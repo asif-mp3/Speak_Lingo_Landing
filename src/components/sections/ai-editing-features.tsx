@@ -61,27 +61,27 @@ const AIEditingFeatures = () => {
                        </p>
                     </div>
                  </div>
-
-                 {/* ELEMENTS POPPING OUT FROM INTERFACE */}
-                 <motion.div 
-                    initial={{ scale: 0, opacity: 0, rotate: 20 }}
-                    whileInView={{ scale: 1.1, opacity: 1, rotate: -5 }}
-                    viewport={{ once: true }}
-                    className="absolute top-[25%] -right-6 w-14 h-14 bg-[#FFD54F] rounded-[18px] shadow-2xl flex items-center justify-center z-20 border-[4px] border-white"
-                 >
-                    <div className="w-6 h-3 border-b-3 border-[#0f172a] rounded-full"></div>
-                 </motion.div>
-                 
-                 <motion.div 
-                    initial={{ x: 60, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="absolute bottom-[6%] -left-6 bg-[#6B5439] text-white px-6 py-3 rounded-[16px] font-bold text-base shadow-2xl z-20"
-                 >
-                    Excellent Pronunciation!
-                 </motion.div>
               </div>
+
+              {/* ELEMENTS POPPING OUT FROM INTERFACE - Moved outside overflow-hidden */}
+              <motion.div 
+                 initial={{ scale: 0, opacity: 0, rotate: 20 }}
+                 whileInView={{ scale: 1.1, opacity: 1, rotate: -5 }}
+                 viewport={{ once: true }}
+                 className="absolute top-[35%] -right-8 w-14 h-14 bg-[#FFD54F] rounded-[18px] shadow-2xl flex items-center justify-center z-20 border-[4px] border-white"
+              >
+                 <div className="w-6 h-3 border-b-3 border-[#0f172a] rounded-full"></div>
+              </motion.div>
+              
+              <motion.div 
+                 initial={{ x: 60, opacity: 0 }}
+                 whileInView={{ x: 0, opacity: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: 0.4 }}
+                 className="absolute bottom-[4%] -left-8 bg-[#6B5439] text-white px-6 py-3 rounded-[16px] font-bold text-base shadow-2xl z-30"
+              >
+                 Excellent Pronunciation!
+              </motion.div>
             </div>
           </div>
 
