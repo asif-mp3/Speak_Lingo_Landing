@@ -2,94 +2,87 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const SpeedComparison = () => {
   return (
-    <section className="bg-[#FBFAF0] py-20 lg:py-40 overflow-hidden">
-      <div className="container mx-auto px-5 lg:px-20">
+    <section className="bg-[#FBFAF0] py-32 md:py-48 overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-24 max-w-[1400px]">
         {/* Header Content */}
-        <div className="flex flex-col items-center text-center max-w-[800px] mx-auto mb-16 lg:mb-24">
-          <div className="relative inline-block mb-8">
-            <h2 className="text-[32px] md:text-[56px] font-serif leading-[1.2] text-black tracking-[-0.02em]">
-              4x faster than typing
+        <div className="flex flex-col items-center text-center max-w-[900px] mx-auto mb-20 md:mb-32">
+          <div className="relative inline-block mb-12">
+            <h2 className="text-[56px] md:text-[110px] font-serif leading-[0.9] text-black tracking-[-0.04em]">
+              4x faster<br />than typing
             </h2>
-            {/* Lavender squiggle underline placeholder */}
-            <div className="absolute -bottom-2 left-0 w-full h-1.5 bg-[#E4D8FF] rounded-full opacity-60"></div>
+            {/* Lavender squiggle underline */}
+            <div className="absolute -bottom-4 left-0 w-[60%] h-3 bg-[#E4D8FF] rounded-full opacity-60"></div>
           </div>
           
-          <p className="font-sans text-[16px] md:text-[20px] text-[#666666] leading-[1.6] max-w-[640px]">
+          <p className="font-sans text-[20px] md:text-[24px] font-bold text-black/40 leading-[1.3] max-w-[720px] tracking-tight">
             After 150 years of using the same keyboard, voice that actually works is finally here. 
             When you create, code, and respond faster, you free up time for more. 
             Speak naturally at the speed you think and let Flow handle the rest.
           </p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <button className="flex items-center gap-2 px-6 py-3 bg-white border border-black rounded-full font-sans font-semibold text-[16px] hover:scale-[0.98] transition-transform">
-              <img 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68335d5ca4a30e3a678bf92d_mic-icon-47.svg" 
-                alt="Mic" 
-                className="w-4 h-4"
-              />
+          <div className="mt-16 flex flex-wrap justify-center gap-4">
+            <button className="flex items-center gap-3 px-10 py-5 bg-[#FBFAF0] border-[1.5px] border-black rounded-[22px] font-bold text-[18px] hover:scale-[0.98] transition-transform shadow-sm">
+              <div className="w-5 h-5">
+                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </div>
               Try Flow
             </button>
-            <button className="px-6 py-3 bg-[#E4D8FF] border border-black rounded-full font-sans font-semibold text-[16px] hover:scale-[0.98] transition-transform">
-              Download for free
+            <button className="flex items-center gap-3 px-10 py-5 bg-[#E4D8FF] border-[1.5px] border-black rounded-[22px] font-bold text-[18px] hover:scale-[0.98] transition-transform shadow-sm">
+              <div className="w-5 h-5">
+                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1V11.1H0V3.449zm0 17.102L9.75 21.9V12.9H0v7.651zM11.25 1.899L24 .001V11.1H11.25V1.899zm0 20.202V12.9H24v9.199l-12.75-1.999z"/></svg>
+              </div>
+              Download for Windows
             </button>
           </div>
         </div>
 
-        {/* Comparison Cards Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 items-end max-w-[1100px] mx-auto">
+        {/* Comparison Area */}
+        <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 items-end max-w-[1200px] mx-auto">
           
           {/* Keyboard Speed Card */}
-          <div className="bg-white rounded-[24px] p-10 flex flex-col items-center justify-center text-center border border-[rgba(0,0,0,0.05)] shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-auto lg:h-[300px]">
-            <span className="font-sans text-[14px] font-medium text-[#666666] uppercase tracking-wider mb-2">Keyboard</span>
-            <div className="font-serif text-[48px] md:text-[56px] text-black leading-none">
-              45 <span className="text-[24px]">wpm</span>
+          <div className="bg-white border-[1.5px] border-black rounded-[40px] p-12 flex flex-col items-center justify-center text-center shadow-xl h-[360px]">
+            <span className="font-sans text-[14px] font-bold text-black/40 uppercase tracking-widest mb-6">Keyboard</span>
+            <div className="font-serif text-[72px] md:text-[80px] text-black leading-none mb-4">
+              45 <span className="text-[32px] font-sans font-bold text-black/40">wpm</span>
             </div>
-            <p className="font-sans text-[14px] text-[#666666] mt-4 max-w-[180px]">
+            <p className="font-sans text-[16px] font-bold text-black/60 max-w-[220px] leading-tight tracking-tight">
               Average typing speed for professionals
             </p>
           </div>
 
-          {/* Flow Speed / Video Card */}
-          <div className="relative group rounded-[48px] overflow-hidden h-[400px] lg:h-[480px] bg-black shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex items-center justify-center">
-            {/* Background Blur Image - Mocking the blurry video backplate from screenshots */}
-            <div className="absolute inset-0 opacity-60">
-              <img 
-                src="https://cdn.prod.website-files.com/682f84b3838c89f8ff7667db/68713160a3f2ece629f48a35_Icon.svg" 
-                alt="Background effect" 
-                className="w-full h-full object-cover blur-[40px] scale-110"
-              />
-            </div>
+          {/* Flow Speed Card */}
+          <div className="relative group rounded-[56px] overflow-hidden h-[500px] bg-[#121212] border-[1.5px] border-black shadow-2xl flex items-center justify-center">
+            {/* Pulsing Visual Effect */}
+            <motion.div 
+              animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute inset-0 bg-brand-lavender/10 blur-[100px]"
+            />
             
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-
-            {/* Content Overlay */}
-            <div className="relative z-10 flex flex-col items-center text-center px-10">
-              <span className="font-sans text-[14px] font-medium text-white/80 uppercase tracking-wider mb-2">Flow</span>
-              <div className="font-serif text-[64px] md:text-[80px] text-white leading-none mb-6">
-                220 <span className="text-[32px]">wpm</span>
+            <div className="relative z-10 flex flex-col items-center text-center px-8 md:px-20">
+              <span className="font-sans text-[14px] font-bold text-white/40 uppercase tracking-widest mb-8">Flow</span>
+              <div className="font-serif text-[100px] md:text-[140px] text-white leading-none mb-10 tracking-[-0.04em]">
+                220 <span className="text-[40px] font-sans font-bold text-white/40">wpm</span>
               </div>
               
-              {/* Transcription Mockup */}
-              <div className="max-w-[500px] p-6 bg-white/10 backdrop-blur-md rounded-[24px] border border-white/20">
-                <p className="font-sans text-[15px] md:text-[18px] text-white leading-relaxed italic">
-                  "How would you like to set up the file. Here are a few options. I'm getting started with the project..."
+              {/* Live Transcription Simulation */}
+              <div className="w-full max-w-[600px] p-8 bg-white/5 backdrop-blur-xl rounded-[32px] border border-white/10">
+                <p className="font-sans text-[18px] md:text-[22px] text-white font-bold leading-tight italic tracking-tight mb-8">
+                  "I was thinking about the project timeline and how we can speed up the delivery without compromising on the quality of the final result..."
                 </p>
-                {/* Waveform visual mimic */}
-                <div className="mt-4 flex items-center justify-center gap-1 h-8">
-                  {[...Array(12)].map((_, i) => (
-                    <div 
+                {/* Waveform Animation */}
+                <div className="flex items-center justify-center gap-1.5 h-12">
+                  {[...Array(15)].map((_, i) => (
+                    <motion.div 
                       key={i} 
-                      className="w-[3px] bg-white rounded-full animate-pulse"
-                      style={{ 
-                        height: `${Math.random() * 100}%`,
-                        animationDelay: `${i * 0.1}s`,
-                        animationDuration: '0.8s'
-                      }}
-                    ></div>
+                      animate={{ height: [10, 40, 10] }}
+                      transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.05 }}
+                      className="w-[3px] bg-white rounded-full"
+                    />
                   ))}
                 </div>
               </div>
