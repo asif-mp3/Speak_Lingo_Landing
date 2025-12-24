@@ -15,7 +15,7 @@ const AIEditingFeatures = () => {
           <div className="relative rounded-[48px] overflow-visible h-[480px] md:h-[640px] shadow-[0_30px_80px_rgba(0,0,0,0.05)] border-[2px] border-[#6B5439]/5 bg-white">
             <div className="absolute inset-0 p-8 md:p-10 flex flex-col">
               {/* App Navigation Motif */}
-              <div className="flex items-center justify-between mb-10">
+              <div className="flex items-center justify-between mb-6 md:mb-10">
                  <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#FFD54F] rounded-[14px] flex items-center justify-center shadow-lg">
                        <div className="w-6 h-6 border-b-[3px] border-[#2D3748] rounded-full"></div>
@@ -32,8 +32,8 @@ const AIEditingFeatures = () => {
               </div>
 
               {/* Main Interaction Area - The "Product" View */}
-              <div className="flex-1 bg-[#f8fafc] rounded-[36px] border-2 border-[#e2e8f0] p-8 relative overflow-hidden flex flex-col">
-                 <div className="flex items-center justify-center gap-2.5 h-32 mb-10">
+              <div className="flex-1 bg-[#f8fafc] rounded-[36px] border-2 border-[#e2e8f0] p-6 md:p-8 relative overflow-hidden flex flex-col">
+                 <div className="flex items-center justify-center gap-2.5 h-24 md:h-32 mb-6 md:mb-10">
                    {[...Array(18)].map((_, i) => (
                      <motion.div
                        key={i}
@@ -44,19 +44,19 @@ const AIEditingFeatures = () => {
                    ))}
                  </div>
                  
-                 <div className="space-y-6 relative z-10">
-                    <div className="p-6 bg-white rounded-[24px] border-[2px] border-[#FFD54F] shadow-[0_12px_30px_rgba(0,0,0,0.02)] transform hover:scale-[1.01] transition-transform">
-                       <div className="flex items-center gap-2 mb-4">
+                 <div className="space-y-4 md:space-y-6 relative z-10">
+                    <div className="p-5 md:p-6 bg-white rounded-[24px] border-[2px] border-[#FFD54F] shadow-[0_12px_30px_rgba(0,0,0,0.02)] transform hover:scale-[1.01] transition-transform">
+                       <div className="flex items-center gap-2 mb-3 md:mb-4">
                           <div className="w-2.5 h-2.5 bg-[#10b981] rounded-full shadow-[0_0_6px_rgba(16,185,129,0.3)]"></div>
                           <div className="text-[9px] font-black text-[#64748b]/60 uppercase tracking-[0.2em]">Real-time correction</div>
                        </div>
-                       <p className="text-xl md:text-2xl font-bold text-[#0f172a] leading-tight tracking-tight">
+                       <p className="text-lg md:text-2xl font-bold text-[#0f172a] leading-tight tracking-tight">
                           "I <span className="text-[#ef4444] line-through decoration-[2px] mr-1">am having</span> <span className="text-[#10b981]">have</span> a reservation for two people."
                        </p>
                     </div>
                     
-                    <div className="p-5 bg-[#0f172a]/5 rounded-[22px] border-[1.5px] border-dashed border-[#0f172a]/10 opacity-60">
-                       <p className="text-lg font-bold text-[#64748b] italic">
+                    <div className="p-4 md:p-5 bg-[#0f172a]/5 rounded-[22px] border-[1.5px] border-dashed border-[#0f172a]/10 opacity-60">
+                       <p className="text-base md:text-lg font-bold text-[#64748b] italic">
                           Next exercise: Ordering coffee...
                        </p>
                     </div>
