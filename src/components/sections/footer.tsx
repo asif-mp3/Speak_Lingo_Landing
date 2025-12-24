@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Youtube, Instagram, Linkedin } from 'lucide-react';
 
