@@ -23,55 +23,55 @@ const Footer = () => {
   );
 
   return (
-    <footer className="bg-white border-t border-[#e2e8f0] pt-24 pb-12 px-6 md:px-20">
-      <div className="max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+    <footer className="bg-white border-t border-[#e2e8f0] pt-20 pb-10 px-6 md:px-12">
+      <div className="max-w-[1140px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Logo />
-            <p className="mt-6 text-[#64748b] font-medium leading-relaxed max-w-[240px]">
+            <p className="mt-5 text-[#64748b] font-medium leading-relaxed max-w-[220px] text-sm">
               Reimagining language learning through immersive interface design.
             </p>
           </div>
           
           <div>
-            <h5 className="text-[13px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-8">Product</h5>
-            <ul className="space-y-4">
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Features</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Methodology</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Interface Design</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Mobile App</a></li>
+            <h5 className="text-[11px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-6">Product</h5>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Features</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Methodology</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Interface Design</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Mobile App</a></li>
             </ul>
           </div>
 
           <div>
-            <h5 className="text-[13px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-8">Resources</h5>
-            <ul className="space-y-4">
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Blog</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Community</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Guidelines</a></li>
+            <h5 className="text-[11px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-6">Resources</h5>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Blog</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Community</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Help Center</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Guidelines</a></li>
             </ul>
           </div>
 
           <div>
-            <h5 className="text-[13px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-8">Company</h5>
-            <ul className="space-y-4">
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">About</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Careers</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Privacy</a></li>
-              <li><a href="#" className="text-[#475569] font-bold hover:text-[#0f172a] transition-colors">Terms</a></li>
+            <h5 className="text-[11px] font-black text-[#0f172a] uppercase tracking-[0.2em] mb-6">Company</h5>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">About</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Careers</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Privacy</a></li>
+              <li><a href="#" className="text-[#475569] text-sm font-bold hover:text-[#0f172a] transition-colors">Terms</a></li>
             </ul>
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#e2e8f0] gap-8">
-          <p className="text-[#94a3b8] text-sm font-bold">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-[#e2e8f0] gap-6">
+          <p className="text-[#94a3b8] text-[12px] font-black uppercase tracking-widest">
             © 2024 SpeakLingo Inc. All rights reserved.
           </p>
-          <div className="flex gap-8">
-            <div className="w-5 h-5 bg-[#e2e8f0] rounded-md"></div>
-            <div className="w-5 h-5 bg-[#e2e8f0] rounded-md"></div>
-            <div className="w-5 h-5 bg-[#e2e8f0] rounded-md"></div>
+          <div className="flex gap-6">
+            <div className="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
+            <div className="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
+            <div className="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
           </div>
         </div>
       </div>
