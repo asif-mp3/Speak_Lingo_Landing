@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, Windows } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,156 +72,179 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-[100] transition-colors duration-300 ${scrolled ? 'glass-nav border-b border-border' : 'bg-transparent'}`}>
+    <>
       {/* Banner */}
-      {!scrolled && (
-        <div className="bg-[#004D40] text-white py-[10px] text-center text-sm font-medium px-4">
-          <div className="container mx-auto flex justify-center items-center gap-2">
-            <span>Wispr raises $81M to build the Voice OS.</span>
-            <a href="/new-funding" className="underline inline-flex items-center group">
-              Read Article 
-              <svg className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" viewBox="0 0 12 12" fill="none">
-                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      )}
-
-      <header className="h-[80px] flex items-center">
-        <div className="container mx-auto px-5 lg:px-20 flex justify-between items-center relative">
-          
-          {/* Logo */}
-          <a href="/" className="flex-shrink-0 relative z-10">
-            <img 
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/683215c6f233131a07d8bafc_navbar_logo-1.svg" 
-              alt="Flow Logo" 
-              className="h-8 lg:h-9"
-            />
+      <div className="fixed top-0 left-0 right-0 z-[110] bg-[#004D40] text-[#FBFAF0] h-10 flex items-center justify-center text-sm font-medium px-4 overflow-hidden">
+        <div className="flex items-center gap-2 whitespace-nowrap">
+          <span>Wispr raises $81M to build the Voice OS.</span>
+          <a href="/new-funding" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <span className="font-bold underline">Read Article</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
           </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
-            {Object.entries(dropdownData).map(([key, data]) => (
-              <div 
-                key={key} 
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown(key)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="flex items-center gap-1.5 px-4 py-2 text-[15px] font-medium text-black hover:bg-black/5 rounded-full transition-colors">
-                  {data.label}
-                  <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/6832181fdb427a83a4270c9a_dropdown_arrow-2.svg" alt="" className={`w-2.5 transition-transform duration-200 ${activeDropdown === key ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Dropdown Menu */}
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${activeDropdown === key ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-                  <div className="bg-white rounded-3xl p-6 shadow-xl border border-border min-w-[320px] max-w-[640px] flex overflow-hidden">
-                    <div className="flex gap-8">
-                      {data.sections.map((section, idx) => (
-                        <div key={idx} className="min-w-[240px]">
-                          <div className="text-[11px] font-bold tracking-wider text-muted-foreground mb-4">{section.heading}</div>
-                          <div className="space-y-1">
-                            {section.links.map((link: any, lIdx) => (
-                              <a 
-                                key={lIdx} 
-                                href={link.href}
-                                className="group flex items-start gap-3.5 p-3 rounded-2xl hover:bg-[#F1F0E5] transition-colors"
-                              >
-                                <img src={link.icon} alt="" className="w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100" />
-                                <div>
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-[15px] font-semibold text-black">{link.title}</span>
-                                    {(link as any).badge && (
-                                      <span className="text-[9px] font-bold bg-[#E4D8FF] text-[#121212] px-1.5 py-0.5 rounded-sm">
-                                        {(link as any).badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <div className="text-[13px] text-muted-foreground leading-tight mt-0.5">{link.desc}</div>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-            <a href="/business" className="px-4 py-2 text-[15px] font-medium text-black hover:bg-black/5 rounded-full transition-colors">Business</a>
-            <a href="/pricing" className="px-4 py-2 text-[15px] font-medium text-black hover:bg-black/5 rounded-full transition-colors">Pricing</a>
-          </nav>
-
-          {/* Right Action */}
-          <div className="hidden lg:block relative z-10">
-            <a 
-              href="https://wisprflow.onelink.me/PguH/lw5h199m" 
-              className="bg-[#E4D8FF] hover:bg-[#d8c8ff] text-[#121212] px-6 py-3 rounded-full text-base font-semibold border border-black shadow-sm transition-transform active:scale-95"
-            >
-              Download for free
-            </a>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="lg:hidden p-2 text-black relative z-10"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Navigation Interface */}
-      <div className={`lg:hidden fixed inset-0 bg-[#FBFAF0] z-50 transition-transform duration-500 overflow-y-auto ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="container mx-auto px-5 py-24">
-          <div className="flex flex-col gap-6">
-            <div className="space-y-4">
-              <div className="text-2xl font-serif">Product</div>
-              <div className="grid grid-cols-1 gap-2 pl-4">
-                {dropdownData.product.sections[0].links.map((link, idx) => (
-                  <a key={idx} href={link.href} className="text-lg font-medium text-muted-foreground py-2 flex items-center gap-3">
-                    <img src={link.icon} alt="" className="w-5 h-5" />
-                    {link.title}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="h-[1px] bg-border w-full"></div>
-
-            <div className="space-y-4">
-              <div className="text-2xl font-serif">Individuals</div>
-              <div className="grid grid-cols-1 gap-2 pl-4">
-                {dropdownData.individuals.sections[0].links.map((link, idx) => (
-                  <a key={idx} href={link.href} className="text-lg font-medium text-muted-foreground py-2 flex items-center gap-3">
-                    <img src={link.icon} alt="" className="w-5 h-5" />
-                    {link.title}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="h-[1px] bg-border w-full"></div>
-
-            <a href="/business" className="text-2xl font-serif">Business</a>
-            <a href="/pricing" className="text-2xl font-serif">Pricing</a>
-            <a href="/about" className="text-2xl font-serif">About</a>
-
-            <div className="pt-8">
-              <a 
-                href="https://wisprflow.onelink.me/PguH/lw5h199m" 
-                className="block w-full text-center bg-[#E4D8FF] text-[#121212] py-4 rounded-full text-lg font-semibold border border-black"
-              >
-                Download for free
-              </a>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
+
+      <div className="fixed top-14 left-0 right-0 z-[100] px-4 md:px-6 pointer-events-none">
+        <header className="container mx-auto max-w-[1200px] pointer-events-auto">
+          <div className="bg-[#FBFAF0] border border-black/10 rounded-2xl md:rounded-[24px] shadow-sm flex items-center justify-between px-4 md:px-8 h-16 md:h-20 transition-all duration-300">
+            
+            {/* Logo */}
+            <a href="/" className="flex-shrink-0">
+              <img 
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/683215c6f233131a07d8bafc_navbar_logo-1.svg" 
+                alt="Flow Logo" 
+                className="h-8 md:h-9"
+              />
+            </a>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {Object.entries(dropdownData).map(([key, data]) => (
+                <div 
+                  key={key} 
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(key)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button className="flex items-center gap-1.5 px-4 py-2 text-[15px] font-bold text-black/80 hover:text-black transition-colors rounded-full">
+                    {data.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === key ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {activeDropdown === key && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                      >
+                        <div className="bg-white rounded-[32px] p-6 shadow-xl border border-black/5 min-w-[320px] max-w-[640px] flex gap-8">
+                          {data.sections.map((section, idx) => (
+                            <div key={idx} className="min-w-[240px]">
+                              <div className="text-[11px] font-bold tracking-widest text-black/40 mb-4 px-3">{section.heading}</div>
+                              <div className="space-y-1">
+                                {section.links.map((link: any, lIdx) => (
+                                  <a 
+                                    key={lIdx} 
+                                    href={link.href}
+                                    className="group flex items-start gap-3.5 p-3 rounded-2xl hover:bg-[#FBFAF0] transition-colors"
+                                  >
+                                    <img src={link.icon} alt="" className="w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100" />
+                                    <div>
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-[15px] font-bold text-black">{link.title}</span>
+                                        {link.badge && (
+                                          <span className="text-[9px] font-bold bg-[#E4D8FF] text-[#121212] px-1.5 py-0.5 rounded-sm">
+                                            {link.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <div className="text-[13px] text-black/60 leading-tight mt-0.5">{link.desc}</div>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+              <a href="/business" className="px-4 py-2 text-[15px] font-bold text-black/80 hover:text-black transition-colors">Business</a>
+              <a href="/pricing" className="px-4 py-2 text-[15px] font-bold text-black/80 hover:text-black transition-colors">Pricing</a>
+            </nav>
+
+            {/* Right Action */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a 
+                href="/research" 
+                className="text-[15px] font-bold text-black/80 hover:text-black px-6 py-2.5 border border-black rounded-xl"
+              >
+                Research
+              </a>
+              <a 
+                href="https://wisprflow.onelink.me/PguH/lw5h199m" 
+                className="bg-[#E4D8FF] hover:bg-[#D4C4FF] text-[#121212] px-6 py-3 rounded-[18px] text-[15px] font-bold border border-black shadow-sm flex items-center gap-2 transition-transform active:scale-95"
+              >
+                <div className="w-4 h-4">
+                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1V11.1H0V3.449zm0 17.102L9.75 21.9V12.9H0v7.651zM11.25 1.899L24 .001V11.1H11.25V1.899zm0 20.202V12.9H24v9.199l-12.75-1.999z"/></svg>
+                </div>
+                Download for Windows
+              </a>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="lg:hidden p-2 text-black"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </header>
+      </div>
+
+      {/* Mobile Navigation Interface */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden fixed inset-0 bg-[#FBFAF0] z-[90] pt-40 px-6 overflow-y-auto"
+          >
+            <div className="container mx-auto flex flex-col gap-8 pb-20">
+              <div className="space-y-4">
+                <div className="text-[11px] font-bold tracking-widest text-black/40">PRODUCT</div>
+                <div className="flex flex-col gap-2">
+                  {dropdownData.product.sections[0].links.map((link: any, idx) => (
+                    <a key={idx} href={link.href} className="text-2xl font-serif py-2 flex items-center gap-4">
+                      <img src={link.icon} alt="" className="w-6 h-6" />
+                      {link.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-[1px] bg-black/10 w-full"></div>
+
+              <div className="space-y-4">
+                <div className="text-[11px] font-bold tracking-widest text-black/40">INDIVIDUALS</div>
+                <div className="flex flex-col gap-2">
+                  {dropdownData.individuals.sections[0].links.map((link: any, idx) => (
+                    <a key={idx} href={link.href} className="text-2xl font-serif py-2 flex items-center gap-4">
+                      <img src={link.icon} alt="" className="w-6 h-6" />
+                      {link.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-[1px] bg-black/10 w-full"></div>
+
+              <div className="flex flex-col gap-6">
+                <a href="/business" className="text-2xl font-serif">Business</a>
+                <a href="/pricing" className="text-2xl font-serif">Pricing</a>
+                <a href="/about" className="text-2xl font-serif">About</a>
+              </div>
+
+              <div className="pt-8">
+                <a 
+                  href="https://wisprflow.onelink.me/PguH/lw5h199m" 
+                  className="block w-full text-center bg-[#E4D8FF] text-[#121212] py-4 rounded-2xl text-lg font-bold border border-black"
+                >
+                  Download for Windows
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
