@@ -124,28 +124,28 @@ export default function Hero() {
   const textWavy = "speak naturally speak lingo speak naturally speak lingo speak naturally speak lingo speak naturally speak lingo";
 
   return (
-    <section className="relative pt-[120px] pb-[80px] md:pt-[180px] md:pb-[140px] overflow-hidden bg-[#FFFAE7]">
+    <section className="relative pt-[100px] pb-[60px] md:pt-[150px] md:pb-[100px] overflow-hidden bg-[#FFFAE7]">
       {/* Wavy Background Text Animation (from Wispr style) */}
-      <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden opacity-[0.04]">
+      <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden opacity-[0.03]">
         <motion.div 
           animate={{ x: [0, -1000] }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           style={{ y: wavyY }}
           className="w-[4000px] h-full"
         >
           <svg className="w-full h-full" viewBox="0 0 3000 800" fill="none">
             <path id="textPathHero" d="M0,450 Q400,200 800,450 T1600,450 T2400,450 T3200,450" fill="transparent" />
-            <text className="font-sans text-[32px] uppercase tracking-[0.25em] font-black fill-brand-brown">
+            <text className="font-sans text-[24px] uppercase tracking-[0.25em] font-black fill-brand-brown">
               <textPath href="#textPathHero" startOffset="0%">{textWavy} {textWavy} {textWavy}</textPath>
             </text>
           </svg>
         </motion.div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 max-w-[1200px]">
+      <div className="container relative z-10 mx-auto px-6 max-w-[1140px]">
         
         {/* Circular Floating Text Animation on Left (from Wispr style) */}
-        <div className="absolute -left-16 top-20 w-[240px] h-[240px] pointer-events-none opacity-[0.06] hidden xl:block">
+        <div className="absolute -left-12 top-20 w-[200px] h-[200px] pointer-events-none opacity-[0.05] hidden xl:block">
            <motion.div
              animate={{ rotate: 360 }}
              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -153,7 +153,7 @@ export default function Hero() {
            >
              <svg viewBox="0 0 200 200" className="w-full h-full">
                <path id="circlePath" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0" fill="transparent" />
-               <text className="font-sans text-[9px] uppercase tracking-[0.25em] font-black fill-brand-brown">
+               <text className="font-sans text-[8px] uppercase tracking-[0.25em] font-black fill-brand-brown">
                  <textPath href="#circlePath">
                     Learn by speaking • Experience fluency • Natural conversations • SpeakLingo
                  </textPath>
@@ -163,21 +163,21 @@ export default function Hero() {
         </div>
 
         {/* Hero Content */}
-        <div className="text-center max-w-[900px] mx-auto mb-24 relative">
+        <div className="text-center max-w-[800px] mx-auto mb-20 relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD54F]/20 rounded-full mb-8 border border-[#FFD54F]/30 backdrop-blur-sm shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FFD54F]/20 rounded-full mb-6 border border-[#FFD54F]/30 backdrop-blur-sm shadow-sm"
           >
-            <span className="w-2 h-2 bg-[#F9A825] rounded-full animate-pulse shadow-[0_0_8px_rgba(249,168,37,0.5)]"></span>
-            <span className="text-[11px] font-black uppercase tracking-wider text-[#6B5439]">Powered by Conversation AI</span>
+            <span className="w-1.5 h-1.5 bg-[#F9A825] rounded-full animate-pulse shadow-[0_0_6px_rgba(249,168,37,0.5)]"></span>
+            <span className="text-[10px] font-black uppercase tracking-wider text-[#6B5439]">Powered by Conversation AI</span>
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[48px] md:text-[80px] font-bold leading-[1] text-[#0f172a] mb-8 tracking-tight"
+            className="text-[40px] md:text-[72px] font-bold leading-[1] text-[#0f172a] mb-6 tracking-tight"
           >
             Speak fluently,<br />
             <span className="text-[#6B5439]">live naturally.</span>
@@ -187,7 +187,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg md:text-[22px] font-bold text-[#475569]/60 max-w-[640px] mx-auto mb-10 leading-[1.3] tracking-tight"
+            className="text-base md:text-[20px] font-bold text-[#475569]/60 max-w-[580px] mx-auto mb-8 leading-[1.3] tracking-tight"
           >
             The language app that feels like a real conversation. Speak, learn, and grow with SpeakLingo's immersive interface.
           </motion.p>
@@ -196,12 +196,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-10 py-4 rounded-[20px] text-[17px] font-bold transition-all shadow-[0_5px_0_rgb(60,45,30)] hover:shadow-[0_6px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[5px] hover:scale-[1.01]">
+            <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-8 py-3.5 rounded-[18px] text-[16px] font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] hover:shadow-[0_5px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[4px]">
               Start Free Trial
             </button>
-            <button className="bg-white border-2 border-[#6B5439]/10 text-[#6B5439] px-10 py-4 rounded-[20px] text-[17px] font-bold transition-all hover:bg-[#FFFAE7] shadow-sm">
+            <button className="bg-white border-2 border-[#6B5439]/10 text-[#6B5439] px-8 py-3.5 rounded-[18px] text-[16px] font-bold transition-all hover:bg-[#FFFAE7]">
               Watch Video
             </button>
           </motion.div>
@@ -212,7 +212,7 @@ export default function Hero() {
           style={{ y: dashboardY }}
           className="relative px-4"
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-gold rounded-full blur-[120px] opacity-[0.12] -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-brand-gold rounded-full blur-[100px] opacity-[0.1] -z-10" />
           <DashboardMockup />
         </motion.div>
       </div>
