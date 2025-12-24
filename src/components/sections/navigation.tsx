@@ -121,7 +121,7 @@ const Navigation = () => {
                         <div key={idx} className="min-w-[240px]">
                           <div className="text-[11px] font-bold tracking-wider text-muted-foreground mb-4">{section.heading}</div>
                           <div className="space-y-1">
-                            {section.links.map((link, lIdx) => (
+                            {section.links.map((link: any, lIdx) => (
                               <a 
                                 key={lIdx} 
                                 href={link.href}
@@ -131,9 +131,9 @@ const Navigation = () => {
                                 <div>
                                   <div className="flex items-center gap-2">
                                     <span className="text-[15px] font-semibold text-black">{link.title}</span>
-                                    {link.badge && (
+                                    {(link as any).badge && (
                                       <span className="text-[9px] font-bold bg-[#E4D8FF] text-[#121212] px-1.5 py-0.5 rounded-sm">
-                                        {link.badge}
+                                        {(link as any).badge}
                                       </span>
                                     )}
                                   </div>
