@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const AppIntegrationShowcase = () => {
@@ -20,7 +19,7 @@ const AppIntegrationShowcase = () => {
   ];
 
   return (
-    <section className="px-5 py-20 bg-[#FBFAF0]">
+    <section className="px-5 pt-20 bg-[#FBFAF0]">
       <div className="mx-auto max-w-[1280px]">
         {/* Main Black Container */}
         <div 
@@ -65,7 +64,6 @@ const AppIntegrationShowcase = () => {
                 className="absolute bottom-[10%] left-0 flex items-center gap-12 w-[4000px]"
               >
                 {[...appIcons, ...appIcons, ...appIcons, ...appIcons].map((src, i) => {
-                  // Simulate a curve by calculating Y offset based on X
                   const angle = (i * 0.2);
                   const yOffset = Math.sin(angle) * 100;
                   const rotation = Math.cos(angle) * 20;
@@ -151,31 +149,6 @@ const AppIntegrationShowcase = () => {
                  {/* Home Indicator */}
                  <div className="w-32 h-1 bg-white/20 rounded-full mt-4"></div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Brand/Social Proof Strip Below Case */}
-        <div className="mt-[-2px] bg-[#004D40] rounded-b-[48px] py-16 px-6 flex flex-col items-center overflow-hidden">
-          <p className="text-[#FBFAF0]/60 text-[16px] font-bold mb-14 tracking-widest text-center uppercase">
-            Used by professionals everywhere to speed up their thoughts
-          </p>
-          
-          <div className="w-full max-w-[1200px] relative">
-            {/* Binoculars Character on the Left */}
-            <div className="absolute left-[-20px] top-[-60px] w-[200px] h-[200px] hidden xl:block">
-               <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68a520cc330f89d53fdfc9cc_flow-v2-4.svg" alt="" className="w-full h-full object-contain" />
-            </div>
-
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10">
-              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/689f1210efd813db213a4714_mercury-lumon-32.svg" alt="Mercury" className="h-8 opacity-80 invert brightness-0" />
-              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/689f1376ce57025556d25a77_groupon-lumon-v3-33.svg" alt="Groupon" className="h-8 opacity-80 invert brightness-0" />
-              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68cd489e5cc5b3b63d17259a_vercel-logo1-35.svg" alt="Vercel" className="h-8 opacity-80 invert brightness-0" />
-              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68cd48f7ceada1605ba5f9bb_OpenAI-logo-36.svg" alt="OpenAI" className="h-8 opacity-80 invert brightness-0" />
-              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68d282cf6db9e65365e93c86_replit-lumen-v2-37.svg" alt="Replit" className="h-8 opacity-80 invert brightness-0" />
-              <span className="text-[#FBFAF0] font-bold text-2xl opacity-80">warp</span>
-              <span className="text-[#FBFAF0] font-bold text-2xl opacity-80">substack</span>
-              <span className="text-[#FBFAF0] font-bold text-2xl opacity-80">amazon</span>
             </div>
           </div>
         </div>
