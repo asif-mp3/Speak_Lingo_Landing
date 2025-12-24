@@ -2,125 +2,137 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-/**
- * Hero component for Wispr Flow
- * Clones the high-impact hero section with headline, CTA, and animated elements.
- */
 export default function Hero() {
+  const wavyText = "what's going on so can you check in with them and see if the notes from yesterday's meeting were sent out, or if they need more time what's going on so can you check in with them and see if the notes from yesterday's meeting were sent out";
+
   return (
-    <section className="relative overflow-hidden bg-[#FBFAF0] pt-[120px] pb-[160px] md:pt-[160px] md:pb-[240px]">
-      {/* Decorative Wave Text Path Background */}
-      <div className="absolute inset-0 pointer-events-none select-none z-0">
-        <svg
-          className="w-full h-full opacity-10 md:opacity-[0.08]"
-          viewBox="0 0 1440 800"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+    <section className="relative overflow-hidden bg-[#FBFAF0] pt-[180px] pb-[160px] md:pt-[240px] md:pb-[240px]">
+      {/* Curved Text Path Background - Moving Animation */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
+        <motion.div 
+          animate={{ x: [0, -1000] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="w-[3000px] h-full opacity-[0.05]"
         >
-          <path
-            id="textPathHero"
-            d="M-200,450 Q200,300 500,500 T1200,400 T1600,600"
-            fill="transparent"
-          />
-          <text className="font-sans text-[20px] md:text-[24px] uppercase tracking-[0.2em] font-medium fill-black">
-            <textPath href="#textPathHero" startOffset="0%">
-              what's going on so can you check in with them and see if the notes from yesterday's meeting were sent out, or if they need more time what's going on so can you check in with them and see if the notes from yesterday's meeting were sent out
-            </textPath>
-          </text>
-        </svg>
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 3000 800"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="textPathHero"
+              d="M0,450 Q400,200 800,450 T1600,450 T2400,450 T3200,450"
+              fill="transparent"
+            />
+            <text className="font-sans text-[24px] uppercase tracking-[0.2em] font-medium fill-black">
+              <textPath href="#textPathHero" startOffset="0%">
+                {wavyText} {wavyText}
+              </textPath>
+            </text>
+          </svg>
+        </motion.div>
       </div>
 
       <div className="container relative z-10 mx-auto px-5 md:px-20 max-w-[1280px]">
-        {/* Promo Tag */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-white/50 backdrop-blur-sm border border-black/10 rounded-full px-4 py-1 flex items-center gap-2">
-            <span className="text-[12px] font-bold tracking-wider uppercase text-black/40">Promo</span>
-          </div>
+        
+        {/* Circular Floating Text Animation on the Left */}
+        <div className="absolute left-[-100px] md:left-[0px] top-[100px] md:top-[150px] w-[300px] h-[300px] pointer-events-none opacity-[0.08] hidden lg:block">
+           <motion.div
+             animate={{ rotate: 360 }}
+             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+             className="w-full h-full"
+           >
+             <svg viewBox="0 0 200 200" className="w-full h-full">
+               <path id="circlePath" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0" fill="transparent" />
+               <text className="font-sans text-[10px] uppercase tracking-widest font-bold">
+                 <textPath href="#circlePath">
+                    Also, I told the team the new timeline should be ready by Friday, although it's probably going to be a bit tight. I'm not totally sure.
+                 </textPath>
+               </text>
+             </svg>
+           </motion.div>
         </div>
 
         {/* Headline */}
-        <div className="text-center max-w-[900px] mx-auto">
-          <h1 className="font-serif text-[48px] md:text-[96px] leading-[1.1] text-black mb-10 tracking-[-0.02em]">
+        <div className="text-center max-w-[1000px] mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="font-serif text-[56px] md:text-[110px] leading-[0.95] text-black mb-10 tracking-[-0.04em]"
+          >
             <span className="text-black/20">Don't type, </span>
             just speak
-          </h1>
+          </motion.h1>
 
-          <p className="font-sans text-[18px] md:text-[20px] font-semibold text-black max-w-[560px] mx-auto mb-10 leading-[1.5]">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-sans text-[18px] md:text-[22px] font-bold text-black max-w-[560px] mx-auto mb-12 leading-[1.3] tracking-tight"
+          >
             The voice-to-text AI that turns speech into clear, polished writing in every app.
-          </p>
+          </motion.p>
 
           {/* Download CTA */}
-          <div className="flex flex-col items-center gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-center gap-6"
+          >
             <a
               href="https://wisprflow.onelink.me/PguH/lw5h199m"
-              className="inline-flex items-center justify-center bg-[#E4D8FF] border border-black text-[#121212] font-semibold py-4 px-10 rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"
+              className="inline-flex items-center justify-center bg-[#E4D8FF] border-[1.5px] border-black text-[#121212] font-bold py-5 px-10 rounded-[24px] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm gap-3 text-lg"
             >
-              Download for free
+              <div className="w-5 h-5">
+                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1V11.1H0V3.449zm0 17.102L9.75 21.9V12.9H0v7.651zM11.25 1.899L24 .001V11.1H11.25V1.899zm0 20.202V12.9H24v9.199l-12.75-1.999z"/></svg>
+              </div>
+              Download for Windows
             </a>
-            <p className="text-[14px] text-[#666666]">
+            <p className="text-[14px] font-medium text-black/40">
               Available on Mac, Windows and iPhone
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Floating Animated UI Elements */}
-        <div className="mt-20 relative flex flex-col items-center">
-          {/* Grammar Corrected Pill */}
-          <div className="mb-6 animate-bounce-slow">
-            <div className="bg-[#004D40] text-white flex items-center gap-3 px-6 py-3 rounded-full shadow-lg">
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 7L6 12L17 1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="font-sans font-semibold text-[16px]">Grammar corrected</span>
-            </div>
-          </div>
-
-          {/* Audio Visualizer Pill */}
-          <div className="neumorphic-card bg-white border border-black/5 rounded-[32px] p-6 max-w-[200px] w-full flex items-center justify-center shadow-xl">
-            <div className="flex items-end gap-1 h-[40px]">
-              {[0.4, 0.7, 1.0, 0.6, 0.8, 0.5, 0.9, 0.4, 0.7, 0.6].map((h, i) => (
-                <div
+        {/* Floating Waveform Element Bottom Center */}
+        <div className="mt-32 relative flex flex-col items-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="relative"
+          >
+            {/* Waveform Pill */}
+            <div className="bg-[#FBFAF0] border-[1.5px] border-black rounded-[40px] px-10 py-6 flex items-center gap-1.5 h-[90px] shadow-sm z-20 relative">
+              {[0.4, 0.7, 1.0, 0.6, 0.8, 1.2, 0.9, 0.5, 0.8, 0.6, 0.9, 0.5, 0.7].map((h, i) => (
+                <motion.div
                   key={i}
-                  className="w-[3px] bg-black rounded-full transition-all duration-300 animate-pulse"
-                  style={{ 
-                    height: `${h * 100}%`,
-                    animationDelay: `${i * 100}ms`
-                  }}
+                  animate={{ height: [h * 20, h * 40, h * 20] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.1, ease: "easeInOut" }}
+                  className="w-[3px] bg-black rounded-full"
                 />
               ))}
             </div>
-          </div>
-          
-          {/* Handdrawn Squiggly Underline Visual Metaphor */}
-          <div className="absolute -bottom-12 md:-bottom-24 w-full max-w-[1000px] opacity-20 pointer-events-none">
-             <Image 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/20a26365-26c5-4232-b0ed-08ff9b332ab6-wisprflow-ai/assets/svgs/68a2f7b01a0cde72bf0f9177_squiggly-49.svg"
-                alt=""
-                width={1000}
-                height={100}
-                className="w-full h-auto"
-             />
-          </div>
+
+            {/* Black Text Tape Behind */}
+            <motion.div 
+              animate={{ x: [-100, 100] }}
+              transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[60px] bg-black rotate-[-4deg] flex items-center overflow-hidden z-10 whitespace-nowrap"
+            >
+               <div className="text-white font-bold text-xl uppercase tracking-wider px-10 flex gap-10">
+                  <span>I also told the team the new timeline should be ready by Friday</span>
+                  <span>I also told the team the new timeline should be ready by Friday</span>
+               </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 4s ease-in-out infinite;
-        }
-        @keyframes pulse-audio {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-        .animate-pulse {
-          animation: pulse-audio 1.5s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }
