@@ -10,90 +10,107 @@ const SpeakLingoShowcase = () => {
     { name: "German", level: "Advanced", progress: 85, flag: "🇩🇪" },
     { name: "Japanese", level: "Beginner", progress: 15, flag: "🇯🇵" },
     { name: "Italian", level: "Fluent", progress: 95, flag: "🇮🇹" },
+    { name: "Korean", level: "Intermediate", progress: 45, flag: "🇰🇷" },
   ];
 
   return (
-    <section className="px-5 py-24 bg-[#FFFAE7]">
-      <div className="mx-auto max-w-[1280px]">
+    <section className="px-5 py-32 md:py-48 bg-[#FFFAE7] overflow-hidden">
+      <div className="mx-auto max-w-[1340px]">
         {/* Main Interface Container */}
         <div 
-          className="relative bg-[#0f172a] rounded-[64px] overflow-hidden min-h-[800px] flex flex-col justify-start pt-24 pb-32 px-6 md:px-16 lg:px-24 border-2 border-[#6B5439]/20 shadow-2xl"
+          className="relative bg-[#0f172a] rounded-[64px] overflow-hidden min-h-[850px] flex flex-col justify-start pt-28 pb-40 px-6 md:px-16 lg:px-24 border-2 border-[#6B5439]/20 shadow-[0_40px_120px_rgba(0,0,0,0.1)]"
         >
-          {/* Header Content */}
-          <div className="z-10 text-white max-w-[750px]">
-            <div className="flex gap-3 mb-12">
-              <div className="px-5 py-2.5 bg-white/10 rounded-full border border-white/10 backdrop-blur-md">
-                <span className="text-sm font-bold">Speech-First Learning</span>
+          {/* Header Content Section */}
+          <div className="relative z-20 text-white max-w-[850px]">
+            <div className="flex flex-wrap gap-3 mb-12">
+              <div className="px-6 py-2.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
+                <span className="text-[13px] font-black uppercase tracking-widest text-white/60">Speech-First Learning</span>
               </div>
-              <div className="px-5 py-2.5 bg-[#FFD54F] rounded-full border border-white/10">
-                <span className="text-sm font-bold text-[#0f172a]">New Methods</span>
+              <div className="px-6 py-2.5 bg-[#FFD54F] rounded-full border border-white/10">
+                <span className="text-[13px] font-black uppercase tracking-widest text-[#0f172a]">New Methods</span>
               </div>
             </div>
 
-            <h2 className="text-white text-[64px] md:text-[96px] font-bold leading-[0.9] mb-10 tracking-tight">
+            <h2 className="text-white text-[64px] md:text-[110px] font-bold leading-[0.85] mb-12 tracking-tight">
               Learn while you<br /><span className="text-[#FFD54F]">actually speak</span>
             </h2>
-            <p className="text-[#cbd5e1] text-[20px] md:text-[24px] max-w-[540px] leading-relaxed mb-16 font-medium">
-              Every card, every pill, and every interaction on this page is pulled directly from the SpeakLingo interface.
+            <p className="text-[#cbd5e1]/60 text-[20px] md:text-[28px] max-w-[640px] leading-[1.2] mb-16 font-bold tracking-tight">
+              Every card, every pill, and every interaction is pulled directly from the SpeakLingo interface.
             </p>
             
-            <button className="bg-[#FFFAE7] text-[#0f172a] px-10 py-5 rounded-[24px] font-bold text-[18px] hover:scale-105 transition-all shadow-xl active:scale-95">
+            <button className="bg-[#FFFAE7] text-[#0f172a] px-12 py-6 rounded-[24px] font-bold text-xl hover:scale-[1.05] transition-all shadow-[0_6px_0_rgba(255,255,255,0.1)] active:shadow-none active:translate-y-[6px]">
               Explore the Interface
             </button>
           </div>
 
-          {/* Scrolling Interface Elements (Cards from UI) */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {/* CURVED PATH ANIMATION (from Wispr style) - Re-integrated with SpeakLingo Cards */}
+          <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
             <div className="relative w-full h-full">
               <motion.div 
-                animate={{ x: [0, -1000] }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute bottom-[20%] left-0 flex items-center gap-12 w-[4000px]"
+                animate={{ x: [0, -1800] }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute bottom-[10%] left-0 flex items-center gap-20 w-[6000px] py-20"
               >
-                {[...Array(4)].map((_, i) => (
+                {[...Array(6)].map((_, i) => (
                   <React.Fragment key={i}>
-                    {languageCards.map((card, idx) => (
-                      <div 
-                        key={`${i}-${idx}`} 
-                        className="shrink-0 w-[280px] bg-white/5 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 shadow-2xl"
-                      >
-                        <div className="flex items-center justify-between mb-8">
-                          <div className="text-4xl">{card.flag}</div>
-                          <div className="w-10 h-10 bg-[#FFD54F] rounded-full flex items-center justify-center">
-                            <div className="w-5 h-5 bg-[#0f172a] rounded-full scale-50"></div>
+                    {languageCards.map((card, idx) => {
+                       const angle = ((i * languageCards.length + idx) * 0.4);
+                       const yOffset = Math.sin(angle) * 120;
+                       const rotation = Math.cos(angle) * 12;
+                       
+                       return (
+                        <div 
+                          key={`${i}-${idx}`} 
+                          className="shrink-0"
+                          style={{ transform: `translateY(${yOffset}px) rotate(${rotation}deg)` }}
+                        >
+                          <div className="w-[300px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-10 shadow-[0_30px_60px_rgba(0,0,0,0.3)] group hover:bg-white/10 transition-colors">
+                            <div className="flex items-center justify-between mb-10">
+                              <div className="text-5xl">{card.flag}</div>
+                              <div className="w-12 h-12 bg-[#FFD54F] rounded-[16px] flex items-center justify-center shadow-[0_0_20px_rgba(255,213,79,0.3)]">
+                                <div className="w-6 h-6 bg-[#0f172a] rounded-full scale-50"></div>
+                              </div>
+                            </div>
+                            <h4 className="text-[28px] font-bold text-white mb-2 tracking-tight">{card.name}</h4>
+                            <p className="text-[#94a3b8] text-[13px] font-black uppercase tracking-[0.2em] mb-8">{card.level}</p>
+                            <div className="w-full h-2.5 bg-white/10 rounded-full overflow-hidden border border-white/5">
+                              <motion.div 
+                                initial={{ width: 0 }}
+                                whileInView={{ width: `${card.progress}%` }}
+                                className="h-full bg-[#FFD54F]"
+                                transition={{ duration: 1.5, delay: 0.2 }}
+                              />
+                            </div>
                           </div>
                         </div>
-                        <h4 className="text-2xl font-bold text-white mb-2">{card.name}</h4>
-                        <p className="text-[#94a3b8] text-sm font-bold uppercase tracking-widest mb-6">{card.level}</p>
-                        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-[#FFD54F]" 
-                            style={{ width: `${card.progress}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+                       );
+                    })}
                   </React.Fragment>
                 ))}
               </motion.div>
             </div>
           </div>
 
-          {/* Pop-out Bubble Face supporting elements */}
+          {/* Central POP OUT element from dashboard UI */}
           <motion.div 
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[15%] right-[10%] z-20"
+            animate={{ 
+              y: [0, -30, 0],
+              rotate: [0, 5, -5, 0]
+            }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[10%] right-[8%] z-30 hidden lg:block"
           >
-            <div className="w-20 h-20 bg-[#FFD54F] rounded-[24px] flex items-center justify-center border-2 border-white/20 shadow-2xl">
-              <div className="flex flex-col items-center gap-1">
-                <div className="flex gap-2">
-                  <div className="w-2 h-2 bg-[#0f172a] rounded-full"></div>
-                  <div className="w-2 h-2 bg-[#0f172a] rounded-full"></div>
+            <div className="w-32 h-32 bg-[#FFD54F] rounded-[36px] flex items-center justify-center border-[6px] border-[#0f172a] shadow-[0_20px_50px_rgba(255,213,79,0.2)]">
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="flex gap-2.5">
+                  <div className="w-2.5 h-2.5 bg-[#0f172a] rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-[#0f172a] rounded-full"></div>
                 </div>
-                <div className="w-8 h-4 border-b-4 border-[#0f172a] rounded-full"></div>
+                <div className="w-10 h-5 border-b-[5px] border-[#0f172a] rounded-full"></div>
               </div>
             </div>
+            {/* Annotation Doodle */}
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 border-[3px] border-brand-gold/30 rounded-full scale-x-[1.5] rotate-[20deg] pointer-events-none" />
           </motion.div>
         </div>
       </div>
