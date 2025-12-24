@@ -13,21 +13,21 @@ const LOGO_ASSETS = [
 
 export default function TrustedByLogos() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0f172a] rounded-b-[64px] py-20 px-6 flex flex-col items-center border-b-2 border-[#FFD54F]/10">
-      <div className="container relative z-10 mx-auto max-w-[1200px]">
+    <section className="relative w-full overflow-hidden bg-[#0f172a] rounded-b-[40px] py-16 px-6 flex flex-col items-center border-b-2 border-[#FFD54F]/10">
+      <div className="container relative z-10 mx-auto max-w-[1140px]">
         {/* Caption */}
-        <div className="mb-14 flex justify-center">
-          <p className="font-sans text-[14px] font-black tracking-[0.25em] text-white/40 uppercase text-center">
+        <div className="mb-10 flex justify-center">
+          <p className="font-sans text-[11px] font-black tracking-[0.25em] text-white/30 uppercase text-center">
             The next generation of language learners is here
           </p>
         </div>
 
         {/* Text-based logos for clean look */}
-        <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-12">
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
           {LOGO_ASSETS.map((logo, index) => (
             <span 
               key={index}
-              className="text-white font-bold text-2xl tracking-tighter"
+              className="text-white font-bold text-xl tracking-tighter"
               style={{ opacity: logo.opacity }}
             >
               {logo.name}
@@ -40,9 +40,9 @@ export default function TrustedByLogos() {
       <motion.div 
         animate={{ rotate: [0, 10, -10, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute -bottom-10 right-[15%] w-24 h-24 bg-[#FFD54F] rounded-3xl z-20 flex items-center justify-center border-4 border-[#0f172a] shadow-xl"
+        className="absolute -bottom-8 right-[15%] w-20 h-20 bg-[#FFD54F] rounded-[24px] z-20 flex items-center justify-center border-[6px] border-[#0f172a] shadow-xl"
       >
-         <div className="w-10 h-10 border-b-4 border-[#0f172a] rounded-full"></div>
+         <div className="w-8 h-4 border-b-4 border-[#0f172a] rounded-full"></div>
       </motion.div>
     </section>
   );
