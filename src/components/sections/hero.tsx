@@ -106,12 +106,22 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
         </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
-          {active ? "Syping Active" : "Waiting for Voice"}
-        </p>
-        <BubblePhase active={active} />
-      </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <div className="flex items-center gap-4 mb-2">
+             <div className="px-3 py-1 bg-green-50 rounded-full border border-green-100 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
+                <span className="text-[10px] font-black uppercase tracking-wider text-green-700">Live WPM: {active ? "142" : "0"}</span>
+             </div>
+             <div className="px-3 py-1 bg-amber-50 rounded-full border border-amber-100 flex items-center gap-2">
+                <span className="text-[10px] font-black uppercase tracking-wider text-amber-700">Streak: {active ? "🔥 12m" : "0m"}</span>
+             </div>
+          </div>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
+            {active ? "Syping Active" : "Waiting for Voice"}
+          </p>
+          <BubblePhase active={active} />
+        </div>
+
     </div>
   );
 };
