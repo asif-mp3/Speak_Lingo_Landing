@@ -21,7 +21,7 @@ export default function FinalCTA() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-5xl md:text-7xl lg:text-[80px] font-black text-[#0f172a] mb-10 tracking-[-0.04em] leading-[0.95]">
-              Every Minute <br />You Speak, <br />
+              Every Minute <br />You Sype, <br />
               <span className="text-[#F9A825]">You Win.</span>
             </h2>
 
