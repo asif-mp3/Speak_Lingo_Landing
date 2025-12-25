@@ -31,12 +31,13 @@ const SpeakLingoShowcase = () => {
                 </div>
               </div>
 
-              <h2 className="text-white text-[40px] md:text-[64px] font-bold leading-[0.9] mb-8 tracking-tight">
-                Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
-              </h2>
-              <p className="text-[#cbd5e1]/60 text-base md:text-[20px] max-w-[460px] leading-[1.3] mb-10 font-bold tracking-tight">
-                Sype in Japanese, French, or Spanish as naturally as you think. SpeakLingo adapts to your accent and your rhythm.
-              </p>
+                <h2 className="text-white text-[48px] md:text-[80px] font-bold leading-[0.9] mb-8 tracking-[-0.04em]">
+                  Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
+                </h2>
+                <p className="text-[#cbd5e1]/80 text-lg md:text-2xl max-w-[520px] leading-relaxed mb-10 font-medium tracking-tight">
+                  Sype in Japanese, French, or Spanish as naturally as you think. <span className="text-white font-bold">SpeakLingo</span> adapts to your accent and your rhythm.
+                </p>
+
             </div>
 
 
