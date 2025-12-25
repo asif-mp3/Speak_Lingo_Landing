@@ -20,6 +20,7 @@ export default function Home() {
         <SpeakLingoShowcase />
         <KeyBenefits />
         <PainPoints />
+        <SypingChat />
         <FiveModes />
         <PrivacyTrust />
         <Audience />
