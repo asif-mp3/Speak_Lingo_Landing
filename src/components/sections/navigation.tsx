@@ -64,12 +64,12 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
                   </div>
                 </a>
               ))}
-                <div className="col-span-2 mt-2 pt-4 border-t border-[#f1f5f9] flex justify-between items-center px-2">
-                  <span className="text-[12px] font-black text-[#94a3b8] uppercase tracking-widest">SpeakLingo for Desktop & Web</span>
-                  <a href="#" className="text-[13px] font-bold text-[#F9A825] flex items-center gap-1 hover:underline">
-                    View all features <ChevronDown size={12} className="-rotate-90" />
-                  </a>
-                </div>
+                  <div className="col-span-2 mt-2 pt-4 border-t border-[#f1f5f9] flex justify-between items-center px-2">
+                    <span className="text-[12px] font-black text-[#94a3b8] uppercase tracking-widest">Syping for Desktop & Web</span>
+                    <a href="#" className="text-[13px] font-bold text-[#F9A825] flex items-center gap-1 hover:underline">
+                      View all features <ChevronDown size={12} className="-rotate-90" />
+                    </a>
+                  </div>
               </div>
             </motion.div>
           )}
