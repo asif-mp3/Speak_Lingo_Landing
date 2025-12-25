@@ -18,11 +18,11 @@ const Logo = () => (
           <div className="w-4 h-2 border-b-2 border-[#2D3748] rounded-full"></div>
         </div>
       </div>
-      <div className="text-2xl font-bold flex tracking-tighter">
-        <span className="text-[#2D3748]">Speak</span>
-        <span className="text-[#EAB308]">Lingo</span>
+        <div className="text-2xl font-bold flex tracking-tighter">
+          <span className="text-[#2D3748]">Sy</span>
+          <span className="text-[#EAB308]">ping</span>
+        </div>
       </div>
-    </div>
 
 );
 
@@ -68,7 +68,7 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
                 </a>
               ))}
               <div className="col-span-2 mt-2 pt-4 border-t border-[#f1f5f9] flex justify-between items-center px-2">
-                <span className="text-[12px] font-black text-[#94a3b8] uppercase tracking-widest">SpeakLingo for Web & Mobile</span>
+                <span className="text-[12px] font-black text-[#94a3b8] uppercase tracking-widest">Syping for Desktop & Web</span>
                 <a href="#" className="text-[13px] font-bold text-[#EAB308] flex items-center gap-1 hover:underline">
                   View all features <ChevronDown size={12} className="-rotate-90" />
                 </a>
