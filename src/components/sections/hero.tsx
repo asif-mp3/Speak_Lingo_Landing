@@ -145,26 +145,27 @@ export default function Hero() {
               <span className="text-[#EAB308]">Keyboard</span>.
             </h1>
 
-            <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
-              <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
-              <div className="w-12 h-[1px] bg-[#EAB308]/30" />
-              <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Syping...</span>
-            </div>
-
-            <p className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]">
-              Typing slows thought. <span className="text-[#0f172a] font-bold">Syping</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
-                  Download for Windows <ArrowRight size={18} />
-                </button>
-                <button className="w-full sm:w-auto bg-white border border-[#0f172a]/20 text-[#0f172a] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-2 shadow-sm">
-                  Download for Mac
-                </button>
+              <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
+                <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
+                <div className="w-12 h-[1px] bg-[#EAB308]/30" />
+                <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Speaking...</span>
               </div>
-            </div>
+
+              <p className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]">
+                Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                  <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
+                    Download for Windows <ArrowRight size={18} />
+                  </button>
+                  <button className="w-full sm:w-auto bg-white border-2 border-[#0f172a] text-[#0f172a] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-2 shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px]">
+                    Download for Mac
+                  </button>
+                </div>
+              </div>
+
 
             <div className="mt-12 space-y-2 text-center lg:text-left">
               <p className="text-xs font-bold text-[#475569]/60 uppercase tracking-widest">
