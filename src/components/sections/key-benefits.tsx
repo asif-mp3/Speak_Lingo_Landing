@@ -4,29 +4,60 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Globe, Shield, Activity, ArrowRight } from 'lucide-react';
 
-const BenefitCard = ({ icon: Icon, title, description, delay }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay, duration: 0.6 }}
-    className="group bg-white p-8 rounded-[32px] border border-[#6B5439]/10 hover:border-[#EAB308]/30 transition-all hover:shadow-[0_20px_50px_rgba(234,179,8,0.08)] relative overflow-hidden"
-  >
-    <div className="absolute top-0 right-0 w-24 h-24 bg-[#FFD54F]/5 rounded-full -mr-12 -mt-12 group-hover:bg-[#FFD54F]/10 transition-colors" />
-    <div className="w-14 h-14 bg-[#FFFAE7] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
-      <Icon className="text-[#6B5439]" size={28} />
-    </div>
-    <h3 className="text-2xl font-bold text-[#0f172a] mb-3 tracking-tight">{title}</h3>
-    <p className="text-[#475569] leading-relaxed font-medium">{description}</p>
-    <motion.div 
-      initial={{ width: 0 }}
-      whileInView={{ width: "100%" }}
+const BenefitCard = ({ icon: Icon, title, description, delay }: any) => {
+  const [pulse, setPulse] = React.useState(false);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setPulse(true), delay * 1000 + 500);
+    return () => clearTimeout(timeout);
+  }, [delay]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: delay + 0.3, duration: 0.8 }}
-      className="h-1 bg-gradient-to-r from-[#FFD54F] to-transparent absolute bottom-0 left-0"
-    />
-  </motion.div>
-);
+      transition={{ delay, duration: 0.6 }}
+      className="group bg-white p-8 rounded-[32px] border border-[#6B5439]/10 hover:border-[#EAB308]/30 transition-all hover:shadow-[0_20px_50px_rgba(234,179,8,0.08)] relative overflow-hidden"
+    >
+      <AnimatePresence>
+        {pulse && (
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0, 0.2, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
+            className="absolute inset-0 bg-[#FFD54F] rounded-full blur-3xl pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
+      <div className="absolute top-0 right-0 w-24 h-24 bg-[#FFD54F]/5 rounded-full -mr-12 -mt-12 group-hover:bg-[#FFD54F]/10 transition-colors" />
+      <div className="w-14 h-14 bg-[#FFFAE7] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm relative overflow-hidden">
+        <Icon className="text-[#6B5439] relative z-10" size={28} />
+        <motion.div 
+          animate={{ opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute inset-0 bg-[#EAB308]/20"
+        />
+      </div>
+      <h3 className="text-2xl font-bold text-[#0f172a] mb-3 tracking-tight">{title}</h3>
+      <p className="text-[#475569] leading-relaxed font-medium">{description}</p>
+      
+      <div className="mt-8">
+        <button className="text-sm font-bold text-[#EAB308] hover:text-[#6B5439] flex items-center gap-2 transition-colors group/btn">
+          Feel the speed <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+        </button>
+      </div>
+
+      <motion.div 
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        viewport={{ once: true }}
+        transition={{ delay: delay + 0.3, duration: 0.8 }}
+        className="h-1 bg-gradient-to-r from-[#FFD54F] to-transparent absolute bottom-0 left-0"
+      />
+    </motion.div>
+  );
+};
 
 export default function KeyBenefits() {
   const benefits = [
