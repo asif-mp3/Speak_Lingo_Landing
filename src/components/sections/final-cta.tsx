@@ -31,7 +31,7 @@ export default function FinalCTA() {
 
             <div className="space-y-6 mb-12">
               <p className="text-lg font-bold text-[#0f172a]">
-                The moment you start using SpeakLingo, the clock flips. Your ideas move 5× faster, your tasks finish before they interrupt your flow.
+                The moment you start using Syping, the clock flips. Your ideas move 5× faster, your tasks finish before they interrupt your flow.
               </p>
               <p className="text-lg text-[#475569] font-medium">
                 Watch your <span className="text-[#6B5439] font-bold">Time Saved Counter</span> climb every day. Minutes become hours. Hours become freedom.
