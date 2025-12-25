@@ -23,28 +23,40 @@ import {
   Shield,
   Info,
   Smile,
-  ArrowRight } from
+  ArrowRight,
+  ArrowUpLeft,
+  ArrowDownRight,
+  ArrowUpRight,
+  ArrowDownLeft} from
 'lucide-react';
 
-const StatCard = ({ label, value, unit = "", icon: Icon }: any) =>
-<div className="bg-white/80 p-3 rounded-xl border border-black/5 shadow-sm">
-    <div className="flex justify-between items-start mb-1">
-      <div className="text-[10px] font-bold text-slate-500 uppercase tracking-tight">{label}</div>
-      {Icon && <Icon size={12} className="text-slate-400" />}
-    </div>
-    <div className="flex items-baseline gap-1">
-      <span className="text-sm font-black text-[#0f172a]">{value}</span>
-      {unit && <span className="text-[10px] font-bold text-slate-400">{unit}</span>}
-    </div>
-  </div>;
+const Pointer = ({ label, position, arrow = "up-left" }: { label: string, position: string, arrow?: "up-left" | "up-right" | "down-left" | "down-right" }) => {
+  const arrows = {
+    "up-left": <ArrowUpLeft className="text-[#F9A825]" size={20} />,
+    "up-right": <ArrowUpRight className="text-[#F9A825]" size={20} />,
+    "down-left": <ArrowDownLeft className="text-[#F9A825]" size={20} />,
+    "down-right": <ArrowDownRight className="text-[#F9A825]" size={20} />,
+  };
 
-
-const ActionButton = ({ icon: Icon, label, active = false }: any) =>
-<button className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl transition-all ${active ? 'bg-[#FFD54F] shadow-[0_4px_0_rgb(230,167,0)] border border-black/10' : 'bg-[#FFD54F]/60 hover:bg-[#FFD54F] border border-black/5'}`}>
-    <Icon size={18} className="text-[#6B5439]" />
-    <span className="text-[11px] font-bold text-[#6B5439]">{label}</span>
-  </button>;
-
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      animate={{ y: [0, -5, 0] }}
+      transition={{ 
+        y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+        opacity: { duration: 0.5 }
+      }}
+      className={`absolute z-20 pointer-events-none hidden lg:flex items-center gap-2 ${position}`}
+    >
+      {arrow.includes("left") && arrows[arrow]}
+      <div className="bg-[#0f172a] text-[#FFFAE7] px-3 py-1.5 rounded-xl border-2 border-[#F9A825] shadow-lg whitespace-nowrap">
+        <span className="text-[11px] font-black uppercase tracking-wider">{label}</span>
+      </div>
+      {arrow.includes("right") && arrows[arrow]}
+    </motion.div>
+  );
+};
 
 export default function SypingChat() {
   return (
@@ -67,6 +79,12 @@ export default function SypingChat() {
         </div>
 
         <div className="relative max-w-[440px] mx-auto scale-90 md:scale-100">
+          {/* Interactive Pointers */}
+          <Pointer label="Smart Voice Capture" position="-left-32 top-28" arrow="down-right" />
+          <Pointer label="Instant Transcription" position="-right-36 top-48" arrow="up-left" />
+          <Pointer label="Gamified Productivity" position="-left-40 bottom-48" arrow="up-right" />
+          <Pointer label="Mode Switching" position="-right-28 bottom-28" arrow="down-left" />
+
           {/* Main App Container */}
           <div className="bg-[#FFFAE7] border-2 border-[#F9A825]/30 rounded-[32px] p-6 shadow-[0_30px_100px_rgba(249,168,37,0.15)] overflow-hidden relative">
             
