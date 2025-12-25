@@ -1,34 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Mic,
   Moon,
   Minus,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-  ChevronDown,
-  Copy,
-  Trash2,
   BarChart2,
   Trophy,
   MessageSquare,
   Terminal,
-  CheckSquare,
   Settings,
-  Keyboard,
   Zap,
   Shield,
-  Info,
-  Smile,
-  ArrowRight,
-  ArrowUpLeft,
-  ArrowDownRight,
-  ArrowUpRight,
-  ArrowDownLeft} from
-'lucide-react';
+  Monitor,
+  Globe,
+  ArrowRight
+} from 'lucide-react';
+
+const StatCard = ({ label, value }: { label: string, value: string }) => (
+  <div className="bg-white/90 p-3 rounded-2xl border border-[#0f172a]/5 shadow-sm">
+    <div className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">{label}</div>
+    <div className="text-lg font-black text-[#0f172a]">{value}</div>
+  </div>
+);
 
 const CloudCallout = ({ label, description, position, arrowPath, icon: Icon }: { label: string, description: string, position: string, arrowPath: string, icon: any }) => {
   return (
@@ -61,8 +56,6 @@ const CloudCallout = ({ label, description, position, arrowPath, icon: Icon }: {
           <motion.circle
             r="6"
             fill="#F9A825"
-            initial={{ offset: 0 }}
-            animate={{ offset: 1 }}
           >
             <animateMotion dur="3s" repeatCount="indefinite" path={arrowPath} />
           </motion.circle>
@@ -209,18 +202,15 @@ export default function SypingChat() {
             arrowPath="M -10 50 Q -100 50 -180 -120"
           />
         </div>
-      </div>
-    </section>
-  );
-}
 
         <div className="mt-20 flex flex-col items-center gap-6">
           <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em]">Ready to upgrade your workflow?</p>
-          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3 !whitespace-pre-line !whitespace-pre-line">Download Syping for Desktop
+          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3">
+            Download Syping for Desktop
             <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
