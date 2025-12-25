@@ -21,27 +21,24 @@ const SpeakLingoShowcase = () => {
           className="relative bg-[#0f172a] rounded-[40px] overflow-hidden min-h-[600px] flex flex-col justify-start pt-16 pb-28 px-6 md:px-10 lg:px-16 border-2 border-[#6B5439]/10 shadow-[0_25px_80px_rgba(0,0,0,0.08)]"
         >
           {/* Header Content Section */}
-          <div className="relative z-20 text-white max-w-[640px]">
-            <div className="flex flex-wrap gap-2 mb-8">
-              <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Speech-First Learning</span>
+            <div className="relative z-20 text-white max-w-[640px]">
+              <div className="flex flex-wrap gap-2 mb-8">
+                <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Syping Everywhere</span>
+                </div>
+                <div className="px-4 py-1.5 bg-[#FFD54F] rounded-full border border-white/10">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#0f172a]">Multi-Language Flow</span>
+                </div>
               </div>
-              <div className="px-4 py-1.5 bg-[#FFD54F] rounded-full border border-white/10">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#0f172a]">New Methods</span>
-              </div>
+
+              <h2 className="text-white text-[40px] md:text-[64px] font-bold leading-[0.9] mb-8 tracking-tight">
+                Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
+              </h2>
+              <p className="text-[#cbd5e1]/60 text-base md:text-[20px] max-w-[460px] leading-[1.3] mb-10 font-bold tracking-tight">
+                Sype in Japanese, French, or Spanish as naturally as you think. SpeakLingo adapts to your accent and your rhythm.
+              </p>
             </div>
 
-            <h2 className="text-white text-[40px] md:text-[64px] font-bold leading-[0.9] mb-8 tracking-tight">
-              Learn while you<br /><span className="text-[#FFD54F]">actually speak</span>
-            </h2>
-            <p className="text-[#cbd5e1]/40 text-base md:text-[20px] max-w-[460px] leading-[1.3] mb-10 font-bold tracking-tight">
-              Every card, every pill, and every interaction is pulled directly from the SpeakLingo interface.
-            </p>
-            
-            <button className="bg-[#FFFAE7] text-[#0f172a] px-8 py-4 rounded-[18px] font-bold text-[17px] hover:scale-[1.02] transition-all shadow-lg active:translate-y-[3px]">
-              Explore the Interface
-            </button>
-          </div>
 
           {/* CURVED PATH ANIMATION (from Wispr style) - Re-integrated with SpeakLingo Cards */}
           <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
