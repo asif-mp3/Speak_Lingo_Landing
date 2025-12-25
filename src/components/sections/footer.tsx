@@ -6,7 +6,7 @@ import { Smile } from 'lucide-react';
 const Footer = () => {
     const Logo = () => (
       <div className="flex items-center">
-        <img src="/2.webp" alt="SpeakLingo" className="h-12 w-auto object-contain" />
+        <img src="/2.webp" alt="SpeakLingo" className="h-[53px] w-auto object-contain" />
       </div>
     );
 
