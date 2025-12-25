@@ -189,22 +189,27 @@ const FlashCard = ({ point, index }: { point: string, index: number }) => {
             </div>
           </motion.div>
         ) : (
-          <motion.div
-            key="back"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-[#FFFAE7] border-2 border-[#F9A825] p-6 rounded-2xl shadow-[8px_8px_0_0_#F9A825]"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0 mt-1">
-                <Sparkles size={18} className="text-[#F9A825]" />
+            <motion.div
+              key="back"
+              initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              className="bg-[#FFFAE7] border-2 border-[#F9A825] p-6 rounded-2xl shadow-[8px_8px_0_0_#F9A825] relative overflow-hidden"
+            >
+              <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#F9A825]/10 rounded-full blur-xl" />
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0 mt-1">
+                  <Sparkles size={18} className="text-[#F9A825]" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-[#6B5439]">Resolved with SpeakLingo</p>
+                  <p className="text-xs font-medium text-[#6B5439]/60 mt-1 italic">Thought-to-screen friction removed.</p>
+                </div>
               </div>
-              <p className="text-lg font-bold text-[#6B5439]">Resolved with SpeakLingo Flow</p>
-            </div>
-            <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}>
-              ← Bring back the pain
-            </button>
-          </motion.div>
+              <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}>
+                ← Bring back the pain
+              </button>
+            </motion.div>
+
         )}
       </AnimatePresence>
     </motion.div>
