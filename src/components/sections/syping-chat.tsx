@@ -105,16 +105,16 @@ export default function SypingChat() {
           </h2>
         </div>
 
-        <div className="relative h-[1200px] flex items-center justify-center">
+        <div className="relative h-[1100px] flex items-center justify-center">
           {/* SVG Connector Layer */}
           <div className="absolute inset-0 pointer-events-none hidden xl:block">
             {/* Lines from Card to Symmetrical Clouds */}
-            <ConnectorLine d="M 430 400 Q 380 350 328 250" />
-            <ConnectorLine d="M 970 400 Q 1020 350 1072 250" />
-            <ConnectorLine d="M 430 600 L 328 600" />
-            <ConnectorLine d="M 970 600 L 1072 600" />
-            <ConnectorLine d="M 430 800 Q 380 850 328 950" />
-            <ConnectorLine d="M 970 800 Q 1020 850 1072 950" />
+            <ConnectorLine d="M 430 350 Q 380 250 180 200" />
+            <ConnectorLine d="M 970 350 Q 1020 250 1220 200" />
+            <ConnectorLine d="M 430 550 L 180 550" />
+            <ConnectorLine d="M 970 550 L 1220 550" />
+            <ConnectorLine d="M 430 750 Q 380 850 180 900" />
+            <ConnectorLine d="M 970 750 Q 1020 850 1220 900" />
           </div>
 
           {/* Main App Card with 3D Phone Frame */}
@@ -122,10 +122,10 @@ export default function SypingChat() {
             {/* Phone Bezel/Frame */}
             <div className="bg-[#1e293b] rounded-[60px] p-[10px] shadow-[40px_60px_100px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.1)_inset] relative group">
               {/* Inner Screen */}
-              <div className="bg-[#FFFCEE] rounded-[50px] p-8 border-[3px] border-[#0f172a] overflow-hidden relative min-h-[900px]">
+              <div className="bg-[#FFFCEE] rounded-[50px] p-8 border-[3px] border-[#0f172a] overflow-hidden relative min-h-[750px]">
                 
                 {/* Header Section */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <img src="/1.webp" alt="Logo" className="w-14 h-14 object-contain" />
                     <span className="text-4xl font-black tracking-tight flex items-center">
@@ -143,14 +143,14 @@ export default function SypingChat() {
                   </div>
                 </div>
 
-                <div className="text-right text-[14px] font-bold text-slate-400 italic mb-4">
+                <div className="text-right text-[14px] font-bold text-slate-400 italic mb-3">
                   Type faster than typing!
                 </div>
 
-                <div className="w-full h-px bg-[#0f172a]/10 mb-6" />
+                <div className="w-full h-px bg-[#0f172a]/10 mb-4" />
 
                 {/* Status Row */}
-                <div className="flex justify-between items-center mb-6 px-2">
+                <div className="flex justify-between items-center mb-4 px-2">
                   <div className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 bg-blue-100 rounded-full" />
                     <span className="text-[14px] font-bold text-slate-500">Ready</span>
@@ -166,7 +166,7 @@ export default function SypingChat() {
                 </div>
 
                 {/* Waveform Visualization (Circles/Dots) */}
-                <div className="bg-[#FFD54F] h-16 rounded-2xl flex items-center justify-center gap-2 px-6 mb-4 shadow-inner border-2 border-[#0f172a]/5 overflow-hidden">
+                <div className="bg-[#FFD54F] h-12 rounded-2xl flex items-center justify-center gap-2 px-6 mb-3 shadow-inner border-2 border-[#0f172a]/5 overflow-hidden">
                   {Array.from({ length: 24 }).map((_, i) => (
                     <motion.div
                       key={i}
@@ -177,7 +177,7 @@ export default function SypingChat() {
                   ))}
                 </div>
 
-                <div className="text-center text-[12px] font-bold text-slate-400 italic mb-8">
+                <div className="text-center text-[12px] font-bold text-slate-400 italic mb-6">
                   Speak 'NL2' to insert a new line
                 </div>
 
@@ -199,14 +199,14 @@ export default function SypingChat() {
                 </div>
 
                 {/* Text Area */}
-                <div className="bg-[#FFD54F]/80 rounded-[32px] p-6 border-2 border-[#0f172a]/5 shadow-inner min-h-[150px] mb-8">
+                <div className="bg-[#FFD54F]/80 rounded-[32px] p-6 border-2 border-[#0f172a]/5 shadow-inner min-h-[120px] mb-6">
                   <p className="text-[14px] font-bold text-[#0f172a]/40 italic">
                     Your transcribed text will appear here...
                   </p>
                 </div>
 
                 {/* Productivity Dashboard */}
-                <div className="mb-8">
+                <div className="mb-6">
                   <div className="flex justify-between items-center mb-4">
                     <h4 className="text-[16px] font-black text-[#0f172a]">Productivity Dashboard</h4>
                     <div className="flex gap-2">
@@ -215,10 +215,10 @@ export default function SypingChat() {
                     </div>
                   </div>
 
-                  <div className="bg-[#FFD54F] p-6 rounded-[40px] border-2 border-[#0f172a]/5 space-y-6">
+                  <div className="bg-[#FFD54F] p-5 rounded-[40px] border-2 border-[#0f172a]/5 space-y-4">
                     {/* Today Stats */}
                     <div>
-                      <div className="flex justify-between items-center mb-3 px-1">
+                      <div className="flex justify-between items-center mb-2 px-1">
                         <span className="text-[14px] font-black text-[#6B5439]">Today</span>
                         <div className="flex gap-3">
                           <span className="text-[12px] font-black text-[#6B5439] flex items-center gap-1"><Flame size={14} className="text-orange-500" /> ×13</span>
@@ -230,16 +230,16 @@ export default function SypingChat() {
                         <StatRow label="Words" value="1.2" unit="K" />
                         <StatRow label="WPM" value="134" />
                       </div>
-                      <div className="mt-4 bg-white/40 rounded-full h-5 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
+                      <div className="mt-3 bg-white/40 rounded-full h-4 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
                         <div className="bg-[#6B5439] w-[21%] h-full rounded-full" />
-                        <span className="absolute left-3 text-[10px] font-black text-white">21%</span>
-                        <span className="absolute right-3 text-[10px] font-black text-[#6B5439]">8m to 🔷 Diamond</span>
+                        <span className="absolute left-3 text-[9px] font-black text-white">21%</span>
+                        <span className="absolute right-3 text-[9px] font-black text-[#6B5439]">8m to 🔷 Diamond</span>
                       </div>
                     </div>
 
                     {/* Lifetime Stats */}
                     <div>
-                      <div className="flex justify-between items-center mb-3 px-1">
+                      <div className="flex justify-between items-center mb-2 px-1">
                         <span className="text-[14px] font-black text-[#6B5439]">Lifetime</span>
                         <span className="text-[12px] font-black text-[#6B5439] flex items-center gap-1"><Trophy size={14} className="text-orange-500" /> Apprentice</span>
                       </div>
@@ -248,17 +248,17 @@ export default function SypingChat() {
                         <StatRow label="Total Words" value="2.4" unit="K" />
                         <StatRow label="Transcripts" value="93" />
                       </div>
-                      <div className="mt-4 bg-white/40 rounded-full h-5 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
+                      <div className="mt-3 bg-white/40 rounded-full h-4 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
                         <div className="bg-[#6B5439] w-[16%] h-full rounded-full" />
-                        <span className="absolute left-3 text-[10px] font-black text-white">16%</span>
-                        <span className="absolute right-3 text-[10px] font-black text-[#6B5439]">2.5K XP to ⚡ Adept</span>
+                        <span className="absolute left-3 text-[9px] font-black text-white">16%</span>
+                        <span className="absolute right-3 text-[9px] font-black text-[#6B5439]">2.5K XP to ⚡ Adept</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer Buttons Grid */}
-                <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="grid grid-cols-3 gap-2 mb-4">
                   {[
                     { icon: MessageSquare, label: 'Chat' },
                     { icon: ChevronRight, label: 'Prompt' },
@@ -267,27 +267,27 @@ export default function SypingChat() {
                     { icon: Mic, label: 'Mic' },
                     { icon: Keyboard, label: 'Hotkey' }
                   ].map((btn, i) => (
-                    <div key={i} className="bg-[#FFD54F] rounded-2xl border border-[#0f172a]/10 p-4 flex flex-col items-center justify-center gap-2 hover:bg-[#F9A825] transition-colors cursor-pointer group">
-                      <btn.icon size={20} className="text-[#0f172a]/60 group-hover:text-[#0f172a]" />
-                      <span className="text-[12px] font-black text-[#0f172a]/60 group-hover:text-[#0f172a]">{btn.label}</span>
+                    <div key={i} className="bg-[#FFD54F] rounded-2xl border border-[#0f172a]/10 p-3 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
+                      <btn.icon size={18} className="text-[#0f172a]/60 group-hover:text-[#0f172a]" />
+                      <span className="text-[11px] font-black text-[#0f172a]/60 group-hover:text-[#0f172a]">{btn.label}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Bottom Tip Bar */}
-                <div className="bg-[#FFD54F] rounded-full py-3 px-6 flex items-center gap-3 mb-6 border border-[#0f172a]/10 shadow-sm">
+                <div className="bg-[#FFD54F] rounded-full py-2.5 px-6 flex items-center gap-3 mb-4 border border-[#0f172a]/10 shadow-sm">
                   <Lightbulb size={16} className="text-[#0f172a]/60" />
-                  <span className="text-[11px] font-black text-[#0f172a]/60">Minimize to system tray to keep the app running</span>
+                  <span className="text-[10px] font-black text-[#0f172a]/60">Minimize to system tray to keep the app running</span>
                 </div>
 
                 {/* Footer Status */}
-                <div className="flex items-center justify-between text-[12px] font-bold text-slate-400 px-2">
+                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 px-2">
                   <div className="flex items-center gap-6">
                     <span className="flex items-center gap-2"><Keyboard size={14} /> Hotkey: Shift</span>
                     <span className="flex items-center gap-2">Mode: Standard</span>
                   </div>
-                  <div className="bg-white border border-[#0f172a]/10 rounded-full px-4 py-1.5 flex items-center gap-2 shadow-sm">
-                    <div className="w-2.5 h-2.5 bg-green-500 rounded-full" />
+                  <div className="bg-white border border-[#0f172a]/10 rounded-full px-4 py-1 flex items-center gap-2 shadow-sm">
+                    <div className="w-2 h-2 bg-green-500 rounded-full" />
                     <span className="text-[#0f172a]/60">Connected</span>
                   </div>
                 </div>
@@ -301,37 +301,37 @@ export default function SypingChat() {
             label="Neural Core"
             description="The engine that turns sound into structure."
             icon={Zap}
-            position="left-[2%] top-[250px] -translate-y-1/2"
+            position="left-[2%] top-[200px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Live Insight"
             description="Zero-latency visualization of thought flow."
             icon={Flame}
-            position="right-[2%] top-[250px] -translate-y-1/2"
+            position="right-[2%] top-[200px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Smart Memory"
             description="Persistent history of every syped word."
             icon={MessageSquare}
-            position="left-[2%] top-[600px] -translate-y-1/2"
+            position="left-[2%] top-[550px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Momentum"
             description="Real-time proof of productivity gains."
             icon={BarChart2}
-            position="right-[2%] top-[600px] -translate-y-1/2"
+            position="right-[2%] top-[550px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Power Grid"
             description="One-click access to system commands."
             icon={Terminal}
-            position="left-[2%] top-[950px] -translate-y-1/2"
+            position="left-[2%] top-[900px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Zero Trust"
             description="On-device processing keeps ideas safe."
             icon={Shield}
-            position="right-[2%] top-[950px] -translate-y-1/2"
+            position="right-[2%] top-[900px] -translate-y-1/2"
           />
         </div>
 
