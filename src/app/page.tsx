@@ -18,11 +18,11 @@ export default function Home() {
         <Hero />
         <KeyBenefits />
         <PainPoints />
-        <Audience />
         <FiveModes />
         <PrivacyTrust />
         <Testimonials />
         <FinalCTA />
+        <Audience />
       </main>
       <Footer />
     </div>
