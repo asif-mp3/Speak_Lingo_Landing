@@ -41,11 +41,11 @@ const TypingBubble = ({ text, delay = 0 }: { text: string; delay?: number }) => 
   );
 };
 
-const SpeakLingoBubble = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+const SypingBubble = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   return (
     <div className="flex flex-col items-end gap-1 ml-auto max-w-[85%]">
       <div className="flex items-center gap-1.5 mb-0.5">
-        <span className="text-[9px] font-black uppercase tracking-widest text-[#6B5439]/40">SpeakLingo Live</span>
+        <span className="text-[9px] font-black uppercase tracking-widest text-[#6B5439]/40">Syping Live</span>
         <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
       </div>
       <div className="bg-[#6B5439] p-4 rounded-2xl rounded-tr-none border border-[#5A4530] shadow-lg relative overflow-hidden">
@@ -66,7 +66,7 @@ const SpeakLingoBubble = ({ text, delay = 0 }: { text: string; delay?: number })
   );
 };
 
-export default function SpeakLingoChat() {
+export default function SypingChat() {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
@@ -137,7 +137,7 @@ export default function SpeakLingoChat() {
                     <Mic size={20} className="text-[#6B5439]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0f172a] text-sm tracking-tight">SpeakLingo Flow</h4>
+                    <h4 className="font-bold text-[#0f172a] text-sm tracking-tight">Syping Flow</h4>
                     <p className="text-[9px] font-black uppercase tracking-widest text-green-600">Active Session</p>
                   </div>
                 </div>
@@ -154,8 +154,8 @@ export default function SpeakLingoChat() {
                   delay={1000} 
                 />
                 
-                <SpeakLingoBubble 
-                  text="SpeakLingo kills the friction. No typos, no pauses, just pure momentum. 🔥" 
+                <SypingBubble 
+                  text="Syping kills the friction. No typos, no pauses, just pure momentum. 🔥" 
                   delay={5000} 
                 />
 
@@ -187,7 +187,7 @@ export default function SpeakLingoChat() {
 
           <div className="mt-16 flex justify-center">
             <button className="group bg-[#6B5439] hover:bg-[#5A4530] text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] hover:shadow-[0_5px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[4px] border border-black flex items-center gap-3">
-              Try SpeakLingo Messenger <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              Try Syping Messenger <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
       </div>
