@@ -32,7 +32,7 @@ const modes = [
       icon: Brain,
       title: "PROMPT",
       headline: "Think Like an AI.",
-      description: "You speak casually. SpeakLingo transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+      description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
       insight: "You become the smartest communicator in any system.",
       color: "#0f172a",
       lightColor: "rgba(15, 23, 42, 0.1)",
@@ -55,7 +55,7 @@ const modes = [
       icon: Headphones,
       title: "EVOLVE",
       headline: "Effortless Evolution.",
-      description: "Every time you speak, SpeakLingo listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+      description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
       insight: "Your daily communication becomes your training ground.",
       color: "#FFD54F",
       lightColor: "rgba(255, 213, 79, 0.1)",
@@ -83,7 +83,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
                   transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
                   className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
                 >
-                  It's SpeakLingo.
+                  It's Syping.
                 </motion.span>
               </div>
             </div>
@@ -160,7 +160,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <p className="text-xs font-bold text-[#0f172a]">User: "Summarize the call"</p>
           </div>
             <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
-              <p className="text-xs text-white leading-relaxed">SpeakLingo: Key points identified. Drafting summary now...</p>
+              <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
             </div>
 
           <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
