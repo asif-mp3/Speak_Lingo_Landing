@@ -111,11 +111,11 @@ export default function SypingChat() {
         </div>
 
         <div className="relative max-w-[440px] mx-auto scale-90 md:scale-100">
-          {/* Interactive Pointers */}
-          <Pointer label="Smart Voice Capture" position="-left-32 top-28" arrow="down-right" />
-          <Pointer label="Instant Transcription" position="-right-36 top-48" arrow="up-left" />
-          <Pointer label="Gamified Productivity" position="-left-40 bottom-48" arrow="up-right" />
-          <Pointer label="Mode Switching" position="-right-28 bottom-28" arrow="down-left" />
+          {/* Interactive Pointers (Architecture Style) */}
+          <Pointer label="Smart Voice Engine" position="-left-[280px] top-[10%] " arrow="down-right" />
+          <Pointer label="AI Context Processor" position="-right-[320px] top-[25%] " arrow="up-left" />
+          <Pointer label="Gamified Analytics" position="-left-[300px] bottom-[20%] " arrow="up-right" />
+          <Pointer label="Multi-Mode Core" position="-right-[280px] bottom-[10%] " arrow="down-left" />
 
           {/* Main App Container */}
           <div className="bg-[#FFFAE7] border-2 border-[#F9A825]/30 rounded-[32px] p-6 shadow-[0_30px_100px_rgba(249,168,37,0.15)] overflow-hidden relative">
