@@ -84,27 +84,28 @@ export default function SypingChat() {
   return (
     <section className="py-20 bg-[#FFFAE7]/30 overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-[1000px]">
-        <div className="text-center mb-16 space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#6B5439]/10 rounded-full shadow-sm"
-          >
-            <div className="w-2 h-2 bg-[#EAB308] rounded-full animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#6B5439]/60">Interactive Messenger Demo</span>
-          </motion.div>
-          
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#0f172a] leading-tight tracking-tight">
-            Kill the Friction. <br className="hidden md:block" />
-            Start <span className="text-[#EAB308]">Syping.</span>
-          </h2>
-          
-          <p className="text-lg md:text-xl font-bold text-[#475569] max-w-[600px] mx-auto leading-relaxed">
-            Stop wrestling with keys. Your thoughts flow instantly into any chat box, email, or document.
-          </p>
-        </div>
+          <div className="text-center mb-12 space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#6B5439]/10 rounded-full shadow-sm"
+            >
+              <div className="w-1.5 h-1.5 bg-[#EAB308] rounded-full animate-pulse" />
+              <span className="text-[9px] font-black uppercase tracking-widest text-[#6B5439]/60">Interactive Demo</span>
+            </motion.div>
+            
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0f172a] leading-tight tracking-tight">
+              Kill the Friction. <br className="hidden md:block" />
+              Start <span className="text-[#EAB308]">Syping.</span>
+            </h2>
+            
+            <p className="text-base md:text-lg font-bold text-[#475569] max-w-[540px] mx-auto leading-relaxed">
+              Stop wrestling with keys. Your thoughts flow instantly into any chat box, email, or document.
+            </p>
+          </div>
 
-        <div className="relative max-w-[600px] mx-auto">
+          <div className="relative max-w-[480px] mx-auto">
+
           {/* Decorative floating elements */}
           <motion.div 
             animate={{ y: [0, -15, 0] }}
