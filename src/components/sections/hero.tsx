@@ -130,34 +130,43 @@ export default function Hero() {
     <section className="relative pt-[140px] pb-[80px] overflow-hidden bg-[#FFFAE7]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="flex-1 text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FFD54F]/20 rounded-full mb-8 border border-[#FFD54F]/30 backdrop-blur-sm"
-            >
-              <span className="w-1.5 h-1.5 bg-[#F9A825] rounded-full animate-pulse"></span>
-              <span className="text-[10px] font-black uppercase tracking-wider text-[#6B5439]">The Syping Revolution</span>
-            </motion.div>
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FFD54F]/20 rounded-full mb-8 border border-[#FFD54F]/30 backdrop-blur-sm"
+              >
+                <span className="w-1.5 h-1.5 bg-[#F9A825] rounded-full animate-pulse"></span>
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#6B5439]">The Syping Revolution</span>
+              </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold leading-[1.05] text-[#0f172a] mb-8 tracking-tight"
-            >
-              Kill the Keyboard.<br />
-              <span className="text-[#EAB308]">Set Your Thoughts Free.</span>
-            </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-5xl md:text-7xl font-bold leading-[1.05] text-[#0f172a] mb-8 tracking-tight"
+              >
+                Kill the <span className="text-[#EAB308]">Keyboard</span>.<br />
+                Set Your Thoughts Free.
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl md:text-2xl font-medium text-[#475569] mb-10 leading-relaxed max-w-[540px]"
-            >
-              Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with <span className="underline decoration-[#EAB308] decoration-4 underline-offset-4">Syping</span> — so your ideas flow from voice to screen in real time.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-2xl md:text-3xl font-serif italic text-[#475569] mb-10 leading-relaxed max-w-[540px]"
+              >
+                "Stop typing start syping"
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.8 }}
+                className="text-lg md:text-xl font-medium text-[#64748b] mb-10 leading-relaxed max-w-[540px]"
+              >
+                Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with <span className="underline decoration-[#EAB308] decoration-4 underline-offset-4">Syping</span> — so your ideas flow from voice to screen in real time.
+              </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
