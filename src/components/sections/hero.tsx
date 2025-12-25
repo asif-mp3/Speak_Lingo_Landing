@@ -68,9 +68,11 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
       i++;
       if (i > fullText.length) {
         clearInterval(interval);
-        setTimeout(() => setText(""), 2000);
+        setTimeout(() => {
+           if (active) setText("");
+        }, 3000);
       }
-    }, 50);
+    }, 40);
 
     return () => clearInterval(interval);
   }, [active]);
