@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Logo = () => (
     <div className="flex items-center">
-      <img src="/2.webp" alt="SpeakLingo" className="h-[90px] w-auto object-contain" />
+      <img src="/2.webp" alt="SpeakLingo" className="h-[120px] w-auto object-contain" />
     </div>
 );
 
