@@ -16,7 +16,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <SpeakLingoShowcase />
         <KeyBenefits />
         <PainPoints />
         <SypingChat />
