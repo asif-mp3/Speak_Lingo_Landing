@@ -197,10 +197,10 @@ export default function FiveModes() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-brand-navy mb-6 tracking-tight"
             >
               Five Modes. Infinite Power. <br />
-              <span className="text-[#EAB308]">One Revolution.</span>
+              <span className="text-brand-gold">One Revolution.</span>
             </motion.h2>
 
           <motion.p
@@ -208,9 +208,9 @@ export default function FiveModes() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-[#475569] font-medium max-w-[700px] mx-auto"
+            className="text-xl text-slate-600 font-medium max-w-[700px] mx-auto"
           >
-            This isn’t an upgrade — it’s an extinction event for typing. Five intelligent modes, one voice-driven engine. Every word you speak becomes <span className="text-[#0f172a] font-bold">impact</span>, not input.
+            This isn’t an upgrade — it’s an extinction event for typing. Five intelligent modes, one voice-driven engine. Every word you speak becomes <span className="text-brand-navy font-bold">impact</span>, not input.
           </motion.p>
         </div>
 
@@ -223,14 +223,14 @@ export default function FiveModes() {
                   onClick={() => handleModeChange(mode)}
                   className={`w-full text-left p-6 rounded-[32px] transition-all duration-500 flex items-center gap-5 group relative ${
                     activeMode.id === mode.id 
-                      ? 'bg-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-[#EAB308]/20 translate-x-3' 
+                      ? 'bg-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-brand-gold/20 translate-x-3' 
                       : 'hover:bg-white/40 border border-transparent'
                   }`}
                 >
                   {activeMode.id === mode.id && (
                     <motion.div 
                       layoutId="active-pill"
-                      className="absolute left-0 w-1.5 h-12 bg-[#EAB308] rounded-full"
+                      className="absolute left-0 w-1.5 h-12 bg-brand-gold rounded-full"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -241,7 +241,7 @@ export default function FiveModes() {
                     <ModeBadge type={mode.element} />
                   </div>
                   <div>
-                    <h4 className={`text-lg font-bold transition-colors duration-300 ${activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-500 group-hover:text-slate-700'}`}>
+                    <h4 className={`text-lg font-bold transition-colors duration-300 ${activeMode.id === mode.id ? 'text-brand-navy' : 'text-slate-500 group-hover:text-slate-700'}`}>
                       {mode.title}
                     </h4>
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8] mt-1.5 opacity-60">Mode 0{modes.indexOf(mode) + 1}</p>
