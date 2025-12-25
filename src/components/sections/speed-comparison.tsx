@@ -52,17 +52,18 @@ const SpeedComparison = () => {
 
 
         {/* Comparison Area - Fixing alignment and layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-8 items-end max-w-[1000px] mx-auto">
-          
-          {/* Traditional Method Card */}
-          <div className="bg-white border-[2px] border-[#6B5439]/10 rounded-[32px] p-10 flex flex-col items-center justify-center text-center shadow-lg h-[300px] relative">
-            <span className="font-sans text-[10px] font-black text-[#64748b]/40 uppercase tracking-[0.25em] mb-6">Traditional Methods</span>
-            <div className="text-[60px] md:text-[72px] text-[#0f172a] font-bold leading-none mb-5 tracking-tight">
-              12 <span className="text-[28px] font-medium text-[#64748b]/40">mo</span>
-            </div>
-            <p className="text-[15px] font-bold text-[#475569]/60 max-w-[210px] leading-tight tracking-tight">
-              To reach basic conversational fluency
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 items-stretch max-w-[1040px] mx-auto">
+            
+            {/* Traditional Method Card */}
+            <div className="bg-white border-[2px] border-[#6B5439]/10 rounded-[40px] p-12 flex flex-col items-center justify-center text-center shadow-sm relative group hover:shadow-xl transition-all duration-500">
+              <span className="font-sans text-[11px] font-black text-[#64748b]/60 uppercase tracking-[0.25em] mb-8">The Old Way</span>
+              <div className="text-[72px] md:text-[84px] text-[#0f172a] font-bold leading-none mb-6 tracking-tight">
+                12 <span className="text-[32px] font-medium text-[#64748b]/30">mo</span>
+              </div>
+              <p className="text-[16px] font-bold text-[#475569]/70 max-w-[220px] leading-tight tracking-tight">
+                To reach basic conversational fluency
+              </p>
+
             {/* Sad face bubble accent pop out */}
             <div className="absolute -top-3 -left-3 w-14 h-14 bg-[#f1f5f9] rounded-[16px] flex items-center justify-center border-2 border-[#e2e8f0] rotate-[-10deg] shadow-lg">
                <div className="flex flex-col items-center gap-0.5 opacity-30">
