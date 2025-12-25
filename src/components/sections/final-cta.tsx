@@ -19,27 +19,15 @@ export default function FinalCTA() {
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-5xl md:text-[80px] font-bold text-[#0f172a] mb-10 tracking-[-0.04em] leading-[0.95]"
-              >
-                Every Minute <br />You Sype, <br />
-                <span className="text-[#EAB308]">You Win.</span>
-              </motion.h2>
+          <div>
+            <h2 className="text-5xl md:text-[80px] font-bold text-[#0f172a] mb-10 tracking-[-0.04em] leading-[0.95]">
+              Every Minute <br />You Sype, <br />
+              <span className="text-[#EAB308]">You Win.</span>
+            </h2>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-12 max-w-[500px] leading-tight"
-              >
-                “Stop typing start syping”
-              </motion.p>
-
+            <p className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-12 max-w-[500px] leading-tight">
+              “Stop typing start syping”
+            </p>
 
             <div className="space-y-6 mb-12">
               <p className="text-lg font-bold text-[#0f172a]">
@@ -50,15 +38,9 @@ export default function FinalCTA() {
               </p>
             </div>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] flex items-center gap-3 group border border-black"
-            >
+            <button className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] flex items-center gap-3 group border border-black active:shadow-none active:translate-y-[6px]">
               Start Syping Now. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </button>
           </div>
 
           <div className="relative">
@@ -115,13 +97,9 @@ export default function FinalCTA() {
              </div>
 
              {/* Floating Microcopy */}
-             <motion.p
-               animate={{ y: [0, 5, 0] }}
-               transition={{ duration: 3, repeat: Infinity }}
-               className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-bold text-[#475569]/60 italic whitespace-nowrap"
-             >
+             <p className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-bold text-[#475569]/60 italic whitespace-nowrap">
                “Every second you Sype is a moment returned.”
-             </motion.p>
+             </p>
           </div>
         </div>
       </div>
