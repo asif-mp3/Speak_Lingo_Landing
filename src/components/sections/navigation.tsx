@@ -91,7 +91,7 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
     }, []);
   
     const featureItems = [
-      { name: 'SpeakLingo Mode', description: 'Voice to screen in real time with zero lag.', icon: Zap, color: 'bg-[#FFFAE7]', href: '#' },
+      { name: 'Syping Mode', description: 'Voice to screen in real time with zero lag.', icon: Zap, color: 'bg-[#FFFAE7]', href: '#' },
       { name: 'Tasking Mode', description: 'Command reality with simple voice instructions.', icon: Layers, color: 'bg-[#FFFAE7]', href: '#' },
       { name: 'Prompt Mode', description: 'Speak casually, get perfect AI prompts.', icon: MessageSquare, color: 'bg-[#FFFAE7]', href: '#' },
       { name: 'Pure Offline', description: 'Total privacy with on-device processing.', icon: Globe, color: 'bg-[#FFFAE7]', href: '#' },
