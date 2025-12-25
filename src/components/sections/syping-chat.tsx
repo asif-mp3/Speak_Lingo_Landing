@@ -105,58 +105,58 @@ export default function SypingChat() {
           </h2>
         </div>
 
-        <div className="relative h-[1100px] flex items-center justify-center">
+        <div className="relative h-[850px] flex items-center justify-center">
           {/* SVG Connector Layer */}
           <div className="absolute inset-0 pointer-events-none hidden xl:block">
             {/* Lines from Card to Symmetrical Clouds */}
-            <ConnectorLine d="M 430 350 Q 380 250 180 200" />
-            <ConnectorLine d="M 970 350 Q 1020 250 1220 200" />
-            <ConnectorLine d="M 430 550 L 180 550" />
-            <ConnectorLine d="M 970 550 L 1220 550" />
-            <ConnectorLine d="M 430 750 Q 380 850 180 900" />
-            <ConnectorLine d="M 970 750 Q 1020 850 1220 900" />
+            <ConnectorLine d="M 510 200 Q 460 150 180 150" />
+            <ConnectorLine d="M 890 200 Q 940 150 1220 150" />
+            <ConnectorLine d="M 510 425 L 180 425" />
+            <ConnectorLine d="M 890 425 L 1220 425" />
+            <ConnectorLine d="M 510 650 Q 460 750 180 750" />
+            <ConnectorLine d="M 890 650 Q 940 750 1220 750" />
           </div>
 
           {/* Main App Card with 3D Phone Frame */}
-          <div className="relative z-10 max-w-[540px] w-full transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-700">
+          <div className="relative z-10 max-w-[380px] w-full transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-700">
             {/* Phone Bezel/Frame */}
             <div className="bg-[#1e293b] rounded-[60px] p-[10px] shadow-[40px_60px_100px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.1)_inset] relative group">
               {/* Inner Screen */}
-              <div className="bg-[#FFFCEE] rounded-[50px] p-8 border-[3px] border-[#0f172a] overflow-hidden relative min-h-[750px]">
+              <div className="bg-[#FFFCEE] rounded-[50px] p-6 border-[3px] border-[#0f172a] overflow-hidden relative min-h-[580px]">
                 
                 {/* Header Section */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <img src="/1.webp" alt="Logo" className="w-14 h-14 object-contain" />
-                    <span className="text-4xl font-black tracking-tight flex items-center">
+                    <img src="/1.webp" alt="Logo" className="w-10 h-10 object-contain" />
+                    <span className="text-2xl font-black tracking-tight flex items-center">
                       <span className="text-[#0f172a]">Speak</span>
                       <span className="text-[#F9A825]">Lingo</span>
                     </span>
                   </div>
                   <div className="flex gap-2">
-                    <div className="w-12 h-12 bg-[#FFD54F] rounded-full flex items-center justify-center border-2 border-[#0f172a] shadow-sm">
-                      <Moon size={20} className="text-[#0f172a]" />
+                    <div className="w-8 h-8 bg-[#FFD54F] rounded-full flex items-center justify-center border-2 border-[#0f172a] shadow-sm">
+                      <Moon size={16} className="text-[#0f172a]" />
                     </div>
-                    <div className="w-12 h-12 bg-[#FFD54F] rounded-full flex items-center justify-center border-2 border-[#0f172a] shadow-sm">
-                      <Minus size={20} className="text-[#0f172a]" />
+                    <div className="w-8 h-8 bg-[#FFD54F] rounded-full flex items-center justify-center border-2 border-[#0f172a] shadow-sm">
+                      <Minus size={16} className="text-[#0f172a]" />
                     </div>
                   </div>
                 </div>
 
-                <div className="text-right text-[14px] font-bold text-slate-400 italic mb-3">
+                <div className="text-right text-[12px] font-bold text-slate-400 italic mb-2">
                   Type faster than typing!
                 </div>
 
-                <div className="w-full h-px bg-[#0f172a]/10 mb-4" />
+                <div className="w-full h-px bg-[#0f172a]/10 mb-3" />
 
                 {/* Status Row */}
-                <div className="flex justify-between items-center mb-4 px-2">
+                <div className="flex justify-between items-center mb-2 px-2">
                   <div className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 bg-blue-100 rounded-full" />
-                    <span className="text-[14px] font-bold text-slate-500">Ready</span>
+                    <span className="text-[12px] font-bold text-slate-500">Ready</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[14px] font-bold text-slate-500">Clarity :</span>
+                    <span className="text-[12px] font-bold text-slate-500">Clarity :</span>
                     <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map(i => (
                         <div key={i} className="w-2 h-2 rounded-full bg-slate-100" />
@@ -166,99 +166,81 @@ export default function SypingChat() {
                 </div>
 
                 {/* Waveform Visualization (Circles/Dots) */}
-                <div className="bg-[#FFD54F] h-12 rounded-2xl flex items-center justify-center gap-2 px-6 mb-3 shadow-inner border-2 border-[#0f172a]/5 overflow-hidden">
+                <div className="bg-[#FFD54F] h-8 rounded-2xl flex items-center justify-center gap-2 px-6 mb-2 shadow-inner border-2 border-[#0f172a]/5 overflow-hidden">
                   {Array.from({ length: 24 }).map((_, i) => (
                     <motion.div
                       key={i}
                       animate={{ scale: [1, Math.random() * 1.5 + 0.5, 1] }}
                       transition={{ duration: 1 + Math.random(), repeat: Infinity }}
-                      className="w-2.5 h-2.5 bg-white rounded-full opacity-90"
+                      className="w-1.5 h-1.5 bg-white rounded-full opacity-90"
                     />
                   ))}
                 </div>
 
-                <div className="text-center text-[12px] font-bold text-slate-400 italic mb-6">
+                <div className="text-center text-[11px] font-bold text-slate-400 italic mb-3">
                   Speak 'NL2' to insert a new line
                 </div>
 
                 {/* Transcription History Header */}
-                <div className="flex items-center justify-between mb-4 px-1">
-                  <h4 className="text-[16px] font-black text-[#0f172a]">Transcription History</h4>
+                <div className="flex items-center justify-between mb-2 px-1">
+                  <h4 className="text-[14px] font-black text-[#0f172a]">Transcription History</h4>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-2 bg-white border border-[#0f172a]/10 rounded-lg px-3 py-1.5">
-                      <ChevronLeft size={16} className="text-slate-400" />
-                      <span className="text-[12px] font-bold text-[#0f172a]">1 / 30</span>
-                      <ChevronRight size={16} className="text-slate-400" />
-                    </div>
-                    <div className="flex gap-1.5">
-                      <div className="p-1.5 bg-white border border-[#0f172a]/10 rounded-lg"><ChevronUp size={16} className="text-slate-400" /><ChevronDown size={16} className="text-slate-400" /></div>
-                      <div className="p-1.5 bg-white border border-[#0f172a]/10 rounded-lg"><Copy size={16} className="text-slate-400" /></div>
-                      <div className="p-1.5 bg-white border border-[#0f172a]/10 rounded-lg text-red-400"><Trash2 size={16} /></div>
+                    <div className="flex items-center gap-2 bg-white border border-[#0f172a]/10 rounded-lg px-2 py-1">
+                      <ChevronLeft size={14} className="text-slate-400" />
+                      <span className="text-[11px] font-bold text-[#0f172a]">1/30</span>
+                      <ChevronRight size={14} className="text-slate-400" />
                     </div>
                   </div>
                 </div>
 
                 {/* Text Area */}
-                <div className="bg-[#FFD54F]/80 rounded-[32px] p-6 border-2 border-[#0f172a]/5 shadow-inner min-h-[120px] mb-6">
-                  <p className="text-[14px] font-bold text-[#0f172a]/40 italic">
+                <div className="bg-[#FFD54F]/80 rounded-[24px] p-4 border-2 border-[#0f172a]/5 shadow-inner min-h-[80px] mb-3">
+                  <p className="text-[12px] font-bold text-[#0f172a]/40 italic">
                     Your transcribed text will appear here...
                   </p>
                 </div>
 
                 {/* Productivity Dashboard */}
-                <div className="mb-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h4 className="text-[16px] font-black text-[#0f172a]">Productivity Dashboard</h4>
+                <div className="mb-3">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-[14px] font-black text-[#0f172a]">Productivity</h4>
                     <div className="flex gap-2">
-                      <div className="w-10 h-8 bg-[#6B5439] rounded-lg flex items-center justify-center text-white"><BarChart2 size={18} /></div>
-                      <div className="w-10 h-8 bg-[#FFD54F] border border-[#0f172a]/10 rounded-lg flex items-center justify-center text-[#6B5439]"><Trophy size={18} /></div>
+                      <div className="w-8 h-6 bg-[#6B5439] rounded-lg flex items-center justify-center text-white"><BarChart2 size={14} /></div>
                     </div>
                   </div>
 
-                  <div className="bg-[#FFD54F] p-5 rounded-[40px] border-2 border-[#0f172a]/5 space-y-4">
+                  <div className="bg-[#FFD54F] p-3 rounded-[32px] border-2 border-[#0f172a]/5 space-y-2">
                     {/* Today Stats */}
                     <div>
-                      <div className="flex justify-between items-center mb-2 px-1">
-                        <span className="text-[14px] font-black text-[#6B5439]">Today</span>
-                        <div className="flex gap-3">
-                          <span className="text-[12px] font-black text-[#6B5439] flex items-center gap-1"><Flame size={14} className="text-orange-500" /> ×13</span>
-                          <span className="text-[12px] font-black text-[#6B5439] flex items-center gap-1">❄️ ×1</span>
+                      <div className="flex justify-between items-center mb-1 px-1">
+                        <span className="text-[12px] font-black text-[#6B5439]">Today</span>
+                        <div className="flex gap-2">
+                          <span className="text-[10px] font-black text-[#6B5439] flex items-center gap-1"><Flame size={12} className="text-orange-500" /> ×13</span>
                         </div>
                       </div>
-                      <div className="grid grid-cols-3 gap-3">
-                        <StatRow label="Saved" value="22" unit="m 3s" icon={ZapIcon} />
+                      <div className="grid grid-cols-3 gap-2">
+                        <StatRow label="Saved" value="22" unit="m" icon={ZapIcon} />
                         <StatRow label="Words" value="1.2" unit="K" />
                         <StatRow label="WPM" value="134" />
-                      </div>
-                      <div className="mt-3 bg-white/40 rounded-full h-4 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
-                        <div className="bg-[#6B5439] w-[21%] h-full rounded-full" />
-                        <span className="absolute left-3 text-[9px] font-black text-white">21%</span>
-                        <span className="absolute right-3 text-[9px] font-black text-[#6B5439]">8m to 🔷 Diamond</span>
                       </div>
                     </div>
 
                     {/* Lifetime Stats */}
                     <div>
-                      <div className="flex justify-between items-center mb-2 px-1">
-                        <span className="text-[14px] font-black text-[#6B5439]">Lifetime</span>
-                        <span className="text-[12px] font-black text-[#6B5439] flex items-center gap-1"><Trophy size={14} className="text-orange-500" /> Apprentice</span>
+                      <div className="flex justify-between items-center mb-1 px-1">
+                        <span className="text-[12px] font-black text-[#6B5439]">Lifetime</span>
                       </div>
-                      <div className="grid grid-cols-3 gap-3">
-                        <StatRow label="Time Saved" value="43" unit="m 50s" />
-                        <StatRow label="Total Words" value="2.4" unit="K" />
-                        <StatRow label="Transcripts" value="93" />
-                      </div>
-                      <div className="mt-3 bg-white/40 rounded-full h-4 overflow-hidden relative border border-[#0f172a]/5 flex items-center">
-                        <div className="bg-[#6B5439] w-[16%] h-full rounded-full" />
-                        <span className="absolute left-3 text-[9px] font-black text-white">16%</span>
-                        <span className="absolute right-3 text-[9px] font-black text-[#6B5439]">2.5K XP to ⚡ Adept</span>
+                      <div className="grid grid-cols-3 gap-2">
+                        <StatRow label="Saved" value="43" unit="m" />
+                        <StatRow label="Words" value="2.4" unit="K" />
+                        <StatRow label="Trans" value="93" />
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer Buttons Grid */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
+                <div className="grid grid-cols-3 gap-2 mb-3">
                   {[
                     { icon: MessageSquare, label: 'Chat' },
                     { icon: ChevronRight, label: 'Prompt' },
@@ -267,28 +249,27 @@ export default function SypingChat() {
                     { icon: Mic, label: 'Mic' },
                     { icon: Keyboard, label: 'Hotkey' }
                   ].map((btn, i) => (
-                    <div key={i} className="bg-[#FFD54F] rounded-2xl border border-[#0f172a]/10 p-3 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
-                      <btn.icon size={18} className="text-[#0f172a]/60 group-hover:text-[#0f172a]" />
-                      <span className="text-[11px] font-black text-[#0f172a]/60 group-hover:text-[#0f172a]">{btn.label}</span>
+                    <div key={i} className="bg-[#FFD54F] rounded-xl border border-[#0f172a]/10 p-2 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
+                      <btn.icon size={14} className="text-[#0f172a]/60 group-hover:text-[#0f172a]" />
+                      <span className="text-[10px] font-black text-[#0f172a]/60 group-hover:text-[#0f172a]">{btn.label}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Bottom Tip Bar */}
-                <div className="bg-[#FFD54F] rounded-full py-2.5 px-6 flex items-center gap-3 mb-4 border border-[#0f172a]/10 shadow-sm">
-                  <Lightbulb size={16} className="text-[#0f172a]/60" />
-                  <span className="text-[10px] font-black text-[#0f172a]/60">Minimize to system tray to keep the app running</span>
+                <div className="bg-[#FFD54F] rounded-full py-2 px-4 flex items-center gap-2 mb-3 border border-[#0f172a]/10 shadow-sm">
+                  <Lightbulb size={14} className="text-[#0f172a]/60" />
+                  <span className="text-[9px] font-black text-[#0f172a]/60 truncate">Minimize to tray to keep running</span>
                 </div>
 
                 {/* Footer Status */}
-                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 px-2">
-                  <div className="flex items-center gap-6">
-                    <span className="flex items-center gap-2"><Keyboard size={14} /> Hotkey: Shift</span>
-                    <span className="flex items-center gap-2">Mode: Standard</span>
+                <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 px-2">
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1"><Keyboard size={12} /> Shift</span>
                   </div>
-                  <div className="bg-white border border-[#0f172a]/10 rounded-full px-4 py-1 flex items-center gap-2 shadow-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full" />
-                    <span className="text-[#0f172a]/60">Connected</span>
+                  <div className="bg-white border border-[#0f172a]/10 rounded-full px-3 py-0.5 flex items-center gap-1 shadow-sm">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                    <span className="text-[#0f172a]/60">Live</span>
                   </div>
                 </div>
 
@@ -301,37 +282,37 @@ export default function SypingChat() {
             label="Neural Core"
             description="The engine that turns sound into structure."
             icon={Zap}
-            position="left-[2%] top-[200px] -translate-y-1/2"
+            position="left-[2%] top-[150px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Live Insight"
             description="Zero-latency visualization of thought flow."
             icon={Flame}
-            position="right-[2%] top-[200px] -translate-y-1/2"
+            position="right-[2%] top-[150px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Smart Memory"
             description="Persistent history of every syped word."
             icon={MessageSquare}
-            position="left-[2%] top-[550px] -translate-y-1/2"
+            position="left-[2%] top-[425px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Momentum"
             description="Real-time proof of productivity gains."
             icon={BarChart2}
-            position="right-[2%] top-[550px] -translate-y-1/2"
+            position="right-[2%] top-[425px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Power Grid"
             description="One-click access to system commands."
             icon={Terminal}
-            position="left-[2%] top-[900px] -translate-y-1/2"
+            position="left-[2%] top-[700px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Zero Trust"
             description="On-device processing keeps ideas safe."
             icon={Shield}
-            position="right-[2%] top-[900px] -translate-y-1/2"
+            position="right-[2%] top-[700px] -translate-y-1/2"
           />
         </div>
 
