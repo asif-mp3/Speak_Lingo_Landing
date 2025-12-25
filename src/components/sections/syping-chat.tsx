@@ -26,56 +26,59 @@ const StatCard = ({ label, value }: { label: string, value: string }) => (
   </div>
 );
 
-const CloudCallout = ({ label, description, position, arrowPath, icon: Icon, arrowStyle }: { label: string, description: string, position: string, arrowPath: string, icon: any, arrowStyle?: React.CSSProperties }) => {
+const Arrow = ({ d, id }: { d: string, id: string }) => (
+  <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
+    <defs>
+      <marker
+        id={`arrowhead-${id}`}
+        markerWidth="10"
+        markerHeight="7"
+        refX="9"
+        refY="3.5"
+        orient="auto"
+      >
+        <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
+      </marker>
+    </defs>
+    <motion.path
+      d={d}
+      fill="none"
+      stroke="#0f172a"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeDasharray="12 8"
+      initial={{ pathLength: 0 }}
+      whileInView={{ pathLength: 1 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+      markerEnd={`url(#arrowhead-${id})`}
+    />
+    <motion.path
+      d={d}
+      fill="none"
+      stroke="#F9A825"
+      strokeWidth="4"
+      strokeLinecap="round"
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: [0, 1, 0] }}
+      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+    />
+  </svg>
+);
+
+const CloudCallout = ({ label, description, position, icon: Icon }: { label: string, description: string, position: string, icon: any }) => {
   return (
     <div className={`absolute z-20 hidden xl:block ${position}`}>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white p-5 rounded-[32px] border-2 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[260px] relative group hover:-translate-y-2 transition-transform"
+        className="bg-white p-6 rounded-[32px] border-4 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[280px] relative group hover:-translate-y-2 transition-transform"
       >
-        <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center mb-3 border-2 border-[#0f172a] shadow-sm">
-          <Icon size={24} className="text-[#0f172a]" />
+        <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center mb-4 border-2 border-[#0f172a] shadow-sm">
+          <Icon size={28} className="text-[#0f172a]" />
         </div>
-        <h4 className="text-[16px] font-black text-[#0f172a] mb-1 uppercase tracking-tight leading-none">{label}</h4>
-        <p className="text-[13px] font-bold text-slate-500 leading-tight">{description}</p>
-        
-        {/* Animated Big Arrow */}
-        <svg className="absolute pointer-events-none" style={{ ...arrowStyle, overflow: 'visible' }}>
-          <motion.path
-            d={arrowPath}
-            fill="none"
-            stroke="#0f172a"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeDasharray="12 8"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.path
-            d={arrowPath}
-            fill="none"
-            stroke="#F9A825"
-            strokeWidth="3"
-            strokeLinecap="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-          />
-          {/* Arrow Head */}
-          <motion.path
-            d="M -6 -6 L 0 0 L -6 6"
-            fill="none"
-            stroke="#0f172a"
-            strokeWidth="3"
-            strokeLinecap="round"
-            className="origin-center"
-          >
-             <animateMotion dur="2s" repeatCount="indefinite" path={arrowPath} rotate="auto" />
-          </motion.path>
-        </svg>
+        <h4 className="text-[18px] font-black text-[#0f172a] mb-2 uppercase tracking-tight leading-none">{label}</h4>
+        <p className="text-[14px] font-bold text-slate-500 leading-tight">{description}</p>
       </motion.div>
     </div>
   );
@@ -97,14 +100,31 @@ export default function SypingChat() {
           </h2>
         </div>
 
-        <div className="relative h-[1000px] flex items-center justify-center">
+        <div className="relative h-[1100px] flex items-center justify-center">
+          {/* SVG Arrow Layer */}
+          <div className="absolute inset-0 pointer-events-none hidden xl:block">
+            {/* Arrows from Card to Clouds */}
+            {/* Core engine to top-left cloud */}
+            <Arrow id="core" d="M 650 450 Q 500 400 350 250" />
+            {/* Waveform to top-right cloud */}
+            <Arrow id="live" d="M 800 480 Q 950 400 1080 280" />
+            {/* History to middle-left cloud */}
+            <Arrow id="history" d="M 620 600 Q 500 600 320 550" />
+            {/* Stats to middle-right cloud */}
+            <Arrow id="stats" d="M 850 750 Q 1000 750 1100 650" />
+            {/* Tools to bottom-left cloud */}
+            <Arrow id="tools" d="M 650 900 Q 550 950 350 950" />
+            {/* Security to bottom-right cloud */}
+            <Arrow id="privacy" d="M 820 900 Q 950 950 1100 900" />
+          </div>
+
           {/* Main App Card */}
           <div className="relative z-10 max-w-[440px] w-full transform -rotate-1">
             <div className="bg-[#FFFAE7] border-4 border-[#0f172a] rounded-[56px] p-10 shadow-[32px_32px_0_rgba(15,23,42,0.1)] overflow-hidden relative ring-[12px] ring-[#FFFAE7]">
               
               {/* Header */}
               <div className="flex items-center justify-between mb-10">
-                  <div className="flex items-center gap-4" id="app-header">
+                  <div className="flex items-center gap-4">
                     <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center border-2 border-[#0f172a] shadow-sm overflow-hidden p-2">
                       <img src="/1.webp" alt="Syping" className="w-full h-full object-contain" />
                     </div>
@@ -123,7 +143,7 @@ export default function SypingChat() {
               </div>
 
               {/* Status Bar */}
-              <div className="flex items-center justify-between mb-8 bg-[#0f172a]/5 p-4 rounded-3xl border border-[#0f172a]/5" id="app-status">
+              <div className="flex items-center justify-between mb-8 bg-[#0f172a]/5 p-4 rounded-3xl border border-[#0f172a]/5">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-[13px] font-black text-[#0f172a] tracking-widest">LIVE_CORE_ACTIVE</span>
@@ -138,7 +158,7 @@ export default function SypingChat() {
               </div>
 
               {/* Waveform */}
-              <div className="bg-[#0f172a] h-16 rounded-[28px] flex items-center justify-center gap-2 px-8 mb-10 shadow-xl border border-white/10 overflow-hidden" id="app-waveform">
+              <div className="bg-[#0f172a] h-16 rounded-[28px] flex items-center justify-center gap-2 px-8 mb-10 shadow-xl border border-white/10 overflow-hidden">
                 {Array.from({ length: 32 }).map((_, i) =>
                 <motion.div
                   key={i}
@@ -149,7 +169,7 @@ export default function SypingChat() {
               </div>
 
               {/* Transcription History */}
-              <div className="mb-10" id="app-history">
+              <div className="mb-10">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-[15px] font-black text-[#0f172a] uppercase tracking-[0.2em] flex items-center gap-2">
                     <MessageSquare size={16} className="text-[#F9A825]" />
@@ -164,7 +184,7 @@ export default function SypingChat() {
               </div>
 
               {/* Productivity Dashboard */}
-              <div className="mb-10" id="app-stats">
+              <div className="mb-10">
                 <div className="bg-[#FFD54F] p-6 rounded-[40px] border-2 border-[#0f172a] shadow-[12px_12px_0_#0f172a]">
                   <div className="flex justify-between items-center mb-5">
                     <span className="text-[14px] font-black text-[#0f172a] uppercase tracking-widest">Efficiency</span>
@@ -178,7 +198,7 @@ export default function SypingChat() {
               </div>
 
               {/* Footer Actions */}
-              <div className="grid grid-cols-4 gap-4" id="app-tools">
+              <div className="grid grid-cols-4 gap-4">
                 {[Mic, Terminal, Settings, Globe].map((Icon, i) => (
                   <div key={i} className="aspect-square bg-white rounded-2xl border-2 border-[#0f172a] flex items-center justify-center shadow-[6px_6px_0_#0f172a] hover:bg-[#FFD54F] transition-all cursor-pointer hover:-translate-y-1 active:translate-y-0 active:shadow-none">
                     <Icon size={24} className="text-[#0f172a]" />
@@ -193,49 +213,37 @@ export default function SypingChat() {
             label="Syping Core"
             description="The neural engine that turns sound into structure."
             icon={Zap}
-            position="left-[2%] top-[5%]"
-            arrowPath="M 260 60 Q 350 60 450 160"
-            arrowStyle={{ top: '50%', left: '100%', width: '200px' }}
+            position="left-[5%] top-[10%]"
           />
           <CloudCallout 
             label="Live Stream"
             description="Zero-latency visualization of your thought flow."
             icon={Flame}
-            position="right-[2%] top-[8%]"
-            arrowPath="M 0 60 Q -100 60 -200 180"
-            arrowStyle={{ top: '50%', right: '100%', width: '220px' }}
+            position="right-[5%] top-[15%]"
           />
           <CloudCallout 
             label="Context History"
             description="Persistent memory of every word you've syped."
             icon={MessageSquare}
-            position="left-[0%] top-[40%]"
-            arrowPath="M 260 60 Q 380 60 480 80"
-            arrowStyle={{ top: '50%', left: '100%', width: '240px' }}
+            position="left-[2%] top-[45%]"
           />
           <CloudCallout 
             label="Momentum Stats"
             description="Real-time proof of your productivity gains."
             icon={BarChart2}
-            position="right-[0%] top-[45%]"
-            arrowPath="M 0 60 Q -120 60 -240 100"
-            arrowStyle={{ top: '50%', right: '100%', width: '260px' }}
+            position="right-[2%] top-[50%]"
           />
           <CloudCallout 
             label="Power Tools"
             description="One-click access to system-level commands."
             icon={Terminal}
-            position="left-[5%] bottom-[8%]"
-            arrowPath="M 260 40 Q 380 40 460 -120"
-            arrowStyle={{ bottom: '100%', left: '100%', width: '220px' }}
+            position="left-[8%] bottom-[10%]"
           />
           <CloudCallout 
             label="Privacy Shield"
             description="On-device processing keeps your ideas yours."
             icon={Shield}
-            position="right-[5%] bottom-[12%]"
-            arrowPath="M 0 40 Q -100 40 -220 -150"
-            arrowStyle={{ bottom: '100%', right: '100%', width: '240px' }}
+            position="right-[8%] bottom-[15%]"
           />
         </div>
 
