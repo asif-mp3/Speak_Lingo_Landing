@@ -25,22 +25,22 @@ export default function FinalCTA() {
               <span className="text-[#F9A825]">You Win.</span>
             </h2>
 
-            <p className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-12 max-w-[500px] leading-tight">
-              “Stop typing start speaking”
-            </p>
-
-            <div className="space-y-6 mb-12">
-              <p className="text-lg font-bold text-[#0f172a]">
-                The moment you start using Syping, the clock flips. Your ideas move 5× faster, your tasks finish before they interrupt your flow.
+              <p className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-12 max-w-[500px] leading-tight">
+                “Stop typing start syping”
               </p>
-              <p className="text-lg text-[#475569] font-medium">
-                Watch your <span className="text-[#6B5439] font-bold">Time Saved Counter</span> climb every day. Minutes become hours. Hours become freedom.
-              </p>
-            </div>
 
-            <button className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] flex items-center gap-3 group border border-black active:shadow-none active:translate-y-[6px]">
-              Start Speaking Now. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
+              <div className="space-y-6 mb-12">
+                <p className="text-lg font-bold text-[#0f172a]">
+                  The moment you start using Syping, the clock flips. Your ideas move 5× faster, your tasks finish before they interrupt your flow.
+                </p>
+                <p className="text-lg text-[#475569] font-medium">
+                  Watch your <span className="text-[#6B5439] font-bold">Time Saved Counter</span> climb every day. Minutes become hours. Hours become freedom.
+                </p>
+              </div>
+
+              <button className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] flex items-center gap-3 group border border-black active:shadow-none active:translate-y-[6px]">
+                Start Syping Now. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </button>
           </div>
 
           <div className="relative">
