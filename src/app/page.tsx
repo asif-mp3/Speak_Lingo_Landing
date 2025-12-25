@@ -19,6 +19,7 @@ export default function Home() {
         <KeyBenefits />
         <PainPoints />
         <FiveModes />
+        <SypingChat />
         <PrivacyTrust />
         <Testimonials />
         <FinalCTA />
