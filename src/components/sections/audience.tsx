@@ -319,11 +319,26 @@ export default function Audience() {
         <div className="mt-20 flex flex-col items-center gap-4">
            <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.3em]">Compatible With</p>
            <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-30 grayscale contrast-150">
-              <span className="text-xl font-black">Notion</span>
-              <span className="text-xl font-black">Discord</span>
-              <span className="text-xl font-black">Linear</span>
-              <span className="text-xl font-black">Cursor</span>
-              <span className="text-xl font-black">Gmail</span>
+              <div className="flex items-center gap-2">
+                 <SiNotion className="w-5 h-5" />
+                 <span className="text-xl font-black">Notion</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <SiDiscord className="w-5 h-5" />
+                 <span className="text-xl font-black">Discord</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <SiLinear className="w-5 h-5" />
+                 <span className="text-xl font-black">Linear</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <SiCursor className="w-5 h-5" />
+                 <span className="text-xl font-black">Cursor</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <SiGmail className="w-5 h-5" />
+                 <span className="text-xl font-black">Gmail</span>
+              </div>
            </div>
         </div>
       </div>
