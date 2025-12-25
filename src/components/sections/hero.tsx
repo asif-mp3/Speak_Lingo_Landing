@@ -110,7 +110,7 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
            </div>
         </div>
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
-            {active ? "SpeakLingo Active" : "Waiting for Voice"}
+            {active ? "Syping Active" : "Waiting for Voice"}
           </p>
 
         <BubblePhase active={active} />
@@ -136,7 +136,7 @@ export default function Hero() {
           <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFD54F]/20 rounded-full mb-6 border border-[#FFD54F]/30 backdrop-blur-sm">
                 <span className="w-1.5 h-1.5 bg-[#F9A825] rounded-full animate-pulse"></span>
-                <span className="text-[9px] font-black uppercase tracking-wider text-[#6B5439]">The SpeakLingo Revolution</span>
+                <span className="text-[9px] font-black uppercase tracking-wider text-[#6B5439]">The Syping Revolution</span>
               </div>
 
 
@@ -152,7 +152,7 @@ export default function Hero() {
               </div>
 
               <p className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]">
-                Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
+                Typing slows thought. <span className="text-[#0f172a] font-bold">Syping</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
