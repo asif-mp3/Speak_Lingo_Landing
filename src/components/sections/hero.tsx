@@ -158,20 +158,21 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] text-[#0f172a] mb-6 tracking-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-[#0f172a] mb-8 tracking-[-0.04em]"
                 >
-                  Kill the <span className="text-[#EAB308]">Keyboard</span>.
+                  Kill the <br className="hidden sm:block" />
+                  <span className="text-[#EAB308]">Keyboard</span>.
                 </motion.h1>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="flex items-center gap-4 mb-8"
+                  className="flex items-center gap-5 mb-10"
                 >
-                  <span className="text-lg md:text-xl font-serif text-[#475569]">Stop Typing</span>
-                  <div className="w-8 h-[1px] bg-[#EAB308]/40" />
-                  <span className="text-lg md:text-xl font-black text-[#0f172a] italic tracking-tight">Start Syping...</span>
+                  <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
+                  <div className="w-12 h-[1px] bg-[#EAB308]/30" />
+                  <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Syping...</span>
                 </motion.div>
 
                 <motion.p
