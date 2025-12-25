@@ -166,9 +166,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-10 leading-relaxed max-w-[540px]"
+                className="text-2xl md:text-3xl font-serif text-[#475569] mb-10 leading-relaxed max-w-[600px]"
               >
-                “Stop typing start syping”
+                Stop Typing <span className="mx-2 text-[#EAB308]/30">|</span> <span className="font-sans font-black text-[#0f172a] italic tracking-tight">Start Syping...</span>
               </motion.p>
 
               <motion.p
