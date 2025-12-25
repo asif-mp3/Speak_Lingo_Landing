@@ -15,7 +15,8 @@ import {
   Shield,
   Monitor,
   Globe,
-  ArrowRight
+  ArrowRight,
+  Flame
 } from 'lucide-react';
 
 const StatCard = ({ label, value }: { label: string, value: string }) => (
