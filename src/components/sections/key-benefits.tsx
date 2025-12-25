@@ -1,13 +1,13 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Globe, Shield, Activity, ArrowRight } from 'lucide-react';
 
 const BenefitCard = ({ icon: Icon, title, description, delay }: any) => {
-  const [pulse, setPulse] = React.useState(false);
+  const [pulse, setPulse] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timeout = setTimeout(() => setPulse(true), delay * 1000 + 500);
     return () => clearTimeout(timeout);
   }, [delay]);
