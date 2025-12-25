@@ -135,7 +135,7 @@ const SypingFlowAnimation = () => {
         <AnimatePresence mode="popLayout">
           {transcript.map((line, i) => (
             <motion.p
-              key={line}
+              key={`${line}-${i}`}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1 - (transcript.length - 1 - i) * 0.3, x: 0 }}
               exit={{ opacity: 0, y: -10 }}
