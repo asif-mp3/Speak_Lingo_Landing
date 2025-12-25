@@ -1,0 +1,112 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote, Star, ArrowRight } from 'lucide-react';
+
+const testimonials = [
+  {
+    quote: "I used to lose ideas mid-sentence. Now, they hit the screen before I even realize I’ve spoken.",
+    author: "Aria M.",
+    role: "Startup Founder",
+    color: "bg-blue-50"
+  },
+  {
+    quote: "Syping didn’t just save me time — it gave me clarity. My thoughts sound like me again.",
+    author: "Noah K.",
+    role: "Writer & Podcaster",
+    color: "bg-amber-50"
+  },
+  {
+    quote: "Every tool claims to boost productivity. SpeakLingo changed my relationship with thinking itself.",
+    author: "Devi R.",
+    role: "Product Designer",
+    color: "bg-purple-50"
+  },
+  {
+    quote: "After this, typing feels primitive — like chiseling ideas into stone.",
+    author: "Liam T.",
+    role: "Content Strategist",
+    color: "bg-green-50"
+  }
+];
+
+export default function Testimonials() {
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1140px]">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight"
+          >
+            The Ones Who Moved First <br />
+            <span className="text-[#EAB308]">Never Looked Back.</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-[#475569] font-medium max-w-[700px] mx-auto"
+          >
+            Before SpeakLingo, they hesitated. Now, their ideas move at the speed of instinct.
+          </motion.p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`p-10 rounded-[40px] ${t.color} border border-slate-100 flex flex-col justify-between group hover:scale-[1.02] transition-transform`}
+            >
+              <div>
+                <Quote size={40} className="text-[#EAB308]/40 mb-6" />
+                <p className="text-2xl font-bold text-[#0f172a] leading-tight mb-8">
+                  “{t.quote}”
+                </p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold text-[#0f172a]">{t.author}</h4>
+                  <p className="text-sm font-medium text-[#475569]">{t.role}</p>
+                </div>
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="text-[#EAB308] fill-[#EAB308]" />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center space-y-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="inline-block p-8 bg-slate-50 rounded-[32px] border border-slate-100 max-w-[800px]"
+          >
+            <p className="text-xl font-bold text-[#475569] italic mb-4">
+              They were just like you — thinkers trapped behind keyboards. Then they pressed a hotkey, spoke once… and everything changed.
+            </p>
+            <p className="text-sm font-black text-[#94a3b8] uppercase tracking-[0.2em]">
+              The first generation of unfiltered thinkers.
+            </p>
+          </motion.div>
+
+          <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(60,45,30)] flex items-center gap-3 mx-auto group">
+            Join the Movement. Start Syping. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
