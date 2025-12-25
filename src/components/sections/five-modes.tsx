@@ -138,17 +138,14 @@ export default function FiveModes() {
                   {activeMode.description}
                 </p>
 
-                <div className="bg-slate-50 border-l-4 border-[#EAB308] p-6 rounded-r-2xl mb-12">
-                   <p className="text-lg font-bold italic text-[#0f172a]">
-                     {activeMode.insight}
-                   </p>
-                </div>
+                  <div className="bg-slate-50 border-l-4 border-[#EAB308] p-6 rounded-r-2xl mb-12">
+                     <p className="text-lg font-bold italic text-[#0f172a]">
+                       {activeMode.insight}
+                     </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
-                <button className="flex items-center gap-2 bg-[#0f172a] text-white px-8 py-4 rounded-[20px] font-bold hover:bg-slate-800 transition-all">
-                  Try {activeMode.title} <ArrowRight size={20} />
-                </button>
-              </motion.div>
-            </AnimatePresence>
 
             {/* Visual Decoration */}
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
