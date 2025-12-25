@@ -62,24 +62,26 @@ const SpeakLingoShowcase = () => {
                           className="shrink-0"
                           style={{ transform: `translateY(${yOffset}px) rotate(${rotation}deg)` }}
                         >
-                          <div className="w-[210px] bg-white/5 backdrop-blur-xl border border-white/10 rounded-[28px] p-6 shadow-[0_15px_30px_rgba(0,0,0,0.2)] group hover:bg-white/10 transition-colors">
-                            <div className="flex items-center justify-between mb-6">
-                              <div className="text-3xl">{card.flag}</div>
-                              <div className="w-8 h-8 bg-[#FFD54F] rounded-[10px] flex items-center justify-center shadow-[0_0_10px_rgba(255,213,79,0.15)]">
-                                <div className="w-4 h-4 bg-[#0f172a] rounded-full scale-50"></div>
+                            <div className="w-[240px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] p-7 shadow-[0_20px_40px_rgba(0,0,0,0.3)] group hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
+                              <div className="flex items-center justify-between mb-6">
+                                <div className="text-4xl filter drop-shadow-lg">{card.flag}</div>
+                                <div className="w-10 h-10 bg-[#FFD54F] rounded-[14px] flex items-center justify-center shadow-[0_0_20px_rgba(255,213,79,0.2)]">
+                                  <div className="w-5 h-5 bg-[#0f172a] rounded-full scale-[0.4] animate-pulse"></div>
+                                </div>
+                              </div>
+                              <h4 className="text-[22px] font-bold text-white mb-1 tracking-tight">{card.name}</h4>
+                              <p className="text-[#94a3b8] text-[11px] font-black uppercase tracking-[0.2em] mb-6">{card.level}</p>
+                              <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-white/5 relative">
+                                <motion.div 
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: `${card.progress}%` }}
+                                  className="h-full bg-gradient-to-r from-[#FFD54F] to-[#EAB308]"
+                                  transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+                                />
+                                <div className="absolute inset-0 bg-white/5 animate-pulse" />
                               </div>
                             </div>
-                            <h4 className="text-[19px] font-bold text-white mb-1 tracking-tight">{card.name}</h4>
-                            <p className="text-[#94a3b8] text-[10px] font-black uppercase tracking-[0.2em] mb-5">{card.level}</p>
-                            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden border border-white/5">
-                              <motion.div 
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${card.progress}%` }}
-                                className="h-full bg-[#FFD54F]"
-                                transition={{ duration: 1.5, delay: 0.2 }}
-                              />
-                            </div>
-                          </div>
+
                         </div>
                        );
                     })}
