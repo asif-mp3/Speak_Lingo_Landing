@@ -50,17 +50,18 @@ const modes = [
     lightColor: "rgba(107, 84, 57, 0.1)",
     element: "Chat"
   },
-  {
-    id: 'grammar',
-    icon: Headphones,
-    title: "EVOLVE",
-    headline: "Effortless Evolution.",
-    description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
-    insight: "Your daily communication becomes your training ground.",
-    color: "#FFD54F",
-    lightColor: "rgba(255, 213, 79, 0.1)",
-    element: "Education"
-  }
+    {
+      id: 'grammar',
+      icon: Headphones,
+      title: "EVOLVE",
+      headline: "Effortless Evolution.",
+      description: "Every time you speak, SpeakLingo listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+      insight: "Your daily communication becomes your training ground.",
+      color: "#FFD54F",
+      lightColor: "rgba(255, 213, 79, 0.1)",
+      element: "Education"
+    }
+
 ];
 
 const ModeGraphic = ({ type }: { type: string }) => {
