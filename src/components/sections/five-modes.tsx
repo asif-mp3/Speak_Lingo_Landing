@@ -102,11 +102,12 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <span className="text-[10px] text-slate-500 uppercase tracking-widest">Execute_Command</span>
             <Command size={12} className="text-slate-500" />
           </div>
-          <div className="space-y-3">
-            <div className="flex gap-2">
-              <span className="text-[#FFD54F]">$</span>
-              <span className="text-white text-sm">syping --deploy "email_campaign"</span>
-            </div>
+            <div className="space-y-3">
+              <div className="flex gap-2">
+                <span className="text-[#FFD54F]">$</span>
+                <span className="text-white text-sm">speaklingo --deploy "email_campaign"</span>
+              </div>
+
             <div className="flex items-center gap-2 text-green-400 text-xs">
               <CheckCircle2 size={12} />
               <span>Analyzing context...</span>
