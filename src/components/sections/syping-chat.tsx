@@ -72,14 +72,14 @@ export default function SypingChat() {
             
             {/* Header */}
             <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-[#FFD54F] rounded-xl flex items-center justify-center border border-[#E6A700] shadow-sm">
-                  <Smile size={24} className="text-[#0f172a]" />
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 bg-[#FFD54F] rounded-xl flex items-center justify-center border border-[#E6A700] shadow-sm overflow-hidden p-1">
+                    <img src="/1.webp" alt="Syping" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="text-xl font-black tracking-tighter">
+                    <span className="text-[#0f172a]">Syping</span>
+                  </div>
                 </div>
-                <div className="text-xl font-black tracking-tighter">
-                  <span className="text-[#0f172a]">Syping</span>
-                </div>
-              </div>
               <div className="flex gap-2">
                 <div className="w-9 h-9 bg-[#FFD54F] rounded-full flex items-center justify-center shadow-sm">
                   <Moon size={18} className="text-[#6B5439]" />
