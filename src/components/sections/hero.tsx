@@ -148,7 +148,7 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
                   <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
                   <div className="w-12 h-[1px] bg-[#F9A825]/30" />
-                  <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Speaking...</span>
+                  <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Syping...</span>
                 </div>
 
 
