@@ -79,7 +79,7 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
   }, [active]);
 
   return (
-    <div className="bg-white rounded-[32px] border border-[#6B5439]/10 shadow-[0_30px_80px_rgba(0,0,0,0.06)] p-8 w-full max-w-[600px] aspect-[4/3] relative overflow-hidden">
+    <div className="bg-white rounded-[32px] border border-[#6B5439]/10 shadow-[0_30px_80px_rgba(0,0,0,0.06)] p-8 w-full max-w-[500px] aspect-[4/3] relative overflow-hidden">
       <div className="flex gap-2 mb-6">
         <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
         <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
