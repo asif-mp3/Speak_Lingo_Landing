@@ -96,7 +96,7 @@ export default function Navigation() {
           <div className="flex items-center gap-10">
             <a href="/"><Logo /></a>
 
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-4">
               <MegaMenu 
                 title="Features" 
                 items={featureItems} 
