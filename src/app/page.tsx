@@ -1,6 +1,5 @@
 import Navigation from "@/components/sections/navigation";
 import Hero from "@/components/sections/hero";
-import KeyBenefits from "@/components/sections/key-benefits";
 import PainPoints from "@/components/sections/pain-points";
 import SypingChat from "@/components/sections/syping-chat";
 import FiveModes from "@/components/sections/five-modes";
