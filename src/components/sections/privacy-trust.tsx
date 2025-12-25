@@ -2,140 +2,172 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Lock, EyeOff, WifiOff } from 'lucide-react';
+import { Shield, Lock, EyeOff, WifiOff, Zap, Fingerprint } from 'lucide-react';
 
 export default function PrivacyTrust() {
   const [isOffline, setIsOffline] = useState(false);
 
   return (
-    <section className="py-24 bg-white overflow-hidden relative">
+    <section className="py-32 bg-white overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-[1140px] relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full mb-6 border border-green-100">
-              <Shield size={12} className="text-green-600" />
-              <span className="text-[9px] font-black uppercase tracking-wider text-green-700">Zero Data Storage</span>
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 rounded-full mb-8 border border-red-100">
+              <Zap size={12} className="text-red-600 fill-red-600" />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-red-700">Hard Kill Switch</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight leading-[1.1]">
-              Privacy Isn’t a Setting. <br />
-              <span className="text-[#F9A825]">It’s a Switch.</span>
+            <h2 className="text-5xl md:text-7xl font-black text-[#0f172a] mb-8 tracking-tighter leading-[0.95]">
+              Privacy is <br />
+              <span className={isOffline ? 'text-blue-600 transition-colors duration-500' : 'text-[#F9A825] transition-colors duration-500'}>
+                {isOffline ? 'Absolute.' : 'Physical.'}
+              </span>
             </h2>
 
-            <p className="text-lg text-[#475569] font-medium mb-10 leading-relaxed max-w-[480px]">
-              Tap one button — and Syping goes <span className="text-[#0f172a] font-bold">Pure Offline.</span> No listening. No sending. No background anything.
+            <p className="text-xl text-[#475569] font-medium mb-12 leading-relaxed max-w-[500px]">
+              Syping doesn't just "encrypt" your data. It <span className="text-[#0f172a] font-bold underline decoration-blue-500/30 decoration-4">unplugs</span> from the world.
             </p>
 
-            <div className="grid gap-5 mb-10">
+            <div className="flex flex-wrap gap-4 mb-12">
               {[
-                { icon: WifiOff, title: "Pure Offline Mode", desc: "No cloud. No sync. No data movement — total silence." },
-                { icon: Lock, title: "Your Control, Always", desc: "You decide when it listens, when it learns, and when it stops." },
-                { icon: EyeOff, title: "No Hidden Channels", desc: "No analytics, no ghost uploads. Your voice never leaves your device." }
+                { label: "OFFLINE FIRST", icon: WifiOff },
+                { label: "LOCAL STORAGE", icon: Fingerprint },
+                { label: "ZERO TELEMETRY", icon: EyeOff }
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100">
-                    <item.icon size={20} className="text-[#6B5439]" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#0f172a] text-sm">{item.title}</h4>
-                    <p className="text-[13px] font-medium text-[#475569] leading-snug">{item.desc}</p>
-                  </div>
+                <div key={i} className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-xl border border-slate-100">
+                  <item.icon size={14} className="text-slate-400" />
+                  <span className="text-[11px] font-black uppercase tracking-wider text-slate-600">{item.label}</span>
                 </div>
               ))}
             </div>
 
-            <div className="p-5 bg-[#FFFAE7] border-l-4 border-[#F9A825] rounded-r-2xl max-w-[480px]">
-              <p className="text-base font-bold italic text-[#6B5439]">
-                "When you go offline in Syping, you vanish — by design."
+            <div className="relative">
+              <div className="absolute -left-6 top-0 bottom-0 w-1 bg-slate-100 rounded-full overflow-hidden">
+                <motion.div 
+                  animate={{ height: isOffline ? "100%" : "20%" }}
+                  className="w-full bg-blue-500"
+                />
+              </div>
+              <p className="text-lg font-bold text-[#6B5439] pl-4 italic">
+                {isOffline 
+                  ? "You are currently invisible. The cloud is dead to you."
+                  : "Tap the switch to vanish from every server on Earth."}
               </p>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto">
+          <div className="relative order-1 lg:order-2">
+            {/* Visual background elements */}
+            <div className="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full scale-150" />
+            
             <div
-              className={`rounded-[32px] p-8 border-2 min-h-[400px] flex flex-col items-center justify-center text-center shadow-2xl relative transition-colors duration-700 overflow-hidden ${
-                isOffline ? 'bg-[#0f172a] border-[#1e293b]' : 'bg-[#FFFAE7] border-[#F9A825]'
+              className={`rounded-[48px] p-1 border-2 transition-all duration-700 shadow-[0_0_80px_-20px_rgba(0,0,0,0.1)] ${
+                isOffline ? 'border-blue-500/30 bg-slate-950' : 'border-[#F9A825]/30 bg-[#FFFAE7]'
               }`}
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F9A825]/20 to-transparent" />
-              <AnimatePresence mode="wait">
-                {!isOffline ? (
-                  <motion.div
-                    key="online"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    className="space-y-6"
-                  >
-                    <div className="w-20 h-20 bg-[#FFD54F]/20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
-                       <motion.div 
-                         animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
-                         transition={{ duration: 2, repeat: Infinity }}
-                         className="absolute inset-0 bg-[#FFD54F] rounded-full"
-                       />
-                       <WifiOff size={32} className="text-[#F9A825] relative z-10" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#6B5439]">Connected Mode</h3>
-                    <p className="text-[#6B5439]/70 font-medium text-sm">Standard processing enabled.</p>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="offline"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    className="space-y-6"
-                  >
-                    <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
-                       <div className="absolute inset-0 bg-blue-500 opacity-20 blur-xl rounded-full" />
-                       <Lock size={32} className="text-blue-400 relative z-10" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">Pure Offline</h3>
-                    <p className="text-slate-400 font-medium italic text-sm">"Nothing leaves. Nothing listens. Only you remain."</p>
-                    <motion.div 
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      className="h-1 bg-blue-500/50 rounded-full w-full max-w-[160px] mx-auto overflow-hidden"
+              <div className="rounded-[44px] p-12 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[520px]">
+                
+                <AnimatePresence mode="wait">
+                  {!isOffline ? (
+                    <motion.div
+                      key="online"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="relative z-10"
                     >
-                      <motion.div 
-                        animate={{ x: [-160, 160] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                        className="w-full h-full bg-blue-400"
-                      />
+                      <div className="w-32 h-32 bg-[#FFD54F]/10 rounded-full flex items-center justify-center mx-auto mb-10 relative">
+                         <motion.div 
+                           animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
+                           transition={{ duration: 3, repeat: Infinity }}
+                           className="absolute inset-0 bg-[#FFD54F] rounded-full"
+                         />
+                         <div className="w-20 h-20 bg-[#FFD54F] rounded-full flex items-center justify-center shadow-lg">
+                           <WifiOff size={40} className="text-white" />
+                         </div>
+                      </div>
+                      <h3 className="text-3xl font-black text-[#6B5439] mb-4">Standard Mode</h3>
+                      <p className="text-[#6B5439]/60 font-medium text-base px-8">
+                        The web is active. Data is syncing. Your digital footprint is growing.
+                      </p>
                     </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  ) : (
+                    <motion.div
+                      key="offline"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="relative z-10"
+                    >
+                      <div className="w-32 h-32 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-10 relative">
+                         <motion.div 
+                           animate={{ 
+                             scale: [1, 2],
+                             opacity: [0.5, 0]
+                           }}
+                           transition={{ duration: 2, repeat: Infinity }}
+                           className="absolute inset-0 border-2 border-blue-500 rounded-full"
+                         />
+                         <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.5)]">
+                           <Lock size={40} className="text-white" />
+                         </div>
+                      </div>
+                      <h3 className="text-3xl font-black text-white mb-4">Pure Offline</h3>
+                      <p className="text-blue-200/50 font-medium text-base italic px-8">
+                        "If you aren't on the grid, <br />they can't find you."
+                      </p>
+                      
+                      <div className="mt-8 flex justify-center gap-1">
+                        {[1, 2, 3].map(i => (
+                          <motion.div
+                            key={i}
+                            animate={{ opacity: [0.2, 1, 0.2] }}
+                            transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }}
+                            className="w-1.5 h-1.5 rounded-full bg-blue-400"
+                          />
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              <div className="mt-10">
-                <button
-                  onClick={() => setIsOffline(!isOffline)}
-                  className={`relative w-16 h-8 rounded-full transition-colors duration-500 flex items-center px-1 ${
-                    isOffline ? 'bg-blue-600' : 'bg-[#F9A825]'
-                  }`}
-                >
-                  <motion.div
-                    animate={{ x: isOffline ? 32 : 0 }}
-                    className="w-6 h-6 bg-white rounded-full shadow-lg"
-                  />
-                </button>
-                <p className={`mt-4 text-[9px] font-black uppercase tracking-widest ${isOffline ? 'text-slate-500' : 'text-[#6B5439]/50'}`}>
-                  Toggle Privacy Mode
-                </p>
+                <div className="mt-16 relative z-10">
+                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-6">
+                    Master Privacy Toggle
+                  </div>
+                  <button
+                    onClick={() => setIsOffline(!isOffline)}
+                    className={`group relative w-24 h-12 rounded-full p-1.5 transition-all duration-500 ease-in-out ${
+                      isOffline ? 'bg-blue-600 shadow-[0_0_30px_rgba(59,130,246,0.4)]' : 'bg-[#F9A825]'
+                    }`}
+                  >
+                    <motion.div
+                      animate={{ x: isOffline ? 48 : 0 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="w-9 h-9 bg-white rounded-full shadow-xl flex items-center justify-center"
+                    >
+                      <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${isOffline ? 'bg-blue-600' : 'bg-[#F9A825]'}`} />
+                    </motion.div>
+                  </button>
+                </div>
               </div>
             </div>
 
+            {/* Floating indicator */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -right-6 bg-white border border-slate-100 p-6 rounded-3xl shadow-xl flex items-center gap-4 max-w-[240px]"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className={`absolute -bottom-8 -left-8 p-6 rounded-3xl shadow-2xl border transition-colors duration-700 hidden md:flex items-center gap-4 ${
+                isOffline ? 'bg-slate-900 border-slate-800 text-white' : 'bg-white border-slate-100 text-[#0f172a]'
+              }`}
             >
-              <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center shrink-0">
-                <Shield className="text-green-500" size={20} />
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${isOffline ? 'bg-blue-500/20' : 'bg-green-50'}`}>
+                <Shield className={isOffline ? 'text-blue-400' : 'text-green-500'} size={24} />
               </div>
-              <p className="text-sm font-bold text-[#0f172a] leading-tight">
-                No analytics. No ghost uploads. Ever.
-              </p>
+              <div>
+                <p className="text-sm font-black leading-tight">HARDWARE LEVEL</p>
+                <p className={`text-[11px] font-bold ${isOffline ? 'text-blue-400' : 'text-slate-500'}`}>PROTECTION ACTIVE</p>
+              </div>
             </motion.div>
           </div>
         </div>
