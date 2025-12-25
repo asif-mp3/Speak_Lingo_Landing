@@ -35,11 +35,12 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-[900px]">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mb-3 tracking-tight">
-            The Ones Who Moved First <br />
-            <span className="text-[#EAB308]">Never Looked Back.</span>
-          </h2>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
+              The Ones Who Moved First <br />
+              <span className="text-[#F9A825]">Never Looked Back.</span>
+            </h2>
+
           <p className="text-base text-[#475569] font-medium max-w-[500px] mx-auto opacity-80">
             Before Syping, they hesitated. Now, their ideas move at the speed of instinct.
           </p>
