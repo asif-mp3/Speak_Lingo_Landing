@@ -98,7 +98,8 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
           <div className="flex-1 p-6 space-y-4 font-sans">
               <div className="border-b border-slate-100 pb-2">
                 <span className="text-[10px] font-bold text-slate-400">To:</span>
-                <span className="text-xs ml-2 text-slate-600">leadership@speaklingo.ai</span>
+                  <span className="text-xs ml-2 text-slate-600">leadership@syping.ai</span>
+
               </div>
 
             <div className="text-xs text-slate-800 leading-relaxed whitespace-pre-wrap">
