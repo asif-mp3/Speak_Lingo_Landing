@@ -51,9 +51,9 @@ export default function KeyBenefits() {
   const benefits = [
     {
       icon: Zap,
-      title: "3× Faster Thinking",
-      description: "Your voice moves where typing hesitates. Flow returns the moment you speak.",
-    },
+        title: "3× Faster Thinking",
+        description: "Your voice moves where typing hesitates. Flow returns the moment you Sype.",
+      },
     {
       icon: Globe,
       title: "Work Everywhere",
