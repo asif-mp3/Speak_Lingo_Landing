@@ -156,8 +156,7 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
                 className="text-5xl md:text-7xl font-bold leading-[1.05] text-[#0f172a] mb-8 tracking-tight"
               >
-                Kill the <span className="text-[#EAB308]">Keyboard</span>.<br />
-                Set Your Thoughts Free.
+                Kill the <span className="text-[#EAB308]">Keyboard</span>.
               </motion.h1>
 
               <motion.p
@@ -166,7 +165,7 @@ export default function Hero() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="text-2xl md:text-3xl font-serif italic text-[#475569] mb-10 leading-relaxed max-w-[540px]"
               >
-                "Stop typing start syping"
+                “Stop typing start syping”
               </motion.p>
 
               <motion.p
@@ -175,7 +174,7 @@ export default function Hero() {
                 transition={{ delay: 0.25, duration: 0.8 }}
                 className="text-lg md:text-xl font-medium text-[#64748b] mb-10 leading-relaxed max-w-[540px]"
               >
-                Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with <span className="underline decoration-[#EAB308] decoration-4 underline-offset-4">Syping</span> — so your ideas flow from voice to screen in real time.
+                Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with <span className="underline decoration-[#EAB308] decoration-4 underline-offset-4">Syping (Speak + Type)</span> — so your ideas flow from voice to screen in real time.
               </motion.p>
 
             <motion.div
