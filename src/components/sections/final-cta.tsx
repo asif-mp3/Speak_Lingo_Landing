@@ -19,26 +19,27 @@ export default function FinalCTA() {
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold text-[#0f172a] mb-8 tracking-tight leading-tight"
-            >
-              Every Minute You Sype, <br />
-              <span className="text-[#EAB308]">You Win Time Back.</span>
-            </motion.h2>
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-[80px] font-bold text-[#0f172a] mb-10 tracking-[-0.04em] leading-[0.95]"
+              >
+                Every Minute <br />You Sype, <br />
+                <span className="text-[#EAB308]">You Win.</span>
+              </motion.h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-[#475569] font-medium mb-12"
-            >
-              Typing steals your hours in silence. SpeakLingo gives them back — loud, fast, and beautifully.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-12 max-w-[500px] leading-tight"
+              >
+                “Stop typing start syping”
+              </motion.p>
+
 
             <div className="space-y-6 mb-12">
               <p className="text-lg font-bold text-[#0f172a]">
