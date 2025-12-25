@@ -18,10 +18,9 @@ export default function Home() {
         <Hero />
         <KeyBenefits />
         <PainPoints />
-        <SypingChat />
+        <Audience />
         <FiveModes />
         <PrivacyTrust />
-        <Audience />
         <Testimonials />
         <FinalCTA />
       </main>
