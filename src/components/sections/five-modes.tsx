@@ -66,7 +66,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
   switch (type) {
     case 'Cursor':
       return (
-        <div className="relative w-full h-full flex items-center justify-center lg:justify-end pr-12">
+        <div className="relative w-full h-full flex items-center justify-center">
           <motion.div 
             animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -84,7 +84,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
       );
     case 'Terminal':
       return (
-        <div className="relative w-full h-full flex items-center justify-center lg:justify-end pr-12">
+        <div className="relative w-full h-full flex items-center justify-center">
           <div className="w-72 h-56 bg-[#0f172a] rounded-2xl overflow-hidden shadow-2xl rotate-3">
             <div className="h-8 bg-slate-800 flex items-center gap-2 px-4">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
@@ -107,7 +107,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
       );
     case 'AI':
       return (
-        <div className="relative w-full h-full flex items-center justify-center lg:justify-end pr-12">
+        <div className="relative w-full h-full flex items-center justify-center">
           <div className="relative">
             {[...Array(3)].map((_, i) => (
               <motion.div
@@ -123,7 +123,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
       );
     case 'Chat':
       return (
-        <div className="relative w-full h-full flex items-center justify-center lg:justify-end pr-12 space-y-6 flex-col">
+        <div className="relative w-full h-full flex items-center justify-center space-y-6 flex-col">
           <motion.div 
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -143,7 +143,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
       );
     case 'Education':
       return (
-        <div className="relative w-full h-full flex items-center justify-center lg:justify-end pr-12">
+        <div className="relative w-full h-full flex items-center justify-center">
           <div className="w-64 h-64 border-[12px] border-[#FFD54F]/20 rounded-full flex items-center justify-center relative">
             <motion.div
               animate={{ rotate: 360 }}
