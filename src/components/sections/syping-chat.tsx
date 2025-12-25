@@ -91,7 +91,7 @@ const CloudCallout = ({ label, description, position, icon: Icon }: { label: str
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white p-6 rounded-[32px] border-4 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[280px] relative group hover:-translate-y-2 transition-transform"
+        className="bg-white p-6 rounded-[32px] border-4 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[300px] relative group hover:-translate-y-2 transition-transform"
       >
         <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center mb-4 border-2 border-[#0f172a] shadow-sm">
           <Icon size={28} className="text-[#0f172a]" />
