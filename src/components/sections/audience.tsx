@@ -66,22 +66,23 @@ export default function Audience() {
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="space-y-8"
-            >
-              <p className="text-lg font-bold text-[#475569]/60 italic">
-                You don’t need permission to think differently — just a way to let your voice keep up.
-              </p>
-              
-              <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(60,45,30)] flex items-center gap-3 mx-auto group">
-                Made for You. Built for What’s Next. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.div>
-          </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="space-y-8"
+              >
+                <p className="text-lg font-bold text-[#475569]/60 italic">
+                  You don’t need permission to think differently — just a way to let your voice keep up.
+                </p>
+                
+                <p className="text-2xl font-black text-[#6B5439] uppercase tracking-widest">
+                  Made for You. Built for What’s Next.
+                </p>
+              </motion.div>
+            </div>
+
         </div>
       </div>
     </section>
