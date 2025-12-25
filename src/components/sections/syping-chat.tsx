@@ -45,40 +45,26 @@ const StatRow = ({ label, value, unit, icon: Icon, subLabel }: { label: string, 
   </div>
 );
 
-const Arrow = ({ d, id }: { d: string, id: string }) => (
+const ConnectorLine = ({ d }: { d: string }) => (
   <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
-    <defs>
-      <marker
-        id={`arrowhead-${id}`}
-        markerWidth="10"
-        markerHeight="7"
-        refX="9"
-        refY="3.5"
-        orient="auto"
-      >
-        <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
-      </marker>
-    </defs>
     <motion.path
       d={d}
       fill="none"
       stroke="#0f172a"
-      strokeWidth="4"
+      strokeWidth="3"
       strokeLinecap="round"
-      strokeDasharray="12 8"
-      initial={{ pathLength: 0 }}
-      whileInView={{ pathLength: 1 }}
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 0.2 }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
-      markerEnd={`url(#arrowhead-${id})`}
     />
     <motion.path
       d={d}
       fill="none"
       stroke="#F9A825"
-      strokeWidth="4"
+      strokeWidth="3"
       strokeLinecap="round"
       initial={{ pathLength: 0, opacity: 0 }}
-      whileInView={{ pathLength: 1, opacity: [0, 1, 0] }}
+      whileInView={{ pathLength: 1, opacity: [0, 0.5, 0] }}
       transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
     />
   </svg>
