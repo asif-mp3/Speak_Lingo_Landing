@@ -45,17 +45,17 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 mb-24">
+        <div className="grid md:grid-cols-2 gap-6 mb-24">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`p-12 rounded-[48px] ${t.color} border border-slate-100/50 flex flex-col justify-between group hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1`}
+              className={`p-8 rounded-[32px] ${t.color} border border-slate-100/50 flex flex-col justify-between group hover:shadow-[0_20px_40px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1`}
             >
               <div>
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm border border-slate-50">
-                  <Quote size={24} className="text-[#EAB308]" />
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm border border-slate-50">
+                  <Quote size={20} className="text-[#EAB308]" />
                 </div>
-                <p className="text-[26px] md:text-[32px] font-bold text-[#0f172a] leading-[1.1] mb-10 tracking-tight">
+                <p className="text-xl md:text-2xl font-bold text-[#0f172a] leading-tight mb-8 tracking-tight">
                   “{t.quote}”
                 </p>
               </div>
@@ -63,11 +63,11 @@ export default function Testimonials() {
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-[#0f172a]">{t.author}</h4>
-                  <p className="text-sm font-medium text-[#475569]">{t.role}</p>
+                  <p className="text-xs font-medium text-[#475569]">{t.role}</p>
                 </div>
-                <div className="flex gap-1">
+                <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="text-[#EAB308] fill-[#EAB308]" />
+                    <Star key={i} size={12} className="text-[#EAB308] fill-[#EAB308]" />
                   ))}
                 </div>
               </div>
