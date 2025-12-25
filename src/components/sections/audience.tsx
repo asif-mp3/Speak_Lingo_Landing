@@ -11,13 +11,13 @@ import {
   Zap,
   Send,
   MoreHorizontal,
-  Plus
+  Plus,
+  MousePointer2,
+  Activity
 } from 'lucide-react';
 import { 
   SiNotion, 
   SiDiscord, 
-  SiLinear, 
-  SiCursor, 
   SiGmail 
 } from 'react-icons/si';
 
