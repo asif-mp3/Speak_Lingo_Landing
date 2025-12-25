@@ -140,12 +140,13 @@ const Navigation = () => {
                  <Search size={18} />
                </button>
             </div>
-            <div className="flex items-center gap-3">
-              <button className="text-[15px] font-bold text-[#6B5439] hover:text-[#5A4530] px-4">Log in</button>
-              <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-7 py-3 rounded-[16px] text-[15px] font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] hover:shadow-[0_5px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[4px]">
-                Try Free
-              </button>
-            </div>
+              <div className="flex items-center gap-3">
+                <button className="text-[15px] font-bold text-[#6B5439] hover:text-[#0f172a] px-4 transition-colors">Log in</button>
+                <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-7 py-3 rounded-[18px] text-[15px] font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] hover:shadow-[0_5px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[4px] border border-[#5A4530]">
+                  Try Free
+                </button>
+              </div>
+
           </div>
 
           <button className="lg:hidden p-2 text-[#2D3748]" onClick={() => setIsOpen(!isOpen)}>
