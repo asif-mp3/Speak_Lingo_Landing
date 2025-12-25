@@ -20,7 +20,7 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
       onMouseLeave={() => setActive(null)}
     >
         <button 
-          className={`flex items-center gap-1.5 px-6 py-6 text-[15px] font-bold transition-colors ${isHovered ? 'text-[#F9A825]' : 'text-[#475569] hover:text-[#0f172a]'}`}
+          className={`flex items-center gap-1.5 px-4 py-6 text-[15px] font-bold transition-colors ${isHovered ? 'text-[#F9A825]' : 'text-[#475569] hover:text-[#0f172a]'}`}
         >
           {title}
           <ChevronDown size={14} className={`transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} />
