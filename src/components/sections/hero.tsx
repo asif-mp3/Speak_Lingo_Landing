@@ -153,8 +153,8 @@ export default function Hero() {
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-5xl md:text-7xl font-bold leading-[1.05] text-[#0f172a] mb-8 tracking-tight"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-6xl md:text-[84px] font-bold leading-[0.95] text-[#0f172a] mb-8 tracking-[-0.04em]"
               >
                 Kill the <span className="text-[#EAB308]">Keyboard</span>.
               </motion.h1>
@@ -163,7 +163,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-2xl md:text-3xl font-serif font-bold italic text-[#475569] mb-10 leading-relaxed max-w-[540px]"
+                className="text-2xl md:text-3xl font-serif font-bold text-[#475569] mb-10 leading-relaxed max-w-[540px]"
               >
                 “Stop typing start syping”
               </motion.p>
