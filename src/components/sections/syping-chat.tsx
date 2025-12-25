@@ -315,37 +315,37 @@ export default function SypingChat() {
             label="Neural Core"
             description="The engine that turns sound into structure."
             icon={Zap}
-            position="left-[8%] top-[15%]"
+            position="left-[6%] top-[250px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Live Insight"
             description="Zero-latency visualization of thought flow."
             icon={Flame}
-            position="right-[8%] top-[15%]"
+            position="right-[6%] top-[250px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Smart Memory"
             description="Persistent history of every syped word."
             icon={MessageSquare}
-            position="left-[5%] top-[50%]"
+            position="left-[6%] top-[600px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Momentum"
             description="Real-time proof of productivity gains."
             icon={BarChart2}
-            position="right-[5%] top-[50%]"
+            position="right-[6%] top-[600px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Power Grid"
             description="One-click access to system commands."
             icon={Terminal}
-            position="left-[8%] bottom-[15%]"
+            position="left-[6%] top-[950px] -translate-y-1/2"
           />
           <CloudCallout 
             label="Zero Trust"
             description="On-device processing keeps ideas safe."
             icon={Shield}
-            position="right-[8%] bottom-[15%]"
+            position="right-[6%] top-[950px] -translate-y-1/2"
           />
         </div>
 
