@@ -52,9 +52,10 @@ const BubblePhase = ({ active }: { active: boolean }) => {
   );
 };
 
-const DocumentMockup = ({ active }: { active: boolean }) => {
-  const [text, setText] = useState("");
-    const fullText = "Thoughts move fast. Typing doesn't. SpeakLingo replaces keys with Syping—capturing your voice at the speed of sound.";
+  const DocumentMockup = ({ active }: { active: boolean }) => {
+    const [text, setText] = useState("");
+      const fullText = "Typing slows thought. SpeakLingo replaces keys with Syping—so your ideas flow from voice to screen in real time.";
+
 
 
   useEffect(() => {
