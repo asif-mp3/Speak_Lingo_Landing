@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Globe, Shield, Activity, ArrowRight } from 'lucide-react';
 
 const BenefitCard = ({ icon: Icon, title, description, delay }: any) => {
