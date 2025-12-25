@@ -88,25 +88,22 @@ export default function Testimonials() {
         </div>
 
         <div className="text-center space-y-12">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block p-8 bg-slate-50 rounded-[32px] border border-slate-100 max-w-[800px]"
-          >
-            <p className="text-xl font-bold text-[#475569] italic mb-4">
-              They were just like you — thinkers trapped behind keyboards. Then they pressed a hotkey, spoke once… and everything changed.
-            </p>
-            <p className="text-sm font-black text-[#94a3b8] uppercase tracking-[0.2em]">
-              The first generation of unfiltered thinkers.
-            </p>
-          </motion.div>
-
-          <button className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_6px_0_rgb(60,45,30)] flex items-center gap-3 mx-auto group">
-            Join the Movement. Start Syping. <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </button>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block p-8 bg-slate-50 rounded-[32px] border border-slate-100 max-w-[800px]"
+            >
+              <p className="text-xl font-bold text-[#475569] italic mb-4">
+                They were just like you — thinkers trapped behind keyboards. Then they pressed a hotkey, spoke once… and everything changed.
+              </p>
+              <p className="text-sm font-black text-[#94a3b8] uppercase tracking-[0.2em]">
+                The first generation of unfiltered thinkers.
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }
+
