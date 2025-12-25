@@ -16,8 +16,8 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <KeyBenefits />
         <PainPoints />
+        <KeyBenefits />
         <FiveModes />
         <SypingChat />
         <PrivacyTrust />
