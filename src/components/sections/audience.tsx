@@ -20,9 +20,10 @@ const apps = [
     name: 'SLACK', 
     icon: Slack, 
     color: '#4A154B',
-    title: "Instant Collaboration",
-    fullText: "Hey team, the production build is ready. I've verified the syping latency and it's practically zero. Let's ship it!"
-  },
+      title: "Instant Collaboration",
+      fullText: "Hey team, the production build is ready. I've verified the SpeakLingo latency and it's practically zero. Let's ship it!"
+    },
+
   { 
     id: 'email', 
     name: 'EMAIL', 
