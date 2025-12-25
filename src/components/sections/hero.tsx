@@ -54,7 +54,8 @@ const BubblePhase = ({ active }: { active: boolean }) => {
 
 const DocumentMockup = ({ active }: { active: boolean }) => {
   const [text, setText] = useState("");
-  const fullText = "Typing slows thought. SpeakLingo replaces keys with Syping — so your ideas flow from voice to screen in real time. Kill the keyboard. Set your thoughts free.";
+    const fullText = "Typing slows thought. SpeakLingo replaces keys with Syping — so your ideas flow from voice to screen in real time. Kill the keyboard.";
+
 
   useEffect(() => {
     if (!active) {
