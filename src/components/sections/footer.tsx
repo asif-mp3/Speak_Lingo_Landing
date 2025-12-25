@@ -16,8 +16,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-xl font-bold flex tracking-tight">
-        <span className="text-[#2D3748]">Speak</span>
-        <span className="text-[#EAB308]">Lingo</span>
+        <span className="text-[#2D3748]">Sy</span>
+        <span className="text-[#EAB308]">ping</span>
       </div>
     </div>
   );
