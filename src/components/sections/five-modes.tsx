@@ -171,9 +171,6 @@ export default function FiveModes() {
 
         <div className="mt-20 text-center">
           <p className="text-2xl font-bold text-[#0f172a] mb-4">You’re not just faster. You’re frictionless.</p>
-          <button className="text-[#EAB308] font-black uppercase tracking-[0.2em] hover:tracking-[0.3em] transition-all">
-            Unlock All Five Modes Now →
-          </button>
         </div>
       </div>
     </section>
