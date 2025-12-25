@@ -109,9 +109,10 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
               <span className="text-[10px] font-black uppercase tracking-wider text-amber-700">Streak: {active ? "🔥 12m" : "0m"}</span>
            </div>
         </div>
-        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
-          {active ? "Syping Active" : "Waiting for Voice"}
-        </p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
+            {active ? "SpeakLingo Active" : "Waiting for Voice"}
+          </p>
+
         <BubblePhase active={active} />
       </div>
     </div>
