@@ -58,6 +58,26 @@ const Pointer = ({ label, position, arrow = "up-left" }: { label: string, positi
   );
 };
 
+const StatCard = ({ label, value, unit = "", icon: Icon }: any) =>
+<div className="bg-white/80 p-3 rounded-xl border border-black/5 shadow-sm">
+    <div className="flex justify-between items-start mb-1">
+      <div className="text-[10px] font-bold text-slate-500 uppercase tracking-tight">{label}</div>
+      {Icon && <Icon size={12} className="text-slate-400" />}
+    </div>
+    <div className="flex items-baseline gap-1">
+      <span className="text-sm font-black text-[#0f172a]">{value}</span>
+      {unit && <span className="text-[10px] font-bold text-slate-400">{unit}</span>}
+    </div>
+  </div>;
+
+
+const ActionButton = ({ icon: Icon, label, active = false }: any) =>
+<button className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl transition-all ${active ? 'bg-[#FFD54F] shadow-[0_4px_0_rgb(230,167,0)] border border-black/10' : 'bg-[#FFD54F]/60 hover:bg-[#FFD54F] border border-black/5'}`}>
+    <Icon size={18} className="text-[#6B5439]" />
+    <span className="text-[11px] font-bold text-[#6B5439]">{label}</span>
+  </button>;
+
+
 export default function SypingChat() {
   return (
     <section className="py-24 bg-[#FFFAE7]/50 overflow-hidden relative">
