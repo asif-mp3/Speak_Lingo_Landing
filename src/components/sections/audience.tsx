@@ -328,11 +328,11 @@ export default function Audience() {
                  <span className="text-xl font-black">Discord</span>
               </div>
               <div className="flex items-center gap-2">
-                 <SiLinear className="w-5 h-5" />
+                 <Activity className="w-5 h-5" />
                  <span className="text-xl font-black">Linear</span>
               </div>
               <div className="flex items-center gap-2">
-                 <SiCursor className="w-5 h-5" />
+                 <MousePointer2 className="w-5 h-5" />
                  <span className="text-xl font-black">Cursor</span>
               </div>
               <div className="flex items-center gap-2">
