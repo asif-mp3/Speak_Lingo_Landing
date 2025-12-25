@@ -20,25 +20,26 @@ const SpeakLingoShowcase = () => {
         <div 
           className="relative bg-[#0f172a] rounded-[40px] overflow-hidden min-h-[600px] flex flex-col justify-start pt-16 pb-28 px-6 md:px-10 lg:px-16 border-2 border-[#6B5439]/10 shadow-[0_25px_80px_rgba(0,0,0,0.08)]"
         >
-          {/* Header Content Section */}
-            <div className="relative z-20 text-white max-w-[640px]">
-              <div className="flex flex-wrap gap-2 mb-8">
-                <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Syping Everywhere</span>
+            {/* Header Content Section */}
+              <div className="relative z-20 text-white max-w-[640px]">
+                <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="px-4 py-1.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Syping Everywhere</span>
+                  </div>
+                  <div className="px-4 py-1.5 bg-[#FFD54F] rounded-full border border-white/10">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#0f172a]">Multi-Language Flow</span>
+                  </div>
                 </div>
-                <div className="px-4 py-1.5 bg-[#FFD54F] rounded-full border border-white/10">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#0f172a]">Multi-Language Flow</span>
-                </div>
+
+                  <h2 className="text-white text-4xl md:text-6xl font-bold leading-[1.1] mb-8 tracking-[-0.04em]">
+                    Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
+                  </h2>
+                  <p className="text-[#cbd5e1]/80 text-base md:text-xl max-w-[520px] leading-relaxed mb-10 font-medium tracking-tight">
+                    Sype in Japanese, French, or Spanish as naturally as you think. <span className="text-white font-bold">SpeakLingo</span> adapts to your accent and your rhythm.
+                  </p>
+
               </div>
 
-                <h2 className="text-white text-[48px] md:text-[80px] font-bold leading-[0.9] mb-8 tracking-[-0.04em]">
-                  Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
-                </h2>
-                <p className="text-[#cbd5e1]/80 text-lg md:text-2xl max-w-[520px] leading-relaxed mb-10 font-medium tracking-tight">
-                  Sype in Japanese, French, or Spanish as naturally as you think. <span className="text-white font-bold">SpeakLingo</span> adapts to your accent and your rhythm.
-                </p>
-
-            </div>
 
 
           {/* CURVED PATH ANIMATION (from Wispr style) - Re-integrated with SpeakLingo Cards */}
