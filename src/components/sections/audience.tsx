@@ -13,6 +13,13 @@ import {
   MoreHorizontal,
   Plus
 } from 'lucide-react';
+import { 
+  SiNotion, 
+  SiDiscord, 
+  SiLinear, 
+  SiCursor, 
+  SiGmail 
+} from 'react-icons/si';
 
 const apps = [
   { 
