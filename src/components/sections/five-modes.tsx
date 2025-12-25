@@ -100,27 +100,35 @@ export default function FiveModes() {
           {/* Navigation */}
           <div className="w-full lg:w-1/3 space-y-3">
             {modes.map((mode) => (
-              <button
-                key={mode.id}
-                onClick={() => handleModeChange(mode)}
-                className={`w-full text-left p-6 rounded-[24px] transition-all duration-300 flex items-center gap-4 group ${
-                  activeMode.id === mode.id 
-                    ? 'bg-white shadow-xl shadow-amber-500/5 border border-[#EAB308]/20 translate-x-2' 
-                    : 'hover:bg-white/50 border border-transparent'
-                }`}
-              >
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                  activeMode.id === mode.id ? mode.color : 'bg-white border border-slate-200'
-                }`}>
-                  <mode.icon size={24} className={activeMode.id === mode.id ? 'text-white' : 'text-slate-400'} />
-                </div>
-                <div>
-                  <h4 className={`font-bold transition-colors ${activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-500'}`}>
-                    {mode.title}
-                  </h4>
-                  <p className="text-xs font-black uppercase tracking-widest text-[#94a3b8] mt-1">Mode 0{modes.indexOf(mode) + 1}</p>
-                </div>
-              </button>
+                <button
+                  key={mode.id}
+                  onClick={() => handleModeChange(mode)}
+                  className={`w-full text-left p-6 rounded-[32px] transition-all duration-500 flex items-center gap-5 group relative ${
+                    activeMode.id === mode.id 
+                      ? 'bg-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-[#EAB308]/20 translate-x-3' 
+                      : 'hover:bg-white/40 border border-transparent'
+                  }`}
+                >
+                  {activeMode.id === mode.id && (
+                    <motion.div 
+                      layoutId="active-pill"
+                      className="absolute left-0 w-1.5 h-12 bg-[#EAB308] rounded-full"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <div className={`w-14 h-14 rounded-[22px] flex items-center justify-center shrink-0 transition-all duration-500 ${
+                    activeMode.id === mode.id ? mode.color + ' scale-110 rotate-3' : 'bg-white border border-slate-100 group-hover:border-slate-200'
+                  }`}>
+                    <mode.icon size={26} className={activeMode.id === mode.id ? 'text-white' : 'text-slate-400'} />
+                  </div>
+                  <div>
+                    <h4 className={`text-lg font-bold transition-colors duration-300 ${activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-500 group-hover:text-slate-700'}`}>
+                      {mode.title}
+                    </h4>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8] mt-1.5 opacity-60">Mode 0{modes.indexOf(mode) + 1}</p>
+                  </div>
+                </button>
+
             ))}
           </div>
 
