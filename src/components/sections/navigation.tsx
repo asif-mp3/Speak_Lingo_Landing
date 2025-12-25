@@ -91,17 +91,17 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const featureItems = [
-    { name: 'Voice AI Coach', description: 'Real-time feedback on pronunciation and grammar.', icon: MessageSquare, color: 'bg-[#FFFAE7]', href: '#' },
-    { name: 'Immersive Scenarios', description: 'Practice in restaurant, travel, and work settings.', icon: PlayCircle, color: 'bg-[#FFFAE7]', href: '#' },
-    { name: 'Visual Learning', description: 'Dynamic interface that adapts to your progress.', icon: Zap, color: 'bg-[#FFFAE7]', href: '#' },
-    { name: 'Progress Tracker', description: 'Detailed insights into your fluency growth.', icon: Layers, color: 'bg-[#FFFAE7]', href: '#' },
-  ];
+    const featureItems = [
+      { name: 'Syping Mode', description: 'Voice to screen in real time with zero lag.', icon: Zap, color: 'bg-[#FFFAE7]', href: '#' },
+      { name: 'Tasking Mode', description: 'Command reality with simple voice instructions.', icon: Layers, color: 'bg-[#FFFAE7]', href: '#' },
+      { name: 'Prompt Mode', description: 'Speak casually, get perfect AI prompts.', icon: MessageSquare, color: 'bg-[#FFFAE7]', href: '#' },
+      { name: 'Pure Offline', description: 'Total privacy with on-device processing.', icon: Globe, color: 'bg-[#FFFAE7]', href: '#' },
+    ];
 
-  const resourceItems = [
-    { name: 'Language Blog', description: 'Tips and tricks from polyglots and linguists.', icon: BookOpen, color: 'bg-[#FFFAE7]', href: '#' },
-    { name: 'Global Community', description: 'Connect with 500k+ learners worldwide.', icon: Users, color: 'bg-[#FFFAE7]', href: '#' },
-  ];
+    const resourceItems = [
+      { name: 'Manifesto', description: 'Why we are killing the keyboard.', icon: BookOpen, color: 'bg-[#FFFAE7]', href: '#' },
+      { name: 'Community', description: 'Join the generation of unfiltered thinkers.', icon: Users, color: 'bg-[#FFFAE7]', href: '#' },
+    ];
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}>
