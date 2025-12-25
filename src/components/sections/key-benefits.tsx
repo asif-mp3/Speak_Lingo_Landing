@@ -80,18 +80,6 @@ export default function KeyBenefits() {
             <BenefitCard key={index} {...benefit} delay={index * 0.1} />
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <button className="inline-flex items-center gap-2 text-xl font-bold text-[#6B5439] hover:text-[#EAB308] transition-colors group">
-            Feel the Speed of Syping <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </motion.div>
       </div>
     </section>
   );
