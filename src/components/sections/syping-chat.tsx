@@ -266,7 +266,7 @@ export default function SypingChat() {
 
         <div className="mt-20 flex flex-col items-center gap-6">
           <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em]">Ready to upgrade your workflow?</p>
-          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3 !whitespace-pre-line">Download Syping for Desktop
+          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3 !whitespace-pre-line !whitespace-pre-line">Download Syping for Desktop
             <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
