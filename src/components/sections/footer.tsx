@@ -65,9 +65,10 @@ const Footer = () => {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-[#e2e8f0] gap-6">
-          <p className="text-[#94a3b8] text-[12px] font-black uppercase tracking-widest">
-            © 2024 Syping Inc. All rights reserved.
-          </p>
+            <p className="text-[#94a3b8] text-[12px] font-black uppercase tracking-widest">
+              © 2024 SpeakLingo Inc. All rights reserved.
+            </p>
+
           <div className="flex gap-6">
             <div className="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
             <div className="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
