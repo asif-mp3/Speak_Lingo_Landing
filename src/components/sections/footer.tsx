@@ -4,11 +4,11 @@ import React from 'react';
 import { Smile } from 'lucide-react';
 
 const Footer = () => {
-    const Logo = () => (
-      <div className="flex items-center">
-        <img src="/2.webp" alt="SpeakLingo" className="h-[53px] w-auto object-contain" />
-      </div>
-    );
+  const Logo = () =>
+  <div className="flex items-center">
+        <img src="/2.webp" alt="SpeakLingo" className="object-contain !w-[222px] !h-full !max-w-[222px]" />
+      </div>;
+
 
   return (
     <footer className="bg-white border-t border-[#e2e8f0] pt-24 pb-12 px-6 md:px-12">
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
