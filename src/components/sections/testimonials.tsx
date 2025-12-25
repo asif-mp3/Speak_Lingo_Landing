@@ -64,7 +64,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.8 }}
-            className={`p-12 rounded-[48px] !w-[448px] !h-[219px] ${t.color} border border-slate-100/50 flex flex-col justify-between group hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1`}>
+            className={`p-12 rounded-[48px] !w-[49%] !h-[369px] ${t.color} border border-slate-100/50 flex flex-col justify-between group hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1`}>
 
                 <div>
                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm border border-slate-50">
