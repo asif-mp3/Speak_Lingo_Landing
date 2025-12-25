@@ -24,19 +24,32 @@ const SpeedComparison = () => {
             />
           </div>
           
-          <p className="text-[17px] md:text-[22px] font-bold text-[#475569]/50 leading-[1.3] max-w-[650px] tracking-tight">
-            Stop memorizing vocabulary lists. SpeakLingo's AI-driven interface creates an immersive environment where learning happens naturally.
-          </p>
+            <p className="text-[17px] md:text-[22px] font-bold text-[#475569]/70 leading-[1.3] max-w-[650px] tracking-tight mb-12">
+              Stop memorizing vocabulary lists. SpeakLingo's AI-driven interface creates an immersive environment where learning happens naturally.
+            </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <button className="bg-[#6B5439] text-white px-8 py-3.5 rounded-[18px] font-bold text-[16px] hover:scale-[1.01] transition-all shadow-[0_4px_0_rgb(60,45,30)] active:translate-y-[4px]">
-              Start Your Journey
-            </button>
-            <button className="bg-white border-2 border-[#6B5439]/10 text-[#6B5439] px-8 py-3.5 rounded-[18px] font-bold text-[16px] hover:bg-[#FFFAE7] shadow-sm">
-              Compare Methods
-            </button>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[900px]">
+              {[
+                { label: "Hours Saved", value: "240+", icon: "⏱️" },
+                { label: "Fluency Gain", value: "4x", icon: "🚀" },
+                { label: "Accuracy", value: "99%", icon: "🎯" },
+                { label: "Focus Score", value: "Max", icon: "🔥" }
+              ].map((stat, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white/50 border border-[#6B5439]/10 rounded-2xl p-4 shadow-sm"
+                >
+                  <div className="text-2xl mb-2">{stat.icon}</div>
+                  <div className="text-xl font-bold text-[#0f172a]">{stat.value}</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-[#94a3b8]">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+
 
         {/* Comparison Area - Fixing alignment and layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-8 items-end max-w-[1000px] mx-auto">
