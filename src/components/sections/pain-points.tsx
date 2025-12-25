@@ -227,10 +227,11 @@ export default function PainPoints() {
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-8 tracking-tight">
-              Typing Is <span className="text-[#ef4444]">Slowing You Down.</span>
-            </h2>
+            <div className="order-2 lg:order-1">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-8 tracking-tight">
+                Typing Is <span className="text-[#ef4444]">Slowing You Down.</span>
+              </h2>
+
 
             <p className="text-xl text-[#475569] font-medium mb-12">
               Every pause. Every correction. Every lost idea. <br />
