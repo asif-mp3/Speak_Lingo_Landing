@@ -220,10 +220,11 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
               
               <div className="w-full h-px bg-[#e2e8f0] my-4" />
               
-              <div className="space-y-4">
-                <button className="w-full bg-[#0f172a] text-white py-4 rounded-2xl text-lg font-bold shadow-[0_4px_0_rgb(0,0,0)]">Download for Windows</button>
-                <button className="w-full bg-white border-2 border-slate-200 text-[#0f172a] py-4 rounded-2xl text-lg font-bold">Download for Mac</button>
-              </div>
+                <div className="space-y-4">
+                  <button className="w-full bg-[#0f172a] text-white py-4 rounded-2xl text-lg font-bold shadow-[0_4px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] transition-all border border-black">Download for Windows</button>
+                  <button className="w-full bg-white border-2 border-[#0f172a] text-[#0f172a] py-4 rounded-2xl text-lg font-bold shadow-[0_4px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] transition-all">Download for Mac</button>
+                </div>
+
             </div>
           </motion.div>
         )}
