@@ -73,13 +73,7 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <div className="w-2 h-2 rounded-full bg-green-400" />
           </div>
           <div className="flex-1 font-mono text-sm text-slate-400 leading-relaxed">
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              The future of writing isn't typing...
-            </motion.p>
+            <p>The future of writing isn't typing...</p>
             <div className="flex items-center gap-1 mt-2">
               <motion.span
                 initial={{ width: 0 }}
@@ -110,36 +104,21 @@ const ModeGraphic = ({ type }: { type: string }) => {
               <span className="text-[#FFD54F]">$</span>
               <span className="text-white text-sm">syping --deploy "email_campaign"</span>
             </div>
-            <motion.div 
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
-              className="flex items-center gap-2 text-green-400 text-xs"
-            >
+            <div className="flex items-center gap-2 text-green-400 text-xs">
               <CheckCircle2 size={12} />
               <span>Analyzing context...</span>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 }}
-              className="flex items-center gap-2 text-green-400 text-xs"
-            >
+            </div>
+            <div className="flex items-center gap-2 text-green-400 text-xs">
               <CheckCircle2 size={12} />
               <span>Generating drafts...</span>
-            </motion.div>
-            <motion.div 
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 2, delay: 1.5 }}
-              className="h-1 bg-green-500/30 rounded-full overflow-hidden"
-            >
+            </div>
+            <div className="h-1 bg-green-500/30 rounded-full overflow-hidden">
               <motion.div 
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: 1, repeat: Infinity }}
                 className="w-1/3 h-full bg-green-500"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       );
@@ -160,13 +139,9 @@ const ModeGraphic = ({ type }: { type: string }) => {
               />
             ))}
             <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="bg-[#0f172a] p-6 rounded-3xl shadow-2xl relative z-10"
-              >
+              <div className="bg-[#0f172a] p-6 rounded-3xl shadow-2xl relative z-10">
                 <Brain className="w-12 h-12 text-[#FFD54F]" />
-              </motion.div>
+              </div>
             </div>
             <div className="absolute -top-4 -left-4 bg-white p-2 rounded-lg shadow-lg border border-slate-100">
               <Sparkles size={16} className="text-[#FFD54F]" />
@@ -177,21 +152,12 @@ const ModeGraphic = ({ type }: { type: string }) => {
     case 'Chat':
       return (
         <div className="relative w-full h-full bg-slate-50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden">
-          <motion.div 
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            className="self-start bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 max-w-[80%]"
-          >
+          <div className="self-start bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 max-w-[80%] transition-all">
             <p className="text-xs font-bold text-[#0f172a]">User: "Summarize the call"</p>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.8 }}
-            className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%]"
-          >
+          </div>
+          <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
             <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
-          </motion.div>
+          </div>
           <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
             <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
             <div className="h-1 flex-1 bg-slate-100 rounded-full" />
@@ -218,15 +184,11 @@ const ModeGraphic = ({ type }: { type: string }) => {
             ))}
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
-          <motion.div 
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="bg-[#0f172a] p-6 rounded-full shadow-2xl">
               <Headphones className="w-10 h-10 text-white" />
             </div>
-          </motion.div>
+          </div>
         </div>
       );
     default:
@@ -255,15 +217,10 @@ export default function FiveModes() {
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight"
-          >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
             Five Modes. Infinite Power. <br />
             <span className="text-[#F9A825]">One Revolution.</span>
-          </motion.h2>
+          </h2>
         </div>
 
         {/* Tab Navigation */}
@@ -300,10 +257,8 @@ export default function FiveModes() {
         </div>
 
         {/* Display Card */}
-        <motion.div
+        <div
           key={activeMode.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
           className="relative bg-white rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden"
         >
           {/* Header */}
@@ -327,16 +282,12 @@ export default function FiveModes() {
           </div>
 
           {/* Body */}
-          <div className="p-8 md:p-12 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="p-8 md:p-12 grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-7 space-y-8 relative z-10">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="inline-flex items-center gap-2 bg-[#FFFAE7] px-4 py-2 rounded-full border border-[#FFD54F]/20"
-              >
+              <div className="inline-flex items-center gap-2 bg-[#FFFAE7] px-4 py-2 rounded-full border border-[#FFD54F]/20">
                 <activeMode.icon size={14} className="text-[#F9A825]" />
                 <span className="text-[10px] font-black text-[#6B5439] tracking-widest uppercase">SYPING_{activeMode.id}</span>
-              </motion.div>
+              </div>
 
               <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
                 {activeMode.headline}
@@ -358,11 +309,27 @@ export default function FiveModes() {
                   “{activeMode.insight}”
                 </p>
               </div>
+
+              {/* Status Pill moved here to prevent absolute overlap */}
+              <div className="flex lg:hidden pt-4">
+                <div className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-lg">
+                  <div className="flex gap-1">
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        animate={{ height: [4, 10, 4] }}
+                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                        className="w-1 bg-[#FFD54F] rounded-full"
+                      />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-black tracking-widest uppercase">Active</span>
+                </div>
+              </div>
             </div>
 
             <div className="lg:col-span-5 relative group">
               <div className="aspect-square relative bg-slate-50/50 rounded-[32px] overflow-hidden border border-slate-100 p-8 flex items-center justify-center">
-                {/* Background decorative elements to prevent empty feel */}
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#FFD54F_1px,transparent_1px)] [background-size:20px_20px]" />
                 </div>
@@ -382,19 +349,14 @@ export default function FiveModes() {
                 </div>
               </div>
 
-              {/* Decorative rings that won't overlay text since they are behind or small */}
-              <div className="absolute -z-10 -top-6 -right-6 w-32 h-32 bg-[#FFD54F]/10 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute -z-10 -top-6 -right-6 w-32 h-32 bg-[#FFD54F]/10 rounded-full blur-3xl" />
               <div className="absolute -z-10 -bottom-6 -left-6 w-32 h-32 bg-[#0f172a]/5 rounded-full blur-3xl" />
             </div>
           </div>
 
-          {/* Bottom Pill - Listening Status */}
+          {/* Bottom Pill - Listening Status - Replaced with a more stable version */}
           <div className="absolute bottom-6 right-8 hidden lg:block">
-            <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="bg-[#0f172a] text-white px-6 py-3 rounded-full flex items-center gap-3 shadow-xl"
-            >
+            <div className="bg-[#0f172a] text-white px-6 py-3 rounded-full flex items-center gap-3 shadow-xl">
               <div className="flex gap-1">
                 {[...Array(3)].map((_, i) => (
                   <motion.div
@@ -406,18 +368,14 @@ export default function FiveModes() {
                 ))}
               </div>
               <span className="text-[11px] font-black tracking-widest uppercase">System_Active</span>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-20 text-center">
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-2xl font-bold text-[#0f172a] flex items-center justify-center gap-2"
-          >
+          <p className="text-2xl font-bold text-[#0f172a] flex items-center justify-center gap-2">
             Frictionless execution. <ChevronRight className="text-[#F9A825]" /> <span className="text-slate-400">Standardized.</span>
-          </motion.p>
+          </p>
         </div>
       </div>
     </section>
