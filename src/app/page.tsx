@@ -1,5 +1,6 @@
 import Navigation from "@/components/sections/navigation";
 import Hero from "@/components/sections/hero";
+import SpeakLingoShowcase from "@/components/sections/app-integration-showcase";
 import KeyBenefits from "@/components/sections/key-benefits";
 import PainPoints from "@/components/sections/pain-points";
 import FiveModes from "@/components/sections/five-modes";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <SpeakLingoShowcase />
         <KeyBenefits />
         <PainPoints />
         <FiveModes />
