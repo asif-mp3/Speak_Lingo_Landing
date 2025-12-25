@@ -201,7 +201,7 @@ const FlashCard = ({ point, index }: { point: string, index: number }) => {
                   <Sparkles size={18} className="text-[#F9A825]" />
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-[#6B5439]">Resolved with SpeakLingo</p>
+                  <p className="text-lg font-bold text-[#6B5439]">Resolved with Syping</p>
                   <p className="text-xs font-medium text-[#6B5439]/60 mt-1 italic">Thought-to-screen friction removed.</p>
                 </div>
               </div>
@@ -278,7 +278,7 @@ export default function PainPoints() {
               
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <div>
-                  <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The SpeakLingo Way</h4>
+                  <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The Syping Way</h4>
                   <p className="text-xs font-bold text-[#FFD54F] uppercase tracking-widest mt-1">Unfiltered Cognition</p>
                 </div>
                 <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(250,204,21,0.4)]">
