@@ -76,15 +76,16 @@ export default function FiveModes() {
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight"
-          >
-            Five Modes. Infinite Power. <br />
-            <span className="text-[#EAB308]">One Revolution.</span>
-          </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight"
+            >
+              Five Modes. Infinite Power. <br />
+              <span className="text-[#EAB308]">One Revolution.</span>
+            </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
