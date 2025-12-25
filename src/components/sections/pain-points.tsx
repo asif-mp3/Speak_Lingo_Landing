@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, AlertCircle, CheckCircle2, Mic } from 'lucide-react';
+import { ArrowRight, AlertCircle, Mic, MousePointer2, Sparkles } from 'lucide-react';
 
 const KeyboardAnimation = () => {
-  const [activeKey, setActiveKey] = useState<number | null>(null);
+  const [activeKey, setActiveKey] = useState<string | null>(null);
   const [text, setText] = useState("");
-  const fullText = "Typing is so slow...";
+  const fullText = "Too slow... lost the thought...";
   
-  // Simplified keyboard layout
   const rows = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
@@ -21,136 +20,135 @@ const KeyboardAnimation = () => {
     const interval = setInterval(() => {
       if (currentIndex < fullText.length) {
         const char = fullText[currentIndex].toUpperCase();
-        // Find key index to "press"
-        let foundKey = null;
-        rows.flat().forEach((key, idx) => {
-          if (key === char) foundKey = idx;
-        });
-        
-        setActiveKey(foundKey);
+        setActiveKey(char);
         setText(fullText.slice(0, currentIndex + 1));
-        
-        // Release key after short delay
-        setTimeout(() => setActiveKey(null), 100);
-        
+        setTimeout(() => setActiveKey(null), 80);
         currentIndex++;
       } else {
         setTimeout(() => {
           currentIndex = 0;
           setText("");
-        }, 1000);
+        }, 1500);
       }
-    }, 250);
+    }, 180);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="w-full flex flex-col items-center gap-4">
-      <div className="bg-slate-100 p-2 rounded-lg w-full font-mono text-[10px] text-slate-500 min-h-[40px] border border-slate-200 text-left">
-        {text}<span className="animate-pulse">|</span>
+      <div className="bg-slate-200/50 p-3 rounded-md w-full font-mono text-[11px] text-slate-600 min-h-[50px] border-2 border-slate-300 shadow-inner relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-white/50" />
+        {text}<span className="w-1.5 h-3 bg-slate-400 inline-block ml-1 animate-pulse" />
       </div>
       
-      <div className="flex flex-col gap-1 items-center scale-[0.8] origin-top">
-        {rows.map((row, i) => (
-          <div key={i} className="flex gap-1">
-            {row.map((key, j) => {
-              const globalIdx = rows.slice(0, i).flat().length + j;
-              const isActive = activeKey === globalIdx;
-              return (
+      <div className="bg-slate-300 p-2 rounded-xl border-b-4 border-slate-400 shadow-lg scale-90">
+        <div className="flex flex-col gap-1">
+          {rows.map((row, i) => (
+            <div key={i} className="flex gap-1 justify-center">
+              {row.map((key) => (
                 <motion.div
                   key={key}
                   animate={{ 
-                    y: isActive ? 2 : 0,
-                    backgroundColor: isActive ? "#cbd5e1" : "#f1f5f9",
-                    boxShadow: isActive 
-                      ? "0 0px 0px rgba(0,0,0,0.1)" 
+                    y: activeKey === key ? 2 : 0,
+                    backgroundColor: activeKey === key ? "#cbd5e1" : "#f8fafc",
+                    boxShadow: activeKey === key 
+                      ? "inset 0 1px 2px rgba(0,0,0,0.2)" 
                       : "0 2px 0px rgba(0,0,0,0.1)"
                   }}
-                  className="w-6 h-6 rounded flex items-center justify-center text-[8px] font-bold text-slate-400 border border-slate-200"
+                  className="w-7 h-7 rounded-[4px] flex items-center justify-center text-[10px] font-black text-slate-400 border border-slate-200"
                 >
                   {key}
                 </motion.div>
-              );
-            })}
+              ))}
+            </div>
+          ))}
+          <div className="flex justify-center mt-1">
+            <motion.div 
+              animate={{ y: activeKey === " " ? 2 : 0 }}
+              className="w-32 h-7 bg-white rounded-[4px] border border-slate-200 shadow-[0_2px_0_rgba(0,0,0,0.1)]" 
+            />
           </div>
-        ))}
-        <div className="w-24 h-6 bg-slate-100 rounded border border-slate-200 mt-1 shadow-[0_2px_0_rgba(0,0,0,0.1)]" />
+        </div>
       </div>
     </div>
   );
 };
 
 const SypingFlowAnimation = () => {
-  const [transcript, setTranscript] = useState<string[]>([]);
-  const phrases = ["Instantly capturing thoughts...", "150 words per minute...", "Zero friction flow.", "Thinking at light speed."];
+  const [words, setWords] = useState<string[]>([]);
+  const fullSentence = "Ideas flow as fast as I can think them without any friction at all.";
   
   useEffect(() => {
-    let phraseIdx = 0;
+    const wordList = fullSentence.split(" ");
+    let index = 0;
+    
     const interval = setInterval(() => {
-      setTranscript(prev => {
-        const next = [...prev, phrases[phraseIdx]];
-        if (next.length > 3) return next.slice(1);
+      setWords(prev => {
+        if (index >= wordList.length) {
+          index = 0;
+          return [];
+        }
+        const next = [...prev, wordList[index]];
+        index++;
         return next;
       });
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-    }, 2000);
+    }, 250);
+    
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full flex flex-col gap-6 items-center">
-      {/* Waveform */}
-      <div className="flex items-end gap-1 h-12">
-        {[...Array(15)].map((_, i) => (
+    <div className="w-full relative flex flex-col items-center gap-8">
+      {/* Dynamic Soundwave */}
+      <div className="flex items-center justify-center gap-1.5 h-16 w-full">
+        {[...Array(24)].map((_, i) => (
           <motion.div
             key={i}
             animate={{ 
-              height: [8, 32, 12, 40, 8],
-              opacity: [0.3, 1, 0.5, 1, 0.3]
+              height: [10, Math.random() * 50 + 10, 10],
+              opacity: [0.3, 0.8, 0.3],
+              backgroundColor: ["#FFD54F", "#FACC15", "#FFD54F"]
             }}
             transition={{ 
-              duration: 1.5, 
-              repeat: Infinity, 
-              delay: i * 0.05,
-              ease: "easeInOut" 
+              duration: 0.6 + Math.random() * 0.4, 
+              repeat: Infinity,
+              ease: "easeInOut"
             }}
-            className="w-1.5 bg-[#FFD54F] rounded-full"
+            className="w-1.5 rounded-full"
           />
         ))}
       </div>
 
-      {/* Transcription Box */}
-      <div className="w-full bg-white/5 rounded-2xl p-4 border border-white/10 min-h-[100px] flex flex-col gap-2 overflow-hidden relative">
-        <div className="absolute top-2 right-3">
-          <motion.div
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 1, repeat: Infinity }}
-            className="flex items-center gap-1.5"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-            <span className="text-[8px] font-bold text-white/40 uppercase tracking-widest">Live</span>
-          </motion.div>
+      {/* Floating Thoughts becoming Text */}
+      <div className="w-full min-h-[120px] bg-gradient-to-br from-white/10 to-transparent rounded-[24px] p-6 border border-white/20 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute -top-10 -left-10 w-20 h-20 bg-[#FFD54F]/10 rounded-full blur-2xl" />
+        <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-blue-400/10 rounded-full blur-2xl" />
+        
+        <div className="flex flex-wrap gap-x-2 gap-y-1 relative z-10">
+          <AnimatePresence mode="popLayout">
+            {words.map((word, i) => (
+              <motion.span
+                key={`${word}-${i}`}
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="text-lg font-bold text-white tracking-tight"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </AnimatePresence>
+          <motion.div 
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 0.6, repeat: Infinity }}
+            className="w-2 h-6 bg-[#FFD54F] mt-1 shadow-[0_0_8px_#FFD54F]"
+          />
         </div>
-        
-        <AnimatePresence mode="popLayout">
-          {transcript.map((line, i) => (
-            <motion.p
-              key={`${line}-${i}`}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1 - (transcript.length - 1 - i) * 0.3, x: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="text-xs font-medium text-white/90 text-left"
-            >
-              {line}
-            </motion.p>
-          ))}
-        </AnimatePresence>
-        
-        <motion.div 
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 0.8, repeat: Infinity }}
-          className="w-1.5 h-4 bg-[#FFD54F] mt-1"
-        />
+
+        <div className="absolute top-2 right-4 flex items-center gap-2">
+          <Sparkles size={12} className="text-[#FFD54F] animate-pulse" />
+          <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Real-time AI</span>
+        </div>
       </div>
     </div>
   );
@@ -177,10 +175,7 @@ export default function PainPoints() {
                 "Typing breaks your flow before your ideas land.",
                 "The spark fades while you’re still finding the keys."
               ].map((point, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4"
-                >
+                <div key={i} className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-1">
                     <div className="w-2 h-2 rounded-full bg-[#ef4444]" />
                   </div>
@@ -194,68 +189,76 @@ export default function PainPoints() {
             </button>
           </div>
 
-          <div className="order-1 lg:order-2 relative flex flex-col md:flex-row gap-6 items-center justify-center">
-            {/* The Old Way - Smaller, Gray, Tilted */}
-            <motion.div 
-              whileHover={{ scale: 0.98, rotate: -2 }}
-              className="w-full md:w-5/12 bg-slate-50 rounded-[24px] p-6 border border-slate-200 flex flex-col items-center text-center relative overflow-hidden grayscale opacity-80"
-            >
-              <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-                <AlertCircle className="text-slate-400" size={20} />
-              </div>
-              <h4 className="text-base font-bold text-slate-600 mb-1">The Old Way</h4>
-              <p className="text-[9px] font-bold text-slate-400 mb-6 uppercase tracking-wider">Physical Constraint</p>
-              
-              <div className="w-full mb-4">
-                <KeyboardAnimation />
-              </div>
-              
-              <div className="text-[9px] font-black text-slate-300 uppercase tracking-widest mt-auto pt-4">40 WPM Barrier</div>
-            </motion.div>
-
-            {/* The Syping Way - Larger, Vibrant, Glowing */}
-            <motion.div 
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.05, rotate: 1 }}
-              className="w-full md:w-7/12 bg-[#0f172a] rounded-[32px] p-8 border border-white/10 flex flex-col items-center text-center relative overflow-hidden shadow-2xl shadow-[#FFD54F]/10"
-            >
-              <div className="absolute top-0 right-0 p-4">
-                <div className="px-3 py-1 bg-[#FFD54F] text-[#0f172a] rounded-full text-[9px] font-black uppercase tracking-widest">Live Flow</div>
-              </div>
-              
-              <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#FFD54F]/20">
-                <Mic className="text-[#0f172a]" size={28} />
-              </div>
-              
-              <h4 className="text-2xl font-bold text-white mb-1">The Syping Way</h4>
-              <p className="text-xs font-medium text-[#FFD54F] mb-8 opacity-80 uppercase tracking-[0.2em]">Voice-to-Thought</p>
-              
-              <div className="w-full relative mb-8">
-                <SypingFlowAnimation />
-              </div>
-
-              <div className="space-y-2 w-full px-4">
-                <div className="flex justify-between text-[10px] font-bold text-[#FFD54F] uppercase tracking-widest mb-1">
-                  <span>Input Speed</span>
-                  <span>150+ WPM</span>
+          <div className="order-1 lg:order-2 relative flex flex-col gap-8">
+            {/* The Old Way - Grid Card */}
+            <div className="w-full bg-[#f1f5f9] rounded-[32px] p-8 border-2 border-slate-200 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-1 bg-slate-300" />
+              <div className="flex justify-between items-start mb-8">
+                <div>
+                  <h4 className="text-xl font-black text-slate-800 uppercase tracking-tighter">The Old Way</h4>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Mechanical Bottleneck</p>
                 </div>
-                <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="h-full bg-[#FFD54F] shadow-[0_0_10px_#FFD54F]" 
-                  />
+                <div className="w-10 h-10 bg-white rounded-xl border border-slate-200 flex items-center justify-center shadow-sm">
+                  <MousePointer2 className="text-slate-400 rotate-12" size={20} />
                 </div>
               </div>
-            </motion.div>
-            
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#FFD54F] text-[#0f172a] px-5 py-2 rounded-full font-black text-xs shadow-xl z-10 whitespace-nowrap uppercase tracking-widest border border-[#0f172a]/10">
-              Evolution of Thought
+              
+              <KeyboardAnimation />
+              
+              <div className="mt-8 flex justify-between items-center pt-6 border-t border-slate-200">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Efficiency: 20%</span>
+                <span className="px-3 py-1 bg-slate-200 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-widest italic">Low Bandwidth</span>
+              </div>
+            </div>
+
+            {/* The Syping Way - Futuristic Glass Card */}
+            <div className="w-full bg-[#0f172a] rounded-[32px] p-8 border border-white/10 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] group">
+              {/* Background Glows */}
+              <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#FFD54F]/20 rounded-full blur-[80px] animate-pulse" />
+              <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-blue-500/20 rounded-full blur-[80px] animate-pulse" />
+              
+              <div className="flex justify-between items-start mb-8 relative z-10">
+                <div>
+                  <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The Syping Way</h4>
+                  <p className="text-xs font-bold text-[#FFD54F] uppercase tracking-widest mt-1">Unfiltered Cognition</p>
+                </div>
+                <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(250,204,21,0.4)]">
+                  <Mic className="text-[#0f172a]" size={24} />
+                </div>
+              </div>
+              
+              <SypingFlowAnimation />
+              
+              <div className="mt-8 flex justify-between items-center pt-6 border-t border-white/10 relative z-10">
+                <span className="text-[10px] font-black text-[#FFD54F] uppercase tracking-widest">Efficiency: 98%</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+                  <span className="text-[10px] font-black text-green-400 uppercase tracking-widest">Optimal Flow</span>
+                </div>
+              </div>
+              
+              {/* Floating label */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.4em]">Think. Speak. Done.</p>
+              </div>
+            </div>
+
+            {/* Connecting Label */}
+            <div className="hidden lg:block absolute top-1/2 -left-12 -translate-y-1/2 z-20">
+              <div className="bg-[#FFD54F] text-[#0f172a] px-4 py-8 rounded-full font-black text-[10px] uppercase tracking-widest vertical-text border-2 border-[#0f172a]">
+                The Evolution
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <style jsx>{`
+        .vertical-text {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+      `}</style>
     </section>
   );
 }
