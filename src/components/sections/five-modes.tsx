@@ -163,19 +163,20 @@ export default function FiveModes() {
                    </span>
                 </div>
 
-                <h3 className="text-4xl font-bold text-[#0f172a] mb-6 leading-tight">
-                  {activeMode.headline}
-                </h3>
-                
-                <p className="text-xl text-[#475569] font-medium leading-relaxed mb-10">
-                  {activeMode.description}
-                </p>
+                  <h3 className="text-4xl md:text-[54px] font-bold text-[#0f172a] mb-8 leading-[0.95] tracking-[-0.04em]">
+                    {activeMode.headline}
+                  </h3>
+                  
+                  <p className="text-xl md:text-2xl text-[#475569] font-medium leading-relaxed mb-12 max-w-[600px]">
+                    {activeMode.description}
+                  </p>
 
-                  <div className="bg-slate-50 border-l-4 border-[#EAB308] p-6 rounded-r-2xl mb-12">
-                     <p className="text-lg font-bold italic text-[#0f172a]">
-                       {activeMode.insight}
-                     </p>
-                  </div>
+                    <div className="bg-[#FFFAE7] border-l-[6px] border-[#EAB308] p-8 rounded-r-[32px] mb-12 shadow-sm">
+                       <p className="text-xl font-bold italic text-[#0f172a] leading-relaxed">
+                         “{activeMode.insight}”
+                       </p>
+                    </div>
+
                 </motion.div>
               </AnimatePresence>
 
