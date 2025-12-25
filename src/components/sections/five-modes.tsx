@@ -105,7 +105,8 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <div className="space-y-3">
               <div className="flex gap-2">
                 <span className="text-[#FFD54F]">$</span>
-                <span className="text-white text-sm">speaklingo --deploy "email_campaign"</span>
+                  <span className="text-white text-sm">syping --deploy "email_campaign"</span>
+
               </div>
 
             <div className="flex items-center gap-2 text-green-400 text-xs">
