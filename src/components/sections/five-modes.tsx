@@ -13,52 +13,64 @@ const modes = [
     description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
     insight: "It's not dictation. It's telepathy with a cursor.",
     color: "bg-blue-500",
-    lightColor: "bg-blue-50"
+    lightColor: "bg-blue-50",
+    flashColor: "rgba(59, 130, 246, 0.5)"
   },
   {
     id: 'tasking',
     icon: Terminal,
-    title: "Tasking Mode",
-    headline: "Command Reality.",
-    description: "Say the task. Get the result. \"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\"",
+    title: "Tasking Mode — Command Reality.",
+    headline: "Say the task. Get the result.",
+    description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
     insight: "Your words are execution code for productivity.",
     color: "bg-purple-500",
-    lightColor: "bg-purple-50"
+    lightColor: "bg-purple-50",
+    flashColor: "rgba(168, 85, 247, 0.5)"
   },
   {
     id: 'prompt',
     icon: Brain,
-    title: "Prompt Mode",
-    headline: "Talk like a Human. Think like an AI.",
+    title: "Prompt Mode — Talk Like a Human.",
+    headline: "Think Like an AI.",
     description: "You speak casually. SpeakLingo transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
     insight: "You become the smartest communicator in any system.",
     color: "bg-amber-500",
-    lightColor: "bg-amber-50"
+    lightColor: "bg-amber-50",
+    flashColor: "rgba(245, 158, 11, 0.5)"
   },
   {
     id: 'chat',
     icon: MessageSquare,
-    title: "Chat Mode",
-    headline: "Real Conversation. Zero Keyboard.",
+    title: "Chat Mode — Real Conversation.",
+    headline: "Zero Keyboard.",
     description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
     insight: "It feels less like talking to a screen, more like talking to possibility.",
     color: "bg-green-500",
-    lightColor: "bg-green-50"
+    lightColor: "bg-green-50",
+    flashColor: "rgba(34, 197, 94, 0.5)"
   },
   {
     id: 'grammar',
     icon: Headphones,
-    title: "Grammar Training System",
-    headline: "Learn by Living.",
+    title: "Grammar Training System — Learn by Living.",
+    headline: "Effortless Evolution.",
     description: "Every time you speak, SpeakLingo listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
     insight: "Your daily communication becomes your training ground.",
     color: "bg-red-500",
-    lightColor: "bg-red-50"
+    lightColor: "bg-red-50",
+    flashColor: "rgba(239, 68, 68, 0.5)"
   }
 ];
 
 export default function FiveModes() {
   const [activeMode, setActiveMode] = useState(modes[0]);
+  const [isFlashing, setIsFlashing] = useState(false);
+
+  const handleModeChange = (mode: any) => {
+    setActiveMode(mode);
+    setIsFlashing(true);
+    setTimeout(() => setIsFlashing(false), 300);
+  };
 
   return (
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
@@ -80,7 +92,7 @@ export default function FiveModes() {
             transition={{ delay: 0.1 }}
             className="text-xl text-[#475569] font-medium max-w-[700px] mx-auto"
           >
-            This isn’t an upgrade — it’s an extinction event for typing. Five intelligent modes, one voice-driven engine.
+            This isn’t an upgrade — it’s an extinction event for typing. Five intelligent modes, one voice-driven engine. Every word you speak becomes <span className="text-[#0f172a] font-bold">impact</span>, not input.
           </motion.p>
         </div>
 
@@ -90,7 +102,7 @@ export default function FiveModes() {
             {modes.map((mode) => (
               <button
                 key={mode.id}
-                onClick={() => setActiveMode(mode)}
+                onClick={() => handleModeChange(mode)}
                 className={`w-full text-left p-6 rounded-[24px] transition-all duration-300 flex items-center gap-4 group ${
                   activeMode.id === mode.id 
                     ? 'bg-white shadow-xl shadow-amber-500/5 border border-[#EAB308]/20 translate-x-2' 
@@ -114,6 +126,19 @@ export default function FiveModes() {
 
           {/* Display */}
           <div className="flex-1 w-full bg-white rounded-[40px] border border-[#EAB308]/10 shadow-[0_30px_100px_rgba(234,179,8,0.05)] p-10 min-h-[500px] relative overflow-hidden">
+            <AnimatePresence>
+              {isFlashing && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 z-50 pointer-events-none"
+                  style={{ backgroundColor: activeMode.flashColor }}
+                />
+              )}
+            </AnimatePresence>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeMode.id}
