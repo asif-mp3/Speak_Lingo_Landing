@@ -74,19 +74,20 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <div className="w-2 h-2 rounded-full bg-amber-400" />
             <div className="w-2 h-2 rounded-full bg-green-400" />
           </div>
-          <div className="flex-1 font-mono text-sm text-slate-400 leading-relaxed">
-            <p>The future of writing isn't typing...</p>
-            <div className="flex items-center gap-1 mt-2">
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "auto" }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
-              >
-                It's syping.
-              </motion.span>
+            <div className="flex-1 font-mono text-sm text-slate-400 leading-relaxed">
+              <p>The future of writing isn't typing...</p>
+              <div className="flex items-center gap-1 mt-2">
+                <motion.span
+                  initial={{ width: 0 }}
+                  animate={{ width: "auto" }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                  className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
+                >
+                  It's SpeakLingo.
+                </motion.span>
+              </div>
             </div>
-          </div>
+
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 3, repeat: Infinity }}
