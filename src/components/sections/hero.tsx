@@ -158,7 +158,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-[#0f172a] mb-8 tracking-[-0.04em]"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]"
                 >
                   Kill the <br className="hidden sm:block" />
                   <span className="text-[#EAB308]">Keyboard</span>.
@@ -168,7 +168,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="flex items-center gap-5 mb-10"
+                  className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full"
                 >
                   <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
                   <div className="w-12 h-[1px] bg-[#EAB308]/30" />
