@@ -17,8 +17,8 @@ const Logo = () => (
         </div>
       </div>
       <div className="text-2xl font-black flex tracking-tighter">
-        <span className="text-[#0f172a]">Sy</span>
-        <span className="text-[#F9A825]">ping</span>
+        <span className="text-[#0f172a]">Speak</span>
+        <span className="text-[#F9A825]">Lingo</span>
       </div>
     </div>
 );
