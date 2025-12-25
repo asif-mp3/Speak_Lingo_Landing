@@ -30,30 +30,42 @@ import {
   ArrowDownLeft} from
 'lucide-react';
 
-const Pointer = ({ label, position, arrow = "up-left" }: { label: string, position: string, arrow?: "up-left" | "up-right" | "down-left" | "down-right" }) => {
-  const arrows = {
-    "up-left": <ArrowUpLeft className="text-[#F9A825]" size={20} />,
-    "up-right": <ArrowUpRight className="text-[#F9A825]" size={20} />,
-    "down-left": <ArrowDownLeft className="text-[#F9A825]" size={20} />,
-    "down-right": <ArrowDownRight className="text-[#F9A825]" size={20} />,
-  };
-
+const Pointer = ({ label, position, arrow = "up-left", targetId }: { label: string, position: string, arrow?: "up-left" | "up-right" | "down-left" | "down-right", targetId?: string }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      animate={{ y: [0, -5, 0] }}
-      transition={{ 
-        y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-        opacity: { duration: 0.5 }
-      }}
-      className={`absolute z-20 pointer-events-none hidden lg:flex items-center gap-2 ${position}`}
+      initial={{ opacity: 0, x: position.includes("-left") ? -20 : 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className={`absolute z-20 pointer-events-none hidden xl:flex items-center gap-4 ${position}`}
     >
-      {arrow.includes("left") && arrows[arrow]}
-      <div className="bg-[#0f172a] text-[#FFFAE7] px-3 py-1.5 rounded-xl border-2 border-[#F9A825] shadow-lg whitespace-nowrap">
-        <span className="text-[11px] font-black uppercase tracking-wider">{label}</span>
-      </div>
-      {arrow.includes("right") && arrows[arrow]}
+      {arrow.includes("left") && (
+        <div className="flex flex-col items-center">
+          <div className="bg-[#0f172a] text-[#FFFAE7] px-4 py-2 rounded-2xl border-2 border-[#F9A825] shadow-[8px_8px_0_rgba(249,168,37,0.2)] whitespace-nowrap">
+            <span className="text-[12px] font-black uppercase tracking-wider">{label}</span>
+          </div>
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className={`mt-2 ${arrow === 'down-left' ? 'rotate-45' : 'rotate-[135deg]'}`}
+          >
+            <ArrowRight className="text-[#F9A825]" size={24} />
+          </motion.div>
+        </div>
+      )}
+      {!arrow.includes("left") && (
+        <div className="flex flex-col items-center">
+          <div className="bg-[#0f172a] text-[#FFFAE7] px-4 py-2 rounded-2xl border-2 border-[#F9A825] shadow-[-8px_8px_0_rgba(249,168,37,0.2)] whitespace-nowrap">
+            <span className="text-[12px] font-black uppercase tracking-wider">{label}</span>
+          </div>
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className={`mt-2 ${arrow === 'down-right' ? '-rotate-[135deg]' : '-rotate-45'}`}
+          >
+            <ArrowRight className="text-[#F9A825]" size={24} />
+          </motion.div>
+        </div>
+      )}
     </motion.div>
   );
 };
