@@ -121,18 +121,18 @@ export default function SypingChat() {
 
         <div className="relative h-[1200px] flex items-center justify-center">
           {/* SVG Arrow Layer */}
-          <div className="absolute inset-0 pointer-events-none hidden xl:block">
-            {/* Arrows from Card to Symmetrical Clouds */}
-            <Arrow id="core" d="M 550 400 Q 400 350 280 250" />
-            <Arrow id="live" d="M 850 400 Q 1000 350 1120 250" />
-            <Arrow id="history" d="M 500 600 Q 400 600 250 550" />
-            <Arrow id="stats" d="M 900 600 Q 1000 600 1150 550" />
-            <Arrow id="tools" d="M 550 850 Q 400 900 280 950" />
-            <Arrow id="privacy" d="M 850 850 Q 1000 900 1120 950" />
-          </div>
+            <div className="absolute inset-0 pointer-events-none hidden xl:block">
+              {/* Arrows from Card to Symmetrical Clouds */}
+              <Arrow id="core" d="M 470 400 Q 420 350 384 250" />
+              <Arrow id="live" d="M 930 400 Q 980 350 1016 250" />
+              <Arrow id="history" d="M 470 600 L 384 600" />
+              <Arrow id="stats" d="M 930 600 L 1016 600" />
+              <Arrow id="tools" d="M 470 800 Q 420 850 384 950" />
+              <Arrow id="privacy" d="M 930 800 Q 980 850 1016 950" />
+            </div>
 
-          {/* Main App Card with 3D Phone Frame */}
-          <div className="relative z-10 max-w-[420px] w-full transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-700">
+            {/* Main App Card with 3D Phone Frame */}
+            <div className="relative z-10 max-w-[460px] w-full transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-700">
             {/* Phone Bezel/Frame */}
             <div className="bg-[#1e293b] rounded-[60px] p-[10px] shadow-[40px_60px_100px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.1)_inset] relative group">
               {/* Inner Screen */}
