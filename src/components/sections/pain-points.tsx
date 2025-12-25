@@ -52,15 +52,15 @@ export default function PainPoints() {
               ))}
             </div>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="bg-[#6B5439] hover:bg-[#5A4530] text-white px-8 py-4 rounded-[20px] text-lg font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] flex items-center gap-2"
-            >
-              Break the Friction <ArrowRight size={20} />
-            </motion.button>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-8 py-4 rounded-[20px] text-lg font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] flex items-center gap-2 border border-black"
+              >
+                Break the Friction <ArrowRight size={20} />
+              </motion.button>
           </div>
 
           <div className="order-1 lg:order-2 relative">
