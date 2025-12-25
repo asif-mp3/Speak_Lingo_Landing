@@ -173,7 +173,7 @@ export default function Hero() {
                 Typing was built for machines. You were built for momentum.
               </p>
               <p className="text-lg font-bold text-[#0f172a]">
-                Speak. Watch your thoughts appear.
+                Start Syping. Watch your thoughts appear.
               </p>
             </div>
           </div>
