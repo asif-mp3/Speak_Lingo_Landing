@@ -122,7 +122,18 @@ export default function PrivacyTrust() {
                        <Lock size={40} className="text-blue-400 relative z-10" />
                     </div>
                     <h3 className="text-3xl font-bold text-white">Pure Offline</h3>
-                    <p className="text-slate-400 font-medium italic">"Nothing leaves. Nothing listens."</p>
+                    <p className="text-slate-400 font-medium italic">"Nothing leaves. Nothing listens. Only you remain."</p>
+                    <motion.div 
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      className="h-1 bg-blue-500/50 rounded-full w-full max-w-[200px] mx-auto overflow-hidden"
+                    >
+                      <motion.div 
+                        animate={{ x: [-200, 200] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                        className="w-full h-full bg-blue-400"
+                      />
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
