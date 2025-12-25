@@ -162,6 +162,23 @@ const ModeGraphic = ({ type }: { type: string }) => {
   }
 };
 
+const ModeBadge = ({ type }: { type: string }) => {
+  switch (type) {
+    case 'Cursor':
+      return <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity }} className="absolute -top-1 -right-1 w-3 h-3 bg-brand-navy rounded-full border-2 border-white" />;
+    case 'Terminal':
+      return <div className="absolute -bottom-1 -right-1 w-4 h-2 bg-brand-gold rounded-sm border border-brand-navy" />;
+    case 'AI':
+      return <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ repeat: Infinity }} className="absolute -top-2 -right-2 text-[10px] font-bold text-brand-navy">AI+</motion.div>;
+    case 'Chat':
+      return <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full animate-pulse" />;
+    case 'Education':
+      return <div className="absolute -bottom-2 -left-2 text-xs">✨</div>;
+    default:
+      return null;
+  }
+};
+
 export default function FiveModes() {
   const [activeMode, setActiveMode] = useState(modes[0]);
   const [isFlashing, setIsFlashing] = useState(false);
