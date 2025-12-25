@@ -13,13 +13,7 @@ const BenefitCard = ({ icon: Icon, title, description, delay }: any) => {
   }, [delay]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.6 }}
-      className="group bg-white p-8 rounded-[32px] border border-[#6B5439]/10 hover:border-[#EAB308]/30 transition-all hover:shadow-[0_20px_50px_rgba(234,179,8,0.08)] relative overflow-hidden"
-    >
+    <div className="group bg-white p-8 rounded-[32px] border border-[#6B5439]/10 hover:border-[#EAB308]/30 transition-all hover:shadow-[0_20px_50px_rgba(234,179,8,0.08)] relative overflow-hidden">
       <AnimatePresence>
         {pulse && (
           <motion.div
@@ -48,14 +42,8 @@ const BenefitCard = ({ icon: Icon, title, description, delay }: any) => {
         </button>
       </div>
 
-      <motion.div 
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
-        viewport={{ once: true }}
-        transition={{ delay: delay + 0.3, duration: 0.8 }}
-        className="h-1 bg-gradient-to-r from-[#FFD54F] to-transparent absolute bottom-0 left-0"
-      />
-    </motion.div>
+      <div className="h-1 bg-[#FFD54F] absolute bottom-0 left-0 w-full opacity-20" />
+    </div>
   );
 };
 
@@ -87,27 +75,16 @@ export default function KeyBenefits() {
     <section className="py-24 bg-[#FFFAE7]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
             This Is What <span className="text-[#EAB308]">Instant</span> Feels Like
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-[#475569] font-medium max-w-[600px] mx-auto"
-          >
+          </h2>
+          <p className="text-xl text-[#475569] font-medium max-w-[600px] mx-auto">
             No lag. No limits. Just raw thought — hitting the screen at the speed of your voice.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
+          {benefits.map((benefit, index) => (benefit &&
             <BenefitCard key={index} {...benefit} delay={index * 0.1} />
           ))}
         </div>
