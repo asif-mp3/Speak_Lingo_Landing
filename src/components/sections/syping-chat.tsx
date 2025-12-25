@@ -235,9 +235,9 @@ export default function SypingChat() {
                </div>
             </div>
             
-            <div className="mt-4 text-center">
-              <p className="text-[9px] font-bold text-slate-300">© 2025 Varootabay.ai. All rights reserved.</p>
-            </div>
+              <div className="mt-4 text-center">
+                <p className="text-[9px] font-bold text-slate-300">© 2025 Syping Inc. All rights reserved.</p>
+              </div>
 
           </div>
 
