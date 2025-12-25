@@ -247,33 +247,38 @@ export default function FiveModes() {
             </div>
           </div>
 
-          {/* Body */}
-          <div className="p-10 md:p-16 flex flex-col lg:flex-row gap-12 items-center">
-            <div className="flex-1 space-y-8 z-10 relative">
-              <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
-                {activeMode.headline}
-              </h3>
-              
-              <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed min-h-[100px]">
-                {displayText}
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.8, repeat: Infinity }}
-                  className="inline-block w-[3px] h-6 md:h-8 bg-[#FFD54F] ml-1 align-middle"
-                />
-              </p>
+            {/* Body */}
+            <div className="p-10 md:p-16 flex flex-col lg:flex-row gap-12 items-center min-h-[400px]">
+              <div className="w-full lg:flex-1 space-y-8 z-10 relative order-2 lg:order-1">
+                <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
+                  {activeMode.headline}
+                </h3>
+                
+                <div className="min-h-[120px]">
+                  <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed">
+                    {displayText}
+                    <motion.span
+                      animate={{ opacity: [1, 0] }}
+                      transition={{ duration: 0.8, repeat: Infinity }}
+                      className="inline-block w-[3px] h-6 md:h-8 bg-[#FFD54F] ml-1 align-middle"
+                    />
+                  </p>
+                </div>
 
-              <div className="bg-[#FFFAE7] border-l-[6px] border-[#FFD54F] p-6 rounded-r-2xl shadow-sm inline-block">
-                <p className="text-lg font-bold italic text-[#6B5439] leading-relaxed">
-                  “{activeMode.insight}”
-                </p>
+                <div className="bg-[#FFFAE7] border-l-[6px] border-[#FFD54F] p-6 rounded-r-2xl shadow-sm inline-block">
+                  <p className="text-lg font-bold italic text-[#6B5439] leading-relaxed">
+                    “{activeMode.insight}”
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-[450px] h-[300px] lg:h-[400px] flex items-center justify-center order-1 lg:order-2 relative">
+                <div className="absolute inset-0 bg-slate-50/50 rounded-3xl -m-4 lg:-m-8 border border-slate-100/50" />
+                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                  <ModeGraphic type={activeMode.element} />
+                </div>
               </div>
             </div>
-
-            <div className="w-full lg:w-[400px] h-[300px] flex items-center justify-center">
-              <ModeGraphic type={activeMode.element} />
-            </div>
-          </div>
 
           {/* Footer Overlay - Listening Pill */}
           <div className="absolute bottom-8 right-8 hidden md:block">
