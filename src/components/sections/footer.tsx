@@ -5,14 +5,8 @@ import { Smile } from 'lucide-react';
 
 const Footer = () => {
   const Logo = () => (
-    <div className="flex items-center gap-3">
-      <div className="relative w-10 h-10 bg-[#FFD54F] rounded-[14px] flex items-center justify-center overflow-hidden border border-[#E6A700] shadow-sm">
-        <Smile size={24} className="text-[#0f172a]" />
-      </div>
-      <div className="text-2xl font-black flex tracking-tighter">
-        <span className="text-[#0f172a]">Sy</span>
-        <span className="text-[#F9A825]">ping</span>
-      </div>
+    <div className="flex items-center">
+      <img src="/2.webp" alt="SpeakLingo" className="h-10 w-auto object-contain" />
     </div>
   );
 
