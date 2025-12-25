@@ -187,13 +187,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-4"
+              className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4"
             >
-              <button className="w-full sm:w-auto bg-[#6B5439] hover:bg-[#5A4530] text-white px-10 py-5 rounded-[20px] text-lg font-bold transition-all shadow-[0_6px_0_rgb(60,45,30)] hover:shadow-[0_8px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[6px] flex items-center justify-center gap-2">
+              <button className="w-full sm:w-auto bg-[#6B5439] hover:bg-[#5A4530] text-white px-8 py-4 rounded-[20px] text-lg font-bold transition-all shadow-[0_6px_0_rgb(60,45,30)] hover:shadow-[0_8px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[6px] flex items-center justify-center gap-2">
                 Start Syping Now <ArrowRight size={20} />
               </button>
-              <button className="w-full sm:w-auto bg-white border-2 border-[#6B5439]/10 text-[#6B5439] px-10 py-5 rounded-[20px] text-lg font-bold transition-all hover:bg-[#FFFAE7] flex items-center justify-center gap-2">
-                <Play size={18} fill="currentColor" /> Watch It Replace Typing
+              <button className="w-full sm:w-auto bg-white border-2 border-[#6B5439]/10 text-[#6B5439] px-8 py-4 rounded-[20px] text-lg font-bold transition-all hover:bg-[#FFFAE7] flex items-center justify-center gap-2">
+                <Play size={18} fill="currentColor" /> Watch Demo
               </button>
             </motion.div>
 
@@ -201,9 +201,9 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-12 space-y-2"
+              className="mt-12 space-y-2 text-center lg:text-left"
             >
-              <p className="text-sm font-bold text-[#475569]/60 uppercase tracking-widest">
+              <p className="text-xs font-bold text-[#475569]/60 uppercase tracking-widest">
                 Typing was built for machines. You were built for momentum.
               </p>
               <p className="text-lg font-bold text-[#0f172a]">
