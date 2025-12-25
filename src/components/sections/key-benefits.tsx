@@ -64,11 +64,11 @@ export default function KeyBenefits() {
       title: "Offline. Private. Yours.",
       description: "No servers. No eavesdropping. Just your voice — fully owned.",
     },
-      {
-        icon: Activity,
-        title: "Adapts to You",
-        description: "Speak normally, task instantly, chat naturally. Every mode bends to your rhythm.",
-      },
+        {
+          icon: Activity,
+          title: "Adapts to You",
+          description: "Sype normally, task instantly, chat naturally. Every mode bends to your rhythm.",
+        },
 
   ];
 
