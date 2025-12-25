@@ -56,22 +56,25 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`p-10 rounded-[40px] ${t.color} border border-slate-100 flex flex-col justify-between group hover:scale-[1.02] transition-transform`}
-            >
-              <div>
-                <Quote size={40} className="text-[#EAB308]/40 mb-6" />
-                <p className="text-2xl font-bold text-[#0f172a] leading-tight mb-8">
-                  “{t.quote}”
-                </p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-10 mb-24">
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.8 }}
+                className={`p-12 rounded-[48px] ${t.color} border border-slate-100/50 flex flex-col justify-between group hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1`}
+              >
+                <div>
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm border border-slate-50">
+                    <Quote size={24} className="text-[#EAB308]" />
+                  </div>
+                  <p className="text-[26px] md:text-[32px] font-bold text-[#0f172a] leading-[1.1] mb-10 tracking-tight">
+                    “{t.quote}”
+                  </p>
+                </div>
+
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-[#0f172a]">{t.author}</h4>
