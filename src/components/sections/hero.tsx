@@ -140,16 +140,17 @@ export default function Hero() {
               </div>
 
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]">
-              Kill the <br className="hidden sm:block" />
-              <span className="text-[#EAB308]">Keyboard</span>.
-            </h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]">
+                Kill the <br className="hidden sm:block" />
+                <span className="text-[#F9A825]">Keyboard</span>.
+              </h1>
 
-              <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
-                <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
-                <div className="w-12 h-[1px] bg-[#EAB308]/30" />
-                <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Speaking...</span>
-              </div>
+                <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
+                  <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
+                  <div className="w-12 h-[1px] bg-[#F9A825]/30" />
+                  <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Speaking...</span>
+                </div>
+
 
               <p className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]">
                 Typing slows thought. <span className="text-[#0f172a] font-bold">Syping</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
