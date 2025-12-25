@@ -111,7 +111,7 @@ export default function Navigation() {
                 setActive={setActiveMenu} 
                 index={1} 
               />
-                <a href="#pricing" className="px-6 py-6 text-[15px] font-bold text-[#475569] hover:text-[#0f172a] transition-colors">Pricing</a>
+                  <a href="#pricing" className="px-4 py-6 text-[15px] font-bold text-[#475569] hover:text-[#0f172a] transition-colors">Pricing</a>
             </div>
           </div>
 
