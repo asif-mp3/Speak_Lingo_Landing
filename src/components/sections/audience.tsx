@@ -21,7 +21,7 @@ const apps = [
     icon: Slack, 
     color: '#4A154B',
       title: "Instant Collaboration",
-      fullText: "Hey team, the production build is ready. I've verified the SpeakLingo latency and it's practically zero. Let's ship it!"
+      fullText: "Hey team, the production build is ready. I've verified the Syping latency and it's practically zero. Let's ship it!"
     },
 
   { 
@@ -138,7 +138,7 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
           <div className="h-10 bg-[#2c2c2c] border-b border-white/5 flex items-center px-4 justify-between">
               <div className="flex items-center gap-2">
                 <Framer size={14} className="text-[#F24E1E]" />
-                <span className="text-[10px] font-bold text-white/60">SpeakLingo_V2_Main</span>
+                <span className="text-[10px] font-bold text-white/60">Syping_V2_Main</span>
               </div>
 
             <div className="flex -space-x-2">
@@ -195,7 +195,7 @@ export default function Audience() {
             <span className="text-[#F9A825]">Every App. Everywhere.</span>
           </h2>
             <p className="text-xl text-slate-600 font-medium max-w-[700px] mx-auto">
-              SpeakLingo doesn't just work in one place. It works in <span className="text-[#0f172a] font-bold italic underline decoration-[#FFD54F] decoration-4">your</span> places.
+              Syping doesn't just work in one place. It works in <span className="text-[#0f172a] font-bold italic underline decoration-[#FFD54F] decoration-4">your</span> places.
             </p>
 
         </div>
