@@ -234,7 +234,7 @@ export default function FiveModes() {
           </div>
 
           {/* Display */}
-          <div className="flex-1 w-full bg-white rounded-[40px] border border-[#EAB308]/10 shadow-[0_30px_100px_rgba(234,179,8,0.05)] p-10 min-h-[500px] relative overflow-hidden">
+          <div className="flex-1 w-full bg-white rounded-[40px] border border-brand-gold/10 shadow-[0_30px_100px_rgba(255,213,79,0.05)] p-10 min-h-[500px] relative overflow-hidden">
             <AnimatePresence>
               {isFlashing && (
                 <motion.div
@@ -258,25 +258,27 @@ export default function FiveModes() {
                 className="relative z-10"
               >
                 <div className={`inline-flex items-center gap-2 px-4 py-2 ${activeMode.lightColor} rounded-full mb-8`}>
-                   <activeMode.icon size={18} className={activeMode.color.replace('bg-', 'text-')} />
-                   <span className={`text-xs font-black uppercase tracking-widest ${activeMode.color.replace('bg-', 'text-')}`}>
+                   <activeMode.icon size={18} className={activeMode.id === 'prompt' ? 'text-white' : activeMode.color.replace('bg-', 'text-')} />
+                   <span className={`text-xs font-black uppercase tracking-widest ${activeMode.id === 'prompt' ? 'text-white' : activeMode.color.replace('bg-', 'text-')}`}>
                      {activeMode.title}
                    </span>
                 </div>
 
-                  <h3 className="text-4xl md:text-[54px] font-bold text-[#0f172a] mb-8 leading-[0.95] tracking-[-0.04em]">
+                  <h3 className="text-4xl md:text-[54px] font-bold text-brand-navy mb-8 leading-[0.95] tracking-[-0.04em]">
                     {activeMode.headline}
                   </h3>
                   
-                  <p className="text-xl md:text-2xl text-[#475569] font-medium leading-relaxed mb-12 max-w-[600px]">
+                  <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed mb-12 max-w-[600px]">
                     {activeMode.description}
                   </p>
 
-                    <div className="bg-[#FFFAE7] border-l-[6px] border-[#EAB308] p-8 rounded-r-[32px] mb-12 shadow-sm">
-                       <p className="text-xl font-bold italic text-[#0f172a] leading-relaxed">
+                    <div className="bg-brand-cream border-l-[6px] border-brand-gold p-8 rounded-r-[32px] mb-12 shadow-sm">
+                       <p className="text-xl font-bold italic text-brand-navy leading-relaxed">
                          “{activeMode.insight}”
                        </p>
                     </div>
+
+                    <ModeGraphic type={activeMode.element} />
 
                 </motion.div>
               </AnimatePresence>
@@ -297,7 +299,7 @@ export default function FiveModes() {
                    stroke="currentColor"
                    strokeWidth="20"
                    fill="none"
-                   className="text-slate-900"
+                   className="text-brand-navy"
                  />
                </svg>
             </div>
@@ -305,7 +307,7 @@ export default function FiveModes() {
         </div>
 
         <div className="mt-20 text-center">
-          <p className="text-2xl font-bold text-[#0f172a] mb-4">You’re not just faster. You’re frictionless.</p>
+          <p className="text-2xl font-bold text-brand-navy mb-4">You’re not just faster. You’re frictionless.</p>
         </div>
       </div>
     </section>
