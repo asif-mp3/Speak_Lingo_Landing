@@ -234,10 +234,11 @@ export default function FiveModes() {
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                  <div className={`w-14 h-14 rounded-[22px] flex items-center justify-center shrink-0 transition-all duration-500 ${
+                  <div className={`w-14 h-14 rounded-[22px] flex items-center justify-center shrink-0 transition-all duration-500 relative ${
                     activeMode.id === mode.id ? mode.color + ' scale-110 rotate-3' : 'bg-white border border-slate-100 group-hover:border-slate-200'
                   }`}>
                     <mode.icon size={26} className={activeMode.id === mode.id ? 'text-white' : 'text-slate-400'} />
+                    <ModeBadge type={mode.element} />
                   </div>
                   <div>
                     <h4 className={`text-lg font-bold transition-colors duration-300 ${activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-500 group-hover:text-slate-700'}`}>
