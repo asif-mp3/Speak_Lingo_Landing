@@ -175,28 +175,30 @@ export default function Hero() {
                   <span className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter">Start Syping...</span>
                 </motion.div>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25, duration: 0.8 }}
-                  className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]"
-                >
-                  Typing slows thought. <span className="text-[#0f172a] font-bold">SpeakLingo</span> replaces keys with <span className="text-[#EAB308] font-bold">Syping</span>—so your ideas flow from voice to screen in real time.
-                </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25, duration: 0.8 }}
+                    className="text-base md:text-lg font-medium text-[#64748b] mb-10 leading-relaxed max-w-[500px]"
+                  >
+                    Typing slows thought. <span className="text-[#0f172a] font-bold">Syping</span> replaces keys with voice—so your ideas flow from thought to screen in real time.
+                  </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-            >
-              <button className="w-full sm:w-auto bg-[#6B5439] hover:bg-[#5A4530] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(60,45,30)] hover:shadow-[0_5px_0_rgb(60,45,30)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-[#5A4530]">
-                Start Syping Now <ArrowRight size={18} />
-              </button>
-              <button className="w-full sm:w-auto bg-white border border-[#6B5439]/20 text-[#6B5439] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-[#FFFAE7] flex items-center justify-center gap-2">
-                <Play size={16} fill="currentColor" /> Watch Demo
-              </button>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+              >
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                  <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
+                    Download for Windows <ArrowRight size={18} />
+                  </button>
+                  <button className="w-full sm:w-auto bg-white border border-[#0f172a]/20 text-[#0f172a] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-2 shadow-sm">
+                    Download for Mac
+                  </button>
+                </div>
+              </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
