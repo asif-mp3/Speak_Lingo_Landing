@@ -59,24 +59,27 @@ export default function PrivacyTrust() {
                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100">
                     <item.icon size={24} className="text-[#6B5439]" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-[#0f172a]">{item.title}</h4>
-                    <p className="text-sm font-medium text-[#475569]">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+                    <div>
+                      <h4 className="font-bold text-[#0f172a]">{item.title}</h4>
+                      <p className="text-sm font-medium text-[#475569]">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="p-6 bg-[#FFFAE7] border-l-4 border-[#EAB308] rounded-r-2xl"
+              >
+                <p className="text-lg font-bold italic text-[#6B5439]">
+                  "When you go offline in SpeakLingo, you vanish — by design."
+                </p>
+              </motion.div>
             </div>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="group flex items-center gap-2 text-xl font-bold text-[#6B5439] hover:text-[#EAB308] transition-colors"
-            >
-              Try Pure Offline Mode <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </div>
 
           <div className="relative">
             <motion.div
