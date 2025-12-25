@@ -22,19 +22,58 @@ export default function PrivacyTrust() {
               <span className="text-[#F9A825]">It’s a Switch.</span>
             </h2>
 
-              <div className="p-5 bg-[#FFFAE7] border-l-4 border-[#F9A825] rounded-r-2xl max-w-[480px]">
+            <p className="text-lg text-[#475569] font-medium mb-10 leading-relaxed max-w-[480px]">
+              Tap one button — and Syping goes <span className="text-[#0f172a] font-bold">Pure Offline.</span> No listening. No sending. No background anything.
+            </p>
 
-                <button
-                  onClick={() => setIsOffline(!isOffline)}
-                  className={`relative w-16 h-8 rounded-full transition-colors duration-500 flex items-center px-1 ${
-                    isOffline ? 'bg-blue-600' : 'bg-[#F9A825]'
-                  }`}
-                >
+            <div className="grid gap-5 mb-10">
+              {[
+                { icon: WifiOff, title: "Pure Offline Mode", desc: "No cloud. No sync. No data movement — total silence." },
+                { icon: Lock, title: "Your Control, Always", desc: "You decide when it listens, when it learns, and when it stops." },
+                { icon: EyeOff, title: "No Hidden Channels", desc: "No analytics, no ghost uploads. Your voice never leaves your device." }
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100">
+                    <item.icon size={20} className="text-[#6B5439]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0f172a] text-sm">{item.title}</h4>
+                    <p className="text-[13px] font-medium text-[#475569] leading-snug">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F9A825]/20 to-transparent" />
+            <div className="p-5 bg-[#FFFAE7] border-l-4 border-[#F9A825] rounded-r-2xl max-w-[480px]">
+              <p className="text-base font-bold italic text-[#6B5439]">
+                "When you go offline in Syping, you vanish — by design."
+              </p>
+            </div>
+          </div>
 
-                         <WifiOff size={32} className="text-[#F9A825] relative z-10" />
-
+          <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto">
+            <div
+              className={`rounded-[32px] p-8 border-2 min-h-[400px] flex flex-col items-center justify-center text-center shadow-2xl relative transition-colors duration-700 overflow-hidden ${
+                isOffline ? 'bg-[#0f172a] border-[#1e293b]' : 'bg-[#FFFAE7] border-[#F9A825]'
+              }`}
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F9A825]/20 to-transparent" />
+              <AnimatePresence mode="wait">
+                {!isOffline ? (
+                  <motion.div
+                    key="online"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    className="space-y-6"
+                  >
+                    <div className="w-20 h-20 bg-[#FFD54F]/20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                       <motion.div 
+                         animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
+                         transition={{ duration: 2, repeat: Infinity }}
+                         className="absolute inset-0 bg-[#FFD54F] rounded-full"
+                       />
+                       <WifiOff size={32} className="text-[#F9A825] relative z-10" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#6B5439]">Connected Mode</h3>
                     <p className="text-[#6B5439]/70 font-medium text-sm">Standard processing enabled.</p>
@@ -72,7 +111,7 @@ export default function PrivacyTrust() {
                 <button
                   onClick={() => setIsOffline(!isOffline)}
                   className={`relative w-16 h-8 rounded-full transition-colors duration-500 flex items-center px-1 ${
-                    isOffline ? 'bg-blue-600' : 'bg-[#EAB308]'
+                    isOffline ? 'bg-blue-600' : 'bg-[#F9A825]'
                   }`}
                 >
                   <motion.div
