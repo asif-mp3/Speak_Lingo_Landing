@@ -194,9 +194,10 @@ export default function Audience() {
             Universal Flow. <br />
             <span className="text-[#F9A825]">Every App. Everywhere.</span>
           </h2>
-          <p className="text-xl text-slate-600 font-medium max-w-[700px] mx-auto">
-            Syping doesn't just work in one place. It works in <span className="text-[#0f172a] font-bold italic underline decoration-[#FFD54F] decoration-4">your</span> places.
-          </p>
+            <p className="text-xl text-slate-600 font-medium max-w-[700px] mx-auto">
+              SpeakLingo doesn't just work in one place. It works in <span className="text-[#0f172a] font-bold italic underline decoration-[#FFD54F] decoration-4">your</span> places.
+            </p>
+
         </div>
 
         {/* Tab Navigation */}
