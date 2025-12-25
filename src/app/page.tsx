@@ -19,9 +19,9 @@ export default function Home() {
         <FiveModes />
         <SypingChat />
         <PrivacyTrust />
-        <Testimonials />
-        <FinalCTA />
         <Audience />
+        <FinalCTA />
+        <Testimonials />
       </main>
       <Footer />
     </div>
