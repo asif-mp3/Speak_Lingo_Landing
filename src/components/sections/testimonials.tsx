@@ -53,9 +53,10 @@ export default function Testimonials() {
               className={`p-5 rounded-[20px] ${t.color} border border-slate-100/80 flex flex-col justify-between group hover:shadow-[0_10px_20px_rgba(0,0,0,0.02)] transition-all duration-300`}
             >
               <div>
-                <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center mb-3 shadow-sm border border-slate-50">
-                  <Quote size={12} className="text-[#EAB308]" />
-                </div>
+                  <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center mb-3 shadow-sm border border-slate-50">
+                    <Quote size={12} className="text-[#F9A825]" />
+                  </div>
+
                 <p className="text-sm md:text-[15px] font-bold text-[#0f172a] leading-snug mb-4 tracking-tight">
                   “{t.quote}”
                 </p>
