@@ -17,7 +17,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "SpeakLingo - Kill the Keyboard",
+  title: "Syping - Kill the Keyboard",
   description: "Syping: Speak + Type. The faster way to write.",
 };
 

@@ -25,7 +25,7 @@ const SpeedComparison = () => {
           </div>
           
             <p className="text-[17px] md:text-[22px] font-bold text-[#475569]/70 leading-[1.3] max-w-[650px] tracking-tight mb-12">
-              Stop memorizing vocabulary lists. SpeakLingo's AI-driven interface creates an immersive environment where learning happens naturally.
+              Stop memorizing vocabulary lists. Syping's AI-driven interface creates an immersive environment where learning happens naturally.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[900px]">
@@ -73,7 +73,7 @@ const SpeedComparison = () => {
             </div>
           </div>
 
-          {/* SpeakLingo Card */}
+          {/* Syping Card */}
           <div className="relative group rounded-[48px] overflow-hidden h-[440px] bg-[#0f172a] border-[2px] border-[#FFD54F]/20 shadow-2xl flex items-center justify-center">
             {/* Background Atmosphere */}
             <motion.div 
@@ -83,7 +83,7 @@ const SpeedComparison = () => {
             />
             
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-12 w-full">
-              <span className="font-sans text-[10px] font-black text-[#FFD54F]/40 uppercase tracking-[0.25em] mb-8">SpeakLingo Experience</span>
+              <span className="font-sans text-[10px] font-black text-[#FFD54F]/40 uppercase tracking-[0.25em] mb-8">Syping Experience</span>
               <div className="text-[90px] md:text-[130px] text-[#FFD54F] font-bold leading-none mb-8 tracking-tight drop-shadow-[0_0_15px_rgba(255,213,79,0.1)]">
                 3 <span className="text-[36px] font-medium text-[#FFD54F]/40 tracking-normal">mo</span>
               </div>

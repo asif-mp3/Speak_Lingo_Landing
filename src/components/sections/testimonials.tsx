@@ -18,7 +18,7 @@ const testimonials = [
   color: "bg-amber-50"
 },
 {
-  quote: "Every tool claims to boost productivity. SpeakLingo changed my relationship with thinking itself.",
+  quote: "Every tool claims to boost productivity. Syping changed my relationship with thinking itself.",
   author: "Devi R.",
   role: "Product Designer",
   color: "bg-purple-50"
@@ -52,7 +52,7 @@ export default function Testimonials() {
             transition={{ delay: 0.1 }}
             className="text-xl text-[#475569] font-medium max-w-[700px] mx-auto">
 
-            Before SpeakLingo, they hesitated. Now, their ideas move at the speed of instinct.
+            Before Syping, they hesitated. Now, their ideas move at the speed of instinct.
           </motion.p>
         </div>
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SpeakLingoShowcase = () => {
+const SypingShowcase = () => {
   const languageCards = [
     { name: "Spanish", level: "Intermediate", progress: 65, flag: "🇪🇸" },
     { name: "French", level: "Beginner", progress: 30, flag: "🇫🇷" },
@@ -35,14 +35,14 @@ const SpeakLingoShowcase = () => {
                     Your voice, <br /><span className="text-[#FFD54F]">in any language</span>
                   </h2>
                   <p className="text-[#cbd5e1]/80 text-base md:text-xl max-w-[520px] leading-relaxed mb-10 font-medium tracking-tight">
-                    Sype in Japanese, French, or Spanish as naturally as you think. <span className="text-white font-bold">SpeakLingo</span> adapts to your accent and your rhythm.
+                    Sype in Japanese, French, or Spanish as naturally as you think. <span className="text-white font-bold">Syping</span> adapts to your accent and your rhythm.
                   </p>
 
               </div>
 
 
 
-          {/* CURVED PATH ANIMATION (from Wispr style) - Re-integrated with SpeakLingo Cards */}
+          {/* CURVED PATH ANIMATION (from Wispr style) - Re-integrated with Syping Cards */}
           <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
             <div className="relative w-full h-full">
               <motion.div 
@@ -119,4 +119,4 @@ const SpeakLingoShowcase = () => {
   );
 };
 
-export default SpeakLingoShowcase;
+export default SypingShowcase;

@@ -39,7 +39,7 @@ export default function PrivacyTrust() {
                 transition={{ delay: 0.1 }}
                 className="text-lg text-[#475569] font-medium mb-10 leading-relaxed max-w-[480px]"
               >
-                Tap one button — and SpeakLingo goes <span className="text-[#0f172a] font-bold">Pure Offline.</span> No listening. No sending. No background anything.
+                Tap one button — and Syping goes <span className="text-[#0f172a] font-bold">Pure Offline.</span> No listening. No sending. No background anything.
               </motion.p>
 
               <div className="grid gap-5 mb-10">
@@ -75,7 +75,7 @@ export default function PrivacyTrust() {
                   className="p-5 bg-[#FFFAE7] border-l-4 border-[#EAB308] rounded-r-2xl max-w-[480px]"
                 >
                   <p className="text-base font-bold italic text-[#6B5439]">
-                    "When you go offline in SpeakLingo, you vanish — by design."
+                    "When you go offline in Syping, you vanish — by design."
                   </p>
                 </motion.div>
               </div>

@@ -147,7 +147,7 @@ export default function SypingChat() {
                   <Mic size={20} className="text-[#6B5439]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#0f172a] text-sm tracking-tight">SpeakLingo Flow</h4>
+                  <h4 className="font-bold text-[#0f172a] text-sm tracking-tight">Syping Flow</h4>
                   <p className="text-[9px] font-black uppercase tracking-widest text-green-600">Active Session</p>
                 </div>
               </div>

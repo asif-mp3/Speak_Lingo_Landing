@@ -91,7 +91,7 @@ const AIEditingFeatures = () => {
                <h2 className="text-[48px] md:text-[72px] font-bold leading-[0.85] text-[#0f172a] tracking-tight">
                   The interface<br /><span className="text-[#6B5439]">is the coach.</span>
                </h2>
-               {/* Sun doodle re-integrated from Wispr style but matching SpeakLingo */}
+               {/* Sun doodle re-integrated from Wispr style but matching Syping */}
                <motion.div 
                  animate={{ rotate: 360 }}
                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
