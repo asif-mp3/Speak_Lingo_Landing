@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins, Newsreader } from "next/font/google";
+import { Space_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  variable: "--font-space-grotesk",
 });
 
-const newsreader = Newsreader({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
+  weight: ["400"],
+  variable: "--font-instrument-serif",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${instrumentSerif.variable}`}>
       <body className="antialiased">
         <Script
           id="orchids-browser-logs"
