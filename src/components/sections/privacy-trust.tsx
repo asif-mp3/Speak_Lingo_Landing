@@ -81,14 +81,15 @@ export default function PrivacyTrust() {
             </div>
 
 
-          <div className="relative">
-            <motion.div
-              animate={{ 
-                backgroundColor: isOffline ? "#0f172a" : "#FFFAE7",
-                borderColor: isOffline ? "#1e293b" : "#EAB308"
-              }}
-              className="rounded-[48px] p-12 border-2 aspect-square flex flex-col items-center justify-center text-center shadow-2xl relative transition-colors duration-700"
-            >
+            <div className="relative">
+              <motion.div
+                animate={{ 
+                  backgroundColor: isOffline ? "#0f172a" : "#FFFAE7",
+                  borderColor: isOffline ? "#1e293b" : "#EAB308"
+                }}
+                className="rounded-[40px] p-10 border-2 min-h-[480px] flex flex-col items-center justify-center text-center shadow-2xl relative transition-colors duration-700 overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EAB308]/20 to-transparent" />
               <AnimatePresence mode="wait">
                 {!isOffline ? (
                   <motion.div
