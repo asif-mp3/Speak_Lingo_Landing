@@ -5,21 +5,8 @@ import { ChevronDown, Menu, X, Globe, Search, BookOpen, Layers, Users, Zap, Mess
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Logo = () => (
-    <div className="flex items-center gap-3">
-      <div className="relative w-10 h-10 bg-[#FFD54F] rounded-[14px] flex items-center justify-center overflow-hidden border border-[#E6A700] shadow-[0_4px_12px_rgba(255,213,79,0.25)]">
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#FFD54F] rotate-45 border-r border-b border-[#E6A700]"></div>
-        <div className="flex flex-col items-center gap-0.5 relative z-10">
-          <div className="flex gap-1.5">
-            <div className="w-1 h-1 bg-[#0f172a] rounded-full animate-pulse"></div>
-            <div className="w-1 h-1 bg-[#0f172a] rounded-full animate-pulse"></div>
-          </div>
-          <div className="w-4 h-2 border-b-2 border-[#0f172a] rounded-full"></div>
-        </div>
-      </div>
-      <div className="text-2xl font-black flex tracking-tighter">
-        <span className="text-[#0f172a]">Sy</span>
-        <span className="text-[#F9A825]">ping</span>
-      </div>
+    <div className="flex items-center">
+      <img src="/2.webp" alt="SpeakLingo" className="h-10 w-auto object-contain" />
     </div>
 );
 
