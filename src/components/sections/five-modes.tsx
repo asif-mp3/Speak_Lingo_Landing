@@ -291,7 +291,8 @@ export default function FiveModes() {
             <div className="lg:col-span-7 space-y-8 relative z-10">
                 <div className="inline-flex items-center gap-2 bg-[#FFFAE7] px-4 py-2 rounded-full border border-[#FFD54F]/20">
                   <activeMode.icon size={14} className="text-[#F9A825]" />
-                  <span className="text-[10px] font-black text-[#6B5439] tracking-widest uppercase">SPEAKLINGO_{activeMode.id}</span>
+                    <span className="text-[10px] font-black text-[#6B5439] tracking-widest uppercase">SYPING_{activeMode.id}</span>
+
                 </div>
 
 
