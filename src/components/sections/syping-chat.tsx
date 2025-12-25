@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, Send, MoreHorizontal, User } from 'lucide-react';
+import { Mic, Send, MoreHorizontal, User, Zap, MessageSquare, ArrowRight } from 'lucide-react';
 
 const TypingBubble = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayText, setDisplayText] = useState("");
