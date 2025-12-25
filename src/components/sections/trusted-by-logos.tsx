@@ -40,9 +40,9 @@ export default function TrustedByLogos() {
       <motion.div 
         animate={{ rotate: [0, 10, -10, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute -bottom-8 right-[15%] w-20 h-20 bg-[#FFD54F] rounded-[24px] z-20 flex items-center justify-center border-[6px] border-[#0f172a] shadow-xl"
+        className="absolute -bottom-8 right-[15%] w-20 h-20 bg-[#FFD54F] rounded-[24px] z-20 flex items-center justify-center border-[6px] border-[#0f172a] shadow-xl overflow-hidden p-3"
       >
-         <div className="w-8 h-4 border-b-4 border-[#0f172a] rounded-full"></div>
+         <img src="/1.webp" alt="Logo" className="w-full h-full object-contain" />
       </motion.div>
     </section>
   );
