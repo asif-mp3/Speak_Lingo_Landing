@@ -2,32 +2,32 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mic, 
-  Moon, 
-  Minus, 
-  ChevronLeft, 
-  ChevronRight, 
-  ChevronUp, 
-  ChevronDown, 
-  Copy, 
-  Trash2, 
-  BarChart2, 
-  Trophy, 
-  MessageSquare, 
-  Terminal, 
-  CheckSquare, 
-  Settings, 
-  Keyboard, 
-  Zap, 
-  Shield, 
+import {
+  Mic,
+  Moon,
+  Minus,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  ChevronDown,
+  Copy,
+  Trash2,
+  BarChart2,
+  Trophy,
+  MessageSquare,
+  Terminal,
+  CheckSquare,
+  Settings,
+  Keyboard,
+  Zap,
+  Shield,
   Info,
   Smile,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight } from
+'lucide-react';
 
-const StatCard = ({ label, value, unit = "", icon: Icon }: any) => (
-  <div className="bg-white/80 p-3 rounded-xl border border-black/5 shadow-sm">
+const StatCard = ({ label, value, unit = "", icon: Icon }: any) =>
+<div className="bg-white/80 p-3 rounded-xl border border-black/5 shadow-sm">
     <div className="flex justify-between items-start mb-1">
       <div className="text-[10px] font-bold text-slate-500 uppercase tracking-tight">{label}</div>
       {Icon && <Icon size={12} className="text-slate-400" />}
@@ -36,15 +36,15 @@ const StatCard = ({ label, value, unit = "", icon: Icon }: any) => (
       <span className="text-sm font-black text-[#0f172a]">{value}</span>
       {unit && <span className="text-[10px] font-bold text-slate-400">{unit}</span>}
     </div>
-  </div>
-);
+  </div>;
 
-const ActionButton = ({ icon: Icon, label, active = false }: any) => (
-  <button className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl transition-all ${active ? 'bg-[#FFD54F] shadow-[0_4px_0_rgb(230,167,0)] border border-black/10' : 'bg-[#FFD54F]/60 hover:bg-[#FFD54F] border border-black/5'}`}>
+
+const ActionButton = ({ icon: Icon, label, active = false }: any) =>
+<button className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl transition-all ${active ? 'bg-[#FFD54F] shadow-[0_4px_0_rgb(230,167,0)] border border-black/10' : 'bg-[#FFD54F]/60 hover:bg-[#FFD54F] border border-black/5'}`}>
     <Icon size={18} className="text-[#6B5439]" />
     <span className="text-[11px] font-bold text-[#6B5439]">{label}</span>
-  </button>
-);
+  </button>;
+
 
 export default function SypingChat() {
   return (
@@ -105,23 +105,23 @@ export default function SypingChat() {
               <div className="flex items-center gap-2">
                 <span className="text-[11px] font-bold text-slate-500">Clarity :</span>
                 <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className={`w-1.5 h-1.5 rounded-full ${i <= 5 ? 'bg-slate-200' : 'bg-slate-100'}`} />
-                  ))}
+                  {[1, 2, 3, 4, 5].map((i) =>
+                  <div key={i} className={`w-1.5 h-1.5 rounded-full ${i <= 5 ? 'bg-slate-200' : 'bg-slate-100'}`} />
+                  )}
                 </div>
               </div>
             </div>
 
             {/* Waveform */}
             <div className="bg-[#FFD54F] h-8 rounded-full flex items-center justify-center gap-1 px-4 mb-2 shadow-inner border border-black/5">
-              {Array.from({ length: 40 }).map((_, i) => (
-                <motion.div 
-                  key={i}
-                  animate={{ height: [4, Math.random() * 12 + 4, 4] }}
-                  transition={{ duration: 1 + Math.random(), repeat: Infinity }}
-                  className="w-1 bg-white/80 rounded-full"
-                />
-              ))}
+              {Array.from({ length: 40 }).map((_, i) =>
+              <motion.div
+                key={i}
+                animate={{ height: [4, Math.random() * 12 + 4, 4] }}
+                transition={{ duration: 1 + Math.random(), repeat: Infinity }}
+                className="w-1 bg-white/80 rounded-full" />
+
+              )}
             </div>
             
             <div className="text-center mb-6">
@@ -266,11 +266,11 @@ export default function SypingChat() {
 
         <div className="mt-20 flex flex-col items-center gap-6">
           <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em]">Ready to upgrade your workflow?</p>
-          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3">
-            Download Syping for Desktop <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+          <button className="group bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-[0_6px_0_rgb(0,0,0)] hover:shadow-[0_8px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[6px] border border-black flex items-center gap-3">Download Sypibng for Desktop 
+            <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
