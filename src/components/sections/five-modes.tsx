@@ -12,55 +12,155 @@ const modes = [
     headline: "Thought → Screen, Instantly.",
     description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
     insight: "It's not dictation. It's telepathy with a cursor.",
-    color: "bg-blue-500",
-    lightColor: "bg-blue-50",
-    flashColor: "rgba(59, 130, 246, 0.5)"
+    color: "bg-brand-gold",
+    lightColor: "bg-brand-gold/10",
+    flashColor: "rgba(255, 213, 79, 0.3)",
+    element: "Cursor"
   },
   {
     id: 'tasking',
     icon: Terminal,
-    title: "Tasking Mode — Command Reality.",
+    title: "Tasking Mode",
     headline: "Say the task. Get the result.",
     description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
     insight: "Your words are execution code for productivity.",
-    color: "bg-purple-500",
-    lightColor: "bg-purple-50",
-    flashColor: "rgba(168, 85, 247, 0.5)"
+    color: "bg-brand-amber",
+    lightColor: "bg-brand-amber/10",
+    flashColor: "rgba(249, 168, 37, 0.3)",
+    element: "Terminal"
   },
   {
     id: 'prompt',
     icon: Brain,
-    title: "Prompt Mode — Talk Like a Human.",
+    title: "Prompt Mode",
     headline: "Think Like an AI.",
-    description: "You speak casually. SpeakLingo transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+    description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
     insight: "You become the smartest communicator in any system.",
-    color: "bg-amber-500",
-    lightColor: "bg-amber-50",
-    flashColor: "rgba(245, 158, 11, 0.5)"
+    color: "bg-brand-navy",
+    lightColor: "bg-brand-navy/10",
+    flashColor: "rgba(15, 23, 42, 0.3)",
+    element: "AI"
   },
   {
     id: 'chat',
     icon: MessageSquare,
-    title: "Chat Mode — Real Conversation.",
+    title: "Chat Mode",
     headline: "Zero Keyboard.",
     description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
     insight: "It feels less like talking to a screen, more like talking to possibility.",
-    color: "bg-green-500",
-    lightColor: "bg-green-50",
-    flashColor: "rgba(34, 197, 94, 0.5)"
+    color: "bg-brand-brown",
+    lightColor: "bg-brand-brown/10",
+    flashColor: "rgba(107, 84, 57, 0.3)",
+    element: "Chat"
   },
   {
     id: 'grammar',
     icon: Headphones,
-    title: "Grammar Training System — Learn by Living.",
+    title: "Grammar Training",
     headline: "Effortless Evolution.",
-    description: "Every time you speak, SpeakLingo listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+    description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
     insight: "Your daily communication becomes your training ground.",
-    color: "bg-red-500",
-    lightColor: "bg-red-50",
-    flashColor: "rgba(239, 68, 68, 0.5)"
+    color: "bg-brand-gold",
+    lightColor: "bg-brand-gold/10",
+    flashColor: "rgba(255, 213, 79, 0.3)",
+    element: "Education"
   }
 ];
+
+const ModeGraphic = ({ type }: { type: string }) => {
+  switch (type) {
+    case 'Cursor':
+      return (
+        <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block">
+          <motion.div 
+            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-48 h-48 bg-brand-gold/20 rounded-full blur-3xl"
+          />
+          <motion.div 
+            initial={{ x: -20, y: 20 }}
+            animate={{ x: 0, y: 0 }}
+            className="relative"
+          >
+            <div className="w-1 h-12 bg-brand-navy rounded-full animate-pulse" />
+            <div className="absolute top-0 left-0 w-8 h-8 bg-brand-gold rounded-full -translate-x-1/2 -translate-y-1/2 blur-sm" />
+          </motion.div>
+        </div>
+      );
+    case 'Terminal':
+      return (
+        <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block w-64 h-48 bg-brand-navy rounded-2xl overflow-hidden shadow-2xl rotate-3">
+          <div className="h-6 bg-slate-800 flex items-center gap-1.5 px-3">
+            <div className="w-2 h-2 rounded-full bg-red-500/50" />
+            <div className="w-2 h-2 rounded-full bg-amber-500/50" />
+            <div className="w-2 h-2 rounded-full bg-green-500/50" />
+          </div>
+          <div className="p-4 font-mono text-xs text-brand-gold/80">
+            <p className="mb-2">{">"} syping --task "email"</p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-white"
+            >
+              Writing... Done.
+            </motion.p>
+          </div>
+        </div>
+      );
+    case 'AI':
+      return (
+        <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block">
+          <div className="relative">
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.1, 0.3] }}
+                transition={{ duration: 3, delay: i, repeat: Infinity }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-brand-navy rounded-full"
+              />
+            ))}
+            <Brain className="w-24 h-24 text-brand-navy" />
+          </div>
+        </div>
+      );
+    case 'Chat':
+      return (
+        <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block space-y-4">
+          <motion.div 
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            className="bg-brand-gold text-brand-navy p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[180px]"
+          >
+            <p className="text-sm font-bold">Yo, how's it going?</p>
+          </motion.div>
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="bg-brand-navy text-white p-4 rounded-2xl rounded-tl-none shadow-lg max-w-[180px] ml-auto"
+          >
+            <p className="text-sm">Just syping some fire code.</p>
+          </motion.div>
+        </div>
+      );
+    case 'Education':
+      return (
+        <div className="absolute top-1/2 right-12 -translate-y-1/2 hidden lg:block">
+          <div className="w-48 h-48 border-8 border-brand-gold/20 rounded-full flex items-center justify-center relative">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border-t-8 border-brand-gold rounded-full"
+            />
+            <Headphones className="w-16 h-16 text-brand-gold" />
+          </div>
+        </div>
+      );
+    default:
+      return null;
+  }
+};
 
 export default function FiveModes() {
   const [activeMode, setActiveMode] = useState(modes[0]);
