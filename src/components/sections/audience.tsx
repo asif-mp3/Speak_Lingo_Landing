@@ -136,10 +136,11 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
       return (
         <div className="w-full h-full bg-[#1e1e1e] rounded-2xl overflow-hidden flex flex-col">
           <div className="h-10 bg-[#2c2c2c] border-b border-white/5 flex items-center px-4 justify-between">
-            <div className="flex items-center gap-2">
-              <Framer size={14} className="text-[#F24E1E]" />
-              <span className="text-[10px] font-bold text-white/60">Syping_V2_Main</span>
-            </div>
+              <div className="flex items-center gap-2">
+                <Framer size={14} className="text-[#F24E1E]" />
+                <span className="text-[10px] font-bold text-white/60">SpeakLingo_V2_Main</span>
+              </div>
+
             <div className="flex -space-x-2">
                {[...Array(3)].map((_, i) => <div key={i} className={`w-5 h-5 rounded-full border border-[#1e1e1e] ${i === 0 ? 'bg-blue-400' : i === 1 ? 'bg-green-400' : 'bg-pink-400'}`} />)}
             </div>
