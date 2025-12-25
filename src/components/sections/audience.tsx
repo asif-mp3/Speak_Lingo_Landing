@@ -187,15 +187,10 @@ export default function Audience() {
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight"
-          >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
             Universal Flow. <br />
             <span className="text-[#F9A825]">Every App. Everywhere.</span>
-          </motion.h2>
+          </h2>
           <p className="text-xl text-slate-600 font-medium max-w-[700px] mx-auto">
             Syping doesn't just work in one place. It works in <span className="text-[#0f172a] font-bold italic underline decoration-[#FFD54F] decoration-4">your</span> places.
           </p>
@@ -235,10 +230,8 @@ export default function Audience() {
         </div>
 
         {/* Display Card */}
-        <motion.div
+        <div
           key={activeApp.id}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
           className="grid lg:grid-cols-12 gap-12 bg-white rounded-[48px] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden p-8 md:p-12 items-center"
         >
           <div className="lg:col-span-6 space-y-8">
@@ -309,7 +302,7 @@ export default function Audience() {
              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#FFD54F]/20 rounded-full blur-3xl -z-10" />
              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0f172a]/10 rounded-full blur-3xl -z-10" />
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-20 flex flex-col items-center gap-4">
            <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.3em]">Compatible With</p>
