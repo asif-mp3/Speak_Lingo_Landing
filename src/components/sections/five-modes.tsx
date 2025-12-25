@@ -27,17 +27,18 @@ const modes = [
     lightColor: "rgba(249, 168, 37, 0.1)",
     element: "Terminal"
   },
-  {
-    id: 'prompt',
-    icon: Brain,
-    title: "PROMPT",
-    headline: "Think Like an AI.",
-    description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
-    insight: "You become the smartest communicator in any system.",
-    color: "#0f172a",
-    lightColor: "rgba(15, 23, 42, 0.1)",
-    element: "AI"
-  },
+    {
+      id: 'prompt',
+      icon: Brain,
+      title: "PROMPT",
+      headline: "Think Like an AI.",
+      description: "You speak casually. SpeakLingo transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+      insight: "You become the smartest communicator in any system.",
+      color: "#0f172a",
+      lightColor: "rgba(15, 23, 42, 0.1)",
+      element: "AI"
+    },
+
   {
     id: 'chat',
     icon: MessageSquare,
