@@ -3,6 +3,7 @@ import Hero from "@/components/sections/hero";
 import SpeakLingoShowcase from "@/components/sections/app-integration-showcase";
 import KeyBenefits from "@/components/sections/key-benefits";
 import PainPoints from "@/components/sections/pain-points";
+import SypingChat from "@/components/sections/syping-chat";
 import FiveModes from "@/components/sections/five-modes";
 import PrivacyTrust from "@/components/sections/privacy-trust";
 import Audience from "@/components/sections/audience";
