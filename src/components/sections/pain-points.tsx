@@ -154,7 +154,70 @@ const SypingFlowAnimation = () => {
   );
 };
 
+const FlashCard = ({ point, index }: { point: string, index: number }) => {
+  const [isTorn, setIsTorn] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className="relative group cursor-pointer"
+      onClick={() => setIsTorn(!isTorn)}
+    >
+      <AnimatePresence>
+        {!isTorn ? (
+          <motion.div
+            key="front"
+            exit={{ 
+              y: -100, 
+              opacity: 0, 
+              rotate: [0, -5, 5],
+              scale: 0.9,
+              transition: { duration: 0.4 }
+            }}
+            className="bg-white border-2 border-[#0f172a] p-6 rounded-2xl shadow-[8px_8px_0_0_#0f172a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center shrink-0 mt-1">
+                <AlertCircle size={18} className="text-[#ef4444]" />
+              </div>
+              <p className="text-lg font-bold text-[#0f172a]">{point}</p>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tear to resolve →</span>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="back"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-[#FFFAE7] border-2 border-[#F9A825] p-6 rounded-2xl shadow-[8px_8px_0_0_#F9A825]"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0 mt-1">
+                <Sparkles size={18} className="text-[#F9A825]" />
+              </div>
+              <p className="text-lg font-bold text-[#6B5439]">Resolved with SpeakLingo Flow</p>
+            </div>
+            <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}>
+              ← Bring back the pain
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
+
 export default function PainPoints() {
+  const points = [
+    "Your thoughts move faster than your fingers.",
+    "Typing breaks your flow before your ideas land.",
+    "The spark fades while you’re still finding the keys."
+  ];
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
@@ -169,18 +232,9 @@ export default function PainPoints() {
               <span className="text-[#0f172a] font-bold">You’re not tired — you’re throttled.</span>
             </p>
 
-            <div className="space-y-6 mb-12">
-              {[
-                "Your thoughts move faster than your fingers.",
-                "Typing breaks your flow before your ideas land.",
-                "The spark fades while you’re still finding the keys."
-              ].map((point, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-[#ef4444]" />
-                  </div>
-                  <p className="text-lg font-bold text-[#475569]">{point}</p>
-                </div>
+            <div className="grid gap-4 mb-12">
+              {points.map((point, i) => (
+                <FlashCard key={i} point={point} index={i} />
               ))}
             </div>
 
@@ -199,7 +253,7 @@ export default function PainPoints() {
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Mechanical Bottleneck</p>
                 </div>
                 <div className="w-10 h-10 bg-white rounded-xl border border-slate-200 flex items-center justify-center shadow-sm">
-                  <MousePointer2 className="text-slate-400 rotate-12" size={20} />
+                  <MousePointer2 className="text-slate-400" size={20} />
                 </div>
               </div>
               
@@ -219,7 +273,7 @@ export default function PainPoints() {
               
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <div>
-                  <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The Syping Way</h4>
+                  <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The SpeakLingo Way</h4>
                   <p className="text-xs font-bold text-[#FFD54F] uppercase tracking-widest mt-1">Unfiltered Cognition</p>
                 </div>
                 <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(250,204,21,0.4)]">
