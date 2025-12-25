@@ -8,7 +8,7 @@ export default function Audience() {
   return (
     <section className="py-24 bg-[#FFFAE7] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1140px]">
-        <div className="bg-white rounded-[60px] p-12 md:p-20 border border-[#6B5439]/10 relative overflow-hidden shadow-2xl shadow-amber-500/5 !w-[79.9%] !h-full">
+        <div className="bg-white rounded-[60px] p-12 md:p-20 border border-[#6B5439]/10 relative overflow-hidden shadow-2xl shadow-amber-500/5 !w-[942px] !h-full">
           {/* Background Elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl -mr-48 -mt-48" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl -ml-48 -mb-48" />
