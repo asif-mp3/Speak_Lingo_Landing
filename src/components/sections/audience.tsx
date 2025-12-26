@@ -246,13 +246,10 @@ export default function Audience() {
           key={activeApp.id}
           className="grid lg:grid-cols-12 gap-12 bg-white rounded-[48px] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden p-8 md:p-12 items-center"
         >
-          <div className="lg:col-span-6 space-y-8">
-             <div className="inline-flex items-center gap-2 bg-[#FFFAE7] px-4 py-2 rounded-full border border-[#FFD54F]/20">
-                <activeApp.icon size={14} className="text-[#F9A825]" />
-                <span className="text-[10px] font-black text-[#6B5439] tracking-widest uppercase">Integration_Active</span>
-             </div>
-             
-             <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight">
+            <div className="lg:col-span-6 space-y-8">
+               
+               <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight">
+
                {activeApp.title}
              </h3>
 
