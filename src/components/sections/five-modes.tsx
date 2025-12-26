@@ -5,64 +5,64 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Zap, Terminal, Headphones, Brain, Sparkles, Command, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const modes = [
-{
-  id: 'normal',
-  icon: Zap,
-  title: "NORMAL",
-  headline: "Thought → Screen, Instantly.",
-  description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
-  insight: "It's not dictation. It's telepathy with a cursor.",
-  color: "#FFD54F",
-  lightColor: "rgba(255, 213, 79, 0.1)",
-  element: "Cursor"
-},
-{
-  id: 'tasking',
-  icon: Terminal,
-  title: "TASKING",
-  headline: "Say the task. Get the result.",
-  description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
-  insight: "Your words are execution code for productivity.",
-  color: "#F9A825",
-  lightColor: "rgba(249, 168, 37, 0.1)",
-  element: "Terminal"
-},
-{
-  id: 'prompt',
-  icon: Brain,
-  title: "PROMPT",
-  headline: "Think Like an AI.",
-  description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
-  insight: "You become the smartest communicator in any system.",
-  color: "#0f172a",
-  lightColor: "rgba(15, 23, 42, 0.1)",
-  element: "AI"
-},
-{
-  id: 'chat',
-  icon: MessageSquare,
-  title: "CHAT",
-  headline: "Zero Keyboard.",
-  description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
-  insight: "It feels less like talking to a screen, more like talking to possibility.",
-  color: "#6B5439",
-  lightColor: "rgba(107, 84, 57, 0.1)",
-  element: "Chat"
-},
-{
-  id: 'grammar',
-  icon: Headphones,
-  title: "EVOLVE",
-  headline: "Effortless Evolution.",
-  description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
-  insight: "Your daily communication becomes your training ground.",
-  color: "#FFD54F",
-  lightColor: "rgba(255, 213, 79, 0.1)",
-  element: "Education"
-}];
+  {
+    id: 'normal',
+    icon: Zap,
+    title: "NORMAL",
+    headline: "Thought → Screen, Instantly.",
+    description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
+    insight: "It's not dictation. It's telepathy with a cursor.",
+    color: "#FFD54F",
+    lightColor: "rgba(255, 213, 79, 0.1)",
+    element: "Cursor"
+  },
+  {
+    id: 'tasking',
+    icon: Terminal,
+    title: "TASKING",
+    headline: "Say the task. Get the result.",
+    description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
+    insight: "Your words are execution code for productivity.",
+    color: "#F9A825",
+    lightColor: "rgba(249, 168, 37, 0.1)",
+    element: "Terminal"
+  },
+  {
+    id: 'prompt',
+    icon: Brain,
+    title: "PROMPT",
+    headline: "Think Like an AI.",
+    description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+    insight: "You become the smartest communicator in any system.",
+    color: "#0f172a",
+    lightColor: "rgba(15, 23, 42, 0.1)",
+    element: "AI"
+  },
+  {
+    id: 'chat',
+    icon: MessageSquare,
+    title: "CHAT",
+    headline: "Zero Keyboard.",
+    description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
+    insight: "It feels less like talking to a screen, more like talking to possibility.",
+    color: "#6B5439",
+    lightColor: "rgba(107, 84, 57, 0.1)",
+    element: "Chat"
+  },
+  {
+    id: 'grammar',
+    icon: Headphones,
+    title: "EVOLVE",
+    headline: "Effortless Evolution.",
+    description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+    insight: "Your daily communication becomes your training ground.",
+    color: "#FFD54F",
+    lightColor: "rgba(255, 213, 79, 0.1)",
+    element: "Education"
+  }];
 
 
-const ModeGraphic = ({ type }: {type: string;}) => {
+const ModeGraphic = ({ type }: { type: string; }) => {
   switch (type) {
     case 'Cursor':
       return (
@@ -125,169 +125,113 @@ const ModeGraphic = ({ type }: {type: string;}) => {
     case 'AI':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Neural Pulse Animation */}
-          <div className="relative w-64 h-64 flex items-center justify-center">
-            {/* Core Neural Node */}
+          {/* Neural Core Processor - Physical Appearance */}
+          <div className="relative w-48 h-48 flex items-center justify-center">
+            {/* Processor Base */}
+            <div className="absolute w-32 h-32 bg-[#1e293b] rounded-2xl border-4 border-[#0f172a] shadow-2xl overflow-hidden">
+              <div className="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,#F9A825_1px,transparent_1px),linear-gradient(-45deg,#F9A825_1px,transparent_1px)] [background-size:10px_10px]" />
+            </div>
+
+            {/* The 3D Chip */}
             <motion.div
               animate={{
-                scale: [1, 1.2, 1],
-                boxShadow: [
-                  "0 0 20px rgba(249, 168, 37, 0.2)",
-                  "0 0 40px rgba(249, 168, 37, 0.5)",
-                  "0 0 20px rgba(249, 168, 37, 0.2)"
-                ]
+                z: [0, 15, 0],
+                rotateX: [0, 5, 0],
+                rotateY: [0, 10, 0]
               }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="w-20 h-20 bg-[#0f172a] rounded-[2rem] flex items-center justify-center relative z-10 border border-[#F9A825]/30"
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-20 h-20 bg-gradient-to-br from-[#475569] to-[#0f172a] rounded-xl border-2 border-[#F9A825]/50 shadow-[0_15px_30px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 perspective-[1000px]"
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-2 border-2 border-dashed border-[#F9A825]/40 rounded-2xl"
-              />
+              <div className="absolute inset-0 bg-[#F9A825]/5 blur-sm" />
               <Sparkles className="w-8 h-8 text-[#F9A825]" />
+
+              {/* Circuit Paths */}
+              {[...Array(4)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ opacity: [0.2, 1, 0.2] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                  className={`absolute w-full h-px bg-[#F9A825]/30 ${i % 2 === 0 ? 'top-' + (i * 20 + 20) + '%' : 'left-' + (i * 20 + 20) + '%'}`}
+                  style={{ transform: i % 2 === 0 ? 'scaleX(1)' : 'rotate(90deg)' }}
+                />
+              ))}
             </motion.div>
 
-            {/* Orbiting Synapses */}
-            {[...Array(8)].map((_, i) => (
+            {/* Pulsing Data Nodes */}
+            {[...Array(12)].map((_, i) => (
               <motion.div
                 key={i}
                 animate={{
-                  rotate: [i * 45, i * 45 + 360],
+                  scale: [1, 1.3, 1],
+                  opacity: [0.3, 0.8, 0.3],
                 }}
                 transition={{
-                  duration: 10 + i * 2,
+                  duration: 3,
                   repeat: Infinity,
-                  ease: "linear"
+                  delay: i * 0.25,
                 }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <motion.div
-                  animate={{
-                    scale: [0.8, 1.2, 0.8],
-                    opacity: [0.3, 0.7, 0.3]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.2
-                  }}
-                  className="w-3 h-3 bg-[#F9A825] rounded-full translate-x-24 blur-[1px]"
-                />
-              </motion.div>
+                className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full blur-[1px]"
+                style={{
+                  transform: `rotate(${i * 30}deg) translateY(-80px)`
+                }}
+              />
             ))}
-
-            {/* Neural Connection Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20">
-              {[...Array(4)].map((_, i) => (
-                <motion.circle
-                  key={i}
-                  cx="50%"
-                  cy="50%"
-                  r={40 + i * 30}
-                  fill="none"
-                  stroke="#F9A825"
-                  strokeWidth="1"
-                  strokeDasharray="4 8"
-                  animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
-                  transition={{ duration: 15 + i * 5, repeat: Infinity, ease: "linear" }}
-                />
-              ))}
-            </svg>
           </div>
-        </div>);
-
-    case 'Chat':
-      return (
-        <div className="relative w-full h-full bg-slate-50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden">
-          <div className="self-start bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 max-w-[80%] transition-all">
-            <p className="text-xs font-bold text-[#0f172a]">User: "Summarize the call"</p>
-          </div>
-          <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
-            <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
-          </div>
-            <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
-              <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
-              <div className="h-1 flex-1 bg-slate-100 rounded-full" />
-            </div>
         </div>);
 
     case 'Education':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Evolutionary Helix Animation */}
-          <div className="relative w-64 h-64 flex flex-col items-center justify-center">
-            <div className="flex gap-4 items-end h-40">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="flex flex-col gap-1 items-center">
-                  <motion.div
-                    animate={{
-                      height: [10, 40, 20, 60, 10],
-                      backgroundColor: ["#F9A825", "#0f172a", "#F9A825"]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.1,
-                      ease: "easeInOut"
-                    }}
-                    className="w-2 rounded-full"
-                  />
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.4, 1, 0.4]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.1
-                    }}
-                    className="w-1.5 h-1.5 bg-[#0f172a] rounded-full"
-                  />
-                </div>
+          {/* DNA of Data Helix - Physical Representation */}
+          <div className="relative w-48 h-48 flex flex-col items-center justify-center perspective-[1000px]">
+            <div className="relative h-40 w-28 flex flex-col justify-between py-4">
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{
+                    rotateY: 360,
+                    y: [0, -4, 0]
+                  }}
+                  transition={{
+                    rotateY: { duration: 4, repeat: Infinity, ease: "linear", delay: i * 0.2 },
+                    y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.1 }
+                  }}
+                  className="relative w-full h-1 flex items-center justify-between"
+                >
+                  <div className="w-3 h-3 bg-[#0f172a] rounded-full border border-[#F9A825] shadow-md" />
+                  <div className="flex-1 h-[1.5px] bg-gradient-to-r from-[#F9A825] to-[#0f172a] mx-1 opacity-50" />
+                  <div className="w-3 h-3 bg-[#F9A825] rounded-full border border-[#0f172a] shadow-md" />
+                </motion.div>
               ))}
             </div>
-            
-            <motion.div
-              animate={{
-                y: [0, -5, 0],
-                rotate: [0, 5, -5, 0]
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="mt-6 px-6 py-2 bg-[#0f172a] rounded-full border-2 border-[#F9A825]/20 shadow-xl flex items-center gap-3"
-            >
-              <div className="flex gap-1">
-                {[0, 1, 2].map(j => (
-                  <motion.div
-                    key={j}
-                    animate={{ height: [4, 12, 4] }}
-                    transition={{ duration: 1, repeat: Infinity, delay: j * 0.2 }}
-                    className="w-1 bg-[#F9A825] rounded-full"
-                  />
-                ))}
-              </div>
-              <span className="text-[10px] font-black text-white tracking-widest uppercase">Evolving</span>
-            </motion.div>
 
-            {/* Floating Particles */}
-            {[...Array(10)].map((_, i) => (
+            {/* Knowledge Particles Rising */}
+            {[...Array(12)].map((_, i) => (
               <motion.div
                 key={i}
+                initial={{ y: 80, x: (Math.random() - 0.5) * 50, opacity: 0 }}
                 animate={{
-                  y: [0, -100],
-                  x: [Math.sin(i) * 30, Math.sin(i) * 50],
-                  opacity: [0, 0.5, 0],
-                  scale: [0, 1, 0]
+                  y: -120,
+                  opacity: [0, 1, 0],
+                  scale: [0.5, 1, 0.5]
                 }}
                 transition={{
-                  duration: 3 + Math.random() * 2,
+                  duration: 4 + Math.random() * 2,
                   repeat: Infinity,
-                  delay: Math.random() * 3
+                  delay: Math.random() * 4,
+                  ease: "easeOut"
                 }}
-                className="absolute bottom-10 w-1 h-1 bg-[#F9A825] rounded-full blur-[0.5px]"
+                className="absolute w-1 h-1 bg-[#F9A825] rounded-full blur-[0.5px]"
               />
             ))}
+
+            <motion.div
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="mt-4 px-4 py-1.5 bg-[#0f172a] rounded-full border border-[#F9A825]/30 shadow-xl"
+            >
+              <span className="text-[9px] font-black text-[#F9A825] tracking-widest uppercase">Adaptive Learning</span>
+            </motion.div>
           </div>
         </div>);
 
@@ -314,7 +258,7 @@ export default function FiveModes() {
   }, [activeMode]);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1151px]">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1000px]">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
@@ -326,24 +270,24 @@ export default function FiveModes() {
         {/* Tab Navigation */}
         <div className="flex justify-center items-end gap-4 md:gap-8 mb-12">
           {modes.map((mode) =>
-          <button
-            key={mode.id}
-            onClick={() => {
-              setActiveMode(mode);
-              setDisplayText("");
-            }}
-            className="group flex flex-col items-center gap-3 transition-all">
+            <button
+              key={mode.id}
+              onClick={() => {
+                setActiveMode(mode);
+                setDisplayText("");
+              }}
+              className="group flex flex-col items-center gap-3 transition-all">
 
               <div className={`
                 relative w-14 h-14 md:w-16 md:h-16 rounded-[22px] flex items-center justify-center transition-all duration-300
                 ${activeMode.id === mode.id ?
-            'bg-white shadow-[0_10px_30px_rgba(255,213,79,0.3)] ring-2 ring-[#FFD54F] scale-110' :
-            'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
+                  'bg-white shadow-[0_10px_30px_rgba(255,213,79,0.3)] ring-2 ring-[#FFD54F] scale-110' :
+                  'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
               `}>
                 <mode.icon
-                size={24}
-                className={activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'}
-                strokeWidth={2} />
+                  size={24}
+                  className={activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'}
+                  strokeWidth={2} />
 
               </div>
               <span className={`
@@ -387,7 +331,7 @@ export default function FiveModes() {
               <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
                 {activeMode.headline}
               </h3>
-              
+
               <div className="min-h-[120px]">
                 <p className="text-lg md:text-2xl text-slate-600 font-medium leading-relaxed">
                   {displayText}
@@ -410,11 +354,11 @@ export default function FiveModes() {
                 <div className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-lg">
                   <div className="flex gap-1">
                     {[...Array(3)].map((_, i) =>
-                    <motion.div
-                      key={i}
-                      animate={{ height: [4, 10, 4] }}
-                      transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                      className="w-1 bg-[#FFD54F] rounded-full" />
+                      <motion.div
+                        key={i}
+                        animate={{ height: [4, 10, 4] }}
+                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                        className="w-1 bg-[#FFD54F] rounded-full" />
 
                     )}
                   </div>
@@ -428,19 +372,19 @@ export default function FiveModes() {
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#FFD54F_1px,transparent_1px)] [background-size:20px_20px]" />
                 </div>
-                
+
                 <ModeGraphic type={activeMode.element} />
 
                 {/* Secure Badge */}
                 <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
-                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                     SECURE_STREAM
-                   </div>
-                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
-                     <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                     ENCRYPTED
-                   </div>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                    SECURE_STREAM
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                    ENCRYPTED
+                  </div>
                 </div>
               </div>
 

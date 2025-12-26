@@ -90,7 +90,14 @@ export default function Hero() {
               <span className="text-[#F9A825]">Keyboard</span>.
             </h1>
 
-
+            {/* Added Stop Typing. Start Syping... slogan/button */}
+            <div className="flex flex-row items-center gap-3 mb-8 pb-1.5">
+              <p className="text-sm md:text-base font-black text-[#6B5439] tracking-tight whitespace-nowrap uppercase">Stop Typing.</p>
+              <button className="bg-[#F9A825] hover:bg-[#FBC02D] text-[#0f172a] px-2.5 py-1.5 rounded-lg text-[10px] md:text-xs font-black transition-all shadow-[0_3px_0_#C67C00] hover:shadow-[0_4px_0_#C67C00] active:shadow-none active:translate-y-[3px] border-2 border-[#0f172a] flex items-center gap-1.5 group whitespace-nowrap uppercase">
+                Start Syping...
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

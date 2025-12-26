@@ -3,28 +3,29 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X, Globe, Search, BookOpen, Layers, Users, Zap, MessageSquare, Monitor, Apple } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MenuItem, MegaMenuProps } from '@/types';
 
 const Logo = () => (
-    <div className="flex items-center">
-      <img src="/2.webp" alt="SpeakLingo" className="h-[180px] w-auto object-contain" />
-    </div>
+  <div className="flex items-center">
+    <img src="/2.webp" alt="SpeakLingo" className="h-[180px] w-auto object-contain" />
+  </div>
 );
 
-const MegaMenu = ({ title, items, active, setActive, index }: any) => {
+const MegaMenu = ({ title, items, active, setActive, index }: MegaMenuProps) => {
   const isHovered = active === index;
 
   return (
-    <div 
+    <div
       className="relative"
       onMouseEnter={() => setActive(index)}
       onMouseLeave={() => setActive(null)}
     >
-        <button 
-          className={`flex items-center gap-1.5 px-4 py-6 text-[15px] font-bold transition-colors ${isHovered ? 'text-[#F9A825]' : 'text-[#475569] hover:text-[#0f172a]'}`}
-        >
-          {title}
-          <ChevronDown size={14} className={`transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} />
-        </button>
+      <button
+        className={`flex items-center gap-1.5 px-4 py-6 text-[15px] font-bold transition-colors ${isHovered ? 'text-[#F9A825]' : 'text-[#475569] hover:text-[#0f172a]'}`}
+      >
+        {title}
+        <ChevronDown size={14} className={`transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} />
+      </button>
 
       <AnimatePresence>
         {isHovered && (
@@ -37,8 +38,8 @@ const MegaMenu = ({ title, items, active, setActive, index }: any) => {
           >
             <div className="bg-white rounded-[28px] border border-[#e2e8f0] shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden p-6 grid grid-cols-2 gap-4">
               {items.map((item: any, i: number) => (
-                <a 
-                  key={i} 
+                <a
+                  key={i}
                   href={item.href}
                   className="flex items-start gap-4 p-4 rounded-[20px] hover:bg-[#FFFAE7]/50 transition-colors group"
                 >
@@ -97,40 +98,40 @@ export default function Navigation() {
             <a href="/"><Logo /></a>
 
             <div className="hidden lg:flex items-center gap-4">
-              <MegaMenu 
-                title="Features" 
-                items={featureItems} 
-                active={activeMenu} 
-                setActive={setActiveMenu} 
-                index={0} 
+              <MegaMenu
+                title="Features"
+                items={featureItems}
+                active={activeMenu}
+                setActive={setActiveMenu}
+                index={0}
               />
-              <MegaMenu 
-                title="Resources" 
-                items={resourceItems} 
-                active={activeMenu} 
-                setActive={setActiveMenu} 
-                index={1} 
+              <MegaMenu
+                title="Resources"
+                items={resourceItems}
+                active={activeMenu}
+                setActive={setActiveMenu}
+                index={1}
               />
-                  <a href="#pricing" className="px-4 py-6 text-[15px] font-bold text-[#475569] hover:text-[#0f172a] transition-colors">Pricing</a>
+              <a href="#pricing" className="px-4 py-6 text-[15px] font-bold text-[#475569] hover:text-[#0f172a] transition-colors">Pricing</a>
             </div>
           </div>
 
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-5 border-r border-[#e2e8f0] pr-6 mr-1">
-               <button className="text-[#475569] hover:text-[#0f172a] transition-colors flex items-center gap-2">
-                 <Globe size={18} />
-                 <span className="text-[14px] font-bold">EN</span>
-               </button>
-               <button className="text-[#475569] hover:text-[#0f172a] transition-colors">
-                 <Search size={18} />
-               </button>
+              <button className="text-[#475569] hover:text-[#0f172a] transition-colors flex items-center gap-2" aria-label="Change language">
+                <Globe size={18} />
+                <span className="text-[14px] font-bold">EN</span>
+              </button>
+              <button className="text-[#475569] hover:text-[#0f172a] transition-colors" aria-label="Search">
+                <Search size={18} />
+              </button>
             </div>
-            
+
             <div className="flex items-center gap-3">
               <button className="text-[15px] font-bold text-[#0f172a] hover:text-[#F9A825] px-4 transition-colors">Log in</button>
-              
+
               <div className="relative">
-                <button 
+                <button
                   onMouseEnter={() => setShowDownloads(true)}
                   onMouseLeave={() => setShowDownloads(false)}
                   className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3 rounded-[18px] text-[15px] font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] border border-black flex items-center gap-2"
@@ -175,7 +176,7 @@ export default function Navigation() {
             </div>
           </div>
 
-          <button className="lg:hidden p-2 text-[#0f172a]" onClick={() => setIsOpen(!isOpen)}>
+          <button className="lg:hidden p-2 text-[#0f172a]" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
             {isOpen ? <X /> : <Menu />}
           </button>
         </nav>
@@ -183,7 +184,7 @@ export default function Navigation() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -204,9 +205,9 @@ export default function Navigation() {
                 </div>
                 <a href="#pricing" className="block text-2xl font-bold text-[#0f172a] pt-4">Pricing</a>
               </div>
-              
+
               <div className="w-full h-px bg-[#e2e8f0] my-4" />
-              
+
               <div className="space-y-4">
                 <button className="w-full bg-[#0f172a] text-white py-4 rounded-2xl text-lg font-bold shadow-[0_4px_0_rgb(0,0,0)]">Download for Windows</button>
                 <button className="w-full bg-white border-2 border-slate-200 text-[#0f172a] py-4 rounded-2xl text-lg font-bold">Download for Mac</button>
