@@ -91,11 +91,11 @@ export default function Hero() {
             </h1>
 
             {/* Added Stop Typing. Start Syping... slogan/button */}
-            <div className="flex flex-col items-center lg:items-start gap-4 mb-10">
-              <p className="text-2xl md:text-3xl font-black text-[#6B5439] tracking-tight">Stop Typing.</p>
-              <button className="bg-[#F9A825] hover:bg-[#FBC02D] text-[#0f172a] px-8 py-4 rounded-2xl text-xl md:text-2xl font-black transition-all shadow-[0_6px_0_#C67C00] hover:shadow-[0_8px_0_#C67C00] active:shadow-none active:translate-y-[6px] border-2 border-[#0f172a] flex items-center gap-3 group">
+            <div className="flex flex-row items-center gap-4 mb-10 overflow-hidden">
+              <p className="text-xl md:text-2xl font-black text-[#6B5439] tracking-tight whitespace-nowrap">Stop Typing.</p>
+              <button className="bg-[#F9A825] hover:bg-[#FBC02D] text-[#0f172a] px-5 py-2.5 rounded-xl text-lg md:text-xl font-black transition-all shadow-[0_4px_0_#C67C00] hover:shadow-[0_5px_0_#C67C00] active:shadow-none active:translate-y-[4px] border-2 border-[#0f172a] flex items-center gap-2 group whitespace-nowrap">
                 Start Syping...
-                <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
