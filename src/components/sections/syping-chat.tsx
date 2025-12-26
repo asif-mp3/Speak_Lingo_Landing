@@ -3,11 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Mic,
-  Moon,
-  Minus,
-  BarChart2,
-  Trophy,
   MessageSquare,
   Terminal,
   Settings,
