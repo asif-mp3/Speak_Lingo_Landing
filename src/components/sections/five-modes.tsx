@@ -5,64 +5,64 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Zap, Terminal, Headphones, Brain, Mic, Sparkles, Command, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const modes = [
-  {
-    id: 'normal',
-    icon: Zap,
-    title: "NORMAL",
-    headline: "Thought → Screen, Instantly.",
-    description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
-    insight: "It's not dictation. It's telepathy with a cursor.",
-    color: "#FFD54F",
-    lightColor: "rgba(255, 213, 79, 0.1)",
-    element: "Cursor"
-  },
-  {
-    id: 'tasking',
-    icon: Terminal,
-    title: "TASKING",
-    headline: "Say the task. Get the result.",
-    description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
-    insight: "Your words are execution code for productivity.",
-    color: "#F9A825",
-    lightColor: "rgba(249, 168, 37, 0.1)",
-    element: "Terminal"
-  },
-  {
-    id: 'prompt',
-    icon: Brain,
-    title: "PROMPT",
-    headline: "Think Like an AI.",
-    description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
-    insight: "You become the smartest communicator in any system.",
-    color: "#0f172a",
-    lightColor: "rgba(15, 23, 42, 0.1)",
-    element: "AI"
-  },
-  {
-    id: 'chat',
-    icon: MessageSquare,
-    title: "CHAT",
-    headline: "Zero Keyboard.",
-    description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
-    insight: "It feels less like talking to a screen, more like talking to possibility.",
-    color: "#6B5439",
-    lightColor: "rgba(107, 84, 57, 0.1)",
-    element: "Chat"
-  },
-  {
-    id: 'grammar',
-    icon: Headphones,
-    title: "EVOLVE",
-    headline: "Effortless Evolution.",
-    description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
-    insight: "Your daily communication becomes your training ground.",
-    color: "#FFD54F",
-    lightColor: "rgba(255, 213, 79, 0.1)",
-    element: "Education"
-  }
-];
+{
+  id: 'normal',
+  icon: Zap,
+  title: "NORMAL",
+  headline: "Thought → Screen, Instantly.",
+  description: "Speak naturally. Watch it appear — instantly, flawlessly, anywhere. No lag. No correction. No hesitation.",
+  insight: "It's not dictation. It's telepathy with a cursor.",
+  color: "#FFD54F",
+  lightColor: "rgba(255, 213, 79, 0.1)",
+  element: "Cursor"
+},
+{
+  id: 'tasking',
+  icon: Terminal,
+  title: "TASKING",
+  headline: "Say the task. Get the result.",
+  description: "\"Write the email.\" \"Summarize this doc.\" \"Generate ideas.\" No waiting. No second steps.",
+  insight: "Your words are execution code for productivity.",
+  color: "#F9A825",
+  lightColor: "rgba(249, 168, 37, 0.1)",
+  element: "Terminal"
+},
+{
+  id: 'prompt',
+  icon: Brain,
+  title: "PROMPT",
+  headline: "Think Like an AI.",
+  description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+  insight: "You become the smartest communicator in any system.",
+  color: "#0f172a",
+  lightColor: "rgba(15, 23, 42, 0.1)",
+  element: "AI"
+},
+{
+  id: 'chat',
+  icon: MessageSquare,
+  title: "CHAT",
+  headline: "Zero Keyboard.",
+  description: "Speak. Send. Flow. Hold live AI chats or message anyone without touching a key.",
+  insight: "It feels less like talking to a screen, more like talking to possibility.",
+  color: "#6B5439",
+  lightColor: "rgba(107, 84, 57, 0.1)",
+  element: "Chat"
+},
+{
+  id: 'grammar',
+  icon: Headphones,
+  title: "EVOLVE",
+  headline: "Effortless Evolution.",
+  description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+  insight: "Your daily communication becomes your training ground.",
+  color: "#FFD54F",
+  lightColor: "rgba(255, 213, 79, 0.1)",
+  element: "Education"
+}];
 
-const ModeGraphic = ({ type }: { type: string }) => {
+
+const ModeGraphic = ({ type }: {type: string;}) => {
   switch (type) {
     case 'Cursor':
       return (
@@ -79,19 +79,19 @@ const ModeGraphic = ({ type }: { type: string }) => {
                 initial={{ width: 0 }}
                 animate={{ width: "auto" }}
                 transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
-              >
+                className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]">
+
                 It's Syping.
               </motion.span>
             </div>
           </div>
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="absolute bottom-4 right-4 w-24 h-24 bg-[#FFD54F] rounded-full blur-2xl -z-10"
-          />
-        </div>
-      );
+            className="absolute bottom-4 right-4 w-24 h-24 bg-[#FFD54F] rounded-full blur-2xl -z-10" />
+
+        </div>);
+
     case 'Terminal':
       return (
         <div className="relative w-full h-full bg-[#0f172a] rounded-2xl overflow-hidden shadow-2xl p-6 font-mono">
@@ -113,31 +113,31 @@ const ModeGraphic = ({ type }: { type: string }) => {
               <span>Generating drafts...</span>
             </div>
             <div className="h-1 bg-green-500/30 rounded-full overflow-hidden">
-              <motion.div 
+              <motion.div
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="w-1/3 h-full bg-green-500"
-              />
+                className="w-1/3 h-full bg-green-500" />
+
             </div>
           </div>
-        </div>
-      );
+        </div>);
+
     case 'AI':
       return (
         <div className="relative w-full h-full flex items-center justify-center">
           <div className="relative w-48 h-48">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{ 
-                  scale: [1, 1.2, 1], 
-                  rotate: [0, 180, 360],
-                  opacity: [0.3, 0.6, 0.3] 
-                }}
-                transition={{ duration: 8 + i * 2, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 border border-[#FFD54F]/30 rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
-              />
-            ))}
+            {[...Array(3)].map((_, i) =>
+            <motion.div
+              key={i}
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 180, 360],
+                opacity: [0.3, 0.6, 0.3]
+              }}
+              transition={{ duration: 8 + i * 2, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border border-[#FFD54F]/30 rounded-[30%_70%_70%_30%/30%_30%_70%_70%]" />
+
+            )}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-[#0f172a] p-6 rounded-3xl shadow-2xl relative z-10">
                 <Brain className="w-12 h-12 text-[#FFD54F]" />
@@ -147,8 +147,8 @@ const ModeGraphic = ({ type }: { type: string }) => {
               <Sparkles size={16} className="text-[#FFD54F]" />
             </div>
           </div>
-        </div>
-      );
+        </div>);
+
     case 'Chat':
       return (
         <div className="relative w-full h-full bg-slate-50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden">
@@ -163,25 +163,25 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <div className="h-1 flex-1 bg-slate-100 rounded-full" />
             <Mic size={14} className="text-slate-400" />
           </div>
-        </div>
-      );
+        </div>);
+
     case 'Education':
       return (
         <div className="relative w-full h-full flex items-center justify-center">
           <div className="flex items-end gap-1 h-32">
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{ height: [20, 80, 40, 100, 20] }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  delay: i * 0.1,
-                  ease: "easeInOut"
-                }}
-                className="w-2 bg-[#FFD54F] rounded-full"
-              />
-            ))}
+            {[...Array(12)].map((_, i) =>
+            <motion.div
+              key={i}
+              animate={{ height: [20, 80, 40, 100, 20] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.1,
+                ease: "easeInOut"
+              }}
+              className="w-2 bg-[#FFD54F] rounded-full" />
+
+            )}
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -189,8 +189,8 @@ const ModeGraphic = ({ type }: { type: string }) => {
               <Headphones className="w-10 h-10 text-white" />
             </div>
           </div>
-        </div>
-      );
+        </div>);
+
     default:
       return null;
   }
@@ -214,7 +214,7 @@ export default function FiveModes() {
   }, [activeMode]);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1151px]">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
@@ -225,26 +225,26 @@ export default function FiveModes() {
 
         {/* Tab Navigation */}
         <div className="flex justify-center items-end gap-4 md:gap-8 mb-12">
-          {modes.map((mode) => (
-            <button
-              key={mode.id}
-              onClick={() => {
-                setActiveMode(mode);
-                setDisplayText("");
-              }}
-              className="group flex flex-col items-center gap-3 transition-all"
-            >
+          {modes.map((mode) =>
+          <button
+            key={mode.id}
+            onClick={() => {
+              setActiveMode(mode);
+              setDisplayText("");
+            }}
+            className="group flex flex-col items-center gap-3 transition-all">
+
               <div className={`
                 relative w-14 h-14 md:w-16 md:h-16 rounded-[22px] flex items-center justify-center transition-all duration-300
-                ${activeMode.id === mode.id 
-                  ? 'bg-white shadow-[0_10px_30px_rgba(255,213,79,0.3)] ring-2 ring-[#FFD54F] scale-110' 
-                  : 'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
+                ${activeMode.id === mode.id ?
+            'bg-white shadow-[0_10px_30px_rgba(255,213,79,0.3)] ring-2 ring-[#FFD54F] scale-110' :
+            'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
               `}>
-                <mode.icon 
-                  size={24} 
-                  className={activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'} 
-                  strokeWidth={2}
-                />
+                <mode.icon
+                size={24}
+                className={activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'}
+                strokeWidth={2} />
+
               </div>
               <span className={`
                 text-[9px] md:text-[10px] font-black tracking-[0.2em] transition-colors
@@ -253,14 +253,14 @@ export default function FiveModes() {
                 {mode.title}
               </span>
             </button>
-          ))}
+          )}
         </div>
 
         {/* Display Card */}
         <div
           key={activeMode.id}
-          className="relative bg-white rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden"
-        >
+          className="relative bg-white rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
+
           {/* Header */}
           <div className="px-8 py-5 border-b border-slate-50 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -294,8 +294,8 @@ export default function FiveModes() {
                   <motion.span
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity }}
-                    className="inline-block w-[3px] h-6 md:h-8 bg-[#FFD54F] ml-1 align-middle"
-                  />
+                    className="inline-block w-[3px] h-6 md:h-8 bg-[#FFD54F] ml-1 align-middle" />
+
                 </p>
               </div>
 
@@ -309,14 +309,14 @@ export default function FiveModes() {
               <div className="flex lg:hidden pt-4">
                 <div className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-lg">
                   <div className="flex gap-1">
-                    {[...Array(3)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        animate={{ height: [4, 10, 4] }}
-                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                        className="w-1 bg-[#FFD54F] rounded-full"
-                      />
-                    ))}
+                    {[...Array(3)].map((_, i) =>
+                    <motion.div
+                      key={i}
+                      animate={{ height: [4, 10, 4] }}
+                      transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                      className="w-1 bg-[#FFD54F] rounded-full" />
+
+                    )}
                   </div>
                   <span className="text-[10px] font-black tracking-widest uppercase">Active</span>
                 </div>
@@ -353,14 +353,14 @@ export default function FiveModes() {
           <div className="absolute bottom-6 right-8 hidden lg:block">
             <div className="bg-[#0f172a] text-white px-6 py-3 rounded-full flex items-center gap-3 shadow-xl">
               <div className="flex gap-1">
-                {[...Array(3)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ height: [4, 12, 4] }}
-                    transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                    className="w-1 bg-[#FFD54F] rounded-full"
-                  />
-                ))}
+                {[...Array(3)].map((_, i) =>
+                <motion.div
+                  key={i}
+                  animate={{ height: [4, 12, 4] }}
+                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                  className="w-1 bg-[#FFD54F] rounded-full" />
+
+                )}
               </div>
               <span className="text-[11px] font-black tracking-widest uppercase">System_Active</span>
             </div>
@@ -373,6 +373,6 @@ export default function FiveModes() {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
