@@ -5,50 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, ArrowRight } from 'lucide-react';
 import SypingEquation from './syping-equation';
 
-const BubblePhase = ({ active }: {active: boolean;}) => {
-  return (
-    <div className="relative w-16 h-16 flex items-center justify-center">
-      <AnimatePresence>
-        {active &&
-        <>
-            {[...Array(3)].map((_, i) =>
-          <motion.div
-            key={i}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: i * 0.4,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 bg-[#FFD54F] rounded-full blur-xl opacity-20" />
-
-          )}
-            <motion.div
-            animate={{
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="relative z-10 w-12 h-12 bg-[#FFD54F] rounded-full flex items-center justify-center border border-[#E6A700] shadow-lg">
-
-              <Mic size={20} className="text-[#2D3748]" />
-            </motion.div>
-          </>
-        }
-        {!active &&
-        <div className="relative z-10 w-12 h-12 bg-white/50 rounded-full flex items-center justify-center border border-[#e2e8f0]">
-            <Mic size={20} className="text-[#94a3b8]" />
-          </div>
-        }
-      </AnimatePresence>
-    </div>);
-
-};
-
 const DocumentMockup = ({ active }: {active: boolean;}) => {
   const [text, setText] = useState("");
   const fullText = "Typing slows thought. Syping replaces keys with voice—so your ideas flow from voice to screen in real time.";
@@ -109,11 +65,6 @@ const DocumentMockup = ({ active }: {active: boolean;}) => {
               <span className="text-[10px] font-black uppercase tracking-wider text-amber-700">Streak: {active ? "🔥 12m" : "0m"}</span>
            </div>
         </div>
-        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
-          {active ? "Syping Active" : "Waiting for Voice"}
-        </p>
-
-        <BubblePhase active={active} />
       </div>
     </div>);
 
