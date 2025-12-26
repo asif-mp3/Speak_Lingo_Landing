@@ -283,29 +283,8 @@ export default function Audience() {
                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:16px_16px]" />
                 </div>
                 
-                <AppMockup app={activeApp} text={displayText} />
-
-                {/* Listening Pill - Contextual within graphic */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                   <motion.div
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-2xl border border-white/10">
-
-                     <div className="flex gap-1">
-                        {[...Array(3)].map((_, i) =>
-                    <motion.div
-                      key={i}
-                      animate={{ height: [4, 12, 4] }}
-                      transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                      className="w-1 bg-[#FFD54F] rounded-full" />
-
-                    )}
-                     </div>
-                     <span className="text-[10px] font-black tracking-widest uppercase">Listening</span>
-                   </motion.div>
-                </div>
-             </div>
+                  <AppMockup app={activeApp} text={displayText} />
+               </div>
              
              {/* Decorative Elements */}
              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#FFD54F]/20 rounded-full blur-3xl -z-10" />
