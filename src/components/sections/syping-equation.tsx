@@ -42,115 +42,115 @@ const SpeakAnimation = () =>
   </div>;
 
 
-const TypingAnimation = () => (
-  <div className="relative w-24 h-24 flex items-center justify-center">
+const TypingAnimation = () =>
+<div className="relative w-24 h-24 flex items-center justify-center">
     <motion.div
-      animate={{ y: [0, 2, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      className="relative w-20 h-14 bg-[#e2e8f0] border-2 border-[#0f172a] rounded-xl shadow-[0_6px_0_#94a3b8] flex flex-col p-1.5 gap-1"
-    >
+    animate={{ y: [0, 2, 0] }}
+    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    className="relative w-20 h-14 bg-[#e2e8f0] border-2 border-[#0f172a] rounded-xl shadow-[0_6px_0_#94a3b8] flex flex-col p-1.5 gap-1">
+
       {/* Keyboard Row 1 */}
       <div className="flex gap-1 justify-center">
-        {[0, 1, 2, 3].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ 
-              backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-              y: [0, 1.5, 0],
-              boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-            }}
-            transition={{ 
-              duration: 1.2, 
-              repeat: Infinity, 
-              delay: i * 0.15,
-              ease: "easeInOut"
-            }}
-            className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
-          />
-        ))}
+        {[0, 1, 2, 3].map((i) =>
+      <motion.div
+        key={i}
+        animate={{
+          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+          y: [0, 1.5, 0],
+          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
+        }}
+        transition={{
+          duration: 1.2,
+          repeat: Infinity,
+          delay: i * 0.15,
+          ease: "easeInOut"
+        }}
+        className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
+
+      )}
       </div>
       {/* Keyboard Row 2 */}
       <div className="flex gap-1 justify-center">
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ 
-              backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-              y: [0, 1.5, 0],
-              boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-            }}
-            transition={{ 
-              duration: 1.2, 
-              repeat: Infinity, 
-              delay: 0.3 + i * 0.15,
-              ease: "easeInOut"
-            }}
-            className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
-          />
-        ))}
+        {[0, 1, 2].map((i) =>
+      <motion.div
+        key={i}
+        animate={{
+          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+          y: [0, 1.5, 0],
+          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
+        }}
+        transition={{
+          duration: 1.2,
+          repeat: Infinity,
+          delay: 0.3 + i * 0.15,
+          ease: "easeInOut"
+        }}
+        className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
+
+      )}
       </div>
       {/* Keyboard Row 3 (Spacebar row) */}
       <div className="flex gap-1 justify-center">
         <motion.div
-          animate={{ 
-            backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-            y: [0, 2, 0],
-            boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-          }}
-          transition={{ 
-            duration: 1.5, 
-            repeat: Infinity, 
-            delay: 0.8,
-            ease: "easeInOut"
-          }}
-          className="w-12 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
-        />
-      </div>
-    </motion.div>
-    
-    {/* Floating typing particles */}
-    {[0, 1, 2].map((i) => (
-      <motion.div
-        key={i}
         animate={{
-          y: [0, -40],
-          x: [0, (i - 1) * 15],
-          opacity: [0, 1, 0],
-          scale: [0.5, 1, 0.5]
+          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+          y: [0, 2, 0],
+          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
         }}
         transition={{
           duration: 1.5,
           repeat: Infinity,
-          delay: i * 0.4,
-          ease: "easeOut"
+          delay: 0.8,
+          ease: "easeInOut"
         }}
-        className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#F9A825] rounded-full"
-      />
-    ))}
-  </div>
-);
+        className="w-12 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
+
+      </div>
+    </motion.div>
+    
+    {/* Floating typing particles */}
+    {[0, 1, 2].map((i) =>
+  <motion.div
+    key={i}
+    animate={{
+      y: [0, -40],
+      x: [0, (i - 1) * 15],
+      opacity: [0, 1, 0],
+      scale: [0.5, 1, 0.5]
+    }}
+    transition={{
+      duration: 1.5,
+      repeat: Infinity,
+      delay: i * 0.4,
+      ease: "easeOut"
+    }}
+    className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#F9A825] rounded-full" />
+
+  )}
+  </div>;
+
 
 
 const SypingIcon = () =>
-  <div className="relative w-32 h-32 flex items-center justify-center">
+<div className="relative w-32 h-32 flex items-center justify-center">
       <motion.div
-      animate={{
-        y: [-4, 4, -4],
-        scale: [1, 1.02, 1],
-      }}
-      transition={{ 
-        duration: 4, 
-        repeat: Infinity, 
-        ease: "easeInOut" 
-      }}
-      className="relative z-10">
+    animate={{
+      y: [-4, 4, -4],
+      scale: [1, 1.02, 1]
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+    className="relative z-10">
 
         <Image
-        src="/logo.gif"
-        alt="Syping Icon"
-        width={120}
-        height={120}
-        className="w-28 h-28 object-contain drop-shadow-2xl" />
+      src="/logo.gif"
+      alt="Syping Icon"
+      width={120}
+      height={120}
+      className="w-28 h-28 object-contain drop-shadow-2xl" />
 
       </motion.div>
       {/* Soft ambient glow */}
@@ -160,7 +160,7 @@ const SypingIcon = () =>
 
 export default function SypingEquation() {
   return (
-    <div className="py-16 flex flex-col items-center justify-center !w-full !h-[337px]">
+    <div className="py-16 flex flex-col items-center justify-center !w-full !h-[520px]">
       <div className="flex flex-col items-center gap-12">
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16">
           {/* Speak */}
