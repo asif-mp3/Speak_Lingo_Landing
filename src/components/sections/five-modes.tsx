@@ -349,22 +349,7 @@ export default function FiveModes() {
             </div>
           </div>
 
-          {/* Bottom Pill - Listening Status - Replaced with a more stable version */}
-          <div className="absolute bottom-6 right-8 hidden lg:block">
-            <div className="bg-[#0f172a] text-white px-6 py-3 rounded-full flex items-center gap-3 shadow-xl">
-              <div className="flex gap-1">
-                {[...Array(3)].map((_, i) =>
-                <motion.div
-                  key={i}
-                  animate={{ height: [4, 12, 4] }}
-                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                  className="w-1 bg-[#FFD54F] rounded-full" />
 
-                )}
-              </div>
-              <span className="text-[11px] font-black tracking-widest uppercase">System_Active</span>
-            </div>
-          </div>
         </div>
 
         <div className="mt-20 text-center">
