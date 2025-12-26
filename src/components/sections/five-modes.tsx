@@ -164,8 +164,133 @@ const ModeGraphic = ({ type }: { type: string }) => {
               <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
             </div>
 
-                <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
+          <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
+            <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
+            <div className="h-1 flex-1 bg-slate-100 rounded-full" />
+            <Mic size={14} className="text-slate-400" />
+          </div>
+        </div>
+      );
+    case 'Education':
+      return (
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="flex items-end gap-1 h-32">
+            {[...Array(12)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{ height: [20, 80, 40, 100, 20] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  delay: i * 0.1,
+                  ease: "easeInOut"
+                }}
+                className="w-2 bg-[#FFD54F] rounded-full"
+              />
+            ))}
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="bg-[#0f172a] p-6 rounded-full shadow-2xl">
+              <Headphones className="w-10 h-10 text-white" />
+            </div>
+          </div>
+        </div>
+      );
+    default:
+      return null;
+  }
+};
 
+export default function FiveModes() {
+  const [activeMode, setActiveMode] = useState(modes[0]);
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayText(activeMode.description.slice(0, i));
+      i++;
+      if (i > activeMode.description.length) {
+        clearInterval(interval);
+      }
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [activeMode]);
+
+  return (
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1100px]">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
+            Five Modes. Infinite Power. <br />
+            <span className="text-[#F9A825]">One Revolution.</span>
+          </h2>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="flex justify-center items-end gap-4 md:gap-8 mb-12">
+          {modes.map((mode) => (
+            <button
+              key={mode.id}
+              onClick={() => {
+                setActiveMode(mode);
+                setDisplayText("");
+              }}
+              className="group flex flex-col items-center gap-3 transition-all"
+            >
+              <div className={`
+                relative w-14 h-14 md:w-16 md:h-16 rounded-[22px] flex items-center justify-center transition-all duration-300
+                ${activeMode.id === mode.id 
+                  ? 'bg-white shadow-[0_10px_30px_rgba(255,213,79,0.3)] ring-2 ring-[#FFD54F] scale-110' 
+                  : 'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
+              `}>
+                <mode.icon 
+                  size={24} 
+                  className={activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'} 
+                  strokeWidth={2}
+                />
+              </div>
+              <span className={`
+                text-[9px] md:text-[10px] font-black tracking-[0.2em] transition-colors
+                ${activeMode.id === mode.id ? 'text-[#0f172a]' : 'text-slate-400'}
+              `}>
+                {mode.title}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Display Card */}
+        <div
+          key={activeMode.id}
+          className="relative bg-white rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden"
+        >
+          {/* Header */}
+          <div className="px-8 py-5 border-b border-slate-50 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-[#F9A825] animate-pulse" />
+              <span className="text-[10px] font-black tracking-widest text-[#0f172a] uppercase">
+                {activeMode.title} — ENGINE STATUS: NOMINAL
+              </span>
+            </div>
+            <div className="hidden md:flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-[9px] font-black text-slate-400 uppercase">Latency</span>
+                <span className="text-[10px] font-black text-green-600">0.02ms</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[9px] font-black text-slate-400 uppercase">Accuracy</span>
+                <span className="text-[10px] font-black text-[#F9A825]">99.9%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Body */}
+          <div className="p-8 md:p-12 grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7 space-y-8 relative z-10">
+              <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight tracking-tight">
                 {activeMode.headline}
               </h3>
               
