@@ -276,38 +276,38 @@ export default function SypingChat() {
 
           {/* Symmetrical Architecture Callouts */}
           <CloudCallout 
-            label="Neural Core"
-            description="The engine that turns sound into structure."
+            label="Offline Core"
+            description="Write from a plane or a bunker. No cloud dependency."
             icon={Zap}
             position="left-[2%] top-[150px] -translate-y-1/2"
           />
           <CloudCallout 
-            label="Live Insight"
-            description="Zero-latency visualization of thought flow."
+            label="Zero Latency"
+            description="Words appear faster than you can speak them."
             icon={Flame}
             position="right-[2%] top-[150px] -translate-y-1/2"
           />
           <CloudCallout 
-            label="Smart Memory"
-            description="Persistent history of every syped word."
-            icon={MessageSquare}
+            label="Universal Paste"
+            description="Direct insertion into any active text field or IDE."
+            icon={Copy}
             position="left-[2%] top-[425px] -translate-y-1/2"
           />
           <CloudCallout 
-            label="Momentum"
-            description="Real-time proof of productivity gains."
-            icon={BarChart2}
+            label="Auto-Format"
+            description="Perfect punctuation and structure without effort."
+            icon={Sparkles}
             position="right-[2%] top-[425px] -translate-y-1/2"
           />
           <CloudCallout 
-            label="Power Grid"
-            description="One-click access to system commands."
-            icon={Terminal}
+            label="Context Aware"
+            description="Understands your specific jargon and project terms."
+            icon={Lightbulb}
             position="left-[2%] top-[700px] -translate-y-1/2"
           />
           <CloudCallout 
-            label="Zero Trust"
-            description="On-device processing keeps ideas safe."
+            label="Encrypted Privacy"
+            description="Military-grade on-device encryption for every word."
             icon={Shield}
             position="right-[2%] top-[700px] -translate-y-1/2"
           />
