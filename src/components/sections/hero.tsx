@@ -181,10 +181,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-center gap-4 animate-bounce !w-full !h-[73px]">
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-[#94a3b8]">See how it works</p>
-          <div className="w-px h-12 bg-gradient-to-b from-[#EAB308] to-transparent" />
-        </div>
+        <SypingEquation />
       </div>
     </section>);
 
