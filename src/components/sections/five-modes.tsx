@@ -27,18 +27,17 @@ const modes = [
     lightColor: "rgba(249, 168, 37, 0.1)",
     element: "Terminal"
   },
-    {
-      id: 'prompt',
-      icon: Brain,
-      title: "PROMPT",
-      headline: "Think Like an AI.",
-      description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
-      insight: "You become the smartest communicator in any system.",
-      color: "#0f172a",
-      lightColor: "rgba(15, 23, 42, 0.1)",
-      element: "AI"
-    },
-
+  {
+    id: 'prompt',
+    icon: Brain,
+    title: "PROMPT",
+    headline: "Think Like an AI.",
+    description: "You speak casually. Syping transforms it into a perfect AI prompt. Structured, optimized, intelligent — every time.",
+    insight: "You become the smartest communicator in any system.",
+    color: "#0f172a",
+    lightColor: "rgba(15, 23, 42, 0.1)",
+    element: "AI"
+  },
   {
     id: 'chat',
     icon: MessageSquare,
@@ -50,18 +49,17 @@ const modes = [
     lightColor: "rgba(107, 84, 57, 0.1)",
     element: "Chat"
   },
-    {
-      id: 'grammar',
-      icon: Headphones,
-      title: "EVOLVE",
-      headline: "Effortless Evolution.",
-      description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
-      insight: "Your daily communication becomes your training ground.",
-      color: "#FFD54F",
-      lightColor: "rgba(255, 213, 79, 0.1)",
-      element: "Education"
-    }
-
+  {
+    id: 'grammar',
+    icon: Headphones,
+    title: "EVOLVE",
+    headline: "Effortless Evolution.",
+    description: "Every time you speak, Syping listens, corrects, and adapts. No lessons, no stress — just effortless evolution.",
+    insight: "Your daily communication becomes your training ground.",
+    color: "#FFD54F",
+    lightColor: "rgba(255, 213, 79, 0.1)",
+    element: "Education"
+  }
 ];
 
 const ModeGraphic = ({ type }: { type: string }) => {
@@ -74,20 +72,19 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <div className="w-2 h-2 rounded-full bg-amber-400" />
             <div className="w-2 h-2 rounded-full bg-green-400" />
           </div>
-            <div className="flex-1 font-mono text-sm text-slate-400 leading-relaxed">
-              <p>The future of writing isn't typing...</p>
-              <div className="flex items-center gap-1 mt-2">
-                <motion.span
-                  initial={{ width: 0 }}
-                  animate={{ width: "auto" }}
-                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                  className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
-                >
-                  It's Syping.
-                </motion.span>
-              </div>
+          <div className="flex-1 font-mono text-sm text-slate-400 leading-relaxed">
+            <p>The future of writing isn't typing...</p>
+            <div className="flex items-center gap-1 mt-2">
+              <motion.span
+                initial={{ width: 0 }}
+                animate={{ width: "auto" }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                className="overflow-hidden whitespace-nowrap text-[#0f172a] font-bold border-r-2 border-[#FFD54F]"
+              >
+                It's Syping.
+              </motion.span>
             </div>
-
+          </div>
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 3, repeat: Infinity }}
@@ -102,13 +99,11 @@ const ModeGraphic = ({ type }: { type: string }) => {
             <span className="text-[10px] text-slate-500 uppercase tracking-widest">Execute_Command</span>
             <Command size={12} className="text-slate-500" />
           </div>
-            <div className="space-y-3">
-              <div className="flex gap-2">
-                <span className="text-[#FFD54F]">$</span>
-                  <span className="text-white text-sm">syping --deploy "email_campaign"</span>
-
-              </div>
-
+          <div className="space-y-3">
+            <div className="flex gap-2">
+              <span className="text-[#FFD54F]">$</span>
+              <span className="text-white text-sm">syping --deploy "email_campaign"</span>
+            </div>
             <div className="flex items-center gap-2 text-green-400 text-xs">
               <CheckCircle2 size={12} />
               <span>Analyzing context...</span>
@@ -160,10 +155,9 @@ const ModeGraphic = ({ type }: { type: string }) => {
           <div className="self-start bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 max-w-[80%] transition-all">
             <p className="text-xs font-bold text-[#0f172a]">User: "Summarize the call"</p>
           </div>
-            <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
-              <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
-            </div>
-
+          <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
+            <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
+          </div>
           <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
             <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
             <div className="h-1 flex-1 bg-slate-100 rounded-full" />
