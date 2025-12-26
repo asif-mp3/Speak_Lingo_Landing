@@ -161,9 +161,6 @@ export default function Hero() {
               <p className="text-xs font-bold text-[#475569]/60 uppercase tracking-widest">
                 Typing was built for machines. You were built for momentum.
               </p>
-              <p className="text-lg font-bold text-[#0f172a]">
-                Start Syping. Watch your thoughts appear.
-              </p>
             </div>
           </div>
 
