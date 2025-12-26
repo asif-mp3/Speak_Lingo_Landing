@@ -81,51 +81,56 @@ const TypingAnimation = () =>
 
 
 const SypingIcon = () =>
-<div className="relative w-28 h-28 flex items-center justify-center">
-    <motion.div
-    animate={{
-      scale: [1, 1.05, 1],
-      rotate: [0, 2, -2, 0]
-    }}
-    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    className="relative z-10">
+  <div className="relative w-32 h-32 flex items-center justify-center">
+      <motion.div
+      animate={{
+        y: [-4, 4, -4],
+        scale: [1, 1.02, 1],
+      }}
+      transition={{ 
+        duration: 4, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
+      className="relative z-10">
 
-      <Image
-      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/1-resized-1766734648295.webp?width=8000&height=8000&resize=contain"
-      alt="Syping Icon"
-      width={96}
-      height={96}
-      className="w-24 h-24 object-contain drop-shadow-xl" />
+        <Image
+        src="/logo.gif"
+        alt="Syping Icon"
+        width={120}
+        height={120}
+        className="w-28 h-28 object-contain drop-shadow-2xl" />
 
-    </motion.div>
-    {/* Subtle glow behind the icon */}
-    <div className="absolute inset-0 bg-[#F9A825] rounded-full blur-2xl opacity-20 scale-75" />
-  </div>;
+      </motion.div>
+      {/* Soft ambient glow */}
+      <div className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl opacity-15 scale-90" />
+    </div>;
 
 
 export default function SypingEquation() {
   return (
     <div className="py-16 flex flex-col items-center justify-center !w-full !h-[337px]">
       <div className="flex flex-col items-center gap-12">
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-12">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16">
           {/* Speak */}
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
+            initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center gap-4">
 
             <SpeakAnimation />
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#0f172a] bg-white px-3 py-1 rounded-full border border-[#0f172a]">Speak</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#0f172a]/60 px-3 py-1">Speak</span>
           </motion.div>
 
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}>
+            transition={{ delay: 0.3, duration: 0.5 }}>
 
-            <Plus size={32} className="text-[#F9A825] stroke-[3px]" />
+            <Plus size={24} className="text-[#F9A825] opacity-50" />
           </motion.div>
 
           {/* Typing */}
@@ -133,35 +138,36 @@ export default function SypingEquation() {
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center gap-4">
 
             <TypingAnimation />
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#0f172a] bg-white px-3 py-1 rounded-full border border-[#0f172a]">Typing</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#0f172a]/60 px-3 py-1">Typing</span>
           </motion.div>
 
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.7 }}>
+            transition={{ delay: 0.7, duration: 0.5 }}>
 
-            <Equal size={32} className="text-[#F9A825] stroke-[3px]" />
+            <Equal size={24} className="text-[#F9A825] opacity-50" />
           </motion.div>
 
           {/* Syping */}
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
+            initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center gap-4">
 
             <SypingIcon />
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#F9A825] bg-[#0f172a] px-4 py-1.5 rounded-full shadow-lg">Syping</span>
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-[#F9A825] bg-[#0f172a] px-6 py-2 rounded-full shadow-xl ring-4 ring-[#F9A825]/10">Syping</span>
           </motion.div>
         </div>
       </div>
+
 
       <div className="mt-20 flex flex-col items-center gap-4">
         <motion.div
