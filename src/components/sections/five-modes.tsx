@@ -126,24 +126,24 @@ const ModeGraphic = ({ type }: {type: string;}) => {
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
           {/* Neural Core Processor - Physical Appearance */}
-          <div className="relative w-64 h-64 flex items-center justify-center">
+          <div className="relative w-48 h-48 flex items-center justify-center">
             {/* Processor Base */}
-            <div className="absolute w-40 h-40 bg-[#1e293b] rounded-2xl border-4 border-[#0f172a] shadow-2xl overflow-hidden">
+            <div className="absolute w-32 h-32 bg-[#1e293b] rounded-2xl border-4 border-[#0f172a] shadow-2xl overflow-hidden">
               <div className="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,#F9A825_1px,transparent_1px),linear-gradient(-45deg,#F9A825_1px,transparent_1px)] [background-size:10px_10px]" />
             </div>
             
             {/* The 3D Chip */}
             <motion.div
               animate={{ 
-                z: [0, 20, 0],
+                z: [0, 15, 0],
                 rotateX: [0, 5, 0],
                 rotateY: [0, 10, 0]
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-24 h-24 bg-gradient-to-br from-[#475569] to-[#0f172a] rounded-xl border-2 border-[#F9A825]/50 shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 perspective-[1000px]"
+              className="relative w-20 h-20 bg-gradient-to-br from-[#475569] to-[#0f172a] rounded-xl border-2 border-[#F9A825]/50 shadow-[0_15px_30px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 perspective-[1000px]"
             >
               <div className="absolute inset-0 bg-[#F9A825]/5 blur-sm" />
-              <Sparkles className="w-10 h-10 text-[#F9A825]" />
+              <Sparkles className="w-8 h-8 text-[#F9A825]" />
               
               {/* Circuit Paths */}
               {[...Array(4)].map((_, i) => (
@@ -162,7 +162,7 @@ const ModeGraphic = ({ type }: {type: string;}) => {
               <motion.div
                 key={i}
                 animate={{
-                  scale: [1, 1.5, 1],
+                  scale: [1, 1.3, 1],
                   opacity: [0.3, 0.8, 0.3],
                 }}
                 transition={{
@@ -170,9 +170,9 @@ const ModeGraphic = ({ type }: {type: string;}) => {
                   repeat: Infinity,
                   delay: i * 0.25,
                 }}
-                className="absolute w-2 h-2 bg-[#F9A825] rounded-full blur-[1px]"
+                className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full blur-[1px]"
                 style={{
-                  transform: `rotate(${i * 30}deg) translateY(-100px)`
+                  transform: `rotate(${i * 30}deg) translateY(-80px)`
                 }}
               />
             ))}
@@ -183,14 +183,14 @@ const ModeGraphic = ({ type }: {type: string;}) => {
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
           {/* DNA of Data Helix - Physical Representation */}
-          <div className="relative w-64 h-64 flex flex-col items-center justify-center perspective-[1000px]">
-            <div className="relative h-48 w-32 flex flex-col justify-between py-4">
+          <div className="relative w-48 h-48 flex flex-col items-center justify-center perspective-[1000px]">
+            <div className="relative h-40 w-28 flex flex-col justify-between py-4">
               {[...Array(8)].map((_, i) => (
                 <motion.div
                   key={i}
                   animate={{ 
                     rotateY: 360,
-                    y: [0, -5, 0]
+                    y: [0, -4, 0]
                   }}
                   transition={{ 
                     rotateY: { duration: 4, repeat: Infinity, ease: "linear", delay: i * 0.2 },
@@ -198,20 +198,20 @@ const ModeGraphic = ({ type }: {type: string;}) => {
                   }}
                   className="relative w-full h-1 flex items-center justify-between"
                 >
-                  <div className="w-4 h-4 bg-[#0f172a] rounded-full border-2 border-[#F9A825] shadow-lg" />
-                  <div className="flex-1 h-[2px] bg-gradient-to-r from-[#F9A825] to-[#0f172a] mx-1 opacity-50" />
-                  <div className="w-4 h-4 bg-[#F9A825] rounded-full border-2 border-[#0f172a] shadow-lg" />
+                  <div className="w-3 h-3 bg-[#0f172a] rounded-full border border-[#F9A825] shadow-md" />
+                  <div className="flex-1 h-[1.5px] bg-gradient-to-r from-[#F9A825] to-[#0f172a] mx-1 opacity-50" />
+                  <div className="w-3 h-3 bg-[#F9A825] rounded-full border border-[#0f172a] shadow-md" />
                 </motion.div>
               ))}
             </div>
             
             {/* Knowledge Particles Rising */}
-            {[...Array(15)].map((_, i) => (
+            {[...Array(12)].map((_, i) => (
               <motion.div
                 key={i}
-                initial={{ y: 100, x: (Math.random() - 0.5) * 60, opacity: 0 }}
+                initial={{ y: 80, x: (Math.random() - 0.5) * 50, opacity: 0 }}
                 animate={{
-                  y: -150,
+                  y: -120,
                   opacity: [0, 1, 0],
                   scale: [0.5, 1, 0.5]
                 }}
@@ -221,16 +221,16 @@ const ModeGraphic = ({ type }: {type: string;}) => {
                   delay: Math.random() * 4,
                   ease: "easeOut"
                 }}
-                className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full blur-[0.5px]"
+                className="absolute w-1 h-1 bg-[#F9A825] rounded-full blur-[0.5px]"
               />
             ))}
 
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="mt-4 px-5 py-1.5 bg-[#0f172a] rounded-full border border-[#F9A825]/30 shadow-xl"
+              className="mt-4 px-4 py-1.5 bg-[#0f172a] rounded-full border border-[#F9A825]/30 shadow-xl"
             >
-              <span className="text-[10px] font-black text-[#F9A825] tracking-widest uppercase">Adaptive Learning</span>
+              <span className="text-[9px] font-black text-[#F9A825] tracking-widest uppercase">Adaptive Learning</span>
             </motion.div>
           </div>
         </div>);
