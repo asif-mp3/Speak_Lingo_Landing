@@ -134,30 +134,30 @@ export default function Hero() {
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]">
-                  Kill the <br className="hidden sm:block" />
-                  <span className="text-[#F9A825]">Keyboard</span>.
-                </h1>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]">
+              Kill the <br className="hidden sm:block" />
+              <span className="text-[#F9A825]">Keyboard</span>.
+            </h1>
 
-                  <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
-                    <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
-                    <div className="w-12 h-[1px] bg-[#F9A825]/30" />
-                    <button className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter hover:text-[#F9A825] transition-colors flex items-center gap-2 group">
-                      Start Syping... <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
+            <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
+              <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
+              <div className="w-12 h-[1px] bg-[#F9A825]/30" />
+              <button className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter hover:text-[#F9A825] transition-colors flex items-center gap-2 group">
+                Start Syping... <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
 
 
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                  <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
-                    Download for Windows <ArrowRight size={18} />
-                  </button>
-                  <button className="w-full sm:w-auto bg-white border-2 border-[#0f172a] text-[#0f172a] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-2 shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px]">
-                    Download for Mac
-                  </button>
-                </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
+                  Download for Windows <ArrowRight size={18} />
+                </button>
+                <button className="w-full sm:w-auto bg-white border-2 border-[#0f172a] text-[#0f172a] px-7 py-3.5 rounded-[18px] text-base font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-2 shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px]">
+                  Download for Mac
+                </button>
               </div>
+            </div>
 
 
             <div className="mt-12 space-y-2 text-center lg:text-left">
