@@ -8,12 +8,12 @@ const KeyboardAnimation = () => {
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [text, setText] = useState("");
   const fullText = "Too slow... lost the thought...";
-  
+
   const rows = [
-    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
-  ];
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']];
+
 
   useEffect(() => {
     let currentIndex = 0;
@@ -43,47 +43,47 @@ const KeyboardAnimation = () => {
       
       <div className="bg-slate-300 p-2 rounded-xl border-b-4 border-slate-400 shadow-lg scale-90">
         <div className="flex flex-col gap-1">
-          {rows.map((row, i) => (
-            <div key={i} className="flex gap-1 justify-center">
-              {row.map((key) => (
-                <motion.div
-                  key={key}
-                  animate={{ 
-                    y: activeKey === key ? 2 : 0,
-                    backgroundColor: activeKey === key ? "#cbd5e1" : "#f8fafc",
-                    boxShadow: activeKey === key 
-                      ? "inset 0 1px 2px rgba(0,0,0,0.2)" 
-                      : "0 2px 0px rgba(0,0,0,0.1)"
-                  }}
-                  className="w-7 h-7 rounded-[4px] flex items-center justify-center text-[10px] font-black text-slate-400 border border-slate-200"
-                >
+          {rows.map((row, i) =>
+          <div key={i} className="flex gap-1 justify-center">
+              {row.map((key) =>
+            <motion.div
+              key={key}
+              animate={{
+                y: activeKey === key ? 2 : 0,
+                backgroundColor: activeKey === key ? "#cbd5e1" : "#f8fafc",
+                boxShadow: activeKey === key ?
+                "inset 0 1px 2px rgba(0,0,0,0.2)" :
+                "0 2px 0px rgba(0,0,0,0.1)"
+              }}
+              className="w-7 h-7 rounded-[4px] flex items-center justify-center text-[10px] font-black text-slate-400 border border-slate-200">
+
                   {key}
                 </motion.div>
-              ))}
+            )}
             </div>
-          ))}
+          )}
           <div className="flex justify-center mt-1">
-            <motion.div 
+            <motion.div
               animate={{ y: activeKey === " " ? 2 : 0 }}
-              className="w-32 h-7 bg-white rounded-[4px] border border-slate-200 shadow-[0_2px_0_rgba(0,0,0,0.1)]" 
-            />
+              className="w-32 h-7 bg-white rounded-[4px] border border-slate-200 shadow-[0_2px_0_rgba(0,0,0,0.1)]" />
+
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 const SypingFlowAnimation = () => {
   const [words, setWords] = useState<string[]>([]);
   const fullSentence = "Ideas flow as fast as I can think them without any friction at all.";
-  
+
   useEffect(() => {
     const wordList = fullSentence.split(" ");
     let index = 0;
-    
+
     const interval = setInterval(() => {
-      setWords(prev => {
+      setWords((prev) => {
         if (index >= wordList.length) {
           index = 0;
           return [];
@@ -93,7 +93,7 @@ const SypingFlowAnimation = () => {
         return next;
       });
     }, 250);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -101,22 +101,22 @@ const SypingFlowAnimation = () => {
     <div className="w-full relative flex flex-col items-center gap-8">
       {/* Dynamic Soundwave */}
       <div className="flex items-center justify-center gap-1.5 h-16 w-full">
-        {[...Array(24)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{ 
-              height: [10, Math.random() * 50 + 10, 10],
-              opacity: [0.3, 0.8, 0.3],
-              backgroundColor: ["#FFD54F", "#FACC15", "#FFD54F"]
-            }}
-            transition={{ 
-              duration: 0.6 + Math.random() * 0.4, 
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-1.5 rounded-full"
-          />
-        ))}
+        {[...Array(24)].map((_, i) =>
+        <motion.div
+          key={i}
+          animate={{
+            height: [10, Math.random() * 50 + 10, 10],
+            opacity: [0.3, 0.8, 0.3],
+            backgroundColor: ["#FFD54F", "#FACC15", "#FFD54F"]
+          }}
+          transition={{
+            duration: 0.6 + Math.random() * 0.4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="w-1.5 rounded-full" />
+
+        )}
       </div>
 
       {/* Floating Thoughts becoming Text */}
@@ -126,23 +126,23 @@ const SypingFlowAnimation = () => {
         
         <div className="flex flex-wrap gap-x-2 gap-y-1 relative z-10">
           <AnimatePresence mode="popLayout">
-            {words.map((word, i) => (
-              <motion.span
-                key={`${word}-${i}`}
-                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="text-lg font-bold text-white tracking-tight"
-              >
+            {words.map((word, i) =>
+            <motion.span
+              key={`${word}-${i}`}
+              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="text-lg font-bold text-white tracking-tight">
+
                 {word}
               </motion.span>
-            ))}
+            )}
           </AnimatePresence>
-          <motion.div 
+          <motion.div
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 0.6, repeat: Infinity }}
-            className="w-2 h-6 bg-[#FFD54F] mt-1 shadow-[0_0_8px_#FFD54F]"
-          />
+            className="w-2 h-6 bg-[#FFD54F] mt-1 shadow-[0_0_8px_#FFD54F]" />
+
         </div>
 
         <div className="absolute top-2 right-4 flex items-center gap-2">
@@ -150,11 +150,11 @@ const SypingFlowAnimation = () => {
           <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Real-time AI</span>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
-const FlashCard = ({ point, resolution, description, index }: { point: string, resolution: string, description: string, index: number }) => {
+const FlashCard = ({ point, resolution, description, index }: {point: string;resolution: string;description: string;index: number;}) => {
   const [isTorn, setIsTorn] = useState(false);
 
   return (
@@ -163,21 +163,21 @@ const FlashCard = ({ point, resolution, description, index }: { point: string, r
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       className="relative group cursor-pointer"
-      onClick={() => setIsTorn(!isTorn)}
-    >
+      onClick={() => setIsTorn(!isTorn)}>
+
       <AnimatePresence>
-        {!isTorn ? (
-          <motion.div
-            key="front"
-            exit={{ 
-              y: -100, 
-              opacity: 0, 
-              rotate: [0, -5, 5],
-              scale: 0.9,
-              transition: { duration: 0.4 }
-            }}
-            className="bg-white border-2 border-[#0f172a] p-6 rounded-2xl shadow-[8px_8px_0_0_#0f172a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
-          >
+        {!isTorn ?
+        <motion.div
+          key="front"
+          exit={{
+            y: -100,
+            opacity: 0,
+            rotate: [0, -5, 5],
+            scale: 0.9,
+            transition: { duration: 0.4 }
+          }}
+          className="bg-white border-2 border-[#0f172a] p-6 rounded-2xl shadow-[8px_8px_0_0_#0f172a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center shrink-0 mt-1">
                 <AlertCircle size={18} className="text-[#ef4444]" />
@@ -187,14 +187,14 @@ const FlashCard = ({ point, resolution, description, index }: { point: string, r
             <div className="mt-4 flex justify-end">
               <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tear to resolve →</span>
             </div>
-          </motion.div>
-        ) : (
-            <motion.div
-              key="back"
-              initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              className="bg-[#FFFAE7] border-2 border-[#F9A825] p-6 rounded-2xl shadow-[8px_8px_0_0_#F9A825] relative overflow-hidden"
-            >
+          </motion.div> :
+
+        <motion.div
+          key="back"
+          initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          className="bg-[#FFFAE7] border-2 border-[#F9A825] p-6 rounded-2xl shadow-[8px_8px_0_0_#F9A825] relative overflow-hidden">
+
               <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#F9A825]/10 rounded-full blur-xl" />
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0 mt-1">
@@ -205,38 +205,38 @@ const FlashCard = ({ point, resolution, description, index }: { point: string, r
                   <p className="text-xs font-medium text-[#6B5439]/60 mt-1 italic">{description}</p>
                 </div>
               </div>
-              <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}>
+              <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => {e.stopPropagation();setIsTorn(false);}}>
                 ← Bring back the pain
               </button>
             </motion.div>
 
-        )}
+        }
       </AnimatePresence>
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default function PainPoints() {
   const points = [
-    {
-      problem: "Your thoughts move faster than your fingers.",
-      resolution: "Synced to your Speed",
-      description: "Words keep pace with your intuition. No more mechanical bottlenecks."
-    },
-    {
-      problem: "Typing breaks your flow before your ideas land.",
-      resolution: "Seamless Flow State",
-      description: "The bridge between mind and screen is finally invisible."
-    },
-    {
-      problem: "The spark fades while you’re still finding the keys.",
-      resolution: "Instant Capture",
-      description: "Capture brilliance the moment it hits. The keys are no longer your limit."
-    }
-  ];
+  {
+    problem: "Your thoughts move faster than your fingers.",
+    resolution: "Synced to your Speed",
+    description: "Words keep pace with your intuition. No more mechanical bottlenecks."
+  },
+  {
+    problem: "Typing breaks your flow before your ideas land.",
+    resolution: "Seamless Flow State",
+    description: "The bridge between mind and screen is finally invisible."
+  },
+  {
+    problem: "The spark fades while you’re still finding the keys.",
+    resolution: "Instant Capture",
+    description: "Capture brilliance the moment it hits. The keys are no longer your limit."
+  }];
+
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden !w-full !h-[1118px]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -251,9 +251,9 @@ export default function PainPoints() {
             </p>
 
             <div className="grid gap-4 mb-12">
-              {points.map((p, i) => (
-                <FlashCard key={i} point={p.problem} resolution={p.resolution} description={p.description} index={i} />
-              ))}
+              {points.map((p, i) =>
+              <FlashCard key={i} point={p.problem} resolution={p.resolution} description={p.description} index={i} />
+              )}
             </div>
 
             <button className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-8 py-4 rounded-[20px] text-lg font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] flex items-center gap-2 border border-black active:shadow-none active:translate-y-[4px]">
@@ -331,6 +331,6 @@ export default function PainPoints() {
           text-orientation: mixed;
         }
       `}</style>
-    </section>
-  );
+    </section>);
+
 }
