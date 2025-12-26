@@ -42,42 +42,93 @@ const SpeakAnimation = () =>
   </div>;
 
 
-const TypingAnimation = () =>
-<div className="relative w-24 h-24 flex items-center justify-center">
+const TypingAnimation = () => (
+  <div className="relative w-24 h-24 flex items-center justify-center">
     <motion.div
-    animate={{ y: [0, 2, 0] }}
-    transition={{ duration: 2, repeat: Infinity }}
-    className="w-20 h-14 bg-white border-2 border-[#0f172a]/10 rounded-xl shadow-md flex flex-col p-2 gap-1.5">
-
-      <div className="flex gap-1">
-        <div className="w-4 h-3 bg-[#f1f5f9] rounded-sm" />
-        <motion.div
-        animate={{ backgroundColor: ["#f1f5f9", "#F9A825", "#f1f5f9"] }}
-        transition={{ duration: 0.5, repeat: Infinity, delay: 0.2 }}
-        className="w-4 h-3 bg-[#f1f5f9] rounded-sm" />
-
-        <div className="w-4 h-3 bg-[#f1f5f9] rounded-sm" />
+      animate={{ y: [0, 2, 0] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      className="relative w-20 h-14 bg-[#e2e8f0] border-2 border-[#0f172a] rounded-xl shadow-[0_6px_0_#94a3b8] flex flex-col p-1.5 gap-1"
+    >
+      {/* Keyboard Row 1 */}
+      <div className="flex gap-1 justify-center">
+        {[0, 1, 2, 3].map((i) => (
+          <motion.div
+            key={i}
+            animate={{ 
+              backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+              y: [0, 1.5, 0],
+              boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
+            }}
+            transition={{ 
+              duration: 1.2, 
+              repeat: Infinity, 
+              delay: i * 0.15,
+              ease: "easeInOut"
+            }}
+            className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
+          />
+        ))}
       </div>
+      {/* Keyboard Row 2 */}
+      <div className="flex gap-1 justify-center">
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            animate={{ 
+              backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+              y: [0, 1.5, 0],
+              boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
+            }}
+            transition={{ 
+              duration: 1.2, 
+              repeat: Infinity, 
+              delay: 0.3 + i * 0.15,
+              ease: "easeInOut"
+            }}
+            className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
+          />
+        ))}
+      </div>
+      {/* Keyboard Row 3 (Spacebar row) */}
       <div className="flex gap-1 justify-center">
         <motion.div
-        animate={{ backgroundColor: ["#f1f5f9", "#F9A825", "#f1f5f9"] }}
-        transition={{ duration: 0.5, repeat: Infinity, delay: 0.5 }}
-        className="w-8 h-3 bg-[#f1f5f9] rounded-sm" />
-
-        <div className="w-4 h-3 bg-[#f1f5f9] rounded-sm" />
+          animate={{ 
+            backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
+            y: [0, 2, 0],
+            boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
+          }}
+          transition={{ 
+            duration: 1.5, 
+            repeat: Infinity, 
+            delay: 0.8,
+            ease: "easeInOut"
+          }}
+          className="w-12 h-3 bg-white rounded-[4px] border border-[#cbd5e1]"
+        />
       </div>
     </motion.div>
-    {/* Floating cursors/indicators */}
-    <motion.div
-    animate={{
-      x: [20, 40, 20],
-      y: [-20, -10, -20],
-      opacity: [0, 1, 0]
-    }}
-    transition={{ duration: 1.5, repeat: Infinity }}
-    className="absolute top-1/2 right-0 w-1 h-4 bg-[#F9A825] rounded-full" />
-
-  </div>;
+    
+    {/* Floating typing particles */}
+    {[0, 1, 2].map((i) => (
+      <motion.div
+        key={i}
+        animate={{
+          y: [0, -40],
+          x: [0, (i - 1) * 15],
+          opacity: [0, 1, 0],
+          scale: [0.5, 1, 0.5]
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          delay: i * 0.4,
+          ease: "easeOut"
+        }}
+        className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#F9A825] rounded-full"
+      />
+    ))}
+  </div>
+);
 
 
 const SypingIcon = () =>
