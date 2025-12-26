@@ -20,13 +20,14 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
-  ChevronDown,
-  Copy,
-  Trash2,
-  Keyboard,
-  Lightbulb,
-  ZapIcon
-} from 'lucide-react';
+    ChevronDown,
+    Copy,
+    Trash2,
+    Keyboard,
+    Lightbulb,
+    ZapIcon,
+    Sparkles
+  } from 'lucide-react';
 
 const StatRow = ({ label, value, unit, icon: Icon, subLabel }: { label: string, value: string, unit?: string, icon?: any, subLabel?: string }) => (
   <div className="bg-white p-3 rounded-xl border border-[#0f172a]/10 shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:border-[#F9A825] transition-colors">
