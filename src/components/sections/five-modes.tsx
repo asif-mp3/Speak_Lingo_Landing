@@ -158,11 +158,10 @@ const ModeGraphic = ({ type }: {type: string;}) => {
           <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
             <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
           </div>
-          <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
-            <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
-            <div className="h-1 flex-1 bg-slate-100 rounded-full" />
-            <Mic size={14} className="text-slate-400" />
-          </div>
+            <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
+              <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
+              <div className="h-1 flex-1 bg-slate-100 rounded-full" />
+            </div>
         </div>);
 
     case 'Education':
