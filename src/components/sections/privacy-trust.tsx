@@ -153,22 +153,7 @@ export default function PrivacyTrust() {
               </div>
             </div>
 
-            {/* Floating indicator */}
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className={`absolute -bottom-8 -left-8 p-6 rounded-3xl shadow-2xl border transition-colors duration-700 hidden md:flex items-center gap-4 ${
-                isOffline ? 'bg-slate-900 border-slate-800 text-white' : 'bg-white border-slate-100 text-[#0f172a]'
-              }`}
-            >
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${isOffline ? 'bg-blue-500/20' : 'bg-green-50'}`}>
-                <Shield className={isOffline ? 'text-blue-400' : 'text-green-500'} size={24} />
-              </div>
-              <div>
-                <p className="text-sm font-black leading-tight">HARDWARE LEVEL</p>
-                <p className={`text-[11px] font-bold ${isOffline ? 'text-blue-400' : 'text-slate-500'}`}>PROTECTION ACTIVE</p>
-              </div>
-            </motion.div>
+
           </div>
         </div>
       </div>
