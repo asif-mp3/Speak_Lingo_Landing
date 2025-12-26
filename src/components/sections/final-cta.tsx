@@ -10,13 +10,13 @@ export default function FinalCTA() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeSaved(prev => prev + Math.floor(Math.random() * 2));
+      setTimeSaved((prev) => prev + Math.floor(Math.random() * 2));
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1135px]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -86,12 +86,12 @@ export default function FinalCTA() {
                    </div>
                    <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
                       <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "84%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-gradient-to-r from-[#F9A825] to-[#FFD54F]"
-                      />
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "84%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="h-full bg-gradient-to-r from-[#F9A825] to-[#FFD54F]" />
+
                    </div>
                 </div>
              </div>
@@ -103,6 +103,6 @@ export default function FinalCTA() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
