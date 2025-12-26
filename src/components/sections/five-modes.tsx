@@ -125,169 +125,113 @@ const ModeGraphic = ({ type }: {type: string;}) => {
     case 'AI':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Neural Pulse Animation */}
+          {/* Neural Core Processor - Physical Appearance */}
           <div className="relative w-64 h-64 flex items-center justify-center">
-            {/* Core Neural Node */}
+            {/* Processor Base */}
+            <div className="absolute w-40 h-40 bg-[#1e293b] rounded-2xl border-4 border-[#0f172a] shadow-2xl overflow-hidden">
+              <div className="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,#F9A825_1px,transparent_1px),linear-gradient(-45deg,#F9A825_1px,transparent_1px)] [background-size:10px_10px]" />
+            </div>
+            
+            {/* The 3D Chip */}
             <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                boxShadow: [
-                  "0 0 20px rgba(249, 168, 37, 0.2)",
-                  "0 0 40px rgba(249, 168, 37, 0.5)",
-                  "0 0 20px rgba(249, 168, 37, 0.2)"
-                ]
+              animate={{ 
+                z: [0, 20, 0],
+                rotateX: [0, 5, 0],
+                rotateY: [0, 10, 0]
               }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="w-20 h-20 bg-[#0f172a] rounded-[2rem] flex items-center justify-center relative z-10 border border-[#F9A825]/30"
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-24 h-24 bg-gradient-to-br from-[#475569] to-[#0f172a] rounded-xl border-2 border-[#F9A825]/50 shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 perspective-[1000px]"
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-2 border-2 border-dashed border-[#F9A825]/40 rounded-2xl"
-              />
-              <Sparkles className="w-8 h-8 text-[#F9A825]" />
+              <div className="absolute inset-0 bg-[#F9A825]/5 blur-sm" />
+              <Sparkles className="w-10 h-10 text-[#F9A825]" />
+              
+              {/* Circuit Paths */}
+              {[...Array(4)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ opacity: [0.2, 1, 0.2] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                  className={`absolute w-full h-px bg-[#F9A825]/30 ${i % 2 === 0 ? 'top-' + (i * 20 + 20) + '%' : 'left-' + (i * 20 + 20) + '%'}`}
+                  style={{ transform: i % 2 === 0 ? 'scaleX(1)' : 'rotate(90deg)' }}
+                />
+              ))}
             </motion.div>
 
-            {/* Orbiting Synapses */}
-            {[...Array(8)].map((_, i) => (
+            {/* Pulsing Data Nodes */}
+            {[...Array(12)].map((_, i) => (
               <motion.div
                 key={i}
                 animate={{
-                  rotate: [i * 45, i * 45 + 360],
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.8, 0.3],
                 }}
                 transition={{
-                  duration: 10 + i * 2,
+                  duration: 3,
                   repeat: Infinity,
-                  ease: "linear"
+                  delay: i * 0.25,
                 }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <motion.div
-                  animate={{
-                    scale: [0.8, 1.2, 0.8],
-                    opacity: [0.3, 0.7, 0.3]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.2
-                  }}
-                  className="w-3 h-3 bg-[#F9A825] rounded-full translate-x-24 blur-[1px]"
-                />
-              </motion.div>
+                className="absolute w-2 h-2 bg-[#F9A825] rounded-full blur-[1px]"
+                style={{
+                  transform: `rotate(${i * 30}deg) translateY(-100px)`
+                }}
+              />
             ))}
-
-            {/* Neural Connection Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20">
-              {[...Array(4)].map((_, i) => (
-                <motion.circle
-                  key={i}
-                  cx="50%"
-                  cy="50%"
-                  r={40 + i * 30}
-                  fill="none"
-                  stroke="#F9A825"
-                  strokeWidth="1"
-                  strokeDasharray="4 8"
-                  animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
-                  transition={{ duration: 15 + i * 5, repeat: Infinity, ease: "linear" }}
-                />
-              ))}
-            </svg>
           </div>
-        </div>);
-
-    case 'Chat':
-      return (
-        <div className="relative w-full h-full bg-slate-50 rounded-2xl p-6 flex flex-col gap-4 overflow-hidden">
-          <div className="self-start bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 max-w-[80%] transition-all">
-            <p className="text-xs font-bold text-[#0f172a]">User: "Summarize the call"</p>
-          </div>
-          <div className="self-end bg-[#0f172a] p-4 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] transition-all">
-            <p className="text-xs text-white leading-relaxed">Syping: Key points identified. Drafting summary now...</p>
-          </div>
-            <div className="mt-auto flex items-center gap-2 bg-white p-3 rounded-full border border-slate-200">
-              <div className="w-2 h-2 rounded-full bg-[#FFD54F] animate-pulse" />
-              <div className="h-1 flex-1 bg-slate-100 rounded-full" />
-            </div>
         </div>);
 
     case 'Education':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Evolutionary Helix Animation */}
-          <div className="relative w-64 h-64 flex flex-col items-center justify-center">
-            <div className="flex gap-4 items-end h-40">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="flex flex-col gap-1 items-center">
-                  <motion.div
-                    animate={{
-                      height: [10, 40, 20, 60, 10],
-                      backgroundColor: ["#F9A825", "#0f172a", "#F9A825"]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.1,
-                      ease: "easeInOut"
-                    }}
-                    className="w-2 rounded-full"
-                  />
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.4, 1, 0.4]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.1
-                    }}
-                    className="w-1.5 h-1.5 bg-[#0f172a] rounded-full"
-                  />
-                </div>
+          {/* DNA of Data Helix - Physical Representation */}
+          <div className="relative w-64 h-64 flex flex-col items-center justify-center perspective-[1000px]">
+            <div className="relative h-48 w-32 flex flex-col justify-between py-4">
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ 
+                    rotateY: 360,
+                    y: [0, -5, 0]
+                  }}
+                  transition={{ 
+                    rotateY: { duration: 4, repeat: Infinity, ease: "linear", delay: i * 0.2 },
+                    y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.1 }
+                  }}
+                  className="relative w-full h-1 flex items-center justify-between"
+                >
+                  <div className="w-4 h-4 bg-[#0f172a] rounded-full border-2 border-[#F9A825] shadow-lg" />
+                  <div className="flex-1 h-[2px] bg-gradient-to-r from-[#F9A825] to-[#0f172a] mx-1 opacity-50" />
+                  <div className="w-4 h-4 bg-[#F9A825] rounded-full border-2 border-[#0f172a] shadow-lg" />
+                </motion.div>
               ))}
             </div>
             
-            <motion.div
-              animate={{
-                y: [0, -5, 0],
-                rotate: [0, 5, -5, 0]
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="mt-6 px-6 py-2 bg-[#0f172a] rounded-full border-2 border-[#F9A825]/20 shadow-xl flex items-center gap-3"
-            >
-              <div className="flex gap-1">
-                {[0, 1, 2].map(j => (
-                  <motion.div
-                    key={j}
-                    animate={{ height: [4, 12, 4] }}
-                    transition={{ duration: 1, repeat: Infinity, delay: j * 0.2 }}
-                    className="w-1 bg-[#F9A825] rounded-full"
-                  />
-                ))}
-              </div>
-              <span className="text-[10px] font-black text-white tracking-widest uppercase">Evolving</span>
-            </motion.div>
-
-            {/* Floating Particles */}
-            {[...Array(10)].map((_, i) => (
+            {/* Knowledge Particles Rising */}
+            {[...Array(15)].map((_, i) => (
               <motion.div
                 key={i}
+                initial={{ y: 100, x: (Math.random() - 0.5) * 60, opacity: 0 }}
                 animate={{
-                  y: [0, -100],
-                  x: [Math.sin(i) * 30, Math.sin(i) * 50],
-                  opacity: [0, 0.5, 0],
-                  scale: [0, 1, 0]
+                  y: -150,
+                  opacity: [0, 1, 0],
+                  scale: [0.5, 1, 0.5]
                 }}
                 transition={{
-                  duration: 3 + Math.random() * 2,
+                  duration: 4 + Math.random() * 2,
                   repeat: Infinity,
-                  delay: Math.random() * 3
+                  delay: Math.random() * 4,
+                  ease: "easeOut"
                 }}
-                className="absolute bottom-10 w-1 h-1 bg-[#F9A825] rounded-full blur-[0.5px]"
+                className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full blur-[0.5px]"
               />
             ))}
+
+            <motion.div
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="mt-4 px-5 py-1.5 bg-[#0f172a] rounded-full border border-[#F9A825]/30 shadow-xl"
+            >
+              <span className="text-[10px] font-black text-[#F9A825] tracking-widest uppercase">Adaptive Learning</span>
+            </motion.div>
           </div>
         </div>);
 
