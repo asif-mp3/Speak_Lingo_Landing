@@ -4,51 +4,51 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, ArrowRight } from 'lucide-react';
 
-const BubblePhase = ({ active }: { active: boolean }) => {
+const BubblePhase = ({ active }: {active: boolean;}) => {
   return (
     <div className="relative w-16 h-16 flex items-center justify-center">
       <AnimatePresence>
-        {active && (
-          <>
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ 
-                  scale: [1, 1.5, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  delay: i * 0.4,
-                  ease: "easeInOut" 
-                }}
-                className="absolute inset-0 bg-[#FFD54F] rounded-full blur-xl opacity-20"
-              />
-            ))}
+        {active &&
+        <>
+            {[...Array(3)].map((_, i) =>
+          <motion.div
+            key={i}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: i * 0.4,
+              ease: "easeInOut"
+            }}
+            className="absolute inset-0 bg-[#FFD54F] rounded-full blur-xl opacity-20" />
+
+          )}
             <motion.div
-              animate={{ 
-                scale: [1, 1.1, 1],
-              }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="relative z-10 w-12 h-12 bg-[#FFD54F] rounded-full flex items-center justify-center border border-[#E6A700] shadow-lg"
-            >
+            animate={{
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="relative z-10 w-12 h-12 bg-[#FFD54F] rounded-full flex items-center justify-center border border-[#E6A700] shadow-lg">
+
               <Mic size={20} className="text-[#2D3748]" />
             </motion.div>
           </>
-        )}
-        {!active && (
-          <div className="relative z-10 w-12 h-12 bg-white/50 rounded-full flex items-center justify-center border border-[#e2e8f0]">
+        }
+        {!active &&
+        <div className="relative z-10 w-12 h-12 bg-white/50 rounded-full flex items-center justify-center border border-[#e2e8f0]">
             <Mic size={20} className="text-[#94a3b8]" />
           </div>
-        )}
+        }
       </AnimatePresence>
-    </div>
-  );
+    </div>);
+
 };
 
-const DocumentMockup = ({ active }: { active: boolean }) => {
+const DocumentMockup = ({ active }: {active: boolean;}) => {
   const [text, setText] = useState("");
   const fullText = "Typing slows thought. Syping replaces keys with voice—so your ideas flow from voice to screen in real time.";
 
@@ -65,7 +65,7 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
       if (i > fullText.length) {
         clearInterval(interval);
         setTimeout(() => {
-           if (active) setText("");
+          if (active) setText("");
         }, 3000);
       }
     }, 40);
@@ -86,16 +86,16 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
           <motion.span
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.8, repeat: Infinity }}
-            className="inline-block w-0.5 h-6 bg-[#EAB308] ml-1 align-middle"
-          />
+            className="inline-block w-0.5 h-6 bg-[#EAB308] ml-1 align-middle" />
+
         </p>
-        {!active && (
-          <div className="space-y-4">
+        {!active &&
+        <div className="space-y-4">
             <div className="h-4 bg-slate-100 rounded-full w-3/4" />
             <div className="h-4 bg-slate-100 rounded-full w-1/2" />
             <div className="h-4 bg-slate-100 rounded-full w-2/3" />
           </div>
-        )}
+        }
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
@@ -114,8 +114,8 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
 
         <BubblePhase active={active} />
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default function Hero() {
@@ -123,7 +123,7 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsSyping(prev => !prev);
+      setIsSyping((prev) => !prev);
     }, 6000);
     return () => clearInterval(interval);
   }, []);
@@ -174,8 +174,8 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-[#e2e8f0] max-w-[180px]"
-            >
+              className="absolute -bottom-10 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-[#e2e8f0] max-w-[180px]">
+
               <p className="text-xs font-bold text-[#475569] leading-tight">
                 "The keyboard is the bottleneck of human potential."
               </p>
@@ -183,11 +183,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-center gap-4 animate-bounce">
+        <div className="mt-20 flex flex-col items-center gap-4 animate-bounce !w-full !h-[73px]">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-[#94a3b8]">See how it works</p>
           <div className="w-px h-12 bg-gradient-to-b from-[#EAB308] to-transparent" />
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
