@@ -154,7 +154,7 @@ const SypingFlowAnimation = () => {
   );
 };
 
-const FlashCard = ({ point, index }: { point: string, index: number }) => {
+const FlashCard = ({ point, resolution, description, index }: { point: string, resolution: string, description: string, index: number }) => {
   const [isTorn, setIsTorn] = useState(false);
 
   return (
@@ -201,8 +201,8 @@ const FlashCard = ({ point, index }: { point: string, index: number }) => {
                   <Sparkles size={18} className="text-[#F9A825]" />
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-[#6B5439]">Resolved with Syping</p>
-                  <p className="text-xs font-medium text-[#6B5439]/60 mt-1 italic">Thought-to-screen friction removed.</p>
+                  <p className="text-lg font-bold text-[#6B5439]">{resolution}</p>
+                  <p className="text-xs font-medium text-[#6B5439]/60 mt-1 italic">{description}</p>
                 </div>
               </div>
               <button className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline" onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}>
@@ -218,9 +218,21 @@ const FlashCard = ({ point, index }: { point: string, index: number }) => {
 
 export default function PainPoints() {
   const points = [
-    "Your thoughts move faster than your fingers.",
-    "Typing breaks your flow before your ideas land.",
-    "The spark fades while you’re still finding the keys."
+    {
+      problem: "Your thoughts move faster than your fingers.",
+      resolution: "Synced to your Speed",
+      description: "Words keep pace with your intuition. No more mechanical bottlenecks."
+    },
+    {
+      problem: "Typing breaks your flow before your ideas land.",
+      resolution: "Seamless Flow State",
+      description: "The bridge between mind and screen is finally invisible."
+    },
+    {
+      problem: "The spark fades while you’re still finding the keys.",
+      resolution: "Instant Capture",
+      description: "Capture brilliance the moment it hits. The keys are no longer your limit."
+    }
   ];
 
   return (
@@ -239,8 +251,8 @@ export default function PainPoints() {
             </p>
 
             <div className="grid gap-4 mb-12">
-              {points.map((point, i) => (
-                <FlashCard key={i} point={point} index={i} />
+              {points.map((p, i) => (
+                <FlashCard key={i} point={p.problem} resolution={p.resolution} description={p.description} index={i} />
               ))}
             </div>
 
