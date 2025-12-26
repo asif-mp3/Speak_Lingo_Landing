@@ -2,62 +2,62 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Slack, 
-  Mail, 
-  Search, 
-  Framer, 
-  Mic, 
+import {
+  Slack,
+  Mail,
+  Search,
+  Framer,
+  Mic,
   Zap,
   Send,
   MoreHorizontal,
   Plus,
   MousePointer2,
-  Activity
-} from 'lucide-react';
-import { 
-  SiNotion, 
-  SiDiscord, 
-  SiGmail 
-} from 'react-icons/si';
+  Activity } from
+'lucide-react';
+import {
+  SiNotion,
+  SiDiscord,
+  SiGmail } from
+'react-icons/si';
 
 const apps = [
-  { 
-    id: 'slack', 
-    name: 'SLACK', 
-    icon: Slack, 
-    color: '#4A154B',
-      title: "Instant Collaboration",
-      fullText: "Hey team, the production build is ready. I've verified the Syping latency and it's practically zero. Let's ship it!"
-    },
+{
+  id: 'slack',
+  name: 'SLACK',
+  icon: Slack,
+  color: '#4A154B',
+  title: "Instant Collaboration",
+  fullText: "Hey team, the production build is ready. I've verified the Syping latency and it's practically zero. Let's ship it!"
+},
 
-  { 
-    id: 'email', 
-    name: 'EMAIL', 
-    icon: Mail, 
-    color: '#EA4335',
-    title: "Email at Voice Speed",
-    fullText: "Subject: Q4 Strategy Update. \n\nHi everyone, I've outlined the new vision for our voice-first platform. Please review the attached manifest."
-  },
-  { 
-    id: 'search', 
-    name: 'SEARCH', 
-    icon: Search, 
-    color: '#4285F4',
-    title: "Search the World",
-    fullText: "How does on-device neural processing improve privacy in voice-to-text applications?"
-  },
-  { 
-    id: 'figma', 
-    name: 'FIGMA', 
-    icon: Framer, 
-    color: '#F24E1E',
-    title: "Design Feedback",
-    fullText: "The padding on the hero section needs to be increased by 20px. Also, let's make the primary CTA button a bit more rounded."
-  },
-];
+{
+  id: 'email',
+  name: 'EMAIL',
+  icon: Mail,
+  color: '#EA4335',
+  title: "Email at Voice Speed",
+  fullText: "Subject: Q4 Strategy Update. \n\nHi everyone, I've outlined the new vision for our voice-first platform. Please review the attached manifest."
+},
+{
+  id: 'search',
+  name: 'SEARCH',
+  icon: Search,
+  color: '#4285F4',
+  title: "Search the World",
+  fullText: "How does on-device neural processing improve privacy in voice-to-text applications?"
+},
+{
+  id: 'figma',
+  name: 'FIGMA',
+  icon: Framer,
+  color: '#F24E1E',
+  title: "Design Feedback",
+  fullText: "The padding on the hero section needs to be increased by 20px. Also, let's make the primary CTA button a bit more rounded."
+}];
 
-const AppMockup = ({ app, text }: { app: any, text: string }) => {
+
+const AppMockup = ({ app, text }: {app: any;text: string;}) => {
   switch (app.id) {
     case 'slack':
       return (
@@ -90,8 +90,8 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
               <Send size={14} className="text-[#FFD54F]" />
             </div>
           </div>
-        </div>
-      );
+        </div>);
+
     case 'email':
       return (
         <div className="w-full h-full bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-200 shadow-inner">
@@ -114,8 +114,8 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
               <motion.span animate={{ opacity: [1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} className="inline-block w-0.5 h-3 bg-[#EA4335] ml-0.5" />
             </div>
           </div>
-        </div>
-      );
+        </div>);
+
     case 'search':
       return (
         <div className="w-full h-full bg-slate-50 rounded-2xl p-8 flex flex-col items-center justify-center gap-6">
@@ -138,8 +138,8 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
              <div className="h-4 w-20 bg-slate-200 rounded-full" />
              <div className="h-4 w-20 bg-slate-200 rounded-full" />
           </div>
-        </div>
-      );
+        </div>);
+
     case 'figma':
       return (
         <div className="w-full h-full bg-[#1e1e1e] rounded-2xl overflow-hidden flex flex-col">
@@ -155,11 +155,11 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
           </div>
           <div className="flex-1 relative p-8">
             <div className="absolute top-1/4 left-1/4 bg-white/5 border border-white/10 w-1/2 h-1/2 rounded-lg backdrop-blur" />
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-4 shadow-2xl max-w-[200px]"
-            >
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-4 shadow-2xl max-w-[200px]">
+
                <div className="flex items-center gap-2 mb-2">
                  <div className="w-4 h-4 rounded bg-[#F24E1E] flex items-center justify-center text-[8px] text-white font-bold">A</div>
                  <span className="text-[10px] font-bold text-slate-800">Comment</span>
@@ -170,12 +170,12 @@ const AppMockup = ({ app, text }: { app: any, text: string }) => {
                </p>
             </motion.div>
           </div>
-        </div>
-      );
+        </div>);
+
     default:
       return null;
   }
-}
+};
 
 export default function Audience() {
   const [activeApp, setActiveApp] = useState(apps[0]);
@@ -195,7 +195,7 @@ export default function Audience() {
   }, [activeApp]);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1129px]">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
@@ -210,26 +210,26 @@ export default function Audience() {
 
         {/* Tab Navigation */}
         <div className="flex justify-center items-center gap-4 md:gap-8 mb-12 flex-wrap">
-          {apps.map((app) => (
-            <button
-              key={app.id}
-              onClick={() => {
-                setActiveApp(app);
-                setDisplayText("");
-              }}
-              className="group flex flex-col items-center gap-3 transition-all"
-            >
+          {apps.map((app) =>
+          <button
+            key={app.id}
+            onClick={() => {
+              setActiveApp(app);
+              setDisplayText("");
+            }}
+            className="group flex flex-col items-center gap-3 transition-all">
+
               <div className={`
                 relative w-16 h-16 md:w-20 md:h-20 rounded-[24px] flex items-center justify-center transition-all duration-300
-                ${activeApp.id === app.id 
-                  ? 'bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] ring-2 ring-[#FFD54F] scale-110' 
-                  : 'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
+                ${activeApp.id === app.id ?
+            'bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] ring-2 ring-[#FFD54F] scale-110' :
+            'bg-white/40 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:scale-105'}
               `}>
-                <app.icon 
-                  size={32} 
-                  className={activeApp.id === app.id ? 'text-[#0f172a]' : 'text-slate-400'} 
-                  strokeWidth={1.5}
-                />
+                <app.icon
+                size={32}
+                className={activeApp.id === app.id ? 'text-[#0f172a]' : 'text-slate-400'}
+                strokeWidth={1.5} />
+
               </div>
               <span className={`
                 text-[10px] md:text-xs font-black tracking-[0.2em] transition-colors
@@ -238,14 +238,14 @@ export default function Audience() {
                 {app.name}
               </span>
             </button>
-          ))}
+          )}
         </div>
 
         {/* Display Card */}
         <div
           key={activeApp.id}
-          className="grid lg:grid-cols-12 gap-12 bg-white rounded-[48px] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden p-8 md:p-12 items-center"
-        >
+          className="grid lg:grid-cols-12 gap-12 bg-white rounded-[48px] shadow-[0_50px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden p-8 md:p-12 items-center">
+
             <div className="lg:col-span-6 space-y-8">
                
                <h3 className="text-3xl md:text-5xl font-black text-[#0f172a] leading-tight">
@@ -287,20 +287,20 @@ export default function Audience() {
 
                 {/* Listening Pill - Contextual within graphic */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                   <motion.div 
-                     animate={{ y: [0, -4, 0] }}
-                     transition={{ duration: 2, repeat: Infinity }}
-                     className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-2xl border border-white/10"
-                   >
+                   <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="bg-[#0f172a] text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-2xl border border-white/10">
+
                      <div className="flex gap-1">
-                        {[...Array(3)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            animate={{ height: [4, 12, 4] }}
-                            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                            className="w-1 bg-[#FFD54F] rounded-full"
-                          />
-                        ))}
+                        {[...Array(3)].map((_, i) =>
+                    <motion.div
+                      key={i}
+                      animate={{ height: [4, 12, 4] }}
+                      transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                      className="w-1 bg-[#FFD54F] rounded-full" />
+
+                    )}
                      </div>
                      <span className="text-[10px] font-black tracking-widest uppercase">Listening</span>
                    </motion.div>
@@ -339,6 +339,6 @@ export default function Audience() {
            </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
