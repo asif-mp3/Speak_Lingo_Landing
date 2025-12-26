@@ -124,28 +124,76 @@ const ModeGraphic = ({ type }: {type: string;}) => {
 
     case 'AI':
       return (
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="relative w-48 h-48">
-            {[...Array(3)].map((_, i) =>
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          {/* Neural Pulse Animation */}
+          <div className="relative w-64 h-64 flex items-center justify-center">
+            {/* Core Neural Node */}
             <motion.div
-              key={i}
               animate={{
                 scale: [1, 1.2, 1],
-                rotate: [0, 180, 360],
-                opacity: [0.3, 0.6, 0.3]
+                boxShadow: [
+                  "0 0 20px rgba(249, 168, 37, 0.2)",
+                  "0 0 40px rgba(249, 168, 37, 0.5)",
+                  "0 0 20px rgba(249, 168, 37, 0.2)"
+                ]
               }}
-              transition={{ duration: 8 + i * 2, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 border border-[#FFD54F]/30 rounded-[30%_70%_70%_30%/30%_30%_70%_70%]" />
+              transition={{ duration: 4, repeat: Infinity }}
+              className="w-20 h-20 bg-[#0f172a] rounded-[2rem] flex items-center justify-center relative z-10 border border-[#F9A825]/30"
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-2 border-2 border-dashed border-[#F9A825]/40 rounded-2xl"
+              />
+              <Sparkles className="w-8 h-8 text-[#F9A825]" />
+            </motion.div>
 
-            )}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-[#0f172a] p-6 rounded-3xl shadow-2xl relative z-10">
-                <Brain className="w-12 h-12 text-[#FFD54F]" />
-              </div>
-            </div>
-            <div className="absolute -top-4 -left-4 bg-white p-2 rounded-lg shadow-lg border border-slate-100">
-              <Sparkles size={16} className="text-[#FFD54F]" />
-            </div>
+            {/* Orbiting Synapses */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  rotate: [i * 45, i * 45 + 360],
+                }}
+                transition={{
+                  duration: 10 + i * 2,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <motion.div
+                  animate={{
+                    scale: [0.8, 1.2, 0.8],
+                    opacity: [0.3, 0.7, 0.3]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.2
+                  }}
+                  className="w-3 h-3 bg-[#F9A825] rounded-full translate-x-24 blur-[1px]"
+                />
+              </motion.div>
+            ))}
+
+            {/* Neural Connection Lines */}
+            <svg className="absolute inset-0 w-full h-full opacity-20">
+              {[...Array(4)].map((_, i) => (
+                <motion.circle
+                  key={i}
+                  cx="50%"
+                  cy="50%"
+                  r={40 + i * 30}
+                  fill="none"
+                  stroke="#F9A825"
+                  strokeWidth="1"
+                  strokeDasharray="4 8"
+                  animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
+                  transition={{ duration: 15 + i * 5, repeat: Infinity, ease: "linear" }}
+                />
+              ))}
+            </svg>
           </div>
         </div>);
 
@@ -166,27 +214,80 @@ const ModeGraphic = ({ type }: {type: string;}) => {
 
     case 'Education':
       return (
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="flex items-end gap-1 h-32">
-            {[...Array(12)].map((_, i) =>
-            <motion.div
-              key={i}
-              animate={{ height: [20, 80, 40, 100, 20] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: i * 0.1,
-                ease: "easeInOut"
-              }}
-              className="w-2 bg-[#FFD54F] rounded-full" />
-
-            )}
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="bg-[#0f172a] p-6 rounded-full shadow-2xl">
-              <Headphones className="w-10 h-10 text-white" />
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          {/* Evolutionary Helix Animation */}
+          <div className="relative w-64 h-64 flex flex-col items-center justify-center">
+            <div className="flex gap-4 items-end h-40">
+              {[...Array(12)].map((_, i) => (
+                <div key={i} className="flex flex-col gap-1 items-center">
+                  <motion.div
+                    animate={{
+                      height: [10, 40, 20, 60, 10],
+                      backgroundColor: ["#F9A825", "#0f172a", "#F9A825"]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.1,
+                      ease: "easeInOut"
+                    }}
+                    className="w-2 rounded-full"
+                  />
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.4, 1, 0.4]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.1
+                    }}
+                    className="w-1.5 h-1.5 bg-[#0f172a] rounded-full"
+                  />
+                </div>
+              ))}
             </div>
+            
+            <motion.div
+              animate={{
+                y: [0, -5, 0],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="mt-6 px-6 py-2 bg-[#0f172a] rounded-full border-2 border-[#F9A825]/20 shadow-xl flex items-center gap-3"
+            >
+              <div className="flex gap-1">
+                {[0, 1, 2].map(j => (
+                  <motion.div
+                    key={j}
+                    animate={{ height: [4, 12, 4] }}
+                    transition={{ duration: 1, repeat: Infinity, delay: j * 0.2 }}
+                    className="w-1 bg-[#F9A825] rounded-full"
+                  />
+                ))}
+              </div>
+              <span className="text-[10px] font-black text-white tracking-widest uppercase">Evolving</span>
+            </motion.div>
+
+            {/* Floating Particles */}
+            {[...Array(10)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  y: [0, -100],
+                  x: [Math.sin(i) * 30, Math.sin(i) * 50],
+                  opacity: [0, 0.5, 0],
+                  scale: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 3
+                }}
+                className="absolute bottom-10 w-1 h-1 bg-[#F9A825] rounded-full blur-[0.5px]"
+              />
+            ))}
           </div>
         </div>);
 
