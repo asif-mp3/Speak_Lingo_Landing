@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SypingEquation from './syping-equation';
 
 const DocumentMockup = ({ active }: {active: boolean;}) => {
