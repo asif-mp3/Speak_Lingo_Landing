@@ -111,15 +111,15 @@ const AIEditingFeatures = () => {
             </p>
             
             <div className="flex flex-col gap-5">
-               <div className="group flex items-center gap-5 p-6 bg-white rounded-[28px] border-[2px] border-[#6B5439]/5 shadow-sm hover:shadow-lg transition-all hover:scale-[1.01]">
-                  <div className="w-14 h-14 bg-[#FFFAE7] rounded-[18px] flex items-center justify-center border-2 border-[#FFD54F] shadow-inner">
-                     <Mic className="text-[#6B5439] group-hover:scale-110 transition-transform" size={28} />
-                  </div>
-                  <div>
-                     <h4 className="text-lg font-bold text-[#0f172a] mb-1 tracking-tight">Interactive Voice UI</h4>
-                     <p className="text-[#64748b] text-[15px] font-bold opacity-60">The interface reacts to every syllable you speak.</p>
-                  </div>
-               </div>
+                 <div className="group flex items-center gap-5 p-6 bg-white rounded-[28px] border-[2px] border-[#6B5439]/5 shadow-sm hover:shadow-lg transition-all hover:scale-[1.01]">
+                    <div className="w-14 h-14 bg-[#FFFAE7] rounded-[18px] flex items-center justify-center border-2 border-[#FFD54F] shadow-inner">
+                       <Sparkles className="text-[#6B5439] group-hover:scale-110 transition-transform" size={28} />
+                    </div>
+                    <div>
+                       <h4 className="text-lg font-bold text-[#0f172a] mb-1 tracking-tight">Interactive AI UI</h4>
+                       <p className="text-[#64748b] text-[15px] font-bold opacity-60">The interface reacts to every syllable you speak.</p>
+                    </div>
+                 </div>
                
                <div className="group flex items-center gap-5 p-6 bg-white rounded-[28px] border-[2px] border-[#6B5439]/5 shadow-sm hover:shadow-lg transition-all hover:scale-[1.01]">
                   <div className="w-14 h-14 bg-[#FFD54F]/20 rounded-[18px] flex items-center justify-center border-2 border-[#FFD54F] shadow-inner">
