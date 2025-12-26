@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, ArrowRight, Play } from 'lucide-react';
+import { Mic, ArrowRight } from 'lucide-react';
 
 const BubblePhase = ({ active }: { active: boolean }) => {
   return (
@@ -50,8 +50,7 @@ const BubblePhase = ({ active }: { active: boolean }) => {
 
 const DocumentMockup = ({ active }: { active: boolean }) => {
   const [text, setText] = useState("");
-    const fullText = "Typing slows thought. Syping replaces keys with voice—so your ideas flow from voice to screen in real time.";
-
+  const fullText = "Typing slows thought. Syping replaces keys with voice—so your ideas flow from voice to screen in real time.";
 
   useEffect(() => {
     if (!active) {
@@ -109,9 +108,9 @@ const DocumentMockup = ({ active }: { active: boolean }) => {
               <span className="text-[10px] font-black uppercase tracking-wider text-amber-700">Streak: {active ? "🔥 12m" : "0m"}</span>
            </div>
         </div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
-            {active ? "Syping Active" : "Waiting for Voice"}
-          </p>
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#94a3b8]">
+          {active ? "Syping Active" : "Waiting for Voice"}
+        </p>
 
         <BubblePhase active={active} />
       </div>
@@ -147,7 +146,6 @@ export default function Hero() {
               </button>
             </div>
 
-
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-[#0f172a] hover:bg-[#1e293b] text-white px-7 py-3.5 rounded-[18px] text-base font-bold transition-all shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_5px_0_rgb(0,0,0)] active:shadow-none active:translate-y-[4px] flex items-center justify-center gap-2 border border-black">
@@ -158,7 +156,6 @@ export default function Hero() {
                 </button>
               </div>
             </div>
-
 
             <div className="mt-12 space-y-2 text-center lg:text-left">
               <p className="text-xs font-bold text-[#475569]/60 uppercase tracking-widest">
