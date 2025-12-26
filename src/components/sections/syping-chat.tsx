@@ -191,20 +191,6 @@ export default function SypingChat() {
 
                 {/* Text Area */}
                 <div className="bg-[#FFD54F]/80 rounded-[24px] p-4 border-2 border-[#0f172a]/5 shadow-inner min-h-[140px] mb-3 flex flex-col items-center justify-center text-center">
-                  <motion.div
-                    animate={{
-                      y: [-4, 4, -4],
-                      opacity: [0.6, 1, 0.6]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="mb-3"
-                  >
-                    <img src="/logo.gif" alt="Syping Icon" className="w-12 h-12 object-contain opacity-40 grayscale group-hover:grayscale-0 transition-all" />
-                  </motion.div>
                   <p className="text-[12px] font-bold text-[#0f172a]/40 italic">
                     Your transcribed text will appear here...
                   </p>
