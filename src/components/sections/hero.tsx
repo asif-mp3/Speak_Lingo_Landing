@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, ArrowRight } from 'lucide-react';
+import SypingEquation from './syping-equation';
 
 const BubblePhase = ({ active }: {active: boolean;}) => {
   return (
