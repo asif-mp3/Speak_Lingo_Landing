@@ -8,7 +8,7 @@ export default function PrivacyTrust() {
   const [isOffline, setIsOffline] = useState(false);
 
   return (
-    <section className="py-32 bg-white overflow-hidden relative">
+    <section className="py-32 bg-[#FFFAE7] overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-[1140px] relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="order-2 lg:order-1">
