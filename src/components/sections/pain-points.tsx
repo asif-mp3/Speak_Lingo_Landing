@@ -236,7 +236,7 @@ export default function PainPoints() {
 
 
   return (
-    <section className="py-24 bg-white overflow-hidden !w-full !h-[1149px]">
+    <section className="py-24 bg-white overflow-hidden !w-full !h-[1111px]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
