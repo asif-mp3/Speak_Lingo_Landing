@@ -294,9 +294,9 @@ export default function PainPoints() {
                   <h4 className="text-2xl font-black text-white uppercase tracking-tighter">The Syping Way</h4>
                   <p className="text-xs font-bold text-[#FFD54F] uppercase tracking-widest mt-1">Unfiltered Cognition</p>
                 </div>
-                <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(250,204,21,0.4)]">
-                  <Mic className="text-[#0f172a]" size={24} />
-                </div>
+                  <div className="w-12 h-12 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(250,204,21,0.4)]">
+                    <Zap className="text-[#0f172a]" size={24} />
+                  </div>
               </div>
               
               <SypingFlowAnimation />
