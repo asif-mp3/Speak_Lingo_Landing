@@ -130,7 +130,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-[140px] pb-[80px] overflow-hidden bg-[#FFFAE7]">
+    <section className="relative pt-[140px] pb-[80px] overflow-hidden bg-[#FFFAE7] !w-full !h-[936px]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start">
