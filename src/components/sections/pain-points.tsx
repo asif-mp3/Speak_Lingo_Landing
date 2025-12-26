@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, AlertCircle, Mic, MousePointer2, Sparkles } from 'lucide-react';
+import { ArrowRight, AlertCircle, MousePointer2, Sparkles, Zap } from 'lucide-react';
 
 const KeyboardAnimation = () => {
   const [activeKey, setActiveKey] = useState<string | null>(null);
