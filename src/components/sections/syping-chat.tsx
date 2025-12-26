@@ -21,7 +21,10 @@ import {
   Keyboard,
   Lightbulb,
   ZapIcon,
-  Sparkles } from
+  Sparkles,
+  Moon,
+  Minus,
+  BarChart2 } from
 'lucide-react';
 
 const StatRow = ({ label, value, unit, icon: Icon, subLabel }: {label: string;value: string;unit?: string;icon?: any;subLabel?: string;}) =>
