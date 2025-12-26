@@ -92,7 +92,7 @@ const CloudCallout = ({ label, description, position, icon: Icon }: {label: stri
 
 export default function SypingChat() {
   return (
-    <section className="py-32 bg-[#FFFAE7]/50 overflow-hidden relative !w-full !h-[1559px]">
+    <section className="py-32 bg-white overflow-hidden relative !w-full !h-[1559px]">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-32 space-y-6">
 
