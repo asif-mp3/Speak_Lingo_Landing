@@ -7,7 +7,6 @@ import {
   Mail,
   Search,
   Framer,
-  Mic,
   Zap,
   Send,
   MoreHorizontal,
