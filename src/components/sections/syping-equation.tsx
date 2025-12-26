@@ -5,12 +5,12 @@ import { Plus, Equal, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const SpeakAnimation = () => (
-  <div className="relative w-28 h-28 flex items-center justify-center">
+  <div className="relative w-20 h-20 flex items-center justify-center">
     {/* Physical Microphone Body */}
-    <div className="relative z-10 w-12 h-20 bg-gradient-to-b from-[#475569] to-[#0f172a] rounded-full border-2 border-[#F9A825]/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center pt-2">
+    <div className="relative z-10 w-9 h-14 bg-gradient-to-b from-[#475569] to-[#0f172a] rounded-full border-2 border-[#F9A825]/30 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col items-center pt-1.5">
       {/* Mic Grille */}
-      <div className="w-8 h-10 bg-[#1e293b] rounded-full border border-white/10 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] [background-size:4px_4px]" />
+      <div className="w-6 h-7 bg-[#1e293b] rounded-full border border-white/10 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] [background-size:3px_3px]" />
         <motion.div 
           animate={{ opacity: [0.1, 0.4, 0.1] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -18,7 +18,7 @@ const SpeakAnimation = () => (
         />
       </div>
       {/* Mic Body Details */}
-      <div className="w-1 h-4 bg-[#F9A825]/40 mt-2 rounded-full" />
+      <div className="w-1 h-2.5 bg-[#F9A825]/40 mt-1.5 rounded-full" />
     </div>
     
     {/* Sound Waves - Physical Rings */}
@@ -26,9 +26,9 @@ const SpeakAnimation = () => (
       <motion.div
         key={i}
         animate={{
-          scale: [0.8, 2],
+          scale: [0.8, 1.8],
           opacity: [0.6, 0],
-          borderWidth: ["4px", "1px"]
+          borderWidth: ["3px", "1px"]
         }}
         transition={{
           duration: 2,
@@ -43,23 +43,23 @@ const SpeakAnimation = () => (
 );
 
 const TypingAnimation = () => (
-  <div className="relative w-28 h-28 flex items-center justify-center perspective-[1000px]">
+  <div className="relative w-20 h-20 flex items-center justify-center perspective-[1000px]">
     <motion.div
       initial={{ rotateX: 25 }}
       animate={{ rotateX: [25, 30, 25] }}
       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      className="relative w-24 h-16 bg-[#cbd5e1] rounded-xl border-b-[8px] border-[#94a3b8] shadow-2xl p-2 grid grid-cols-4 gap-1.5"
+      className="relative w-18 h-12 bg-[#cbd5e1] rounded-lg border-b-[6px] border-[#94a3b8] shadow-xl p-1.5 grid grid-cols-4 gap-1"
     >
       {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           animate={{
-            y: [0, 4, 0],
+            y: [0, 3, 0],
             backgroundColor: i % 3 === 0 ? ["#ffffff", "#F9A825", "#ffffff"] : ["#ffffff", "#ffffff", "#ffffff"],
             boxShadow: [
-              "0 2px 0 #94a3b8",
+              "0 1.5px 0 #94a3b8",
               "0 0px 0 #94a3b8",
-              "0 2px 0 #94a3b8"
+              "0 1.5px 0 #94a3b8"
             ]
           }}
           transition={{
@@ -68,45 +68,45 @@ const TypingAnimation = () => (
             delay: Math.random() * 2,
             ease: "easeInOut"
           }}
-          className="bg-white rounded-[4px] border border-slate-200"
+          className="bg-white rounded-[3px] border border-slate-200"
         />
       ))}
       <motion.div
         animate={{
-          y: [0, 4, 0],
-          boxShadow: ["0 2px 0 #94a3b8", "0 0px 0 #94a3b8", "0 2px 0 #94a3b8"]
+          y: [0, 3, 0],
+          boxShadow: ["0 1.5px 0 #94a3b8", "0 0px 0 #94a3b8", "0 1.5px 0 #94a3b8"]
         }}
         transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
-        className="col-span-4 h-3 bg-white rounded-[4px] border border-slate-200"
+        className="col-span-4 h-2 bg-white rounded-[3px] border border-slate-200"
       />
     </motion.div>
   </div>
 );
 
 const SypingIcon = () => (
-  <div className="relative w-32 h-32 flex items-center justify-center">
+  <div className="relative w-24 h-24 flex items-center justify-center">
     {/* Synthesis Core - More Physical */}
-    <div className="relative w-20 h-20 flex items-center justify-center">
+    <div className="relative w-16 h-16 flex items-center justify-center">
       {/* Outer Shell */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 border-4 border-[#0f172a] rounded-[30%_70%_70%_30%/30%_30%_70%_70%] shadow-xl"
+        className="absolute inset-0 border-[3px] border-[#0f172a] rounded-[30%_70%_70%_30%/30%_30%_70%_70%] shadow-lg"
       />
       {/* Inner Core */}
       <motion.div
         animate={{
           scale: [1, 1.15, 1],
           boxShadow: [
-            "0 0 20px rgba(249, 168, 37, 0.3)",
-            "0 0 40px rgba(249, 168, 37, 0.6)",
-            "0 0 20px rgba(249, 168, 37, 0.3)"
+            "0 0 15px rgba(249, 168, 37, 0.3)",
+            "0 0 30px rgba(249, 168, 37, 0.6)",
+            "0 0 15px rgba(249, 168, 37, 0.3)"
           ]
         }}
         transition={{ duration: 3, repeat: Infinity }}
-        className="w-12 h-12 bg-[#F9A825] rounded-full border-4 border-[#0f172a] flex items-center justify-center z-10"
+        className="w-9 h-9 bg-[#F9A825] rounded-full border-[3px] border-[#0f172a] flex items-center justify-center z-10"
       >
-        <Sparkles className="text-[#0f172a] w-6 h-6" />
+        <Sparkles className="text-[#0f172a] w-5 h-5" />
       </motion.div>
       
       {/* Floating Orbital Nodes */}
@@ -115,12 +115,12 @@ const SypingIcon = () => (
           key={i}
           animate={{ rotate: 360 }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: i * 2.6 }}
-          className="absolute inset-[-10px]"
+          className="absolute inset-[-8px]"
         >
           <motion.div
-            animate={{ scale: [1, 1.5, 1] }}
+            animate={{ scale: [1, 1.3, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-3 h-3 bg-[#0f172a] rounded-full border-2 border-[#F9A825] absolute top-0 left-1/2 -translate-x-1/2"
+            className="w-2.5 h-2.5 bg-[#0f172a] rounded-full border-2 border-[#F9A825] absolute top-0 left-1/2 -translate-x-1/2"
           />
         </motion.div>
       ))}
@@ -130,7 +130,7 @@ const SypingIcon = () => (
     <motion.div
       animate={{ scale: [1, 1.4, 1], opacity: [0.1, 0.2, 0.1] }}
       transition={{ duration: 4, repeat: Infinity }}
-      className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl"
+      className="absolute inset-0 bg-[#F9A825] rounded-full blur-2xl"
     />
   </div>
 );
@@ -138,7 +138,7 @@ const SypingIcon = () => (
 
 export default function SypingEquation() {
   return (
-    <div className="py-16 flex flex-col items-center justify-center !w-full !h-[520px]">
+    <div className="py-12 flex flex-col items-center justify-center !w-full !h-[420px]">
       <div className="flex flex-col items-center gap-12">
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16">
           {/* Speak */}
