@@ -94,10 +94,7 @@ export default function SypingChat() {
     <section className="py-32 bg-[#FFFAE7]/50 overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-32 space-y-6">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-[#0f172a] rounded-full shadow-[6px_6px_0_#0f172a] mb-4">
-            <div className="w-2.5 h-2.5 bg-[#F9A825] rounded-full animate-ping" />
-            <span className="text-[12px] font-black uppercase tracking-[0.2em] text-[#0f172a]">The Architecture of Speed</span>
-          </div>
+
           
           <h2 className="text-6xl md:text-8xl font-black text-[#0f172a] leading-[0.85] tracking-tighter">
             Total Command. <br className="hidden md:block" />
