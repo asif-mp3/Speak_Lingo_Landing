@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Zap, Terminal, Headphones, Brain, Mic, Sparkles, Command, CheckCircle2, ChevronRight } from 'lucide-react';
+import { MessageSquare, Zap, Terminal, Headphones, Brain, Sparkles, Command, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const modes = [
 {
