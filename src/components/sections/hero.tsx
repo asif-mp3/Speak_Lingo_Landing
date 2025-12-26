@@ -139,13 +139,7 @@ export default function Hero() {
               <span className="text-[#F9A825]">Keyboard</span>.
             </h1>
 
-            <div className="flex items-center justify-center lg:justify-start gap-5 mb-10 w-full">
-              <span className="text-xl md:text-2xl font-serif italic text-[#475569]">Stop Typing</span>
-              <div className="w-12 h-[1px] bg-[#F9A825]/30" />
-              <button className="text-xl md:text-2xl font-extrabold text-[#0f172a] uppercase tracking-tighter hover:text-[#F9A825] transition-colors flex items-center gap-2 group">
-                Start Syping... <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
