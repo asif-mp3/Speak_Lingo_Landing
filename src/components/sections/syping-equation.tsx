@@ -133,29 +133,81 @@ const TypingAnimation = () =>
 
 const SypingIcon = () =>
 <div className="relative w-32 h-32 flex items-center justify-center">
+    {/* Inner Core */}
+    <motion.div
+      animate={{
+        scale: [1, 1.1, 1],
+        rotate: [0, 90, 180, 270, 360]
+      }}
+      transition={{
+        duration: 10,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+      className="w-16 h-16 bg-[#0f172a] rounded-2xl flex items-center justify-center shadow-2xl relative z-10 overflow-hidden"
+    >
       <motion.div
-    animate={{
-      y: [-4, 4, -4],
-      scale: [1, 1.02, 1]
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }}
-    className="relative z-10">
+        animate={{
+          opacity: [0.3, 0.6, 0.3],
+          scale: [0.8, 1.2, 0.8]
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+        className="absolute inset-0 bg-[#F9A825] blur-xl"
+      />
+      <div className="relative z-20 flex gap-0.5 items-center">
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            animate={{ height: [4, 12, 6, 16, 4] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+            className="w-1 bg-white rounded-full"
+          />
+        ))}
+      </div>
+    </motion.div>
 
-        <Image
-      src="/logo.gif"
-      alt="Syping Icon"
-      width={120}
-      height={120}
-      className="w-28 h-28 object-contain drop-shadow-2xl" />
+    {/* Dynamic Rings */}
+    {[0, 1, 2].map((i) => (
+      <motion.div
+        key={i}
+        animate={{
+          scale: [1, 1.5],
+          opacity: [0.5, 0],
+          rotate: i * 45
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          delay: i * 1,
+          ease: "easeOut"
+        }}
+        className="absolute w-20 h-20 border-2 border-[#F9A825] rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
+      />
+    ))}
 
-      </motion.div>
-      {/* Soft ambient glow */}
-      <div className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl opacity-15 scale-90" />
-    </div>;
+    {/* Connection Particles */}
+    {[...Array(6)].map((_, i) => (
+      <motion.div
+        key={i}
+        animate={{
+          x: [Math.cos(i * 60) * 20, Math.cos(i * 60) * 60],
+          y: [Math.sin(i * 60) * 20, Math.sin(i * 60) * 60],
+          opacity: [0, 1, 0],
+          scale: [0, 1, 0]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          delay: i * 0.3,
+          ease: "easeOut"
+        }}
+        className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full"
+      />
+    ))}
+    
+    {/* Soft ambient glow */}
+    <div className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl opacity-15 scale-110" />
+</div>;
 
 
 export default function SypingEquation() {
