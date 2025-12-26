@@ -4,210 +4,136 @@ import { motion } from "framer-motion";
 import { Plus, Equal } from "lucide-react";
 import Image from "next/image";
 
-const SpeakAnimation = () =>
-<div className="relative w-24 h-24 flex items-center justify-center">
-    <div className="w-16 h-16 bg-[#F9A825] rounded-full flex items-center justify-center shadow-lg relative overflow-hidden">
-      <motion.div
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.5, 0.8, 0.5]
-      }}
-      transition={{ duration: 2, repeat: Infinity }}
-      className="absolute inset-0 bg-white/20 rounded-full" />
-
-      <div className="relative z-10 flex gap-1 items-end h-8">
-        {[0, 1, 2, 3, 4].map((i) =>
-      <motion.div
-        key={i}
-        animate={{
-          height: [10, 24, 12, 28, 10]
-        }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          delay: i * 0.1,
-          ease: "easeInOut"
-        }}
-        className="w-1.5 bg-white rounded-full" />
-
-      )}
+const SpeakAnimation = () => (
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Physical Microphone Body */}
+    <div className="relative z-10 w-12 h-20 bg-gradient-to-b from-[#475569] to-[#0f172a] rounded-full border-2 border-[#F9A825]/30 shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center pt-2">
+      {/* Mic Grille */}
+      <div className="w-8 h-10 bg-[#1e293b] rounded-full border border-white/10 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] [background-size:4px_4px]" />
+        <motion.div 
+          animate={{ opacity: [0.1, 0.4, 0.1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute inset-0 bg-[#F9A825]/20"
+        />
       </div>
+      {/* Mic Body Details */}
+      <div className="w-1 h-4 bg-[#F9A825]/40 mt-2 rounded-full" />
     </div>
-    {/* Orbiting particles for depth */}
-    <motion.div
-    animate={{ rotate: 360 }}
-    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-    className="absolute inset-0 border border-[#F9A825]/20 rounded-full" />
-
-  </div>;
-
-
-const TypingAnimation = () =>
-<div className="relative w-24 h-24 flex items-center justify-center">
-    <motion.div
-    animate={{ y: [0, 2, 0] }}
-    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    className="relative w-20 h-14 bg-[#e2e8f0] border-2 border-[#0f172a] rounded-xl shadow-[0_6px_0_#94a3b8] flex flex-col p-1.5 gap-1">
-
-      {/* Keyboard Row 1 */}
-      <div className="flex gap-1 justify-center">
-        {[0, 1, 2, 3].map((i) =>
-      <motion.div
-        key={i}
-        animate={{
-          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-          y: [0, 1.5, 0],
-          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-        }}
-        transition={{
-          duration: 1.2,
-          repeat: Infinity,
-          delay: i * 0.15,
-          ease: "easeInOut"
-        }}
-        className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
-
-      )}
-      </div>
-      {/* Keyboard Row 2 */}
-      <div className="flex gap-1 justify-center">
-        {[0, 1, 2].map((i) =>
-      <motion.div
-        key={i}
-        animate={{
-          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-          y: [0, 1.5, 0],
-          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-        }}
-        transition={{
-          duration: 1.2,
-          repeat: Infinity,
-          delay: 0.3 + i * 0.15,
-          ease: "easeInOut"
-        }}
-        className="w-3.5 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
-
-      )}
-      </div>
-      {/* Keyboard Row 3 (Spacebar row) */}
-      <div className="flex gap-1 justify-center">
-        <motion.div
-        animate={{
-          backgroundColor: ["#ffffff", "#F9A825", "#ffffff"],
-          y: [0, 2, 0],
-          boxShadow: ["0 2px 0 #cbd5e1", "0 0px 0 #cbd5e1", "0 2px 0 #cbd5e1"]
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          delay: 0.8,
-          ease: "easeInOut"
-        }}
-        className="w-12 h-3 bg-white rounded-[4px] border border-[#cbd5e1]" />
-
-      </div>
-    </motion.div>
     
-    {/* Floating typing particles */}
-    {[0, 1, 2].map((i) =>
-  <motion.div
-    key={i}
-    animate={{
-      y: [0, -40],
-      x: [0, (i - 1) * 15],
-      opacity: [0, 1, 0],
-      scale: [0.5, 1, 0.5]
-    }}
-    transition={{
-      duration: 1.5,
-      repeat: Infinity,
-      delay: i * 0.4,
-      ease: "easeOut"
-    }}
-    className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#F9A825] rounded-full" />
-
-  )}
-  </div>;
-
-
-
-const SypingIcon = () =>
-<div className="relative w-32 h-32 flex items-center justify-center">
-    {/* Inner Core */}
-    <motion.div
-      animate={{
-        scale: [1, 1.1, 1],
-        rotate: [0, 90, 180, 270, 360]
-      }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-        ease: "linear"
-      }}
-      className="w-16 h-16 bg-[#0f172a] rounded-2xl flex items-center justify-center shadow-2xl relative z-10 overflow-hidden"
-    >
-      <motion.div
-        animate={{
-          opacity: [0.3, 0.6, 0.3],
-          scale: [0.8, 1.2, 0.8]
-        }}
-        transition={{ duration: 3, repeat: Infinity }}
-        className="absolute inset-0 bg-[#F9A825] blur-xl"
-      />
-      <div className="relative z-20 flex gap-0.5 items-center">
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ height: [4, 12, 6, 16, 4] }}
-            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-            className="w-1 bg-white rounded-full"
-          />
-        ))}
-      </div>
-    </motion.div>
-
-    {/* Dynamic Rings */}
-    {[0, 1, 2].map((i) => (
+    {/* Sound Waves - Physical Rings */}
+    {[1, 2, 3].map((i) => (
       <motion.div
         key={i}
         animate={{
-          scale: [1, 1.5],
-          opacity: [0.5, 0],
-          rotate: i * 45
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          delay: i * 1,
-          ease: "easeOut"
-        }}
-        className="absolute w-20 h-20 border-2 border-[#F9A825] rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
-      />
-    ))}
-
-    {/* Connection Particles */}
-    {[...Array(6)].map((_, i) => (
-      <motion.div
-        key={i}
-        animate={{
-          x: [Math.cos(i * 60) * 20, Math.cos(i * 60) * 60],
-          y: [Math.sin(i * 60) * 20, Math.sin(i * 60) * 60],
-          opacity: [0, 1, 0],
-          scale: [0, 1, 0]
+          scale: [0.8, 2],
+          opacity: [0.6, 0],
+          borderWidth: ["4px", "1px"]
         }}
         transition={{
           duration: 2,
           repeat: Infinity,
-          delay: i * 0.3,
+          delay: i * 0.4,
           ease: "easeOut"
         }}
-        className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full"
+        className="absolute inset-0 border border-[#F9A825] rounded-full"
       />
     ))}
+  </div>
+);
+
+const TypingAnimation = () => (
+  <div className="relative w-28 h-28 flex items-center justify-center perspective-[1000px]">
+    <motion.div
+      initial={{ rotateX: 25 }}
+      animate={{ rotateX: [25, 30, 25] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      className="relative w-24 h-16 bg-[#cbd5e1] rounded-xl border-b-[8px] border-[#94a3b8] shadow-2xl p-2 grid grid-cols-4 gap-1.5"
+    >
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [0, 4, 0],
+            backgroundColor: i % 3 === 0 ? ["#ffffff", "#F9A825", "#ffffff"] : ["#ffffff", "#ffffff", "#ffffff"],
+            boxShadow: [
+              "0 2px 0 #94a3b8",
+              "0 0px 0 #94a3b8",
+              "0 2px 0 #94a3b8"
+            ]
+          }}
+          transition={{
+            duration: 0.6,
+            repeat: Infinity,
+            delay: Math.random() * 2,
+            ease: "easeInOut"
+          }}
+          className="bg-white rounded-[4px] border border-slate-200"
+        />
+      ))}
+      <motion.div
+        animate={{
+          y: [0, 4, 0],
+          boxShadow: ["0 2px 0 #94a3b8", "0 0px 0 #94a3b8", "0 2px 0 #94a3b8"]
+        }}
+        transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
+        className="col-span-4 h-3 bg-white rounded-[4px] border border-slate-200"
+      />
+    </motion.div>
+  </div>
+);
+
+const SypingIcon = () => (
+  <div className="relative w-32 h-32 flex items-center justify-center">
+    {/* Synthesis Core - More Physical */}
+    <div className="relative w-20 h-20 flex items-center justify-center">
+      {/* Outer Shell */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-0 border-4 border-[#0f172a] rounded-[30%_70%_70%_30%/30%_30%_70%_70%] shadow-xl"
+      />
+      {/* Inner Core */}
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          boxShadow: [
+            "0 0 20px rgba(249, 168, 37, 0.3)",
+            "0 0 40px rgba(249, 168, 37, 0.6)",
+            "0 0 20px rgba(249, 168, 37, 0.3)"
+          ]
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+        className="w-12 h-12 bg-[#F9A825] rounded-full border-4 border-[#0f172a] flex items-center justify-center z-10"
+      >
+        <Sparkles className="text-[#0f172a] w-6 h-6" />
+      </motion.div>
+      
+      {/* Floating Orbital Nodes */}
+      {[0, 1, 2].map((i) => (
+        <motion.div
+          key={i}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: i * 2.6 }}
+          className="absolute inset-[-10px]"
+        >
+          <motion.div
+            animate={{ scale: [1, 1.5, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-3 h-3 bg-[#0f172a] rounded-full border-2 border-[#F9A825] absolute top-0 left-1/2 -translate-x-1/2"
+          />
+        </motion.div>
+      ))}
+    </div>
     
-    {/* Soft ambient glow */}
-    <div className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl opacity-15 scale-110" />
-</div>;
+    {/* Ambient Pulse */}
+    <motion.div
+      animate={{ scale: [1, 1.4, 1], opacity: [0.1, 0.2, 0.1] }}
+      transition={{ duration: 4, repeat: Infinity }}
+      className="absolute inset-0 bg-[#F9A825] rounded-full blur-3xl"
+    />
+  </div>
+);
 
 
 export default function SypingEquation() {
