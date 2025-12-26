@@ -133,9 +133,7 @@ export default function Hero() {
     <section className="relative pt-[140px] pb-[80px] overflow-hidden bg-[#FFFAE7]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-
-
-
+          <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start">
                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[92px] font-black leading-[1.05] text-[#0f172a] mb-8 tracking-[-0.04em]">
                   Kill the <br className="hidden sm:block" />
                   <span className="text-[#F9A825]">Keyboard</span>.
