@@ -16,7 +16,7 @@ export default function FinalCTA() {
   }, []);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1135px]">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[892px]">
       <div className="container mx-auto px-6 max-w-[1140px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
