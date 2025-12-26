@@ -20,17 +20,17 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
-    ChevronDown,
-    Copy,
-    Trash2,
-    Keyboard,
-    Lightbulb,
-    ZapIcon,
-    Sparkles
-  } from 'lucide-react';
+  ChevronDown,
+  Copy,
+  Trash2,
+  Keyboard,
+  Lightbulb,
+  ZapIcon,
+  Sparkles } from
+'lucide-react';
 
-const StatRow = ({ label, value, unit, icon: Icon, subLabel }: { label: string, value: string, unit?: string, icon?: any, subLabel?: string }) => (
-  <div className="bg-white p-3 rounded-xl border border-[#0f172a]/10 shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:border-[#F9A825] transition-colors">
+const StatRow = ({ label, value, unit, icon: Icon, subLabel }: {label: string;value: string;unit?: string;icon?: any;subLabel?: string;}) =>
+<div className="bg-white p-3 rounded-xl border border-[#0f172a]/10 shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:border-[#F9A825] transition-colors">
     <div className="flex justify-between items-start mb-1">
       <div className="text-[10px] font-black text-slate-400 uppercase tracking-tight">{label}</div>
       {Icon && <Icon size={12} className="text-[#0f172a]/20 group-hover:text-[#F9A825] transition-colors" />}
@@ -43,56 +43,56 @@ const StatRow = ({ label, value, unit, icon: Icon, subLabel }: { label: string, 
     <div className="absolute top-1 right-1 opacity-10 group-hover:opacity-20 transition-opacity">
       <ArrowRight size={14} className="-rotate-45" />
     </div>
-  </div>
-);
+  </div>;
 
-const ConnectorLine = ({ d }: { d: string }) => (
-  <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
-    <motion.path
-      d={d}
-      fill="none"
-      stroke="#0f172a"
-      strokeWidth="3"
-      strokeLinecap="round"
-      initial={{ pathLength: 0, opacity: 0 }}
-      whileInView={{ pathLength: 1, opacity: 0.2 }}
-      transition={{ duration: 1.5, ease: "easeInOut" }}
-    />
-    <motion.path
-      d={d}
-      fill="none"
-      stroke="#F9A825"
-      strokeWidth="3"
-      strokeLinecap="round"
-      initial={{ pathLength: 0, opacity: 0 }}
-      whileInView={{ pathLength: 1, opacity: [0, 0.5, 0] }}
-      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-    />
-  </svg>
-);
 
-const CloudCallout = ({ label, description, position, icon: Icon }: { label: string, description: string, position: string, icon: any }) => {
+const ConnectorLine = ({ d }: {d: string;}) =>
+<svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
+    <motion.path
+    d={d}
+    fill="none"
+    stroke="#0f172a"
+    strokeWidth="3"
+    strokeLinecap="round"
+    initial={{ pathLength: 0, opacity: 0 }}
+    whileInView={{ pathLength: 1, opacity: 0.2 }}
+    transition={{ duration: 1.5, ease: "easeInOut" }} />
+
+    <motion.path
+    d={d}
+    fill="none"
+    stroke="#F9A825"
+    strokeWidth="3"
+    strokeLinecap="round"
+    initial={{ pathLength: 0, opacity: 0 }}
+    whileInView={{ pathLength: 1, opacity: [0, 0.5, 0] }}
+    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }} />
+
+  </svg>;
+
+
+const CloudCallout = ({ label, description, position, icon: Icon }: {label: string;description: string;position: string;icon: any;}) => {
   return (
     <div className={`absolute z-20 hidden xl:block ${position}`}>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white p-6 rounded-[32px] border-4 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[300px] relative group hover:-translate-y-2 transition-transform"
-      >
+        className="bg-white p-6 rounded-[32px] border-4 border-[#0f172a] shadow-[16px_16px_0_#0f172a] max-w-[300px] relative group hover:-translate-y-2 transition-transform">
+
         <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center mb-4 border-2 border-[#0f172a] shadow-sm">
           <Icon size={28} className="text-[#0f172a]" />
         </div>
         <h4 className="text-[18px] font-black text-[#0f172a] mb-2 uppercase tracking-tight leading-none">{label}</h4>
         <p className="text-[14px] font-bold text-slate-500 leading-tight">{description}</p>
       </motion.div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default function SypingChat() {
   return (
-    <section className="py-32 bg-[#FFFAE7]/50 overflow-hidden relative">
+    <section className="py-32 bg-[#FFFAE7]/50 overflow-hidden relative !w-full !h-[1598px]">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-32 space-y-6">
 
@@ -156,23 +156,23 @@ export default function SypingChat() {
                   <div className="flex items-center gap-2">
                     <span className="text-[12px] font-bold text-slate-500">Clarity :</span>
                     <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map(i => (
-                        <div key={i} className="w-2 h-2 rounded-full bg-slate-100" />
-                      ))}
+                      {[1, 2, 3, 4, 5].map((i) =>
+                      <div key={i} className="w-2 h-2 rounded-full bg-slate-100" />
+                      )}
                     </div>
                   </div>
                 </div>
 
                 {/* Waveform Visualization (Circles/Dots) */}
                 <div className="bg-[#FFD54F] h-8 rounded-2xl flex items-center justify-center gap-2 px-6 mb-2 shadow-inner border-2 border-[#0f172a]/5 overflow-hidden">
-                  {Array.from({ length: 24 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{ scale: [1, Math.random() * 1.5 + 0.5, 1] }}
-                      transition={{ duration: 1 + Math.random(), repeat: Infinity }}
-                      className="w-1.5 h-1.5 bg-white rounded-full opacity-90"
-                    />
-                  ))}
+                  {Array.from({ length: 24 }).map((_, i) =>
+                  <motion.div
+                    key={i}
+                    animate={{ scale: [1, Math.random() * 1.5 + 0.5, 1] }}
+                    transition={{ duration: 1 + Math.random(), repeat: Infinity }}
+                    className="w-1.5 h-1.5 bg-white rounded-full opacity-90" />
+
+                  )}
                 </div>
 
                 <div className="text-center text-[11px] font-bold text-slate-400 italic mb-3">
@@ -240,18 +240,18 @@ export default function SypingChat() {
                 {/* Footer Buttons Grid */}
                 <div className="grid grid-cols-3 gap-2 mb-3">
                   {[
-                    { icon: MessageSquare, label: 'Chat' },
-                    { icon: ChevronRight, label: 'Prompt' },
-                    { icon: Copy, label: 'Task' },
-                    { icon: Settings, label: 'Settings' },
-                    { icon: Mic, label: 'Mic' },
-                    { icon: Keyboard, label: 'Hotkey' }
-                  ].map((btn, i) => (
-                    <div key={i} className="bg-[#FFD54F] rounded-xl border border-[#0f172a]/10 p-2 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
+                  { icon: MessageSquare, label: 'Chat' },
+                  { icon: ChevronRight, label: 'Prompt' },
+                  { icon: Copy, label: 'Task' },
+                  { icon: Settings, label: 'Settings' },
+                  { icon: Mic, label: 'Mic' },
+                  { icon: Keyboard, label: 'Hotkey' }].
+                  map((btn, i) =>
+                  <div key={i} className="bg-[#FFD54F] rounded-xl border border-[#0f172a]/10 p-2 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
                       <btn.icon size={14} className="text-[#0f172a]/60 group-hover:text-[#0f172a]" />
                       <span className="text-[10px] font-black text-[#0f172a]/60 group-hover:text-[#0f172a]">{btn.label}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
 
                 {/* Bottom Tip Bar */}
@@ -276,42 +276,42 @@ export default function SypingChat() {
           </div>
 
           {/* Symmetrical Architecture Callouts */}
-          <CloudCallout 
+          <CloudCallout
             label="Offline Core"
             description="Write from a plane or a bunker. No cloud dependency."
             icon={Zap}
-            position="left-[2%] top-[150px] -translate-y-1/2"
-          />
-          <CloudCallout 
+            position="left-[2%] top-[150px] -translate-y-1/2" />
+
+          <CloudCallout
             label="Zero Latency"
             description="Words appear faster than you can speak them."
             icon={Flame}
-            position="right-[2%] top-[150px] -translate-y-1/2"
-          />
-          <CloudCallout 
+            position="right-[2%] top-[150px] -translate-y-1/2" />
+
+          <CloudCallout
             label="Universal Paste"
             description="Direct insertion into any active text field or IDE."
             icon={Copy}
-            position="left-[2%] top-[425px] -translate-y-1/2"
-          />
-          <CloudCallout 
+            position="left-[2%] top-[425px] -translate-y-1/2" />
+
+          <CloudCallout
             label="Auto-Format"
             description="Perfect punctuation and structure without effort."
             icon={Sparkles}
-            position="right-[2%] top-[425px] -translate-y-1/2"
-          />
-          <CloudCallout 
+            position="right-[2%] top-[425px] -translate-y-1/2" />
+
+          <CloudCallout
             label="Context Aware"
             description="Understands your specific jargon and project terms."
             icon={Lightbulb}
-            position="left-[2%] top-[700px] -translate-y-1/2"
-          />
-          <CloudCallout 
+            position="left-[2%] top-[700px] -translate-y-1/2" />
+
+          <CloudCallout
             label="Encrypted Privacy"
             description="Military-grade on-device encryption for every word."
             icon={Shield}
-            position="right-[2%] top-[700px] -translate-y-1/2"
-          />
+            position="right-[2%] top-[700px] -translate-y-1/2" />
+
         </div>
 
         <div className="mt-24 flex flex-col items-center gap-8">
@@ -326,6 +326,6 @@ export default function SypingChat() {
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
