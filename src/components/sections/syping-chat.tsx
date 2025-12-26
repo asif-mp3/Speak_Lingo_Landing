@@ -123,7 +123,6 @@ export default function SypingChat() {
                 {/* Header Section */}
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <img src="/1.webp" alt="Logo" className="w-10 h-10 object-contain" />
                     <span className="text-2xl font-black tracking-tight flex items-center">
                       <span className="text-[#0f172a]">Speak</span>
                       <span className="text-[#F9A825]">Lingo</span>
