@@ -105,7 +105,7 @@ const SypingIcon = () =>
 
 export default function SypingEquation() {
   return (
-    <div className="py-16 flex flex-col items-center justify-center !w-full !h-[373px]">
+    <div className="py-16 flex flex-col items-center justify-center !w-full !h-[337px]">
       <div className="flex flex-col items-center gap-12">
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-12">
           {/* Speak */}
