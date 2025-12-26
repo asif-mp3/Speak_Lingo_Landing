@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plus, Equal } from "lucide-react";
+import { Plus, Equal, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const SpeakAnimation = () => (
