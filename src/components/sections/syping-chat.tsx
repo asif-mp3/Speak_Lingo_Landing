@@ -258,7 +258,6 @@ export default function SypingChat() {
                   { icon: ChevronRight, label: 'Prompt' },
                   { icon: Copy, label: 'Task' },
                   { icon: Settings, label: 'Settings' },
-                  { icon: Mic, label: 'Mic' },
                   { icon: Keyboard, label: 'Hotkey' }].
                   map((btn, i) =>
                   <div key={i} className="bg-[#FFD54F] rounded-xl border border-[#0f172a]/10 p-2 flex flex-col items-center justify-center gap-1 hover:bg-[#F9A825] transition-colors cursor-pointer group">
