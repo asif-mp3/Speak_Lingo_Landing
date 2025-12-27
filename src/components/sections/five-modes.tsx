@@ -413,7 +413,7 @@ export default function FiveModes() {
   }, [activeMode]);
 
   return (
-    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full !h-[1000px]">
+    <section className="py-24 bg-[#FFFAE7] overflow-hidden !w-full min-h-[900px]">
       <div className="container mx-auto px-6 max-w-[1100px]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
