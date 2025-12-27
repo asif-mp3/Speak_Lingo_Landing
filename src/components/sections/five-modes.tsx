@@ -509,21 +509,23 @@ export default function FiveModes() {
             </div>
 
             <div className="lg:col-span-5 relative group">
-              <div className="aspect-square relative bg-slate-50/50 rounded-[32px] overflow-hidden border border-slate-100 p-8 flex items-center justify-center">
+              <div className="aspect-square relative bg-slate-50/50 rounded-[32px] overflow-hidden border border-slate-100 p-4 md:p-8 flex items-center justify-center">
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#FFD54F_1px,transparent_1px)] [background-size:20px_20px]" />
                 </div>
                 
-                <ModeGraphic type={activeMode.element} />
+                <div className="w-full h-full flex items-center justify-center transform transition-transform duration-500 group-hover:scale-[1.02]">
+                  <ModeGraphic type={activeMode.element} />
+                </div>
 
                 {/* Secure Badge */}
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
-                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[9px] font-bold text-slate-400 border border-slate-100">
+                     <span className="w-1 h-1 rounded-full bg-blue-400" />
                      SECURE_STREAM
                    </div>
-                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[10px] font-bold text-slate-400 border border-slate-100">
-                     <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                   <div className="flex items-center gap-2 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[9px] font-bold text-slate-400 border border-slate-100">
+                     <span className="w-1 h-1 rounded-full bg-green-400" />
                      ENCRYPTED
                    </div>
                 </div>
