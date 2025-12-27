@@ -301,20 +301,34 @@ export default function PainPoints() {
               </div>
             </div>
 
-            {/* The Evolution Bridge */}
-            <div className="relative py-4">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t-2 border-dashed border-slate-200" />
-              </div>
-              <div className="relative flex justify-center">
-                <div className="bg-white border-2 border-[#0f172a] px-6 py-3 rounded-2xl shadow-[4px_4px_0_0_#0f172a] flex items-center gap-3 group hover:-translate-y-1 transition-transform">
-                  <div className="bg-[#FFD54F] p-1.5 rounded-lg border border-[#0f172a]">
-                    <TrendingUp size={16} className="text-[#0f172a]" />
+            {/* The Evolution Leap */}
+            <div className="relative py-12 flex flex-col items-center">
+              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-slate-200 via-slate-400 to-[#0f172a]" />
+              
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="relative bg-white border-2 border-[#0f172a] p-1 rounded-2xl shadow-[6px_6px_0_0_#0f172a] z-10 flex items-center gap-3 pr-6"
+              >
+                <div className="bg-[#FFD54F] p-3 rounded-xl border-2 border-[#0f172a] shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)]">
+                  <Zap size={20} className="text-[#0f172a] fill-[#0f172a]" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f172a]">The Cognitive Leap</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
                   </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-[#0f172a]">The Evolution</p>
-                    <p className="text-[8px] font-bold text-slate-400 uppercase tracking-tight">Mechanical to Cognitive</p>
-                  </div>
+                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Bypassing Mechanical Limits</p>
+                </div>
+              </motion.div>
+
+              <div className="mt-4 flex gap-8">
+                <div className="flex flex-col items-center">
+                  <div className="text-[8px] font-black text-slate-300 uppercase tracking-widest mb-1">Friction</div>
+                  <div className="text-[10px] font-bold text-[#ef4444] line-through opacity-40">100%</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="text-[8px] font-black text-slate-300 uppercase tracking-widest mb-1">Throughput</div>
+                  <div className="text-[10px] font-bold text-green-500 underline">+800%</div>
                 </div>
               </div>
             </div>
