@@ -221,74 +221,114 @@ const ModeGraphic = ({ type }: {type: string;}) => {
     case 'Chat':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Holographic Fluid Chat */}
-          <div className="relative w-72 h-80 flex flex-col">
-            {/* Live Visualizer Core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64">
-              <motion.div 
-                animate={{ 
-                  scale: [1, 1.15, 1],
-                  opacity: [0.1, 0.2, 0.1]
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute inset-0 bg-gradient-to-r from-[#FFD54F] to-transparent rounded-full blur-3xl"
-              />
-            </div>
-
-            {/* Chat Bubbles Floating */}
-            <div className="flex-1 p-6 flex flex-col gap-6">
-              {[
-                { type: 'user', text: 'Hey Syping, help me...', delay: 0 },
-                { type: 'ai', text: 'I am listening. Go ahead!', delay: 2 }
-              ].map((msg, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: msg.delay,
-                    repeat: Infinity,
-                    repeatDelay: 4
-                  }}
-                  className={`max-w-[80%] p-4 rounded-3xl shadow-xl backdrop-blur-md border ${
-                    msg.type === 'user' 
-                      ? 'self-end bg-[#0f172a] border-white/10 text-white rounded-tr-none' 
-                      : 'self-start bg-white border-slate-100 text-[#0f172a] rounded-tl-none'
-                  }`}
-                >
-                  <p className="text-xs font-bold leading-relaxed">{msg.text}</p>
-                  <div className={`absolute -bottom-1 ${msg.type === 'user' ? '-right-1' : '-left-1'} w-3 h-3 bg-inherit rounded-full`} />
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Voice Waveform Bar */}
-            <div className="h-24 bg-[#0f172a] rounded-[32px] mx-4 mb-4 border border-white/10 p-4 flex flex-col justify-between overflow-hidden shadow-2xl">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[10px] font-black text-white/50 tracking-widest uppercase">Live Voice Stream</span>
-                </div>
-                <Sparkles size={12} className="text-[#FFD54F]" />
+          {/* Realistic Chat Interface */}
+          <div className="relative w-72 h-[380px] bg-[#0f172a] rounded-[40px] shadow-2xl border-8 border-slate-900 overflow-hidden flex flex-col">
+            {/* Dynamic Status Bar */}
+            <div className="h-10 px-6 flex items-center justify-between">
+              <span className="text-[10px] font-bold text-white/40">9:41</span>
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full border border-white/20" />
+                <div className="w-3 h-3 rounded-full border border-white/20" />
               </div>
-              
-              <div className="flex items-end justify-center gap-1 h-8">
-                {[...Array(24)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ 
-                      height: [4, Math.random() * 24 + 8, 4],
-                      backgroundColor: ['#FFD54F', '#F9A825', '#FFD54F']
-                    }}
-                    transition={{ 
-                      duration: 0.5, 
-                      repeat: Infinity, 
-                      delay: i * 0.05 
-                    }}
-                    className="w-1 rounded-full opacity-80"
+            </div>
+
+            {/* Header */}
+            <div className="px-6 py-4 bg-[#1e293b] border-b border-white/5 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD54F] to-[#F9A825] flex items-center justify-center shadow-lg">
+                <MessageSquare size={18} className="text-[#0f172a]" />
+              </div>
+              <div>
+                <p className="text-xs font-black text-white uppercase tracking-tight">Syping Chat</p>
+                <div className="flex items-center gap-1">
+                  <motion.div 
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="w-1.5 h-1.5 rounded-full bg-green-500" 
                   />
+                  <span className="text-[9px] text-green-500/80 font-bold">LIVE_SYNC</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Message Thread */}
+            <div className="flex-1 p-4 flex flex-col gap-4 overflow-hidden">
+              <AnimatePresence mode="popLayout">
+                {[
+                  { id: 1, type: 'user', text: "Schedule a meeting with the design team for tomorrow at 2 PM.", delay: 0 },
+                  { id: 2, type: 'ai', text: "Analyzing your calendar... Done! Meeting scheduled. Should I send the invites now?", delay: 1.5 },
+                ].map((msg) => (
+                  <motion.div
+                    key={msg.id}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      delay: msg.delay,
+                      repeat: Infinity,
+                      repeatDelay: 5
+                    }}
+                    className={`max-w-[85%] p-3.5 rounded-2xl text-[11px] font-medium leading-relaxed shadow-sm ${
+                      msg.type === 'user' 
+                        ? 'self-end bg-[#334155] text-white rounded-tr-none border border-white/5' 
+                        : 'self-start bg-white text-[#0f172a] rounded-tl-none border border-slate-100'
+                    }`}
+                  >
+                    {msg.text}
+                    {msg.type === 'ai' && (
+                      <div className="mt-2 flex items-center gap-1">
+                        <div className="w-1 h-1 rounded-full bg-blue-500" />
+                        <span className="text-[8px] text-slate-400 font-bold uppercase tracking-tighter">Verified_Action</span>
+                      </div>
+                    )}
+                  </motion.div>
                 ))}
+              </AnimatePresence>
+
+              {/* Real-time Transcription Visual */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3, repeat: Infinity, repeatDelay: 5 }}
+                className="self-end flex flex-col items-end gap-2"
+              >
+                <div className="bg-[#334155]/50 border border-dashed border-white/10 px-3 py-2 rounded-xl flex items-center gap-2">
+                   <motion.div 
+                     animate={{ opacity: [0.3, 1, 0.3] }}
+                     transition={{ duration: 1, repeat: Infinity }}
+                     className="w-1.5 h-1.5 rounded-full bg-red-500" 
+                   />
+                   <span className="text-[9px] text-white/40 font-mono">Transcribing...</span>
+                </div>
+                <div className="flex gap-1 pr-1">
+                   {[...Array(6)].map((_, i) => (
+                     <motion.div 
+                       key={i}
+                       animate={{ height: [4, 12, 4] }}
+                       transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.1 }}
+                       className="w-0.5 bg-[#FFD54F]/40 rounded-full"
+                     />
+                   ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Input Interaction Area */}
+            <div className="p-4 bg-[#1e293b]/50 border-t border-white/5">
+              <div className="w-full h-10 rounded-full bg-[#0f172a] border border-white/10 flex items-center px-4 gap-3">
+                <motion.div 
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="w-5 h-5 rounded-full bg-[#FFD54F] flex items-center justify-center"
+                >
+                  <div className="w-2 h-2 rounded-full bg-[#0f172a]" />
+                </motion.div>
+                <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                  <motion.div 
+                    animate={{ x: ["-100%", "100%"] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#FFD54F]/30 to-transparent"
+                  />
+                </div>
               </div>
             </div>
           </div>
