@@ -125,57 +125,172 @@ const ModeGraphic = ({ type }: {type: string;}) => {
     case 'AI':
       return (
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {/* Neural Core Processor - Physical Appearance */}
-          <div className="relative w-48 h-48 flex items-center justify-center">
-            {/* Processor Base */}
-            <div className="absolute w-32 h-32 bg-[#1e293b] rounded-2xl border-4 border-[#0f172a] shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,#F9A825_1px,transparent_1px),linear-gradient(-45deg,#F9A825_1px,transparent_1px)] [background-size:10px_10px]" />
+          <div className="relative w-full max-w-[400px] h-[300px] flex items-center justify-between px-4">
+            {/* Input Side: Chaos */}
+            <div className="flex flex-col gap-2 relative">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ 
+                    x: [0, 40, 80],
+                    y: [0, (i - 2) * 10, 0],
+                    opacity: [0, 1, 0],
+                    scale: [0.8, 1.2, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    delay: i * 0.4,
+                    ease: "linear"
+                  }}
+                  className="px-3 py-1 bg-slate-100 rounded-full text-[8px] font-mono text-slate-400 whitespace-nowrap"
+                >
+                  {["just thinking...", "erratic speech", "random ideas", "vague context", "messy input"][i]}
+                </motion.div>
+              ))}
             </div>
-            
-            {/* The 3D Chip */}
-            <motion.div
-              animate={{ 
-                z: [0, 15, 0],
-                rotateX: [0, 5, 0],
-                rotateY: [0, 10, 0]
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-20 h-20 bg-gradient-to-br from-[#475569] to-[#0f172a] rounded-xl border-2 border-[#F9A825]/50 shadow-[0_15px_30px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 perspective-[1000px]"
-            >
-              <div className="absolute inset-0 bg-[#F9A825]/5 blur-sm" />
-              <Sparkles className="w-8 h-8 text-[#F9A825]" />
-              
-              {/* Circuit Paths */}
+
+            {/* Middle: The Transformer Engine */}
+            <div className="relative flex items-center justify-center">
+              <div className="w-32 h-32 relative">
+                {/* Outer Ring */}
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 border-2 border-dashed border-[#F9A825]/30 rounded-full"
+                />
+                {/* Inner Glow */}
+                <motion.div 
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-4 bg-gradient-to-br from-[#FFD54F] to-[#F9A825] rounded-full blur-xl opacity-40"
+                />
+                {/* The Core */}
+                <div className="absolute inset-8 bg-[#0f172a] rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl overflow-hidden">
+                  <Brain size={32} className="text-[#FFD54F]" />
+                  <motion.div 
+                    animate={{ y: [-40, 40] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-[#FFD54F] to-transparent shadow-[0_0_10px_#FFD54F]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Output Side: Structured Clarity */}
+            <div className="flex flex-col gap-3 relative">
               {[...Array(4)].map((_, i) => (
                 <motion.div
                   key={i}
-                  animate={{ opacity: [0.2, 1, 0.2] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-                  className={`absolute w-full h-px bg-[#F9A825]/30 ${i % 2 === 0 ? 'top-' + (i * 20 + 20) + '%' : 'left-' + (i * 20 + 20) + '%'}`}
-                  style={{ transform: i % 2 === 0 ? 'scaleX(1)' : 'rotate(90deg)' }}
-                />
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={{ 
+                    opacity: [0, 1, 1, 0],
+                    x: [0, 20],
+                    scale: [0.9, 1]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    delay: i * 0.7 + 1.5,
+                    ease: "easeOut"
+                  }}
+                  className="flex items-center gap-2"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.5)]" />
+                  <div className="h-2 bg-slate-800 rounded-full" style={{ width: `${40 + i * 15}px` }} />
+                </motion.div>
               ))}
-            </motion.div>
+              <div className="absolute -inset-2 border border-[#F9A825]/20 rounded-lg bg-[#F9A825]/5 p-2 flex flex-col gap-1">
+                 <span className="text-[7px] font-black text-[#F9A825] uppercase">Optimized Prompt</span>
+                 <div className="w-full h-1 bg-[#F9A825]/20 rounded-full overflow-hidden">
+                   <motion.div 
+                     animate={{ x: ["-100%", "100%"] }}
+                     transition={{ duration: 2, repeat: Infinity }}
+                     className="w-1/2 h-full bg-[#F9A825]"
+                   />
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>);
 
-            {/* Pulsing Data Nodes */}
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.8, 0.3],
+    case 'Chat':
+      return (
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          {/* Holographic Fluid Chat */}
+          <div className="relative w-72 h-80 flex flex-col">
+            {/* Live Visualizer Core */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64">
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.15, 1],
+                  opacity: [0.1, 0.2, 0.1]
                 }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: i * 0.25,
-                }}
-                className="absolute w-1.5 h-1.5 bg-[#F9A825] rounded-full blur-[1px]"
-                style={{
-                  transform: `rotate(${i * 30}deg) translateY(-80px)`
-                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute inset-0 bg-gradient-to-r from-[#FFD54F] to-transparent rounded-full blur-3xl"
               />
-            ))}
+            </div>
+
+            {/* Chat Bubbles Floating */}
+            <div className="flex-1 p-6 flex flex-col gap-6">
+              {[
+                { type: 'user', text: 'Hey Syping, help me...', delay: 0 },
+                { type: 'ai', text: 'I am listening. Go ahead!', delay: 2 }
+              ].map((msg, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: msg.delay,
+                    repeat: Infinity,
+                    repeatDelay: 4
+                  }}
+                  className={`max-w-[80%] p-4 rounded-3xl shadow-xl backdrop-blur-md border ${
+                    msg.type === 'user' 
+                      ? 'self-end bg-[#0f172a] border-white/10 text-white rounded-tr-none' 
+                      : 'self-start bg-white border-slate-100 text-[#0f172a] rounded-tl-none'
+                  }`}
+                >
+                  <p className="text-xs font-bold leading-relaxed">{msg.text}</p>
+                  <div className={`absolute -bottom-1 ${msg.type === 'user' ? '-right-1' : '-left-1'} w-3 h-3 bg-inherit rounded-full`} />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Voice Waveform Bar */}
+            <div className="h-24 bg-[#0f172a] rounded-[32px] mx-4 mb-4 border border-white/10 p-4 flex flex-col justify-between overflow-hidden shadow-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                  <span className="text-[10px] font-black text-white/50 tracking-widest uppercase">Live Voice Stream</span>
+                </div>
+                <Sparkles size={12} className="text-[#FFD54F]" />
+              </div>
+              
+              <div className="flex items-end justify-center gap-1 h-8">
+                {[...Array(24)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ 
+                      height: [4, Math.random() * 24 + 8, 4],
+                      backgroundColor: ['#FFD54F', '#F9A825', '#FFD54F']
+                    }}
+                    transition={{ 
+                      duration: 0.5, 
+                      repeat: Infinity, 
+                      delay: i * 0.05 
+                    }}
+                    className="w-1 rounded-full opacity-80"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>);
 
