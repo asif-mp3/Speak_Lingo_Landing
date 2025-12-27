@@ -218,107 +218,107 @@ const ModeGraphic = ({ type }: {type: string;}) => {
           </div>
         </div>);
 
-    case 'Chat':
-      return (
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          <div className="relative w-72 h-[420px] bg-[#0f172a] rounded-[48px] shadow-2xl border-[10px] border-slate-900 overflow-hidden flex flex-col">
-            <div className="h-8 px-8 flex items-center justify-between">
-              <span className="text-[10px] font-bold text-white/40">9:41</span>
-              <div className="flex gap-1.5 items-center">
-                <div className="w-4 h-2 rounded-sm border border-white/20 relative">
-                  <div className="absolute left-0 top-0 h-full bg-white/40 w-2/3" />
+      case 'Chat':
+        return (
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden py-4">
+            <div className="relative w-64 h-[380px] bg-[#0f172a] rounded-[40px] shadow-2xl border-[8px] border-slate-900 overflow-hidden flex flex-col scale-[0.85] sm:scale-100 origin-center">
+              <div className="h-6 px-6 flex items-center justify-between">
+                <span className="text-[9px] font-bold text-white/40">9:41</span>
+                <div className="flex gap-1 items-center">
+                  <div className="w-3.5 h-1.5 rounded-[2px] border border-white/20 relative">
+                    <div className="absolute left-0 top-0 h-full bg-white/40 w-2/3" />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="px-6 py-4 bg-[#1e293b] border-b border-white/5 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD54F] to-[#F9A825] flex items-center justify-center shadow-lg">
-                <MessageSquare size={18} className="text-[#0f172a]" />
-              </div>
-              <div className="flex-1">
-                <p className="text-[11px] font-black text-white uppercase tracking-tight">Syping AI</p>
-                <div className="flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[8px] text-green-500/80 font-bold tracking-tighter uppercase">Active</span>
+              <div className="px-5 py-3 bg-[#1e293b] border-b border-white/5 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFD54F] to-[#F9A825] flex items-center justify-center shadow-lg">
+                  <MessageSquare size={14} className="text-[#0f172a]" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[10px] font-black text-white uppercase tracking-tight leading-none">Syping AI</p>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <div className="w-1 h-1 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[7px] text-green-500/80 font-bold tracking-tighter uppercase">Active</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="flex-1 p-4 flex flex-col gap-4 overflow-y-auto scrollbar-hide">
-              <AnimatePresence mode="popLayout">
-                {/* User Message */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatDelay: 8 }}
-                  className="self-end max-w-[85%] p-3 bg-[#334155] text-white text-[11px] rounded-2xl rounded-tr-none border border-white/10 shadow-sm font-medium"
-                >
-                  "Organize my notes from today's meeting into a summary."
-                </motion.div>
+              <div className="flex-1 p-3 flex flex-col gap-3 overflow-y-auto scrollbar-hide">
+                <AnimatePresence mode="popLayout">
+                  {/* User Message */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20, scale: 0.9 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatDelay: 8 }}
+                    className="self-end max-w-[85%] p-2.5 bg-[#334155] text-white text-[10px] rounded-xl rounded-tr-none border border-white/10 shadow-sm font-medium"
+                  >
+                    "Organize my notes from today's meeting into a summary."
+                  </motion.div>
 
-                {/* AI Typing Indicator */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 1, 1, 0] }}
-                  transition={{ duration: 1.5, delay: 1.5, repeat: Infinity, repeatDelay: 7.5 }}
-                  className="self-start bg-white/5 px-3 py-2 rounded-full flex gap-1 items-center"
-                >
-                  <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6 }} className="w-1 h-1 bg-[#FFD54F] rounded-full" />
-                  <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} className="w-1 h-1 bg-[#FFD54F] rounded-full" />
-                  <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} className="w-1 h-1 bg-[#FFD54F] rounded-full" />
-                </motion.div>
+                  {/* AI Typing Indicator */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 1, 0] }}
+                    transition={{ duration: 1.5, delay: 1.5, repeat: Infinity, repeatDelay: 7.5 }}
+                    className="self-start bg-white/5 px-2.5 py-1.5 rounded-full flex gap-1 items-center"
+                  >
+                    <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6 }} className="w-0.5 h-0.5 bg-[#FFD54F] rounded-full" />
+                    <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} className="w-0.5 h-0.5 bg-[#FFD54F] rounded-full" />
+                    <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} className="w-0.5 h-0.5 bg-[#FFD54F] rounded-full" />
+                  </motion.div>
 
-                {/* AI Response */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 3, repeat: Infinity, repeatDelay: 6 }}
-                  className="self-start max-w-[85%] p-3 bg-white text-[#0f172a] text-[11px] rounded-2xl rounded-tl-none shadow-xl font-semibold border border-slate-100"
-                >
-                  "Done. I've categorized your notes into: Action Items, Decisions, and Next Steps. Sent to your email."
-                  <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      <CheckCircle2 size={10} className="text-blue-500" />
-                      <span className="text-[8px] text-blue-500 font-bold uppercase">Task_Executed</span>
+                  {/* AI Response */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20, scale: 0.9 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 3, repeat: Infinity, repeatDelay: 6 }}
+                    className="self-start max-w-[85%] p-2.5 bg-white text-[#0f172a] text-[10px] rounded-xl rounded-tl-none shadow-xl font-semibold border border-slate-100"
+                  >
+                    "Done. I've categorized your notes into: Action Items, Decisions, and Next Steps. Sent to your email."
+                    <div className="mt-1.5 pt-1.5 border-t border-slate-100 flex items-center justify-between">
+                      <div className="flex items-center gap-1">
+                        <CheckCircle2 size={8} className="text-blue-500" />
+                        <span className="text-[7px] text-blue-500 font-bold uppercase">Task_Executed</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <div className="p-4 bg-[#1e293b]/50 border-t border-white/5">
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex justify-between items-center px-1">
+                    <span className="text-[7px] font-black text-white/30 uppercase tracking-widest">Voice Capture</span>
+                    <div className="flex gap-0.5">
+                      {[...Array(4)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          animate={{ height: [2, 6, 2] }}
+                          transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
+                          className="w-0.5 bg-[#FFD54F]/40 rounded-full"
+                        />
+                      ))}
                     </div>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            <div className="p-5 bg-[#1e293b]/50 border-t border-white/5">
-              <div className="flex flex-col gap-2">
-                <div className="flex justify-between items-center px-1">
-                  <span className="text-[8px] font-black text-white/30 uppercase tracking-widest">Voice Capture</span>
-                  <div className="flex gap-0.5">
-                    {[...Array(4)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        animate={{ height: [3, 8, 3] }}
-                        transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
-                        className="w-0.5 bg-[#FFD54F]/40 rounded-full"
-                      />
-                    ))}
+                  <div className="h-8 rounded-full bg-[#0f172a] border border-white/10 flex items-center px-3 overflow-hidden relative group">
+                    <motion.div 
+                      animate={{ 
+                        x: ["-100%", "100%"],
+                        opacity: [0, 0.5, 0]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD54F]/10 to-transparent"
+                    />
+                    <div className="w-3 h-3 rounded-full bg-[#FFD54F]/20 flex items-center justify-center">
+                      <div className="w-1 h-1 rounded-full bg-[#FFD54F] animate-pulse" />
+                    </div>
+                    <span className="ml-2 text-[8px] font-mono text-white/20 uppercase tracking-tighter">Listening...</span>
                   </div>
-                </div>
-                <div className="h-10 rounded-full bg-[#0f172a] border border-white/10 flex items-center px-4 overflow-hidden relative group">
-                  <motion.div 
-                    animate={{ 
-                      x: ["-100%", "100%"],
-                      opacity: [0, 0.5, 0]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD54F]/10 to-transparent"
-                  />
-                  <div className="w-4 h-4 rounded-full bg-[#FFD54F]/20 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#FFD54F] animate-pulse" />
-                  </div>
-                  <span className="ml-3 text-[9px] font-mono text-white/20">Listening for intent...</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>);
+          </div>);
 
     case 'Education':
       return (
