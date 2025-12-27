@@ -74,14 +74,35 @@ const KeyboardAnimation = () => {
   );
 };
 
+const SoundBar = ({ delay }: { delay: number }) => {
+  const height = React.useMemo(() => [10, 25 + Math.random() * 40, 10], []);
+  const duration = React.useMemo(() => 0.7 + Math.random() * 0.5, []);
+
+  return (
+    <motion.div
+      animate={{
+        height: height,
+        opacity: [0.3, 1, 0.3],
+        backgroundColor: ["#FFD54F", "#FACC15", "#FFD54F"]
+      }}
+      transition={{
+        duration: duration,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: delay
+      }}
+      className="w-1.5 rounded-full"
+    />
+  );
+};
+
 const SypingFlowAnimation = () => {
   const [words, setWords] = useState<string[]>([]);
   const fullSentence = "Ideas flow as fast as I can think them without any friction at all.";
+  const wordList = React.useMemo(() => fullSentence.split(" "), []);
 
   useEffect(() => {
-    const wordList = fullSentence.split(" ");
     let index = 0;
-
     const interval = setInterval(() => {
       setWords((prev) => {
         if (index >= wordList.length) {
@@ -92,60 +113,46 @@ const SypingFlowAnimation = () => {
         index++;
         return next;
       });
-    }, 250);
+    }, 200);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [wordList]);
 
   return (
     <div className="w-full relative flex flex-col items-center gap-8">
-      <div className="flex items-center justify-center gap-1.5 h-16 w-full">
+      {/* Smooth Soundwave */}
+      <div className="flex items-end justify-center gap-1.5 h-16 w-full">
         {[...Array(24)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              height: [10, Math.random() * 50 + 10, 10],
-              opacity: [0.3, 0.8, 0.3],
-              backgroundColor: ["#FFD54F", "#FACC15", "#FFD54F"]
-            }}
-            transition={{
-              duration: 0.6 + Math.random() * 0.4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-1.5 rounded-full"
-          />
+          <SoundBar key={i} delay={i * 0.05} />
         ))}
       </div>
 
-      <div className="w-full min-h-[120px] bg-gradient-to-br from-white/10 to-transparent rounded-[24px] p-6 border border-white/20 backdrop-blur-sm relative overflow-hidden">
-        <div className="absolute -top-10 -left-10 w-20 h-20 bg-[#FFD54F]/10 rounded-full blur-2xl" />
-        <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-blue-400/10 rounded-full blur-2xl" />
+      {/* Floating Thoughts becoming Text */}
+      <div className="w-full min-h-[140px] bg-white/5 rounded-[32px] p-8 border border-white/10 backdrop-blur-md relative overflow-hidden group/thought">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFD54F]/5 via-transparent to-blue-500/5 opacity-50" />
         
         <div className="flex flex-wrap gap-x-2 gap-y-1 relative z-10">
-          <AnimatePresence mode="popLayout">
-            {words.map((word, i) => (
-              <motion.span
-                key={`${word}-${i}`}
-                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="text-lg font-bold text-white tracking-tight"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </AnimatePresence>
+          {words.map((word, i) => (
+            <motion.span
+              key={`${word}-${i}`}
+              initial={{ opacity: 0, filter: "blur(8px)", y: 5 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="text-xl font-bold text-white tracking-tight"
+            >
+              {word}
+            </motion.span>
+          ))}
           <motion.div
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 0.6, repeat: Infinity }}
-            className="w-2 h-6 bg-[#FFD54F] mt-1 shadow-[0_0_8px_#FFD54F]"
+            animate={{ opacity: [1, 0] }}
+            transition={{ duration: 0.8, repeat: Infinity, ease: "steps(2)" }}
+            className="w-2 h-7 bg-[#FFD54F] mt-1 shadow-[0_0_15px_#FFD54F]"
           />
         </div>
 
-        <div className="absolute top-2 right-4 flex items-center gap-2">
-          <Sparkles size={12} className="text-[#FFD54F] animate-pulse" />
-          <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Real-time AI</span>
+        <div className="absolute bottom-4 right-6 flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-[9px] font-black text-white/30 uppercase tracking-[0.3em]">Neural Interface Active</span>
         </div>
       </div>
     </div>
