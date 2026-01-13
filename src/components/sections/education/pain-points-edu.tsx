@@ -2,77 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, AlertCircle, MousePointer2, Sparkles, Zap, Cpu, Brain } from 'lucide-react';
-
-const KeyboardAnimation = () => {
-  const [activeKey, setActiveKey] = useState<string | null>(null);
-  const [text, setText] = useState("");
-  const fullText = "Too slow... lost the thought...";
-
-  const rows = [
-    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
-  ];
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex < fullText.length) {
-        const char = fullText[currentIndex].toUpperCase();
-        setActiveKey(char);
-        setText(fullText.slice(0, currentIndex + 1));
-        setTimeout(() => setActiveKey(null), 80);
-        currentIndex++;
-      } else {
-        setTimeout(() => {
-          currentIndex = 0;
-          setText("");
-        }, 1500);
-      }
-    }, 180);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="w-full flex flex-col items-center gap-4">
-      <div className="bg-slate-200/50 p-2 rounded-md w-full font-mono text-[10px] text-slate-600 min-h-[40px] border-2 border-slate-300 shadow-inner relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-white/50" />
-        {text}<span className="w-1.5 h-3 bg-slate-400 inline-block ml-1 animate-pulse" />
-      </div>
-
-      <div className="bg-slate-300 p-1.5 rounded-xl border-b-4 border-slate-400 shadow-lg scale-75">
-        <div className="flex flex-col gap-1">
-          {rows.map((row, i) => (
-            <div key={i} className="flex gap-1 justify-center">
-              {row.map((key) => (
-                <motion.div
-                  key={key}
-                  animate={{
-                    y: activeKey === key ? 2 : 0,
-                    backgroundColor: activeKey === key ? "#cbd5e1" : "#f8fafc",
-                    boxShadow: activeKey === key ?
-                      "inset 0 1px 2px rgba(0,0,0,0.2)" :
-                      "0 2px 0px rgba(0,0,0,0.1)"
-                  }}
-                  className="w-7 h-7 rounded-[4px] flex items-center justify-center text-[10px] font-black text-slate-400 border border-slate-200"
-                >
-                  {key}
-                </motion.div>
-              ))}
-            </div>
-          ))}
-          <div className="flex justify-center mt-1">
-            <motion.div
-              animate={{ y: activeKey === " " ? 2 : 0 }}
-              className="w-32 h-7 bg-white rounded-[4px] border border-slate-200 shadow-[0_2px_0_rgba(0,0,0,0.1)]"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { ArrowRight, AlertCircle, Sparkles, Zap, Brain, BookOpen, Mic } from 'lucide-react';
 
 const SoundBar = ({ delay }: { delay: number }) => {
   const height = React.useMemo(() => [10, 25 + Math.random() * 40, 10], []);
@@ -96,9 +26,9 @@ const SoundBar = ({ delay }: { delay: number }) => {
   );
 };
 
-const SypingFlowAnimation = () => {
+const LearningFlowAnimation = () => {
   const [words, setWords] = useState<string[]>([]);
-  const fullSentence = "Ideas flow as fast as I can think them without any friction at all.";
+  const fullSentence = "The research demonstrates that effective communication skills significantly enhance academic performance and career opportunities.";
   const wordList = React.useMemo(() => fullSentence.split(" "), []);
 
   useEffect(() => {
@@ -150,7 +80,7 @@ const SypingFlowAnimation = () => {
 
         <div className="absolute bottom-4 right-6 flex items-center gap-2">
           <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-[9px] font-black text-white/30 uppercase tracking-[0.3em]">Neural Interface Active</span>
+          <span className="text-[9px] font-black text-white/30 uppercase tracking-[0.3em]">Grammar AI Active</span>
         </div>
       </div>
     </div>
@@ -188,7 +118,7 @@ const FlashCard = ({ point, resolution, description, index }: { point: string; r
               <p className="text-base font-bold text-[#0f172a]">{point}</p>
             </div>
             <div className="mt-4 flex justify-end">
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tear to resolve →</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tap to see solution</span>
             </div>
           </motion.div>
         ) : (
@@ -212,7 +142,7 @@ const FlashCard = ({ point, resolution, description, index }: { point: string; r
               className="mt-4 text-[10px] font-black uppercase tracking-widest text-[#F9A825] hover:underline"
               onClick={(e) => { e.stopPropagation(); setIsTorn(false); }}
             >
-              ← Bring back the pain
+              See challenge again
             </button>
           </motion.div>
         )}
@@ -221,22 +151,22 @@ const FlashCard = ({ point, resolution, description, index }: { point: string; r
   );
 };
 
-export default function PainPoints() {
+export default function PainPointsEdu() {
   const points = [
     {
-      problem: "Your thoughts move faster than your fingers.",
-      resolution: "Synced to your Speed",
-      description: "Words keep pace with your intuition. No more mechanical bottlenecks."
+      problem: "Struggle to express ideas clearly in English.",
+      resolution: "Grammar AI That Teaches",
+      description: "Real-time corrections with explanations help you learn while you write."
     },
     {
-      problem: "Typing breaks your flow before your ideas land.",
-      resolution: "Seamless Flow State",
-      description: "The bridge between mind and screen is finally invisible."
+      problem: "Fear of making mistakes in class or exams.",
+      resolution: "Confidence Through Practice",
+      description: "Practice speaking and writing in a judgment-free environment."
     },
     {
-      problem: "The spark fades while you're still finding the keys.",
-      resolution: "Instant Capture",
-      description: "Capture brilliance the moment it hits. The keys are no longer your limit."
+      problem: "Essays and assignments take too long to complete.",
+      resolution: "Voice-Powered Writing",
+      description: "Speak your ideas naturally and watch them transform into polished text."
     }
   ];
 
@@ -245,14 +175,19 @@ export default function PainPoints() {
       <div className="container mx-auto px-6 max-w-[1200px]">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           <div className="lg:sticky lg:top-32">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 rounded-full mb-8 border border-red-100">
+              <BookOpen size={12} className="text-red-600" />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-red-700">Learning Challenges</span>
+            </div>
+
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-[#0f172a] mb-8 tracking-tighter leading-[0.9]">
-              Typing Is <br />
-              <span className="text-[#ef4444]">Slowing You Down.</span>
+              English <br />
+              <span className="text-[#ef4444]">Holding You Back?</span>
             </h2>
 
             <p className="text-xl text-[#475569] font-medium mb-12 max-w-md">
-              Every pause. Every correction. Every lost idea. <br />
-              <span className="text-[#0f172a] font-bold">You're not tired — you're throttled.</span>
+              Every hesitation. Every grammar doubt. Every missed opportunity. <br />
+              <span className="text-[#0f172a] font-bold">You deserve better tools.</span>
             </p>
 
             <div className="grid gap-4 mb-12">
@@ -262,39 +197,40 @@ export default function PainPoints() {
             </div>
 
             <button className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 rounded-[24px] text-xl font-bold transition-all shadow-[0_8px_0_rgb(0,0,0)] hover:shadow-[0_4px_0_rgb(0,0,0)] hover:translate-y-[4px] flex items-center gap-3 border-2 border-black active:shadow-none active:translate-y-[8px]">
-              Break the Friction <ArrowRight size={24} />
+              Start Improving Today <ArrowRight size={24} />
             </button>
           </div>
 
           <div className="flex flex-col gap-6">
             {/* The Old Way */}
             <div className="w-full bg-[#f8fafc] rounded-[40px] p-8 md:p-10 border-2 border-slate-200 relative overflow-hidden shadow-sm">
-              <div className="absolute top-4 right-6 text-[10px] font-black text-slate-300 uppercase tracking-widest">v1.0 Mechanical</div>
+              <div className="absolute top-4 right-6 text-[10px] font-black text-slate-300 uppercase tracking-widest">Traditional Learning</div>
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <div className="flex items-center gap-2 text-slate-400 mb-1">
-                    <Cpu size={14} />
-                    <span className="text-[10px] font-black uppercase tracking-widest">Input Protocol</span>
+                    <BookOpen size={14} />
+                    <span className="text-[10px] font-black uppercase tracking-widest">Old Method</span>
                   </div>
-                  <h4 className="text-2xl font-black text-slate-800 uppercase tracking-tighter">The Old Way</h4>
-                </div>
-                <div className="w-12 h-12 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shadow-sm">
-                  <MousePointer2 className="text-slate-400" size={24} />
+                  <h4 className="text-2xl font-black text-slate-800 uppercase tracking-tighter">The Struggle</h4>
                 </div>
               </div>
 
-              <KeyboardAnimation />
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 mb-6">
+                <p className="text-sm text-slate-500 font-medium italic">
+                  "I spend hours reviewing grammar rules but still make mistakes in my essays..."
+                </p>
+              </div>
 
               <div className="mt-10 flex justify-between items-center pt-8 border-t border-slate-200">
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Bandwidth</span>
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Confidence</span>
                   <div className="h-1.5 w-32 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full w-1/5 bg-slate-400" />
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Lost Ideas</span>
-                  <span className="text-lg font-black text-[#ef4444]">High</span>
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Progress</span>
+                  <span className="text-lg font-black text-[#ef4444]">Slow</span>
                 </div>
               </div>
             </div>
@@ -312,50 +248,39 @@ export default function PainPoints() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f172a]">The Cognitive Leap</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f172a]">AI-Powered Learning</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
                   </div>
-                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Bypassing Mechanical Limits</p>
+                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Real-time Feedback</p>
                 </div>
               </motion.div>
-
-              <div className="mt-4 flex gap-8">
-                <div className="flex flex-col items-center">
-                  <div className="text-[8px] font-black text-slate-300 uppercase tracking-widest mb-1">Friction</div>
-                  <div className="text-[10px] font-bold text-[#ef4444] line-through opacity-40">100%</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-[8px] font-black text-slate-300 uppercase tracking-widest mb-1">Throughput</div>
-                  <div className="text-[10px] font-bold text-green-500 underline">+800%</div>
-                </div>
-              </div>
             </div>
 
-            {/* The Syping Way */}
+            {/* The SpeakLingo Way */}
             <div className="w-full bg-[#0f172a] rounded-[40px] p-8 md:p-10 border border-white/10 relative overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.3)] group">
               <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#FFD54F]/10 rounded-full blur-[60px]" />
               <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-blue-500/10 rounded-full blur-[60px]" />
 
-              <div className="absolute top-4 right-6 text-[10px] font-black text-white/20 uppercase tracking-widest">v2.0 Cognitive</div>
+              <div className="absolute top-4 right-6 text-[10px] font-black text-white/20 uppercase tracking-widest">Smart Learning</div>
 
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <div>
                   <div className="flex items-center gap-2 text-[#FFD54F] mb-1">
                     <Brain size={14} />
-                    <span className="text-[10px] font-black uppercase tracking-widest">Neural Flow</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest">AI Tutor</span>
                   </div>
-                  <h4 className="text-3xl font-black text-white uppercase tracking-tighter italic">The Syping Way</h4>
+                  <h4 className="text-3xl font-black text-white uppercase tracking-tighter italic">The SpeakLingo Way</h4>
                 </div>
                 <div className="w-14 h-14 bg-[#FFD54F] rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.4)] group-hover:scale-110 transition-transform">
-                  <Zap className="text-[#0f172a]" size={28} />
+                  <Mic className="text-[#0f172a]" size={28} />
                 </div>
               </div>
 
-              <SypingFlowAnimation />
+              <LearningFlowAnimation />
 
               <div className="mt-10 flex justify-between items-center pt-8 border-t border-white/10 relative z-10">
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-black text-[#FFD54F]/60 uppercase tracking-widest mb-1">Bandwidth</span>
+                  <span className="text-[10px] font-black text-[#FFD54F]/60 uppercase tracking-widest mb-1">Confidence</span>
                   <div className="h-1.5 w-32 bg-white/10 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
@@ -366,8 +291,8 @@ export default function PainPoints() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] font-black text-[#FFD54F]/60 uppercase tracking-widest block mb-1">Efficiency</span>
-                  <span className="text-2xl font-black text-[#FFD54F]">98%</span>
+                  <span className="text-[10px] font-black text-[#FFD54F]/60 uppercase tracking-widest block mb-1">Improvement</span>
+                  <span className="text-2xl font-black text-[#FFD54F]">3x Faster</span>
                 </div>
               </div>
             </div>

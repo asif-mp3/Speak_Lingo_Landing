@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpeakLingo Landing Page
+
+A modern, animated landing page for SpeakLingo - a voice-to-text application with grammar correction and English learning features.
+
+## Routes
+
+- **`/`** - Main landing page showcasing SpeakLingo's core features
+- **`/education`** - Education-focused landing page targeting students and educational institutions
+
+## Tech Stack
+
+- **Next.js 15.3.6** - React framework with App Router
+- **React 19** - UI library
+- **Framer Motion** - Animation library
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **TypeScript** - Type safety
+- **Lucide React** - Icon library
+
+## Features
+
+### Main Landing Page (`/`)
+- Hero section with animated voice demo
+- Five modes showcase (Speak, Text, Search, Create, Learn)
+- Feature highlights with interactive cards
+- Testimonials section
+- Pricing and CTA sections
+
+### Education Landing Page (`/education`)
+- Split-layout hero with live voice-to-text demo
+- Three Pillars section (Productivity, Grammar Mastery, Spoken Confidence)
+- Student Moments - interactive scenario cards with hover effects
+- Step-by-step demo showing the correction flow
+- Dual testimonials (Students + Institutions)
+- Final CTA with achievement card metrics
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/asif-mp3/Speak_Lingo_Landing.git
+
+# Navigate to the project
+cd Speak_Lingo_Landing
+
+# Install dependencies
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the main landing page.
+Open [http://localhost:3000/education](http://localhost:3000/education) to view the education page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── page.tsx              # Main landing page
+│   ├── education/
+│   │   └── page.tsx          # Education landing page
+│   ├── layout.tsx            # Root layout
+│   └── globals.css           # Global styles
+├── components/
+│   └── sections/
+│       ├── navigation.tsx    # Shared navigation
+│       ├── footer.tsx        # Shared footer
+│       ├── hero.tsx          # Main hero section
+│       ├── pain-points.tsx   # Main pain points
+│       └── education/        # Education page sections
+│           ├── hero-edu.tsx
+│           ├── three-pillars-section.tsx
+│           ├── pain-section.tsx
+│           ├── demo-section.tsx
+│           ├── testimonials-section.tsx
+│           ├── final-cta-section.tsx
+│           └── shared/       # Shared components
+│               ├── animated-blob.tsx
+│               ├── waveform.tsx
+│               ├── xp-counter.tsx
+│               ├── confetti.tsx
+│               └── typewriter.tsx
+```
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Background**: `#FFFAE7` (cream yellow)
+- **Primary**: `#0f172a` (navy)
+- **Accent**: `#F9A825` (amber)
+- **Secondary Accent**: `#FFD54F` (gold)
+- **Card Radius**: `rounded-[40px]`
+- **Shadows**: `shadow-[0_20px_50px_rgba(0,0,0,0.08)]`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deploy easily on [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/asif-mp3/Speak_Lingo_Landing)
+
+## License
+
+MIT
